@@ -22,7 +22,7 @@ export default function RootLayout({
               <div className="flex">
                 <div className="flex-shrink-0 flex items-center">
                   <Image
-                    src="/images/4runr-logo.png"
+                    src="/images/4runr (12).png"
                     alt="4Runr Logo"
                     width={120}
                     height={40}
