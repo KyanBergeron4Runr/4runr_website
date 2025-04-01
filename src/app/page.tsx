@@ -1,29 +1,11 @@
 import Image from 'next/image'
+import CTASection from './components/CTASection'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-black text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl font-bold mb-6 leading-tight">
-              Transform Your Business with Custom AI & Automation Solutions That Deliver Results
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Stop struggling with fragmented AI tools and complex implementations. Get a unified, custom AI system that grows with your business, backed by experts who ensure your success.
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-purple-gradient hover:bg-purple-gradient-hover text-white px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105"
-            >
-              Book a Discovery Meeting
-            </a>
-          </div>
-        </div>
-      </section>
-
+      <CTASection />
+      
       {/* Partners Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

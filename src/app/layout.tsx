@@ -2,6 +2,7 @@ import './globals.css'
 import './styles/header.css'
 import { Metadata } from 'next'
 import Header from './components/Header'
+import { poppinsRegular, poppinsBold } from './fonts'
 
 export const metadata: Metadata = {
   title: '4Runr - Custom AI Infrastructure Solutions',
@@ -14,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`}>
+      <body className={poppinsRegular.className}>
         <Header />
         <main>
           {children}
