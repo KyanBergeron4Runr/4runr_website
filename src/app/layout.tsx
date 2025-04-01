@@ -1,5 +1,6 @@
 import './globals.css'
 import './styles/header.css'
+import './styles/cta-section.css'
 import { Metadata } from 'next'
 import Header from './components/Header'
 import { poppinsRegular, poppinsBold } from './fonts'

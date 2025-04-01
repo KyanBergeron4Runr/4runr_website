@@ -1,3 +1,7 @@
+'use client'
+
+import '../styles/cta-section.css'
+
 interface CTASectionProps {
   heading?: string;
   subtext?: string;
@@ -178,31 +182,6 @@ export default function CTASection({
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .lets-talk-button:hover {
-          transform: scale(1.1);
-        }
-        .lets-talk-button-mobile:hover {
-          transform: scale(1.05);
-        }
-        .lets-talk-button-mobile:active {
-          transform: scale(0.98);
-        }
-        @media (max-width: 767px) {
-          .cta-section {
-            display: none;
-          }
-          .cta-section-mobile {
-            display: block;
-          }
-        }
-        @media (min-width: 768px) {
-          .cta-section-mobile {
-            display: none;
-          }
-        }
-      `}</style>
     </>
   );
 } 
