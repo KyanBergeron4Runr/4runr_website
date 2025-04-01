@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { poppinsRegular, poppinsBold } from './fonts'
+import Image from 'next/image'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: '4Runr - Your Running Partner',
@@ -15,14 +14,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`}>
+      <body className="font-sans">
         <header className="bg-white shadow-sm">
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex">
                 <div className="flex-shrink-0 flex items-center">
-                  <span className="text-2xl font-bold text-primary">4Runr</span>
+                  <Image
+                    src="/assets/images/4runr (12).png"
+                    alt="4Runr Logo"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto"
+                  />
                 </div>
               </div>
             </div>
