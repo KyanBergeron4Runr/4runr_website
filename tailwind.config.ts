@@ -26,8 +26,8 @@ const config: Config = {
         'background-alt': 'var(--color-background-alt)',
       },
       fontFamily: {
-        sans: ['var(--font-sans)'],
-        heading: ['var(--font-heading)'],
+        sans: ['var(--font-poppins-regular)', 'sans-serif'],
+        heading: ['var(--font-poppins-bold)', 'sans-serif'],
       },
       backgroundImage: {
         'grid-pattern': 'linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',

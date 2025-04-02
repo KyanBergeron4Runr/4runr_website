@@ -26,7 +26,7 @@ export default function Header() {
           <div className="header__logo-wrapper">
             <Link href="/">
               <Image
-                src="/images/4runr (12).png"
+                src="https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_67.png?v=1738103105"
                 alt="4Runr"
                 width={200}
                 height={80}
@@ -51,7 +51,7 @@ export default function Header() {
         <div className="mobile-logo-wrapper">
           <Link href="/">
             <Image
-              src="/images/4runr (12).png"
+              src="https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_67.png?v=1738103105"
               alt="4Runr"
               width={150}
               height={60}

@@ -23,7 +23,7 @@ export default function CTASection({
       <div
         className="cta-section"
         style={{
-          backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
+          background: '#000000',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '4.16vw 0',
@@ -57,6 +57,7 @@ export default function CTASection({
               maxWidth: '83.33vw',
               textAlign: 'center',
               marginBottom: '0.52vw',
+              fontFamily: 'var(--font-heading)',
             }}
           >
             {heading}
@@ -71,6 +72,7 @@ export default function CTASection({
               color: 'white',
               fontWeight: 500,
               opacity: 0.9,
+              fontFamily: 'var(--font-sans)',
             }}
           >
             {subtext}
@@ -90,6 +92,7 @@ export default function CTASection({
                 fontSize: '1.04vw',
                 fontWeight: 'bold',
                 transition: 'transform 0.3s',
+                fontFamily: 'var(--font-heading)',
               }}
             >
               {buttonText}
@@ -102,13 +105,12 @@ export default function CTASection({
       <div
         className="cta-section-mobile"
         style={{
-          backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
+          background: '#000000',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '3.5rem 1.25rem',
           margin: 0,
           backgroundRepeat: 'no-repeat',
-          backgroundColor: '#000',
         }}
       >
         <div
@@ -132,6 +134,7 @@ export default function CTASection({
               lineHeight: '1.3',
               fontWeight: 900,
               textAlign: 'center',
+              fontFamily: 'var(--font-heading)',
             }}
           >
             {heading}
@@ -147,6 +150,7 @@ export default function CTASection({
               textAlign: 'center',
               color: 'white',
               opacity: 0.9,
+              fontFamily: 'var(--font-sans)',
             }}
           >
             {subtext}
@@ -175,6 +179,7 @@ export default function CTASection({
                 textAlign: 'center',
                 fontWeight: 'bold',
                 transition: 'transform 0.3s ease',
+                fontFamily: 'var(--font-heading)',
               }}
             >
               {buttonText}

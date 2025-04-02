@@ -1,30 +1,16 @@
-@font-face {
-  font-family: 'Poppins Bold';
-  src: url('https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Poppins-Bold.ttf?v=1739033774') format('truetype');
-  font-weight: bold;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins Regular';
-  src: url('https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Poppins-Regular.ttf?v=1739033811') format('truetype');
-  font-weight: normal;
-  font-display: swap;
-}
-
 .pdf-form {
   max-width: 35vw;
   margin: 0 auto;
   padding: 1.8vw;
   text-align: center;
-  font-family: 'Poppins Regular', sans-serif;
+  font-family: var(--font-sans);
   background: #000000;
   border-radius: 0.42vw;
 }
 
 .pdf-form__heading {
   margin-bottom: 1.3vw;
-  font-family: 'Poppins Bold', sans-serif;
+  font-family: var(--font-heading);
   color: white;
   font-size: 2.4vw;
   line-height: 1.2;
@@ -36,7 +22,7 @@
 .pdf-form h3,
 .pdf-form h4,
 .pdf-form h5 {
-  font-family: 'Poppins Bold', sans-serif;
+  font-family: var(--font-heading);
   color: white;
 }
 
@@ -45,7 +31,7 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 32vw;
-  font-family: 'Poppins Regular', sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.7;
   font-size: 1.1vw;
   color: #e0e0e0;
@@ -75,7 +61,7 @@
   color: #ffffff80;
   border-radius: 0.3vw;
   cursor: pointer;
-  font-family: 'Poppins Regular', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.9vw;
   transition: all 0.2s ease;
 }
@@ -100,7 +86,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins Bold', sans-serif;
+  font-family: var(--font-heading);
   min-width: 9.375vw;
   height: 3.125vw;
   background: linear-gradient(45deg, #4B0082, #483D8B);
@@ -123,7 +109,7 @@
 .pdf-form__success,
 .pdf-form__error {
   margin-top: 0.52vw;
-  font-family: 'Poppins Regular', sans-serif;
+  font-family: var(--font-sans);
   padding: 0.39vw;
   border-radius: 0.21vw;
   font-size: 0.95vw;
@@ -143,7 +129,7 @@
   color: #888;
   font-size: 0.8vw;
   margin-top: 1.04vw;
-  font-family: 'Poppins Regular', sans-serif;
+  font-family: var(--font-sans);
   max-width: 28vw;
   margin-left: auto;
   margin-right: auto;
