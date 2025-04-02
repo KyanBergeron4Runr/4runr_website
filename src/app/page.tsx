@@ -6,7 +6,6 @@ import WhatIs4Runr from './components/WhatIs4Runr'
 import AISolutionsCTA from './components/AISolutionsCTA'
 import BenefitsSection from './components/BenefitsSection'
 import ProcessSection from './components/ProcessSection'
-import Footer from './components/Footer'
 
 const InteractiveServices = dynamic(
   () => import('./components/InteractiveServices'),
@@ -72,9 +71,6 @@ export default function Home() {
 
       {/* PDF Form Section */}
       <PDFForm />
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 } 

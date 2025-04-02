@@ -92,7 +92,7 @@ export default function BenefitsSection({
 
         <div className="button-group">
           <a href={buttonLink} className="btn btn-primary">{buttonText}</a>
-          <a href={buttonLink} className="btn btn-secondary">Learn More</a>
+          <a href="/services-learn-more" className="btn btn-secondary">Learn More</a>
         </div>
       </div>
     </section>

@@ -6,11 +6,15 @@ import './styles/what-is-4runr.css'
 import './styles/ai-solutions-cta.css'
 import { Metadata } from 'next'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import { poppinsRegular, poppinsBold } from './fonts'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '4Runr - Custom AI Infrastructure Solutions',
-  description: 'Transform your business with custom AI and automation solutions that deliver measurable results.',
+  title: '4Runr Tech',
+  description: 'Transform your business with custom AI & automation solutions',
 }
 
 export default function RootLayout({
@@ -19,12 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`}>
+    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable} ${inter.className}`}>
       <body className={poppinsRegular.className}>
         <Header />
         <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )

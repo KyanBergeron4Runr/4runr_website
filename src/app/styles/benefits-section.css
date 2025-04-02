@@ -3,19 +3,19 @@
   text-align: center;
   background-color: #000;
   overflow-x: hidden;
-  font-family: 'Poppins Regular', sans-serif;
+  font-family: var(--font-sans);
 }
 
 .section-title {
   margin-bottom: 3.125vw;
 }
 
-.section-title h2 {
-  font-size: 1.875vw;
+.section-title h1 {
+  font-size: 2.5vw;
   font-weight: bold;
   color: #fff;
   margin-bottom: 1.042vw;
-  font-family: 'Poppins Bold', sans-serif;
+  font-family: var(--font-heading);
 }
 
 .benefits-section .container {
@@ -96,9 +96,19 @@
 
 .benefit-bg h3 {
   margin: 1.042vw 0 0.521vw 0;
-  font-size: 1.25vw;
+  font-size: 1.8vw;
   font-weight: bold;
-  font-family: 'Poppins Bold', sans-serif;
+  font-family: var(--font-heading);
+  color: #fff;
+}
+
+.benefit-bg h4 {
+  font-size: 1.2vw;
+  line-height: 1.6;
+  color: #ccc;
+  padding: 0 2.083vw;
+  font-family: var(--font-sans);
+  margin-bottom: 1.042vw;
 }
 
 .benefit-item p {
@@ -127,7 +137,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins Bold', sans-serif;
+  font-family: var(--font-heading);
   min-width: 9.375vw;
   height: 3.125vw;
 }
@@ -166,8 +176,8 @@
 
 /* Medium desktop screens */
 @media screen and (max-width: 1400px) and (min-width: 769px) {
-  .section-title h2 {
-    font-size: 24px;
+  .section-title h1 {
+    font-size: 36px;
   }
 
   .benefit-item {
@@ -176,12 +186,12 @@
   }
 
   .benefit-bg h3 {
-    font-size: 20px;
+    font-size: 24px;
     margin: 12px 0 8px 0;
   }
 
-  .benefit-item p {
-    font-size: 14px;
+  .benefit-bg h4 {
+    font-size: 16px;
     padding: 0 20px;
     margin-bottom: 10px;
   }
@@ -196,8 +206,8 @@
 
 /* Tablet/Mobile breakpoint */
 @media screen and (max-width: 768px) {
-  .section-title h2 {
-    font-size: 24px;
+  .section-title h1 {
+    font-size: 28px;
     margin-bottom: 20px;
   }
 
@@ -215,12 +225,12 @@
   }
 
   .mobile-version .benefit-bg h3 {
-    font-size: 20px;
+    font-size: 24px;
     margin: 5px 0 10px 0;
   }
 
-  .mobile-version .benefit-item p {
-    font-size: 14px;
+  .mobile-version .benefit-bg h4 {
+    font-size: 16px;
     padding: 0 10px;
     margin-bottom: 10px;
   }
@@ -244,8 +254,8 @@
 
 /* Small mobile screens */
 @media screen and (max-width: 480px) {
-  .section-title h2 {
-    font-size: 20px;
+  .section-title h1 {
+    font-size: 24px;
   }
 
   .mobile-version .benefit-item {
@@ -253,11 +263,11 @@
   }
 
   .mobile-version .benefit-bg h3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
-  .mobile-version .benefit-item p {
-    font-size: 13px;
+  .mobile-version .benefit-bg h4 {
+    font-size: 14px;
     line-height: 1.4;
   }
 
