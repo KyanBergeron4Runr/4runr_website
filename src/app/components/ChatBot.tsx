@@ -25,7 +25,7 @@ export default function ChatBot() {
   };
 
   useEffect(() => {
-    // Initial messages
+    // Initial messages with typing effect
     setTimeout(() => {
       setMessages([
         { text: "Hi there! I'm your 4Runr AI consultant. 👋", isUser: false }
@@ -35,8 +35,8 @@ export default function ChatBot() {
           text: "I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?",
           isUser: false
         }]);
-      }, 1000);
-    }, 1500);
+      }, 1500); // Increased delay for more natural typing feel
+    }, 1000);
   }, []);
 
   useEffect(() => {
