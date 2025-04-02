@@ -94,7 +94,7 @@ export default function InteractiveServices({
     <div className="services-section">
       <div className="section-container">
         <div className="main-title">
-          <h2>{heading}</h2>
+          <h1>{heading}</h1>
         </div>
         <div className="subheadings-container">
           {subheadings.map((item, index) => (
@@ -105,7 +105,7 @@ export default function InteractiveServices({
               onMouseEnter={() => !isMobile && handleInteraction(index)}
               onMouseLeave={() => !isMobile && setIsUserInteracting(false)}
             >
-              {item.title}
+              <h2>{item.title}</h2>
               <span className="indicator" />
             </div>
           ))}

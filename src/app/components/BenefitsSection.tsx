@@ -37,7 +37,7 @@ export default function BenefitsSection({
     <section className="benefits-section">
       <div className="container">
         <div className="section-title">
-          <h2>How We Transform Your Business with AI</h2>
+          <h1>How We Transform Your Business with AI</h1>
         </div>
         
         {!isMobile ? (

@@ -86,14 +86,14 @@ export default function AISolutionsCTA({
       {/* Desktop Version */}
       <div className="cta-section">
         <div className="cta-container">
-          <h2 className="cta-heading-main">
+          <h1 className="cta-heading-main">
             You're the Innovator, We're Your AI Partner.<br />
             <div className="typed-wrapper">
               Automate
               <span className="typed-text"></span>
               with AI.
             </div>
-          </h2>
+          </h1>
           <p className="cta-subtext">
             You're not just running a business—you're shaping the future. Break free from outdated processes and the confusion
             of navigating AI alone, with solutions that streamline operations and keep you ahead.
@@ -112,10 +112,10 @@ export default function AISolutionsCTA({
       {/* Mobile Version */}
       <div className="cta-section-mobile">
         <div className="cta-container-mobile">
-          <h2 className="cta-heading-mobile">
+          <h1 className="cta-heading-mobile">
             You're the Innovator,<br />
             We're Your AI Partner.
-          </h2>
+          </h1>
           <div className="typed-wrapper-mobile">
             <p>
               Automate

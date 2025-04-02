@@ -43,14 +43,14 @@ export default function ProcessSection({
   return (
     <div className="our-process-section">
       <div className="section-header">
-        <h2>{title}</h2>
-        <h3>{subtitle}</h3>
+        <h1>{title}</h1>
+        <h2>{subtitle}</h2>
       </div>
 
       <div className="process-steps">
         {steps.map((step, index) => (
           <div key={index} className="process-step">
-            <h4>{step.title}</h4>
+            <h3>{step.title}</h3>
             <div className="step-number">{step.subtitle}</div>
             <p>{step.description}</p>
           </div>
