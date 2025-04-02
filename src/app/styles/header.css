@@ -52,11 +52,12 @@
 .top-nav a {
   color: white;
   text-decoration: none;
-  font-size: 0.929vw;
-  font-family: 'Poppins Bold', sans-serif;
+  font-size: var(--text-body);
+  font-family: var(--font-heading);
   transition: transform 0.3s ease;
   white-space: nowrap;
   line-height: 1;
+  font-weight: 700;
 }
 
 .top-nav a:hover {
@@ -68,7 +69,8 @@
   color: #000000;
   background: white;
   border-radius: 0.313vw;
-  font-size: 0.929vw;
+  font-size: var(--text-button);
+  font-weight: 700;
 }
 
 /* Laptop displays */
@@ -190,12 +192,13 @@
   width: 100%;
   text-align: center;
   text-decoration: none;
-  font-size: 1.125rem;
-  font-family: 'Poppins Bold', sans-serif;
+  font-size: var(--mobile-text-body);
+  font-family: var(--font-heading);
   color: #000000;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
 }
 
 .mobile-menu .nav-button:hover {
