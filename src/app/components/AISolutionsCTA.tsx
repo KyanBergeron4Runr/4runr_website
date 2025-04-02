@@ -37,55 +37,49 @@ export default function AISolutionsCTA({
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [displayText, setDisplayText] = useState('');
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 767);
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
-    let typingTimer: NodeJS.Timeout;
-
-    const typeText = () => {
-      const currentWord = wordsToType[currentWordIndex];
-      const element = isMobile ? document.querySelector('.typed-text-mobile') : document.querySelector('.typed-text');
-
-      if (!element) return;
-
-      if (!isDeleting) {
-        const textContent = currentWord.slice(0, charIndex + 1);
-        element.innerHTML = textContent + '<span class="typing-cursor">_</span>';
-        setCharIndex(prev => prev + 1);
-
-        if (charIndex === currentWord.length) {
-          setIsDeleting(true);
-          typingTimer = setTimeout(typeText, 3000);
-          return;
-        }
-
-        typingTimer = setTimeout(typeText, 200);
-      } else {
-        const textContent = currentWord.slice(0, charIndex - 1);
-        element.innerHTML = textContent + '<span class="typing-cursor">_</span>';
-        setCharIndex(prev => prev - 1);
-
-        if (charIndex === 0) {
-          setIsDeleting(false);
-          setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
-          typingTimer = setTimeout(typeText, 1500);
-          return;
-        }
-
-        typingTimer = setTimeout(typeText, 150);
-      }
-    };
-
-    typeText();
-
     return () => {
       window.removeEventListener('resize', checkMobile);
-      clearTimeout(typingTimer);
     };
-  }, [currentWordIndex, charIndex, isDeleting, isMobile]);
+  }, []);
+
+  useEffect(() => {
+    const currentWord = wordsToType[currentWordIndex];
+    const element = isMobile ? document.querySelector('.typed-text-mobile') : document.querySelector('.typed-text');
+
+    if (!element) return;
+
+    if (!isDeleting) {
+      const textContent = currentWord.slice(0, charIndex + 1);
+      setDisplayText(textContent);
+      element.innerHTML = textContent + '<span class="typing-cursor">_</span>';
+
+      if (charIndex === currentWord.length) {
+        setTimeout(() => setIsDeleting(true), 2000);
+        return;
+      }
+
+      setTimeout(() => setCharIndex(prev => prev + 1), 200);
+    } else {
+      const textContent = currentWord.slice(0, charIndex - 1);
+      setDisplayText(textContent);
+      element.innerHTML = textContent + '<span class="typing-cursor">_</span>';
+
+      if (charIndex === 0) {
+        setIsDeleting(false);
+        setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
+        return;
+      }
+
+      setTimeout(() => setCharIndex(prev => prev - 1), 150);
+    }
+  }, [charIndex, isDeleting, currentWordIndex, isMobile]);
 
   return (
     <>
