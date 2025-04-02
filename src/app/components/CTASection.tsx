@@ -47,11 +47,11 @@ export default function CTASection({
             padding: 0,
           }}
         >
-          <h2
+          <h1
             className="cta-heading-main"
             style={{
-              fontSize: 'var(--text-heading)',
-              lineHeight: '1.3em',
+              fontSize: 'var(--text-title)',
+              lineHeight: '1.2',
               color: 'white',
               fontWeight: 900,
               maxWidth: '83.33vw',
@@ -61,12 +61,12 @@ export default function CTASection({
             }}
           >
             {heading}
-          </h2>
+          </h1>
           <p
             className="cta-subtext"
             style={{
               fontSize: 'var(--text-body)',
-              lineHeight: '1.5em',
+              lineHeight: '1.5',
               margin: '1.04vw 0 1.56vw 0',
               maxWidth: '57.29vw',
               color: 'white',
@@ -90,7 +90,7 @@ export default function CTASection({
                 background: 'linear-gradient(45deg, #4B0082, #483D8B)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-button)',
-                fontWeight: 'bold',
+                fontWeight: 700,
                 transition: 'transform 0.3s',
                 fontFamily: 'var(--font-heading)',
               }}
@@ -125,20 +125,20 @@ export default function CTASection({
             textAlign: 'center',
           }}
         >
-          <h2
+          <h1
             className="cta-heading-mobile"
             style={{
-              fontSize: 'var(--mobile-text-heading)',
+              fontSize: 'var(--mobile-text-title)',
               margin: '0 0 1.2rem 0',
               color: 'white',
-              lineHeight: '1.3',
+              lineHeight: '1.2',
               fontWeight: 900,
               textAlign: 'center',
               fontFamily: 'var(--font-heading)',
             }}
           >
             {heading}
-          </h2>
+          </h1>
           <p
             className="cta-body-mobile"
             style={{
@@ -177,7 +177,7 @@ export default function CTASection({
                 textDecoration: 'none',
                 fontSize: 'var(--mobile-text-button)',
                 textAlign: 'center',
-                fontWeight: 'bold',
+                fontWeight: 700,
                 transition: 'transform 0.3s ease',
                 fontFamily: 'var(--font-heading)',
               }}
