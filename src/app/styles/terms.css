@@ -1,0 +1,143 @@
+.terms-section {
+  padding: 2.083vw 0;
+  text-align: left;
+  overflow-x: hidden;
+  background-color: #000;
+  color: #fff;
+  font-family: var(--font-sans);
+}
+
+.terms-container {
+  width: 100%;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 0 2.083vw;
+  overflow: hidden;
+}
+
+.terms-title {
+  margin-bottom: 3.125vw;
+  text-align: center;
+}
+
+.terms-title h1 {
+  font-size: 2.2vw;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1.042vw;
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+}
+
+.last-updated {
+  font-size: 1.042vw;
+  color: #fff;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 2vw;
+}
+
+.terms-content {
+  font-size: 1.042vw;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.terms-content h2 {
+  font-size: 1.5vw;
+  font-family: var(--font-heading);
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  color: #fff;
+}
+
+.terms-content p {
+  margin-bottom: 1.5vw;
+  color: #fff;
+}
+
+.terms-content ul {
+  padding-left: 2vw;
+  margin-bottom: 1.5vw;
+  color: #fff;
+  list-style-type: disc;
+}
+
+.terms-content li {
+  margin-bottom: 0.5vw;
+  color: #fff;
+  padding-left: 0.5vw;
+}
+
+.contact-info {
+  margin-top: 3vw;
+  padding: 2vw;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5vw;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 0.5em;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1400px) {
+  .terms-title h1 {
+    font-size: 28px;
+  }
+  .terms-content {
+    font-size: 16px;
+  }
+  .terms-content h2 {
+    font-size: 20px;
+  }
+  .last-updated {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .terms-container {
+    max-width: 90%;
+  }
+  .terms-title h1 {
+    font-size: 24px;
+  }
+  .terms-content {
+    font-size: 16px;
+  }
+  .terms-content h2 {
+    font-size: 20px;
+  }
+  .last-updated {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .terms-container {
+    max-width: 95%;
+  }
+  .terms-title h1 {
+    font-size: 22px;
+  }
+  .terms-content {
+    font-size: 16px;
+  }
+  .terms-content h2 {
+    font-size: 18px;
+  }
+  .last-updated {
+    font-size: 14px;
+  }
+  
+  .terms-content ul {
+    padding-left: 1.5rem;
+  }
+} 
