@@ -26,30 +26,23 @@ export default function ChatBot() {
   };
 
   useEffect(() => {
-    // Prevent duplicate initialization
     if (hasInitializedRef.current) return;
     hasInitializedRef.current = true;
 
-    // Initial messages with typing effect
-    const timer1 = setTimeout(() => {
+    // First welcome message
+    setTimeout(() => {
       setMessages([
         { text: "Hi there! I'm your 4Runr AI consultant. 👋", isUser: false }
       ]);
-      
-      const timer2 = setTimeout(() => {
-        setMessages(messages => [
-          ...messages,
-          {
-            text: "I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?",
-            isUser: false
-          }
-        ]);
-      }, 1500);
-
-      return () => clearTimeout(timer2);
     }, 1000);
 
-    return () => clearTimeout(timer1);
+    // Second welcome message
+    setTimeout(() => {
+      setMessages(prev => [...prev, {
+        text: "I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?",
+        isUser: false
+      }]);
+    }, 2500);
   }, []);
 
   useEffect(() => {
