@@ -13,11 +13,14 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const sessionId = useRef(`session_${Date.now()}`);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messagesContainerRef.current) {
+      const container = messagesContainerRef.current;
+      container.scrollTop = container.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -101,7 +104,7 @@ export default function ChatBot() {
       </header>
 
       <div className="chat-container">
-        <div className="messages" id="messages">
+        <div className="messages" id="messages" ref={messagesContainerRef}>
           {messages.map((message, index) => (
             <div
               key={index}
@@ -123,7 +126,6 @@ export default function ChatBot() {
               </div>
             </div>
           )}
-          <div ref={messagesEndRef} />
         </div>
 
         <div className="input-area">
