@@ -4,6 +4,7 @@ import SloganSection from './components/SloganSection'
 import WhatIs4Runr from './components/WhatIs4Runr'
 import AISolutionsCTA from './components/AISolutionsCTA'
 import BenefitsSection from './components/BenefitsSection'
+import ProcessSection from './components/ProcessSection'
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Benefits Section */}
       <BenefitsSection />
+
+      {/* Process Section */}
+      <ProcessSection />
     </div>
   )
 } 
