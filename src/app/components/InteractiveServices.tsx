@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import styles from '../styles/interactive-services.css';
+'use client'
+
+import { useEffect, useState } from 'react'
+import '../styles/interactive-services.css'
 
 interface InteractiveServicesProps {
   heading?: string;
@@ -11,7 +13,7 @@ interface InteractiveServicesProps {
   content3?: string;
 }
 
-const InteractiveServices: React.FC<InteractiveServicesProps> = ({
+export default function InteractiveServices({
   heading = "Let's Build Something Game-Changing",
   subheading1 = "Gain the Competitive Edge",
   content1 = "Transform your business capabilities with systems that put you ahead. Our AI and automation solutions help you operate faster, smarter, and more efficiently than your competitors. From intelligent decision-making to streamlined operations, we build systems that give you the advantage in today's market.",
@@ -19,7 +21,7 @@ const InteractiveServices: React.FC<InteractiveServicesProps> = ({
   content2 = "Future-proof your business with scalable systems that evolve with you. Our solutions combine the latest AI advancements with powerful automation, creating flexible systems that adapt to changing markets. Stay ahead of industry trends with technology that grows alongside your business.",
   subheading3 = "Lead the Digital Revolution",
   content3 = "Don't watch from the sidelines as AI transforms your industry. Our systems give you the tools to be a leader in the digital age. By combining cutting-edge AI with practical automation, we help you pioneer new ways of working and set the standard in your industry"
-}) => {
+}: InteractiveServicesProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -131,6 +133,4 @@ const InteractiveServices: React.FC<InteractiveServicesProps> = ({
       </div>
     </div>
   );
-};
-
-export default InteractiveServices; 
+} 
