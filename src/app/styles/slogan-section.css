@@ -1,0 +1,129 @@
+:root {
+  --section-padding-v: 1.5vw;
+  --section-padding-h: 2vw;
+  --logo-height: 7.03125vw;
+  --logo-gap: 5vw;
+}
+
+.slogan-section {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: var(--section-padding-v) var(--section-padding-h);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2vw 0;
+  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 2%, #000 98%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 2%, #000 98%, transparent 100%);
+}
+
+.marquee-inner {
+  display: flex;
+  width: fit-content;
+  will-change: transform;
+  animation: primary-animation 60s linear infinite;
+  -webkit-animation: primary-animation 60s linear infinite;
+}
+
+@keyframes primary-animation {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@-webkit-keyframes primary-animation {
+  0% { -webkit-transform: translateX(0); }
+  100% { -webkit-transform: translateX(-50%); }
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  padding: 0 calc(var(--logo-gap) / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: var(--logo-height);
+  width: auto;
+  filter: invert(1);
+  object-fit: contain;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fine-print {
+  font-family: var(--font-body);
+  font-size: 0.8vw;
+  color: #666;
+  margin-top: 0.390625vw;
+  line-height: 1.4;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fine-print-line {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.1953125vw;
+}
+
+@media (max-width: 768px) {
+  .marquee-inner {
+    animation: primary-animation 40s linear infinite;
+    -webkit-animation: primary-animation 40s linear infinite;
+  }
+
+  .logo {
+    height: 120px;
+  }
+
+  .fine-print {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .fine-print-line {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 90px;
+  }
+
+  .fine-print {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  .fine-print-line {
+    margin-bottom: 6px;
+  }
+} 

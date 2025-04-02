@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import CTASection from './components/CTASection'
+import SloganSection from './components/SloganSection'
 
 export default function Home() {
   return (
@@ -7,20 +8,7 @@ export default function Home() {
       <CTASection />
       
       {/* Partners Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-600 mb-12">
-            Here are some of the tools we're proficient with. We can easily work with your preferred solutions as well.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="flex items-center justify-center">
-                <div className="w-24 h-12 bg-gray-200 rounded-lg"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SloganSection />
 
       {/* What is 4Runr Section */}
       <section className="py-20 bg-gray-50">
