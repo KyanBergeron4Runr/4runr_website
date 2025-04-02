@@ -51,7 +51,7 @@ export default function ProcessSection({
         {steps.map((step, index) => (
           <div key={index} className="process-step">
             <h3>{step.title}</h3>
-            <div className="step-number">{step.subtitle}</div>
+            <h4>{step.subtitle}</h4>
             <p>{step.description}</p>
           </div>
         ))}

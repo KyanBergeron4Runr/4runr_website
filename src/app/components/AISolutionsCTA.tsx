@@ -89,9 +89,11 @@ export default function AISolutionsCTA({
           <h1 className="cta-heading-main">
             You're the Innovator, We're Your AI Partner.<br />
             <div className="typed-wrapper">
-              Automate
-              <span className="typed-text"></span>
-              with AI.
+              <h2>
+                Automate
+                <span className="typed-text"></span>
+                with AI.
+              </h2>
             </div>
           </h1>
           <p className="cta-subtext">
@@ -117,11 +119,11 @@ export default function AISolutionsCTA({
             We're Your AI Partner.
           </h1>
           <div className="typed-wrapper-mobile">
-            <p>
+            <h2>
               Automate
               <span className="typed-text-mobile"></span>
               with AI.
-            </p>
+            </h2>
           </div>
           <p className="cta-body-mobile">
             You're not just running a business—you're shaping the future. Break free from outdated processes and the confusion

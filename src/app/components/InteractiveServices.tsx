@@ -117,7 +117,7 @@ export default function InteractiveServices({
                 key={index}
                 className={`content ${activeIndex === index ? 'active' : ''}`}
               >
-                {item.content}
+                <h3>{item.content}</h3>
               </div>
             ))}
           </div>
