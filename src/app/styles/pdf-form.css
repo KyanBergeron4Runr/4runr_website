@@ -12,7 +12,7 @@
   margin-bottom: 1.3vw;
   font-family: var(--font-heading);
   color: white;
-  font-size: 2.4vw;
+  font-size: var(--text-heading);
   line-height: 1.2;
   text-shadow: 0 0.10vw 0.21vw rgba(0,0,0,0.1);
 }
@@ -33,7 +33,7 @@
   max-width: 32vw;
   font-family: var(--font-sans);
   line-height: 1.7;
-  font-size: 1.1vw;
+  font-size: var(--text-body);
   color: #e0e0e0;
   padding: 0 0.52vw;
 }
@@ -62,7 +62,7 @@
   border-radius: 0.3vw;
   cursor: pointer;
   font-family: var(--font-sans);
-  font-size: 0.9vw;
+  font-size: var(--text-small);
   transition: all 0.2s ease;
 }
 
@@ -80,7 +80,7 @@
   padding: 1vw 2.5vw;
   text-decoration: none;
   border-radius: 0.521vw;
-  font-size: 1vw;
+  font-size: var(--text-button);
   font-weight: bold;
   transition: transform 0.3s ease;
   display: inline-flex;
@@ -102,7 +102,7 @@
 }
 
 .button-icon {
-  font-size: 1.2vw;
+  font-size: var(--text-body);
   margin-top: -0.21vw;
 }
 
@@ -112,7 +112,7 @@
   font-family: var(--font-sans);
   padding: 0.39vw;
   border-radius: 0.21vw;
-  font-size: 0.95vw;
+  font-size: var(--text-small);
 }
 
 .pdf-form__success {
@@ -127,7 +127,7 @@
 
 .pdf-form__fine-print {
   color: #888;
-  font-size: 0.8vw;
+  font-size: var(--text-small);
   margin-top: 1.04vw;
   font-family: var(--font-sans);
   max-width: 28vw;
@@ -147,14 +147,14 @@
   }
 
   .pdf-form__heading {
-    font-size: 24px;
+    font-size: var(--mobile-text-heading);
     margin-bottom: 15px;
     line-height: 1.3;
     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
 
   .pdf-form__description {
-    font-size: 16px;
+    font-size: var(--mobile-text-body);
     max-width: 100%;
     margin-bottom: 20px;
     line-height: 1.5;
@@ -174,7 +174,7 @@
   }
 
   .language-option {
-    font-size: 14px;
+    font-size: var(--mobile-text-small);
     padding: 6px 15px;
     border-radius: 5px;
   }
@@ -185,25 +185,25 @@
     max-width: 100%;
     height: auto;
     padding: 14px 20px;
-    font-size: 16px;
+    font-size: var(--mobile-text-button);
     border-radius: 8px;
   }
 
   .button-icon {
-    font-size: 18px;
+    font-size: var(--mobile-text-body);
     margin-top: -3px;
   }
 
   .pdf-form__success,
   .pdf-form__error {
-    font-size: 14px;
+    font-size: var(--mobile-text-small);
     padding: 8px;
     margin-top: 10px;
     border-radius: 4px;
   }
 
   .pdf-form__fine-print {
-    font-size: 12px;
+    font-size: var(--mobile-text-small);
     max-width: 100%;
     margin-top: 15px;
     line-height: 1.4;

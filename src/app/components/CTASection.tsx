@@ -50,7 +50,7 @@ export default function CTASection({
           <h2
             className="cta-heading-main"
             style={{
-              fontSize: '2.08vw',
+              fontSize: 'var(--text-heading)',
               lineHeight: '1.3em',
               color: 'white',
               fontWeight: 900,
@@ -65,7 +65,7 @@ export default function CTASection({
           <p
             className="cta-subtext"
             style={{
-              fontSize: '1.04vw',
+              fontSize: 'var(--text-body)',
               lineHeight: '1.5em',
               margin: '1.04vw 0 1.56vw 0',
               maxWidth: '57.29vw',
@@ -89,7 +89,7 @@ export default function CTASection({
                 color: 'white',
                 background: 'linear-gradient(45deg, #4B0082, #483D8B)',
                 textDecoration: 'none',
-                fontSize: '1.04vw',
+                fontSize: 'var(--text-button)',
                 fontWeight: 'bold',
                 transition: 'transform 0.3s',
                 fontFamily: 'var(--font-heading)',
@@ -128,7 +128,7 @@ export default function CTASection({
           <h2
             className="cta-heading-mobile"
             style={{
-              fontSize: '24px',
+              fontSize: 'var(--mobile-text-heading)',
               margin: '0 0 1.2rem 0',
               color: 'white',
               lineHeight: '1.3',
@@ -142,7 +142,7 @@ export default function CTASection({
           <p
             className="cta-body-mobile"
             style={{
-              fontSize: '16px',
+              fontSize: 'var(--mobile-text-body)',
               margin: '0 0 2rem 0',
               lineHeight: '1.6',
               fontWeight: 400,
@@ -175,7 +175,7 @@ export default function CTASection({
                 color: 'white',
                 background: 'linear-gradient(45deg, #4B0082, #483D8B)',
                 textDecoration: 'none',
-                fontSize: '14px',
+                fontSize: 'var(--mobile-text-button)',
                 textAlign: 'center',
                 fontWeight: 'bold',
                 transition: 'transform 0.3s ease',
