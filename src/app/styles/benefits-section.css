@@ -154,26 +154,17 @@
 
 /* Mobile version styles */
 .mobile-version {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Large screens - desktop version only */
-@media screen and (min-width: 1025px) {
-  .desktop-version {
-    display: flex;
-  }
-
-  .mobile-version {
-    display: none;
-  }
-}
-
-/* Medium desktop screens - desktop version only */
+/* Medium desktop screens */
 @media screen and (max-width: 1400px) and (min-width: 769px) {
   .section-title h2 {
     font-size: 24px;
@@ -201,31 +192,13 @@
     height: 48px;
     min-width: 140px;
   }
-
-  .desktop-version {
-    display: flex;
-  }
-
-  .mobile-version {
-    display: none;
-  }
 }
 
-/* Tablet/Mobile breakpoint - MOBILE VERSION ONLY */
+/* Tablet/Mobile breakpoint */
 @media screen and (max-width: 768px) {
   .section-title h2 {
     font-size: 24px;
     margin-bottom: 20px;
-  }
-
-  .desktop-version {
-    display: none;
-  }
-
-  .mobile-version {
-    display: flex;
-    max-width: 90%;
-    margin: 0 auto;
   }
 
   .mobile-version .benefit-item {
@@ -269,7 +242,7 @@
   }
 }
 
-/* Small mobile screens - refinements for very small devices */
+/* Small mobile screens */
 @media screen and (max-width: 480px) {
   .section-title h2 {
     font-size: 20px;

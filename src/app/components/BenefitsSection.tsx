@@ -40,9 +40,35 @@ export default function BenefitsSection({
           <h2>How We Transform Your Business with AI</h2>
         </div>
         
-        {/* Desktop version */}
-        <div className={`benefit-items ${!isMobile ? 'desktop-version' : ''}`}>
-          <div className="benefit-item-wrapper">
+        {!isMobile ? (
+          // Desktop version
+          <div className="benefit-items desktop-version">
+            <div className="benefit-item-wrapper">
+              <div className="benefit-item">
+                <div className="benefit-bg">
+                  <h3>{heading1}</h3>
+                  <p>{subheading1}</p>
+                </div>
+              </div>
+              <div className="benefit-item">
+                <div className="benefit-bg">
+                  <h3>{heading2}</h3>
+                  <p>{subheading2}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bottom-item-wrapper">
+              <div className="benefit-item">
+                <div className="benefit-bg">
+                  <h3>{heading3}</h3>
+                  <p>{subheading3}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          // Mobile version
+          <div className="benefit-items mobile-version">
             <div className="benefit-item">
               <div className="benefit-bg">
                 <h3>{heading1}</h3>
@@ -55,8 +81,6 @@ export default function BenefitsSection({
                 <p>{subheading2}</p>
               </div>
             </div>
-          </div>
-          <div className="bottom-item-wrapper">
             <div className="benefit-item">
               <div className="benefit-bg">
                 <h3>{heading3}</h3>
@@ -64,29 +88,7 @@ export default function BenefitsSection({
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Mobile version */}
-        <div className={`benefit-items ${isMobile ? 'mobile-version' : ''}`}>
-          <div className="benefit-item">
-            <div className="benefit-bg">
-              <h3>{heading1}</h3>
-              <p>{subheading1}</p>
-            </div>
-          </div>
-          <div className="benefit-item">
-            <div className="benefit-bg">
-              <h3>{heading2}</h3>
-              <p>{subheading2}</p>
-            </div>
-          </div>
-          <div className="benefit-item">
-            <div className="benefit-bg">
-              <h3>{heading3}</h3>
-              <p>{subheading3}</p>
-            </div>
-          </div>
-        </div>
+        )}
 
         <div className="button-group">
           <a href={buttonLink} className="btn btn-primary">{buttonText}</a>
