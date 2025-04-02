@@ -14,16 +14,16 @@
   --text-title: 2.5vw;      /* Main titles */
   --text-heading: 2vw;      /* Section headings */
   --text-subheading: 1.5vw; /* Subsection headings */
-  --text-body: 1.04vw;      /* Normal text */
-  --text-small: 0.9vw;      /* Small text, captions */
+  --text-body: 0.9vw;      /* Normal text */
+  --text-small: 0.8vw;      /* Small text, captions */
   --text-button: 1vw;       /* Button text */
   
   /* Mobile Text Sizes */
   --mobile-text-title: 28px;
   --mobile-text-heading: 24px;
   --mobile-text-subheading: 20px;
-  --mobile-text-body: 16px;
-  --mobile-text-small: 14px;
+  --mobile-text-body: 14px;
+  --mobile-text-small: 12px;
   --mobile-text-button: 16px;
   
   /* Colors */

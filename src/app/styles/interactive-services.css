@@ -166,6 +166,19 @@
   justify-content: center;
 }
 
+.content h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: #ccc;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 1rem;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
 .content {
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -182,7 +195,6 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-weight: 400;
 }
 
 .content.active {
@@ -310,6 +322,12 @@
     padding: 1.5rem;
     min-height: 220px;
     margin-top: 1rem;
+  }
+
+  .content h3 {
+    font-size: var(--mobile-text-body);
+    padding: 0;
+    max-width: 100%;
   }
 
   .content {
