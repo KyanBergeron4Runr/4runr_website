@@ -39,12 +39,21 @@
   gap: 0.78vw;
 }
 
+.typed-wrapper p {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.3;
+}
+
 .typed-text {
   color: #6a5acd;
   min-width: 13.02vw;
   display: inline-block;
   position: relative;
   min-height: 1.2em;
+  font-family: var(--font-heading);
+  font-weight: 900;
 }
 
 .cta-subtext {
@@ -145,6 +154,13 @@
   text-align: center;
   margin-bottom: 20px;
   width: 100%;
+}
+
+.typed-wrapper-mobile p {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .typed-text-mobile {
