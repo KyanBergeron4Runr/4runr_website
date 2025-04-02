@@ -62,7 +62,7 @@
 
 .subheading {
   font-family: var(--font-heading);
-  font-size: var(--text-subheading);
+  font-size: calc(1.2vw);
   color: #ccc;
   position: relative;
   text-align: center;
@@ -272,7 +272,7 @@
   .subheading {
     width: 100%;
     text-align: left;
-    font-size: var(--mobile-text-subheading);
+    font-size: 18px;
     padding: 0.8rem 1.2rem;
     margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
