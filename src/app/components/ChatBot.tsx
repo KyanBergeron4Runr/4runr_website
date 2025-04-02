@@ -16,6 +16,7 @@ export default function ChatBot() {
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const sessionId = useRef(`session_${Date.now()}`);
+  const hasInitializedRef = useRef(false);
 
   const scrollToBottom = () => {
     if (messagesContainerRef.current && isUserInteracting) {
@@ -25,18 +26,30 @@ export default function ChatBot() {
   };
 
   useEffect(() => {
+    // Prevent duplicate initialization
+    if (hasInitializedRef.current) return;
+    hasInitializedRef.current = true;
+
     // Initial messages with typing effect
-    setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setMessages([
         { text: "Hi there! I'm your 4Runr AI consultant. 👋", isUser: false }
       ]);
-      setTimeout(() => {
-        setMessages(prev => [...prev, {
-          text: "I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?",
-          isUser: false
-        }]);
-      }, 1500); // Increased delay for more natural typing feel
+      
+      const timer2 = setTimeout(() => {
+        setMessages(messages => [
+          ...messages,
+          {
+            text: "I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?",
+            isUser: false
+          }
+        ]);
+      }, 1500);
+
+      return () => clearTimeout(timer2);
     }, 1000);
+
+    return () => clearTimeout(timer1);
   }, []);
 
   useEffect(() => {
@@ -49,9 +62,8 @@ export default function ChatBot() {
     const userMessage = inputMessage.trim();
     setInputMessage('');
     setIsLoading(true);
-    setIsUserInteracting(true); // User is interacting when sending a message
+    setIsUserInteracting(true);
 
-    // Add user message
     setMessages(prev => [...prev, { text: userMessage, isUser: true }]);
 
     try {
