@@ -13,11 +13,12 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const sessionId = useRef(`session_${Date.now()}`);
 
   const scrollToBottom = () => {
-    if (messagesContainerRef.current) {
+    if (messagesContainerRef.current && isUserInteracting) {
       const container = messagesContainerRef.current;
       container.scrollTop = container.scrollHeight;
     }
@@ -40,7 +41,7 @@ export default function ChatBot() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, isUserInteracting]);
 
   const handleSend = async () => {
     if (!inputMessage.trim()) return;
@@ -48,6 +49,7 @@ export default function ChatBot() {
     const userMessage = inputMessage.trim();
     setInputMessage('');
     setIsLoading(true);
+    setIsUserInteracting(true); // User is interacting when sending a message
 
     // Add user message
     setMessages(prev => [...prev, { text: userMessage, isUser: true }]);
@@ -103,7 +105,13 @@ export default function ChatBot() {
         </div>
       </header>
 
-      <div className="chat-container">
+      <div 
+        className="chat-container"
+        onMouseEnter={() => setIsUserInteracting(true)}
+        onMouseLeave={() => setIsUserInteracting(false)}
+        onClick={() => setIsUserInteracting(true)}
+        onFocus={() => setIsUserInteracting(true)}
+      >
         <div className="messages" id="messages" ref={messagesContainerRef}>
           {messages.map((message, index) => (
             <div
@@ -135,6 +143,7 @@ export default function ChatBot() {
             placeholder="Type your message here..."
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
+            onFocus={() => setIsUserInteracting(true)}
             onKeyPress={(e) => {
               if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
