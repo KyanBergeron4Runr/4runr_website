@@ -17,13 +17,22 @@
   margin-bottom: calc(48 / 1920 * 100vw);
 }
 
-.titles h1 {
-  font-size: calc(48 / 1920 * 100vw);
+.titles h2 {
+  font-size: var(--h2-size);
   margin-bottom: calc(24 / 1920 * 100vw);
   font-family: var(--font-heading);
-  font-weight: bold;
+  font-weight: var(--weight-h2);
   text-align: center;
-  line-height: 1.2;
+  line-height: var(--line-height-h2);
+}
+
+.titles h1 {
+  font-size: var(--h1-size);
+  margin-bottom: calc(24 / 1920 * 100vw);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-h1);
+  text-align: center;
+  line-height: var(--line-height-h1);
 }
 
 .content-wrapper {
@@ -69,17 +78,17 @@
   opacity: 1;
 }
 
-.heading h2 {
-  font-size: calc(24 / 1920 * 100vw);
+.heading h3 {
+  font-size: var(--h3-size);
   transition: all 300ms ease-in-out;
   font-family: var(--font-heading);
-  font-weight: bold;
+  font-weight: var(--weight-h3);
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.2;
+  line-height: var(--line-height-h3);
 }
 
-.heading:hover h2,
-.heading.active h2 {
+.heading:hover h3,
+.heading.active h3 {
   color: #fff;
   transform: scale(1.05);
 }
@@ -129,8 +138,8 @@
 }
 
 .rectangle-content p {
-  font-size: calc(18 / 1920 * 100vw);
-  line-height: 1.6;
+  font-size: var(--text-body);
+  line-height: var(--line-height-body);
   color: var(--color-text-light);
   margin-bottom: calc(16 / 1920 * 100vw);
   max-width: calc(500 / 1920 * 100vw);
@@ -153,9 +162,9 @@
 }
 
 .fine-print {
-  font-size: calc(16 / 1920 * 100vw);
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-small);
+  line-height: var(--line-height-body);
+  color: var(--color-text-muted);
   font-family: var(--font-sans);
   text-align: left;
   margin: 0;
@@ -186,8 +195,8 @@
 }
 
 @media (max-width: 1023px) {
-  .heading h2 {
-    font-size: calc(20 / 1920 * 100vw);
+  .heading h3 {
+    font-size: var(--h3-size);
   }
 
   .headings {
@@ -211,7 +220,7 @@
     margin-bottom: 25px;
   }
 
-  .titles h1 {
+  .titles h2 {
     font-size: 32px;
     margin-bottom: 15px;
   }
@@ -255,8 +264,9 @@
   }
 
   .current-title h3 {
-    font-size: 20px;
+    font-size: var(--h3-size);
     font-family: var(--font-heading);
+    font-weight: var(--weight-h3);
     color: white;
     margin: 0;
     transition: all 0.3s ease;
@@ -279,7 +289,7 @@
   }
 
   .rectangle-content p {
-    font-size: 18px;
+    font-size: var(--text-body);
     max-width: 100%;
   }
 
@@ -321,16 +331,16 @@
     padding: 30px 0 40px;
   }
 
-  .titles h1 {
+  .titles h2 {
     font-size: 28px;
   }
 
   .current-title h3 {
-    font-size: 16px;
+    font-size: var(--h3-size);
   }
 
   .rectangle-content p {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
 
   .cta-button {

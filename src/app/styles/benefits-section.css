@@ -10,12 +10,13 @@
   margin-bottom: 3.125vw;
 }
 
-.section-title h1 {
-  font-size: 2.5vw;
-  font-weight: bold;
+.section-title h2 {
+  font-size: var(--h2-size);
+  font-weight: var(--weight-h2);
   color: #fff;
   margin-bottom: 1.042vw;
   font-family: var(--font-heading);
+  line-height: var(--line-height-h2);
 }
 
 .benefits-section .container {
@@ -96,10 +97,11 @@
 
 .benefit-bg h3 {
   margin: 1.042vw 0 0.521vw 0;
-  font-size: 1.8vw;
-  font-weight: bold;
+  font-size: var(--h3-size);
+  font-weight: var(--weight-h3);
   font-family: var(--font-heading);
   color: #fff;
+  line-height: var(--line-height-h3);
 }
 
 .benefit-bg h4 {
@@ -111,12 +113,12 @@
   margin-bottom: 1.042vw;
 }
 
-.benefit-item p {
-  font-size: 0.833vw;
+.benefit-bg p {
+  font-size: var(--text-body);
+  line-height: var(--line-height-body);
+  color: #ccc;
   padding: 0 2.083vw;
-  line-height: 1.6;
-  color: #fff;
-  font-family: 'Poppins Regular', sans-serif;
+  font-family: var(--font-sans);
   margin-bottom: 1.042vw;
 }
 
@@ -176,8 +178,8 @@
 
 /* Medium desktop screens */
 @media screen and (max-width: 1400px) and (min-width: 769px) {
-  .section-title h1 {
-    font-size: 36px;
+  .section-title h2 {
+    font-size: var(--h2-size);
   }
 
   .benefit-item {
@@ -186,8 +188,7 @@
   }
 
   .benefit-bg h3 {
-    font-size: 24px;
-    margin: 12px 0 8px 0;
+    font-size: var(--h3-size);
   }
 
   .benefit-bg h4 {
@@ -206,9 +207,8 @@
 
 /* Tablet/Mobile breakpoint */
 @media screen and (max-width: 768px) {
-  .section-title h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+  .section-title h2 {
+    font-size: var(--h2-size);
   }
 
   .mobile-version .benefit-item {
@@ -225,8 +225,7 @@
   }
 
   .mobile-version .benefit-bg h3 {
-    font-size: 24px;
-    margin: 5px 0 10px 0;
+    font-size: var(--h3-size);
   }
 
   .mobile-version .benefit-bg h4 {
@@ -254,8 +253,8 @@
 
 /* Small mobile screens */
 @media screen and (max-width: 480px) {
-  .section-title h1 {
-    font-size: 24px;
+  .section-title h2 {
+    font-size: var(--h2-size);
   }
 
   .mobile-version .benefit-item {
@@ -263,7 +262,7 @@
   }
 
   .mobile-version .benefit-bg h3 {
-    font-size: 20px;
+    font-size: var(--h3-size);
   }
 
   .mobile-version .benefit-bg h4 {

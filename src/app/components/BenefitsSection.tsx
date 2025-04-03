@@ -37,7 +37,7 @@ export default function BenefitsSection({
     <section className="benefits-section">
       <div className="container">
         <div className="section-title">
-          <h1>How We Transform Your Business with AI</h1>
+          <h2>How We Transform Your Business with AI</h2>
         </div>
         
         {!isMobile ? (
@@ -47,13 +47,13 @@ export default function BenefitsSection({
               <div className="benefit-item">
                 <div className="benefit-bg">
                   <h3>{heading1}</h3>
-                  <h4>{subheading1}</h4>
+                  <p>{subheading1}</p>
                 </div>
               </div>
               <div className="benefit-item">
                 <div className="benefit-bg">
                   <h3>{heading2}</h3>
-                  <h4>{subheading2}</h4>
+                  <p>{subheading2}</p>
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function BenefitsSection({
               <div className="benefit-item">
                 <div className="benefit-bg">
                   <h3>{heading3}</h3>
-                  <h4>{subheading3}</h4>
+                  <p>{subheading3}</p>
                 </div>
               </div>
             </div>
@@ -72,19 +72,19 @@ export default function BenefitsSection({
             <div className="benefit-item">
               <div className="benefit-bg">
                 <h3>{heading1}</h3>
-                <h4>{subheading1}</h4>
+                <p>{subheading1}</p>
               </div>
             </div>
             <div className="benefit-item">
               <div className="benefit-bg">
                 <h3>{heading2}</h3>
-                <h4>{subheading2}</h4>
+                <p>{subheading2}</p>
               </div>
             </div>
             <div className="benefit-item">
               <div className="benefit-bg">
                 <h3>{heading3}</h3>
-                <h4>{subheading3}</h4>
+                <p>{subheading3}</p>
               </div>
             </div>
           </div>
