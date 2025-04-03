@@ -83,7 +83,9 @@ export default function CTASection({
               href={buttonUrl}
               className="lets-talk-button"
               style={{
-                display: 'inline-block',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 padding: '1rem 2rem',
                 border: '1.5px solid transparent',
                 borderRadius: '0.5rem',
@@ -94,6 +96,7 @@ export default function CTASection({
                 fontWeight: 'var(--weight-button)',
                 transition: 'transform 0.3s',
                 fontFamily: 'var(--font-heading)',
+                minHeight: '3.5rem'
               }}
             >
               {buttonText}
