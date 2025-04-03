@@ -44,7 +44,7 @@ export default function ProcessSection({
     <div className="our-process-section">
       <div className="section-header">
         <h2>{title}</h2>
-        <h3>{subtitle}</h3>
+        <p className="subtitle">{subtitle}</p>
       </div>
 
       <div className="process-steps">

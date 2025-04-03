@@ -13,9 +13,11 @@
 
 .section-title h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #fff;
+  font-size: var(--h2-size);
+  font-weight: var(--weight-h2);
+  line-height: var(--line-height-h2);
+  color: white;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -133,12 +135,13 @@
   transform: translateX(0);
 }
 
-.service h4 {
+.service h3 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: var(--h3-size);
+  font-weight: var(--weight-h3);
+  line-height: var(--line-height-h3);
+  color: white;
   margin-bottom: 1rem;
-  color: #fff;
-  position: relative;
 }
 
 .service-details p {
@@ -185,7 +188,10 @@
 
 .results-section h3 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: var(--h3-size);
+  font-weight: var(--weight-h3);
+  line-height: var(--line-height-h3);
+  color: white;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -354,7 +360,7 @@
     font-size: 1.5rem;
   }
 
-  .service h4 {
+  .service h3 {
     font-size: 1.1rem;
   }
 

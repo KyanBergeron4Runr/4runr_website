@@ -26,14 +26,14 @@ export default function ServicesSection() {
     <section className="services-section">
       <div className="container">
         <div className="section-title">
-          <h3>Our AI Services in Action</h3>
+          <h2>Our AI Services in Action</h2>
         </div>
 
         <div className="service-categories">
           <ServiceCategory title="Process Automation & Workflow Enhancement" id="automation">
             <div className="service-list">
               <div className="service">
-                <h4>Intelligent Document Processing</h4>
+                <h3>Intelligent Document Processing</h3>
                 <div className="service-details">
                   <p>
                     Transform how you handle documents with AI that automatically extracts, categorizes, and processes

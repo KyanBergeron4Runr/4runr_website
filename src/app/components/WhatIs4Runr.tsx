@@ -125,7 +125,7 @@ export default function WhatIs4Runr() {
               </svg>
             </button>
             <div className="current-title">
-              <h3>{topics[currentIndex].title}</h3>
+              <p className="mobile-title">{topics[currentIndex].title}</p>
             </div>
             <button className="nav-arrow next-btn" onClick={handleNext} aria-label="Next topic">
               <svg
