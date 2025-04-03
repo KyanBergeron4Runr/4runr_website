@@ -50,13 +50,14 @@ export default function CTASection({
           <h1
             className="cta-heading-main"
             style={{
-              fontSize: 'var(--text-title)',
-              lineHeight: '1.2',
+              fontSize: 'var(--h1-size)',
+              lineHeight: 'var(--line-height-h1)',
+              letterSpacing: 'var(--letter-spacing-h1)',
+              fontWeight: 'var(--weight-h1)',
               color: 'white',
-              fontWeight: 900,
               maxWidth: '83.33vw',
               textAlign: 'center',
-              marginBottom: '0.52vw',
+              marginBottom: '2rem',
               fontFamily: 'var(--font-heading)',
             }}
           >
@@ -66,31 +67,31 @@ export default function CTASection({
             className="cta-subtext"
             style={{
               fontSize: 'var(--text-body)',
-              lineHeight: '1.5',
-              margin: '1.04vw 0 1.56vw 0',
+              lineHeight: 'var(--line-height-body)',
+              fontWeight: 'var(--weight-body)',
+              margin: '0 0 2rem 0',
               maxWidth: '57.29vw',
-              color: 'white',
-              fontWeight: 500,
-              opacity: 0.9,
+              color: 'var(--color-text-light)',
+              textAlign: 'center',
               fontFamily: 'var(--font-sans)',
             }}
           >
             {subtext}
           </p>
-          <div className="cta-buttons" style={{ marginTop: '1.04vw' }}>
+          <div className="cta-buttons" style={{ marginTop: '2rem' }}>
             <a
               href={buttonUrl}
               className="lets-talk-button"
               style={{
                 display: 'inline-block',
-                padding: '0.78vw 1.56vw',
+                padding: '1rem 2rem',
                 border: '1.5px solid transparent',
-                borderRadius: '0.52vw',
+                borderRadius: '0.5rem',
                 color: 'white',
-                background: 'linear-gradient(45deg, #4B0082, #483D8B)',
+                background: 'linear-gradient(45deg, var(--color-primary), var(--color-secondary))',
                 textDecoration: 'none',
                 fontSize: 'var(--text-button)',
-                fontWeight: 700,
+                fontWeight: 'var(--weight-button)',
                 transition: 'transform 0.3s',
                 fontFamily: 'var(--font-heading)',
               }}

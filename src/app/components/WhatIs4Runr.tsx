@@ -88,7 +88,7 @@ export default function WhatIs4Runr() {
     <div className="what-we-do">
       <div className="container">
         <div className="titles">
-          <h1>What is 4Runr?</h1>
+          <h2>What is 4Runr?</h2>
         </div>
 
         <div className="content-wrapper"
@@ -103,7 +103,7 @@ export default function WhatIs4Runr() {
                 className={`heading ${index === currentIndex ? 'active' : ''}`}
                 onMouseEnter={() => setCurrentIndex(index)}
               >
-                <h2>{topic.title}</h2>
+                <h3>{topic.title}</h3>
               </div>
             ))}
           </div>
