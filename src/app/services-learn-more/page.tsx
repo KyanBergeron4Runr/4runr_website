@@ -182,11 +182,16 @@ export default function ServicesLearnMorePage() {
       <div className="cta-section">
         <h2 className="cta-heading">Ready to Transform Your Business?</h2>
         <p className="cta-description">
-          Chat with our AI assistant now or schedule a consultation with our experts to discuss your unique needs. 
-          Our intelligent chat interface is ready to answer your questions and help you get started with our AI services.
+          Get instant insights about AI integration for your business by chatting with our 4Runr AI Assistant. 
+          Our intelligent assistant can provide detailed information about our services, answer your specific questions, 
+          and even create a customized blueprint showing how AI could be integrated into your existing systems.
+        </p>
+        <p className="cta-description">
+          Whether you're looking to automate processes, enhance analytics, or build custom AI solutions, 
+          our AI Assistant is available 24/7 to help you understand the possibilities and get started on your AI journey.
         </p>
         <div className="cta-buttons">
-          <Link href="/contact" className="primary-button">Talk to Our AI Assistant</Link>
+          <Link href="/contact" className="primary-button">Chat with 4Runr AI Assistant</Link>
         </div>
       </div>
     </div>
