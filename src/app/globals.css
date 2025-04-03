@@ -11,9 +11,9 @@
   --font-heading: var(--font-poppins-bold);
   
   /* Text Sizes - Using vw for better scaling */
-  --h1-size: calc(48 / 1920 * 100vw);      /* Main titles */
-  --h2-size: calc(32 / 1920 * 100vw);      /* Section headings */
-  --h3-size: calc(24 / 1920 * 100vw);      /* Subsection headings */
+  --h1-size: calc(56 / 1920 * 100vw);      /* Main titles */
+  --h2-size: calc(40 / 1920 * 100vw);      /* Section headings */
+  --h3-size: calc(28 / 1920 * 100vw);      /* Subsection headings */
   --text-body: calc(18 / 1920 * 100vw);    /* Normal text */
   --text-small: calc(14 / 1920 * 100vw);   /* Small text */
   --text-button: calc(16 / 1920 * 100vw);  /* Button text */
@@ -108,9 +108,9 @@ a[class*="button"] {
 /* Tablet Breakpoint */
 @media (max-width: 1024px) {
   :root {
-    --h1-size: calc(42 / 1024 * 100vw);
-    --h2-size: calc(28 / 1024 * 100vw);
-    --h3-size: calc(22 / 1024 * 100vw);
+    --h1-size: calc(48 / 1024 * 100vw);
+    --h2-size: calc(36 / 1024 * 100vw);
+    --h3-size: calc(24 / 1024 * 100vw);
     --text-body: calc(16 / 1024 * 100vw);
     --text-small: calc(14 / 1024 * 100vw);
     --text-button: calc(16 / 1024 * 100vw);
@@ -120,9 +120,9 @@ a[class*="button"] {
 /* Mobile Breakpoint */
 @media (max-width: 767px) {
   :root {
-    --h1-size: 32px;
-    --h2-size: 24px;
-    --h3-size: 20px;
+    --h1-size: 40px;
+    --h2-size: 32px;
+    --h3-size: 24px;
     --text-body: 16px;
     --text-small: 14px;
     --text-button: 16px;
@@ -154,10 +154,10 @@ a[class*="button"] {
 /* Small Mobile Breakpoint */
 @media (max-width: 375px) {
   :root {
-    --h1-size: 28px;
-    --h2-size: 22px;
-    --h3-size: 18px;
-    --text-body: 15px;
+    --h1-size: 32px;
+    --h2-size: 28px;
+    --h3-size: 20px;
+    --text-body: 16px;
     --text-small: 13px;
     --text-button: 14px;
   }
