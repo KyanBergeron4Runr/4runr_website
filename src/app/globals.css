@@ -10,21 +10,21 @@
   --font-sans: var(--font-poppins-regular);
   --font-heading: var(--font-poppins-bold);
   
-  /* Text Sizes */
-  --text-title: 2.5vw;      /* Main titles */
-  --text-heading: 2vw;      /* Section headings */
-  --text-subheading: 1.5vw; /* Subsection headings */
-  --text-body: 0.9vw;      /* Normal text */
-  --text-small: 0.8vw;      /* Small text, captions */
-  --text-button: 1vw;       /* Button text */
+  /* Text Sizes - Desktop */
+  --text-title: 3.5vw;      /* Main titles - Increased for impact */
+  --text-heading: 2.5vw;    /* Section headings */
+  --text-subheading: 1.8vw; /* Subsection headings */
+  --text-body: 1.1vw;       /* Normal text - Increased for readability */
+  --text-small: 0.9vw;      /* Small text, captions */
+  --text-button: 1.2vw;     /* Button text */
   
-  /* Mobile Text Sizes */
-  --mobile-text-title: 28px;
-  --mobile-text-heading: 24px;
-  --mobile-text-subheading: 20px;
-  --mobile-text-body: 14px;
-  --mobile-text-small: 12px;
-  --mobile-text-button: 16px;
+  /* Text Sizes - Mobile */
+  --mobile-text-title: 32px;      /* Larger for better visibility */
+  --mobile-text-heading: 28px;    /* Increased section headings */
+  --mobile-text-subheading: 22px; /* Adjusted for hierarchy */
+  --mobile-text-body: 16px;       /* More readable body text */
+  --mobile-text-small: 14px;      /* Increased small text */
+  --mobile-text-button: 18px;     /* Larger button text */
   
   /* Colors */
   --color-primary: #007AFF;
@@ -40,35 +40,51 @@ body {
   background: rgb(var(--background-rgb));
   font-family: var(--font-sans);
   font-size: var(--text-body);
+  line-height: 1.6;
 }
 
 h1 {
   font-family: var(--font-heading);
   font-size: var(--text-title);
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-family: var(--font-heading);
   font-size: var(--text-heading);
   line-height: 1.3;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
 }
 
 h3 {
   font-family: var(--font-heading);
   font-size: var(--text-subheading);
   line-height: 1.4;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 p {
   font-size: var(--text-body);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
+/* Tablet and smaller screens */
+@media (max-width: 1024px) {
+  :root {
+    --text-title: 4.5vw;
+    --text-heading: 3.5vw;
+    --text-subheading: 2.5vw;
+    --text-body: 1.4vw;
+    --text-small: 1.2vw;
+    --text-button: 1.4vw;
+  }
+}
+
+/* Mobile screens */
 @media (max-width: 768px) {
   body {
     font-size: var(--mobile-text-body);
@@ -76,17 +92,21 @@ p {
 
   h1 {
     font-size: var(--mobile-text-title);
+    margin-bottom: 1.5rem;
   }
 
   h2 {
     font-size: var(--mobile-text-heading);
+    margin-bottom: 1.25rem;
   }
 
   h3 {
     font-size: var(--mobile-text-subheading);
+    margin-bottom: 1rem;
   }
 
   p {
     font-size: var(--mobile-text-body);
+    margin-bottom: 1rem;
   }
 } 

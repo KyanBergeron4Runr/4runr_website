@@ -246,34 +246,49 @@
   font-family: var(--font-heading);
   font-size: 2rem;
   color: #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .cta-section p {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;
 }
 
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
 .cta-button {
-  padding: 1rem 2.5rem;
-  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
   font-size: 1.1rem;
+  font-weight: bold;
   text-decoration: none;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
+  font-family: var(--font-heading);
   background: linear-gradient(45deg, #4B0082, #483D8B);
   color: #fff;
   border: none;
-  display: inline-block;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  min-width: 200px;
+  margin: 0 auto;
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(75, 0, 130, 0.3);
-  background: linear-gradient(45deg, #483D8B, #4B0082);
+  transform: scale(1.05);
+  text-decoration: none;
+  color: #fff;
 }
 
 /* Responsive Styles */
