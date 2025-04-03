@@ -11,7 +11,7 @@ export default function ServicesLearnMorePage() {
       <div className="hero-container">
         <h1 className="hero-heading">Transform Your Business with AI</h1>
         <p className="hero-description">
-          Discover how our cutting-edge AI solutions can revolutionize your operations, boost efficiency, and give you the
+          Discover how our cutting-edge AI services can revolutionize your operations, boost efficiency, and give you the
           competitive edge in today's digital landscape.
         </p>
       </div>
@@ -34,7 +34,7 @@ export default function ServicesLearnMorePage() {
               <div className="feature-content">
                 <div className="feature-title">Custom AI Model Development</div>
                 <p className="feature-description">
-                  Tailored AI solutions designed for your specific business needs, using advanced algorithms that adapt and
+                  Tailored AI services designed for your specific business needs, using advanced algorithms that adapt and
                   improve over time.
                 </p>
               </div>
@@ -105,19 +105,19 @@ export default function ServicesLearnMorePage() {
             <li className="feature-item">
               <div className="feature-content">
                 <div className="feature-title">Business Process Management</div>
-                <p className="feature-description">Comprehensive solutions to optimize end-to-end business operations.</p>
+                <p className="feature-description">Comprehensive services to optimize end-to-end business operations.</p>
               </div>
             </li>
           </ul>
         </div>
 
-        {/* Service 3: Scalable Solutions */}
+        {/* Service 3: Scalable Services */}
         <div className="service-card">
           <div className="service-header">
             <svg className="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
             </svg>
-            <h3 className="service-title">Scalable Solutions</h3>
+            <h3 className="service-title">Scalable Services</h3>
           </div>
           <p className="service-description">Future-proof your business with flexible, scalable systems that grow with you.</p>
           <ul className="feature-list">
@@ -162,18 +162,18 @@ export default function ServicesLearnMorePage() {
           </div>
           <div className="process-step">
             <div className="step-number">02</div>
-            <div className="step-title">Solution Design</div>
-            <p className="step-description">Our experts design a customized solution aligned with your goals.</p>
+            <div className="step-title">Service Design</div>
+            <p className="step-description">Our experts design a customized service aligned with your goals.</p>
           </div>
           <div className="process-step">
             <div className="step-number">03</div>
             <div className="step-title">Implementation</div>
-            <p className="step-description">We deploy your solution using industry best practices.</p>
+            <p className="step-description">We deploy your services using industry best practices.</p>
           </div>
           <div className="process-step">
             <div className="step-number">04</div>
             <div className="step-title">Optimization & Support</div>
-            <p className="step-description">Continuous monitoring ensures your solution evolves with your needs.</p>
+            <p className="step-description">Continuous monitoring ensures your services evolve with your needs.</p>
           </div>
         </div>
       </div>
@@ -182,10 +182,11 @@ export default function ServicesLearnMorePage() {
       <div className="cta-section">
         <h2 className="cta-heading">Ready to Transform Your Business?</h2>
         <p className="cta-description">
-          Schedule a consultation with our experts to get started on your digital transformation journey.
+          Chat with our AI assistant now or schedule a consultation with our experts to discuss your unique needs. 
+          Our intelligent chat interface is ready to answer your questions and help you get started with our AI services.
         </p>
         <div className="cta-buttons">
-          <Link href="/contact" className="primary-button">Schedule a Meeting</Link>
+          <Link href="/contact" className="primary-button">Talk to Our AI Assistant</Link>
         </div>
       </div>
     </div>
