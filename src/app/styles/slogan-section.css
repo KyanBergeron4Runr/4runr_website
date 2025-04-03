@@ -1,8 +1,8 @@
 :root {
   --section-padding-v: 1.5vw;
   --section-padding-h: 2vw;
-  --logo-height: 7.03125vw;
-  --logo-gap: 5vw;
+  --logo-height: 4vw;
+  --logo-gap: 3vw;
 }
 
 .slogan-section {
@@ -55,12 +55,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 200px;
 }
 
 .logo {
   height: var(--logo-height);
   width: auto;
-  filter: invert(1);
   object-fit: contain;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
@@ -71,6 +71,7 @@
   -webkit-perspective: 1000px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 200px;
 }
 
 .fine-print {
@@ -100,7 +101,12 @@
   }
 
   .logo {
-    height: 120px;
+    height: 60px;
+    max-width: 150px;
+  }
+
+  .logo-container {
+    min-width: 150px;
   }
 
   .fine-print {
@@ -115,7 +121,12 @@
 
 @media (max-width: 480px) {
   .logo {
-    height: 90px;
+    height: 45px;
+    max-width: 120px;
+  }
+
+  .logo-container {
+    min-width: 120px;
   }
 
   .fine-print {
