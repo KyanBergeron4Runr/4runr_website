@@ -62,17 +62,17 @@
 
 .subheading {
   font-family: var(--font-heading);
-  font-size: calc(20 / 1920 * 100vw);
+  font-size: calc(16 / 1920 * 100vw);
   color: #ccc;
   position: relative;
   text-align: center;
   cursor: pointer;
-  padding: 0.6rem;
+  padding: 0.5rem;
   transition: all 0.3s ease;
   white-space: nowrap;
   display: flex;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .subheading::after {
@@ -272,8 +272,8 @@
   .subheading {
     width: 100%;
     text-align: left;
-    font-size: 16px;
-    padding: 0.8rem 1.2rem;
+    font-size: 14px;
+    padding: 0.6rem 1rem;
     margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     justify-content: flex-start;
