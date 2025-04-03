@@ -20,10 +20,10 @@
 
 .pdf-form h1 {
   font-family: var(--font-heading);
-  font-size: calc(64 / 1920 * 100vw);
+  font-size: var(--h1-size);
   color: white;
-  font-weight: 900;
-  line-height: 1.1;
+  font-weight: var(--weight-h1);
+  line-height: var(--line-height-h1);
 }
 
 .pdf-form h2 {
