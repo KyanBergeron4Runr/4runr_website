@@ -30,10 +30,10 @@
 
 .main-title h2 {
   font-family: var(--font-heading);
-  font-size: var(--text-title);
+  font-size: calc(42 / 1920 * 100vw);
   color: white;
   position: relative;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.2;
 }
 
