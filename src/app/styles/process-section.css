@@ -7,6 +7,7 @@
 
 .section-header {
   margin-bottom: calc(60/1920*100vw);
+  text-align: center;
 }
 
 .section-header h1 {
@@ -31,6 +32,13 @@
   color: #ccc;
   margin-bottom: calc(16/1920*100vw);
   line-height: var(--line-height-h3);
+}
+
+.section-header .subtitle {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ccc;
 }
 
 .process-steps {
