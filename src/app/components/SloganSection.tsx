@@ -9,12 +9,12 @@ interface SloganSectionProps {
 }
 
 const LOGO_URLS = [
-  "https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_72.png?v=1738278801",
-  "https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_70.png?v=1738257207",
-  "https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_69.png?v=1738257155",
-  "https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_68.png?v=1738257088",
-  "https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_73.png?v=1738279844",
-  "https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_74.png?v=1738279986"
+  "/images/Make ai logo.png",
+  "/images/Open ai logo.png",
+  "/images/Airtable logo.png",
+  "/images/Vapi logo.png",
+  "/images/claude logo.png",
+  "/images/zapier logo.png"
 ];
 
 export default function SloganSection({
