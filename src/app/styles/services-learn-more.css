@@ -211,24 +211,27 @@
 .cta-buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .primary-button {
-  padding: 1vw 2.5vw;
-  text-decoration: none;
-  border-radius: 0.521vw;
-  font-size: 1vw;
-  font-weight: bold;
-  transition: transform 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: calc(16/1920*100vw) calc(32/1920*100vw);
+  font-size: calc(18/1920*100vw);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: calc(8/1920*100vw);
   font-family: var(--font-heading);
-  min-width: 9.375vw;
-  height: 3.125vw;
   background: linear-gradient(45deg, #4B0082, #483D8B);
   color: #fff;
   border: none;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  min-width: calc(200/1920*100vw);
+  height: calc(50/1920*100vw);
   margin: 0 auto;
 }
 
@@ -274,17 +277,36 @@
   }
 
   .cta-heading {
-    font-size: calc(24/768*100vw);
+    font-size: calc(28/768*100vw);
   }
 
   .cta-description {
-    font-size: calc(14/768*100vw);
+    font-size: calc(16/768*100vw);
+    max-width: 90%;
   }
 
   .primary-button {
-    font-size: 3vw;
-    padding: 2vw 4vw;
-    min-width: 25vw;
-    height: 8vw;
+    font-size: calc(16/768*100vw);
+    padding: calc(14/768*100vw) calc(28/768*100vw);
+    min-width: calc(180/768*100vw);
+    height: calc(45/768*100vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-heading {
+    font-size: calc(24/480*100vw);
+  }
+
+  .cta-description {
+    font-size: calc(14/480*100vw);
+  }
+
+  .primary-button {
+    font-size: calc(14/480*100vw);
+    padding: calc(12/480*100vw) calc(24/480*100vw);
+    min-width: calc(160/480*100vw);
+    height: calc(40/480*100vw);
+    width: 80%;
   }
 } 
