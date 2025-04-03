@@ -148,8 +148,10 @@
 }
 
 .cta-section h2 {
-  font-size: 1.3vw;
+  font-size: var(--h2-size);
   font-family: var(--font-heading);
+  font-weight: var(--weight-h2);
+  line-height: var(--line-height-h2);
   margin-bottom: 0.8vw;
   background: linear-gradient(45deg, #fff, #a097cf);
   -webkit-background-clip: text;

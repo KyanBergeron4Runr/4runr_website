@@ -194,7 +194,9 @@
 
 .cta-heading {
   font-family: var(--font-heading);
-  font-size: calc(32/1920*100vw);
+  font-size: var(--h2-size);
+  font-weight: var(--weight-h2);
+  line-height: var(--line-height-h2);
   color: white;
   margin-bottom: calc(20/1920*100vw);
 }
