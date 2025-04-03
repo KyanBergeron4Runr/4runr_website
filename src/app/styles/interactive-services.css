@@ -61,18 +61,27 @@
 }
 
 .subheading {
-  font-family: var(--font-heading);
-  font-size: calc(14 / 1920 * 100vw);
+  font-family: var(--font-sans);
+  font-size: calc(12 / 1920 * 100vw);
   color: #ccc;
   position: relative;
   text-align: center;
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.3rem;
   transition: all 0.3s ease;
   white-space: nowrap;
   display: flex;
   align-items: center;
   font-weight: 400;
+  line-height: 1.4;
+}
+
+.subheading h3 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 .subheading::after {
@@ -272,8 +281,8 @@
   .subheading {
     width: 100%;
     text-align: left;
-    font-size: 12px;
-    padding: 0.5rem 0.8rem;
+    font-size: 11px;
+    padding: 0.4rem 0.6rem;
     margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     justify-content: flex-start;
