@@ -26,7 +26,7 @@ export default function ServicesSection() {
     <section className="services-section">
       <div className="container">
         <div className="section-title">
-          <h2>Our AI Services in Action</h2>
+          <h3>Our AI Services in Action</h3>
         </div>
 
         <div className="service-categories">
