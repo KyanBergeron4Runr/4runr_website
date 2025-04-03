@@ -28,13 +28,13 @@
   width: 100%;
 }
 
-.main-title h2 {
+.main-title h1 {
   font-family: var(--font-heading);
-  font-size: calc(42 / 1920 * 100vw);
+  font-size: var(--h1-size);
+  font-weight: var(--weight-h1);
+  line-height: var(--line-height-h1);
   color: white;
   position: relative;
-  font-weight: 600;
-  line-height: 1.2;
 }
 
 .subheadings-container {
@@ -76,7 +76,7 @@
   line-height: 1.4;
 }
 
-.subheading h3 {
+.subheading h2 {
   font-size: inherit;
   font-weight: inherit;
   font-family: inherit;
@@ -225,8 +225,9 @@
 
 .fine-print {
   font-family: var(--font-sans);
-  font-size: clamp(0.875rem, 1vw, 1.125rem);
-  color: #666;
+  font-size: var(--text-small);
+  line-height: var(--line-height-body);
+  color: var(--color-text-muted);
   text-align: right;
   flex: 1;
 }
@@ -261,7 +262,7 @@
     padding: 2rem 1rem;
   }
 
-  .main-title h2 {
+  .main-title h1 {
     font-size: var(--mobile-text-title);
   }
 

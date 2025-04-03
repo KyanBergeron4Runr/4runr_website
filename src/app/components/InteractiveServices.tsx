@@ -105,7 +105,7 @@ export default function InteractiveServices({
               onMouseEnter={() => !isMobile && handleInteraction(index)}
               onMouseLeave={() => !isMobile && setIsUserInteracting(false)}
             >
-              <h3>{item.title}</h3>
+              <h2>{item.title}</h2>
               <span className="indicator" />
             </div>
           ))}
@@ -117,15 +117,15 @@ export default function InteractiveServices({
                 key={index}
                 className={`content ${activeIndex === index ? 'active' : ''}`}
               >
-                <h3>{item.content}</h3>
+                <p>{item.content}</p>
               </div>
             ))}
           </div>
         </div>
         <div className="footer-content">
-          <div className="fine-print">
+          <p className="fine-print">
             Ready to transform your business with AI? Let's create solutions that deliver results, fit your needs, and grow with you.
-          </div>
+          </p>
           <a href="https://4runrtech.com/pages/lets-build" className="cta-button">
             Learn More
           </a>
