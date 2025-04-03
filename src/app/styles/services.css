@@ -263,6 +263,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -282,13 +283,23 @@
   transition: transform 0.3s ease;
   white-space: nowrap;
   min-width: 200px;
-  margin: 0 auto;
+}
+
+.cta-button-secondary {
+  background: transparent;
+  border: 2px solid #4B0082;
+  color: #fff;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
   text-decoration: none;
   color: #fff;
+}
+
+.cta-button-secondary:hover {
+  background: rgba(75, 0, 130, 0.2);
+  border-color: #483D8B;
 }
 
 /* Responsive Styles */
@@ -321,6 +332,18 @@
   .cta-section p {
     font-size: 1rem;
     padding: 0 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.875rem 1.5rem;
+    font-size: var(--mobile-text-button);
   }
 }
 

@@ -206,6 +206,7 @@ export default function ServicesSection() {
             </p>
             <div className="cta-buttons">
               <Link href="/contact" className="cta-button">Schedule a Call</Link>
+              <Link href="/contact" className="cta-button cta-button-secondary">Talk to AI Assistant</Link>
             </div>
           </div>
         </div>
