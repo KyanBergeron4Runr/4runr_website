@@ -62,7 +62,7 @@
 
 .subheading {
   font-family: var(--font-heading);
-  font-size: var(--h3-size);
+  font-size: calc(24 / 1920 * 100vw);
   color: #ccc;
   position: relative;
   text-align: center;
@@ -72,7 +72,7 @@
   white-space: nowrap;
   display: flex;
   align-items: center;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .subheading::after {

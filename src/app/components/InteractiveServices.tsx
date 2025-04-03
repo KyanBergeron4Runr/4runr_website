@@ -105,7 +105,7 @@ export default function InteractiveServices({
               onMouseEnter={() => !isMobile && handleInteraction(index)}
               onMouseLeave={() => !isMobile && setIsUserInteracting(false)}
             >
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
               <span className="indicator" />
             </div>
           ))}
