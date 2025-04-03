@@ -1,8 +1,8 @@
 :root {
   --section-padding-v: 1.5vw;
   --section-padding-h: 2vw;
-  --logo-height: 4vw;
-  --logo-gap: 3vw;
+  --logo-height: 5.5vw;
+  --logo-gap: 4vw;
 }
 
 .slogan-section {
@@ -23,16 +23,16 @@
   width: 100%;
   overflow: hidden;
   padding: 2vw 0;
-  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 2%, #000 98%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 2%, #000 98%, transparent 100%);
+  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
 }
 
 .marquee-inner {
   display: flex;
   width: fit-content;
   will-change: transform;
-  animation: primary-animation 60s linear infinite;
-  -webkit-animation: primary-animation 60s linear infinite;
+  animation: primary-animation 40s linear infinite;
+  -webkit-animation: primary-animation 40s linear infinite;
 }
 
 @keyframes primary-animation {
@@ -55,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 200px;
+  min-width: 250px;
 }
 
 .logo {
@@ -71,7 +71,8 @@
   -webkit-perspective: 1000px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 200px;
+  max-width: 250px;
+  filter: brightness(0) invert(1);
 }
 
 .fine-print {
@@ -96,17 +97,17 @@
 
 @media (max-width: 768px) {
   .marquee-inner {
-    animation: primary-animation 40s linear infinite;
-    -webkit-animation: primary-animation 40s linear infinite;
+    animation: primary-animation 30s linear infinite;
+    -webkit-animation: primary-animation 30s linear infinite;
   }
 
   .logo {
-    height: 60px;
-    max-width: 150px;
+    height: 80px;
+    max-width: 180px;
   }
 
   .logo-container {
-    min-width: 150px;
+    min-width: 180px;
   }
 
   .fine-print {
@@ -121,12 +122,12 @@
 
 @media (max-width: 480px) {
   .logo {
-    height: 45px;
-    max-width: 120px;
+    height: 60px;
+    max-width: 140px;
   }
 
   .logo-container {
-    min-width: 120px;
+    min-width: 140px;
   }
 
   .fine-print {
