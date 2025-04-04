@@ -22,11 +22,11 @@
 }
 
 .cta-heading-main {
-  font-size: var(--h1-size);
+  font-size: var(--h2-size);
   font-family: var(--font-heading);
-  line-height: var(--line-height-h1);
+  line-height: var(--line-height-h2);
   color: white;
-  font-weight: var(--weight-h1);
+  font-weight: var(--weight-h2);
   max-width: 83.33vw;
   text-align: center;
   margin-bottom: 0.52vw;

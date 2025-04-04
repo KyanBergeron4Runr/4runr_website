@@ -47,13 +47,13 @@ export default function CTASection({
             padding: 0,
           }}
         >
-          <h1
+          <h2
             className="cta-heading-main"
             style={{
-              fontSize: 'var(--h1-size)',
-              lineHeight: 'var(--line-height-h1)',
-              letterSpacing: 'var(--letter-spacing-h1)',
-              fontWeight: 'var(--weight-h1)',
+              fontSize: 'var(--h2-size)',
+              lineHeight: 'var(--line-height-h2)',
+              letterSpacing: 'var(--letter-spacing-h2)',
+              fontWeight: 'var(--weight-h2)',
               color: 'white',
               maxWidth: '83.33vw',
               textAlign: 'center',
@@ -62,7 +62,7 @@ export default function CTASection({
             }}
           >
             {heading}
-          </h1>
+          </h2>
           <p
             className="cta-subtext"
             style={{
