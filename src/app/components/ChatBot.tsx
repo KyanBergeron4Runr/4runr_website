@@ -104,7 +104,7 @@ export default function ChatBot() {
   return (
     <div className="page-section">
       <header className="header">
-        <h1 className="title">Transform Your Business Challenges into Opportunities</h1>
+        <h2 className="title">Transform Your Business Challenges into Opportunities</h2>
         <div className="subtitle">
           Chat with our AI assistant to discover how we can automate and optimize your business operations.
         </div>
