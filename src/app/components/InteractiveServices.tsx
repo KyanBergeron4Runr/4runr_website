@@ -94,7 +94,7 @@ export default function InteractiveServices({
     <div className="services-section">
       <div className="section-container">
         <div className="main-title">
-          <h1>{heading}</h1>
+          <h2>{heading}</h2>
         </div>
         <div className="subheadings-container">
           {subheadings.map((item, index) => (
