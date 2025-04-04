@@ -6,12 +6,13 @@ import '@/app/styles/benefits.css';
 export default function BenefitsPage() {
   useEffect(() => {
     // Add scroll reveal animation for features
-    const featureItems = document.querySelectorAll('.feature-item');
+    const featureItems = document.querySelectorAll<HTMLElement>('.feature-item');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          const target = entry.target as HTMLElement;
+          target.style.opacity = '1';
+          target.style.transform = 'translateY(0)';
         }
       });
     }, { threshold: 0.1 });
