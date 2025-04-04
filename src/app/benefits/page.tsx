@@ -25,7 +25,7 @@ export default function BenefitsPage() {
     });
 
     // Add hover effect for service icons
-    const iconWrappers = document.querySelectorAll('.icon-wrapper');
+    const iconWrappers = document.querySelectorAll<HTMLElement>('.icon-wrapper');
     iconWrappers.forEach(wrapper => {
       wrapper.addEventListener('mouseenter', () => {
         wrapper.style.transform = 'scale(1.1)';
