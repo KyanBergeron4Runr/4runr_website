@@ -86,7 +86,7 @@ export default function AISolutionsCTA({
       {/* Desktop Version */}
       <div className="cta-section">
         <div className="cta-container">
-          <h1 className="cta-heading-main">
+          <h2 className="cta-heading-main">
             You're the Innovator, We're Your AI Partner.<br />
             <div className="typed-wrapper">
               <h2>
@@ -95,7 +95,7 @@ export default function AISolutionsCTA({
                 with AI.
               </h2>
             </div>
-          </h1>
+          </h2>
           <p className="cta-subtext">
             You're not just running a business—you're shaping the future. Break free from outdated processes and the confusion
             of navigating AI alone, with solutions that streamline operations and keep you ahead.
