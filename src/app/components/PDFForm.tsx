@@ -56,7 +56,7 @@ export default function PDFForm() {
 
   return (
     <div className="pdf-form">
-      <h3 className="pdf-form__heading">The Ultimate Guide to Business Success in the Age of AI</h3>
+      <h2 className="pdf-form__heading">The Ultimate Guide to Business Success in the Age of AI</h2>
       <p className="pdf-form__description">
         Discover proven strategies, real-world case studies, and practical tools to help your business thrive with AI. This
         comprehensive guide, brought to you by the AI experts at 4runr, is your essential resource for navigating the AI
