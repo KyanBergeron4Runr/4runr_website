@@ -12,7 +12,7 @@
   margin-bottom: 1.3vw;
   font-family: var(--font-heading);
   color: white;
-  font-size: var(--h2-size);
+  font-size: calc(28 / 1920 * 100vw) !important;
   font-weight: var(--weight-h2);
   line-height: var(--line-height-h2);
   text-shadow: 0 0.10vw 0.21vw rgba(0,0,0,0.1);
@@ -166,7 +166,7 @@
   }
 
   .pdf-form__heading {
-    font-size: var(--mobile-h2-size);
+    font-size: calc(28 / 768 * 100vw) !important;
     margin-bottom: 15px;
     line-height: var(--line-height-h2);
     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
