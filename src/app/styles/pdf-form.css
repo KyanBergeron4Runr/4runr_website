@@ -12,9 +12,9 @@
   margin-bottom: 1.3vw;
   font-family: var(--font-heading);
   color: white;
-  font-size: calc(64 / 1920 * 100vw);
-  line-height: 1.1;
-  font-weight: 900;
+  font-size: var(--h2-size);
+  line-height: var(--line-height-h2);
+  font-weight: var(--weight-h2);
   text-shadow: 0 0.10vw 0.21vw rgba(0,0,0,0.1);
 }
 
