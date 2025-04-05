@@ -47,8 +47,8 @@ export default function Footer() {
             © {currentYear} 4Runr. All rights reserved.
           </div>
           <div className="footer-bottom-links">
-            <a href="https://4runrtech.com/pages/privacy-policy">Privacy Policy</a>
-            <a href="https://4runrtech.com/pages/terms-of-service">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
           </div>
         </div>
       </div>
