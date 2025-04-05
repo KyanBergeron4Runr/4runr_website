@@ -126,7 +126,7 @@ export default function InteractiveServices({
           <p className="fine-print">
             Ready to transform your business with AI? Let's create solutions that deliver results, fit your needs, and grow with you.
           </p>
-          <a href="https://4runrtech.com/pages/lets-build" className="cta-button">
+          <a href="/services" className="cta-button">
             Learn More
           </a>
         </div>

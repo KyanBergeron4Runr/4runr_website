@@ -164,7 +164,7 @@ export default function WhatIs4Runr() {
                 and sustainable growth.
               </p>
               <div className="button-wrapper">
-                <a href="/solutions" className="cta-button">See Our Solutions</a>
+                <a href="/services" className="cta-button">See Our Solutions</a>
               </div>
             </div>
           </div>
