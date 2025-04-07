@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { FiMessageSquare, FiSend, FiBox, FiAward } from 'react-icons/fi';
-import { RiShieldCheckLine, RiCustomerService2Line } from 'react-icons/ri';
+import { FiMessageSquare, FiSend, FiBox, FiAward, FiHelpCircle } from 'react-icons/fi';
+import { RiShieldCheckLine, RiCustomerService2Line, RiLockLine } from 'react-icons/ri';
 import '@/app/styles/contact.css';
 
 interface Message {
@@ -214,137 +214,143 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="app-container">
-      <div className="app-content">
-        <aside className="app-sidebar">
-          <div className="app-sidebar-header">
-            <h2>Welcome to 4Runr Support</h2>
-            <p>Get quick answers or schedule a meeting with our team</p>
-          </div>
+    <>
+      <div className="app-container">
+        <div className="app-content">
+          <aside className="app-sidebar">
+            <div className="app-sidebar-header">
+              <h2>Welcome to 4Runr Support</h2>
+              <p>Get quick answers or schedule a meeting with our team</p>
+            </div>
 
-          <div className="sidebar-section">
-            <h3 className="section-title">Common Questions</h3>
-            <div className="question-categories">
-              {commonQuestions.map((category, index) => (
-                <details key={index} className="category-dropdown">
-                  <summary className="category-header">
-                    <span className="category-icon">{category.icon}</span>
-                    {category.category}
-                  </summary>
-                  <div className="category-questions">
-                    {category.questions.map((question, qIndex) => (
-                      <button
-                        key={qIndex}
-                        className="quick-question"
-                        onClick={() => handleQuestionClick(question)}
-                      >
-                        {question}
-                      </button>
-                    ))}
+            <div className="sidebar-section">
+              <h3 className="section-title">
+                <span className="section-icon"><FiHelpCircle /></span>
+                Common Questions
+              </h3>
+              <div className="question-categories">
+                {commonQuestions.map((category, index) => (
+                  <details key={index} className="category-dropdown">
+                    <summary className="category-header">
+                      <span className="category-icon">{category.icon}</span>
+                      {category.category}
+                    </summary>
+                    <div className="category-questions">
+                      {category.questions.map((question, qIndex) => (
+                        <button
+                          key={qIndex}
+                          className="quick-question"
+                          onClick={() => handleQuestionClick(question)}
+                        >
+                          {question}
+                        </button>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+
+            <div className="sidebar-section">
+              <div className="section-header">
+                <span className="section-icon"><RiShieldCheckLine /></span>
+                <h3>Security & Trust</h3>
+              </div>
+              {securityBadges.map((badge, index) => (
+                <div key={index} className="security-badge">
+                  <span className="badge-icon">{badge.icon}</span>
+                  <div className="badge-content">
+                    <h4>{badge.title}</h4>
+                    <p>{badge.description}</p>
                   </div>
-                </details>
+                </div>
               ))}
             </div>
-          </div>
+          </aside>
 
-          <div className="sidebar-section">
-            <div className="section-header">
-              <span className="section-icon"><RiShieldCheckLine /></span>
-              <h3>Security & Trust</h3>
-            </div>
-            {securityBadges.map((badge, index) => (
-              <div key={index} className="security-badge">
-                <span className="badge-icon">{badge.icon}</span>
-                <div className="badge-content">
-                  <h4>{badge.title}</h4>
-                  <p>{badge.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </aside>
-
-        <main className="app-main">
-          <div className="chat-container">
-            <div className="chat-header">
-              <div className="header-main">
-                <div className="header-left">
-                  <div className="bot-avatar">
-                    <RiCustomerService2Line />
-                  </div>
-                  <div className="header-info">
-                    <h1>4Runr Assistant</h1>
-                    <p className="header-subtitle">Typically replies in a few minutes</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="messages-container">
-              {messages.map((message) => (
-                <div key={message.id} className={`message ${message.type}-message`}>
-                  {message.type === 'bot' && (
+          <main className="app-main">
+            <div className="chat-container">
+              <div className="chat-header">
+                <div className="header-main">
+                  <div className="header-left">
                     <div className="bot-avatar">
                       <RiCustomerService2Line />
                     </div>
-                  )}
-                  <div className="message-bubble">
-                    <div className="message-content">{message.content}</div>
-                    {message.options && (
-                      <div className="message-options">
-                        {message.options.map((option, index) => (
-                          <button
-                            key={index}
-                            className="option-button"
-                            onClick={() => handleQuestionClick(option)}
-                          >
-                            {option}
-                          </button>
-                        ))}
+                    <div className="header-info">
+                      <h1>4Runr Assistant</h1>
+                      <p className="header-subtitle">Typically replies in a few minutes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="messages-container" ref={messagesEndRef}>
+                {messages.map((message, index) => (
+                  <div
+                    key={index}
+                    className={`message ${message.type === 'user' ? 'user-message' : 'bot-message'}`}
+                  >
+                    {message.type === 'bot' && (
+                      <div className="bot-avatar">
+                        <RiCustomerService2Line />
                       </div>
                     )}
+                    <div className="message-bubble">
+                      <div className="message-content">{message.content}</div>
+                      {message.options && message.options.length > 0 && (
+                        <div className="message-options">
+                          {message.options.map((option, optionIndex) => (
+                            <button
+                              key={optionIndex}
+                              className="option-button"
+                              onClick={() => handleQuestionClick(option)}
+                            >
+                              {option}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-              {isTyping && (
-                <div className="message bot-message">
-                  <div className="bot-avatar">
-                    <RiCustomerService2Line />
+                ))}
+                {isTyping && (
+                  <div className="message bot-message">
+                    <div className="bot-avatar">
+                      <RiCustomerService2Line />
+                    </div>
+                    <div className="message-bubble">
+                      <div className="message-content">Typing...</div>
+                    </div>
                   </div>
-                  <div className="message-bubble">
-                    <div className="message-content">Typing...</div>
-                  </div>
-                </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
+                )}
+              </div>
 
-            <div className="chat-footer">
-              <div className="security-notice">
-                <RiShieldCheckLine />
-                <span>End-to-end encrypted conversation</span>
-              </div>
-              <div className="chat-input-container">
-                <input
-                  type="text"
-                  className="chat-input"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Type your message here..."
-                />
-                <button
-                  className="send-button"
-                  onClick={() => handleSendMessage(inputValue)}
-                  disabled={!inputValue.trim()}
-                >
-                  <FiSend />
-                </button>
+              <div className="chat-footer">
+                <div className="security-notice">
+                  <RiLockLine />
+                  End-to-end encrypted conversation
+                </div>
+                <form className="chat-input-container" onSubmit={handleKeyPress}>
+                  <input
+                    type="text"
+                    className="chat-input"
+                    placeholder="Type your message here..."
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                  />
+                  <button
+                    type="submit"
+                    className="send-button"
+                    disabled={!inputValue.trim()}
+                  >
+                    <FiSend />
+                  </button>
+                </form>
               </div>
             </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 } 

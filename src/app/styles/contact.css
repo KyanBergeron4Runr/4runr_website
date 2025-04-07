@@ -1,16 +1,13 @@
 /* Contact Page Container */
 .app-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   width: 100%;
   padding: 0;
   box-sizing: border-box;
   background: linear-gradient(135deg, #13111C 0%, #1F1B2E 100%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Reset default styles for contact page */
@@ -23,8 +20,7 @@
 
 .app-content {
   max-width: 100%;
-  height: calc(100vh - 80px);
-  margin-top: 80px;
+  min-height: calc(100vh - 80px);
   display: flex;
   gap: 2rem;
   padding: 2rem;
@@ -469,16 +465,25 @@
     width: 340px;
   }
 
-  .app-content {
-    height: calc(100vh - 80px);
+  .app-container {
+    min-height: calc(100vh - 80px);
     margin-top: 80px;
+  }
+
+  .app-content {
+    min-height: calc(100vh - 80px);
   }
 }
 
 @media (max-width: 1024px) {
-  .app-content {
-    height: calc(100vh - 90px);
+  .app-container {
+    min-height: calc(100vh - 90px);
     margin-top: 90px;
+  }
+
+  .app-content {
+    min-height: calc(100vh - 90px);
+    flex-direction: column;
   }
 
   .app-sidebar {
@@ -495,9 +500,13 @@
 }
 
 @media (max-width: 768px) {
-  .app-content {
-    height: calc(100vh - 90px);
+  .app-container {
+    min-height: calc(100vh - 90px);
     margin-top: 90px;
+  }
+
+  .app-content {
+    min-height: calc(100vh - 90px);
     padding: 1rem;
   }
 
@@ -523,9 +532,13 @@
 }
 
 @media (max-width: 480px) {
-  .app-content {
-    height: calc(100vh - 75px);
+  .app-container {
+    min-height: calc(100vh - 75px);
     margin-top: 75px;
+  }
+
+  .app-content {
+    min-height: calc(100vh - 75px);
     padding: 0.75rem;
   }
 
