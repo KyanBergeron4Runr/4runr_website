@@ -13,6 +13,9 @@ interface Message {
   options?: string[];
 }
 
+// Webhook URLs
+const CONTACT_WEBHOOK_URL = 'https://n8n-mcp-u37169.vm.elestio.app/webhook/e1eb39f3-30e5-4f4f-9342-ff5e0b8b03d4';
+
 const commonQuestions = [
   {
     category: 'Services',
@@ -86,7 +89,35 @@ export default function ContactPage() {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = (content: string) => {
+  const sendToWebhook = async (message: Message, isContactPage: boolean = true) => {
+    try {
+      const webhookUrl = isContactPage ? CONTACT_WEBHOOK_URL : 'https://hook.us1.make.com/ox6fokjihajrnfoli3d9hbattwxnts2p';
+      
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messageId: message.id,
+          type: message.type,
+          content: message.content,
+          timestamp: message.timestamp,
+          page: isContactPage ? 'contact' : 'main',
+          userAgent: navigator.userAgent,
+          timestamp_iso: message.timestamp.toISOString()
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to send message to webhook:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error sending message to webhook:', error);
+    }
+  };
+
+  const handleSendMessage = async (content: string) => {
     if (!content.trim()) return;
 
     const newMessage: Message = {
@@ -96,12 +127,16 @@ export default function ContactPage() {
       timestamp: new Date()
     };
 
+    // Add message to UI
     setMessages(prev => [...prev, newMessage]);
     setInputValue('');
     setIsTyping(true);
 
+    // Send user message to webhook
+    await sendToWebhook(newMessage);
+
     // Simulate bot response with customized options based on user's message
-    setTimeout(() => {
+    setTimeout(async () => {
       let responseOptions: string[] = [];
       let responseContent = '';
 
@@ -139,8 +174,13 @@ export default function ContactPage() {
         timestamp: new Date(),
         options: responseOptions
       };
+
+      // Add bot response to UI
       setMessages(prev => [...prev, botResponse]);
       setIsTyping(false);
+
+      // Send bot response to webhook
+      await sendToWebhook(botResponse);
     }, 1000);
   };
 
