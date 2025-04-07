@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FiHome, FiBox, FiAward, FiMessageSquare, FiSend, FiDownload, FiRefreshCw } from 'react-icons/fi';
 import { RiShieldCheckLine, RiCustomerService2Line, RiQuestionLine } from 'react-icons/ri';
+import '@/app/styles/contact.css';
 
 interface Message {
   id: string;
