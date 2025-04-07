@@ -5,10 +5,11 @@
   padding: 0;
   box-sizing: border-box;
   background: linear-gradient(180deg, #000000 0%, #13111C 5%, #1F1B2E 20%, #1F1B2E 80%, #13111C 95%, #000000 100%);
-  margin-top: 80px;
   position: relative;
   z-index: 1;
-  border-top: none;
+  margin: 0;
+  border: none;
+  margin-top: -1px; /* Remove the gap between header and container */
 }
 
 /* Reset default styles for contact page */
@@ -21,10 +22,11 @@
 
 .app-content {
   max-width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   gap: 2rem;
   padding: 2rem;
+  padding-top: calc(80px + 2rem); /* Account for header height plus padding */
   background: linear-gradient(180deg, 
     rgba(19, 17, 28, 0) 0%,
     rgba(19, 17, 28, 0.7) 5%,
@@ -468,25 +470,25 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .app-container {
-    min-height: calc(100vh - 80px);
-    margin-top: 80px;
-    background: linear-gradient(180deg, #000000 0%, #13111C 5%, #1F1B2E 20%, #1F1B2E 80%, #13111C 95%, #000000 100%);
+    min-height: 100vh;
+    margin-top: -1px;
   }
 
   .app-content {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
+    padding-top: calc(80px + 2rem);
   }
 }
 
 @media (max-width: 1024px) {
   .app-container {
-    min-height: calc(100vh - 90px);
-    margin-top: 90px;
-    background: linear-gradient(180deg, #000000 0%, #13111C 5%, #1F1B2E 20%, #1F1B2E 80%, #13111C 95%, #000000 100%);
+    min-height: 100vh;
+    margin-top: -1px;
   }
 
   .app-content {
-    min-height: calc(100vh - 90px);
+    min-height: 100vh;
+    padding-top: calc(90px + 2rem);
     flex-direction: column;
   }
 
@@ -505,13 +507,14 @@
 
 @media (max-width: 768px) {
   .app-container {
-    min-height: calc(100vh - 90px);
-    margin-top: 90px;
+    min-height: 100vh;
+    margin-top: -1px;
   }
 
   .app-content {
-    min-height: calc(100vh - 90px);
+    min-height: 100vh;
     padding: 1rem;
+    padding-top: calc(90px + 1rem);
   }
 
   .app-sidebar {
@@ -537,13 +540,14 @@
 
 @media (max-width: 480px) {
   .app-container {
-    min-height: calc(100vh - 75px);
-    margin-top: 75px;
+    min-height: 100vh;
+    margin-top: -1px;
   }
 
   .app-content {
-    min-height: calc(100vh - 75px);
+    min-height: 100vh;
     padding: 0.75rem;
+    padding-top: calc(75px + 0.75rem);
   }
 
   .message {
