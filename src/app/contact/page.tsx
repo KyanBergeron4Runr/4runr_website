@@ -100,14 +100,44 @@ export default function ContactPage() {
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate bot response
+    // Simulate bot response with customized options based on user's message
     setTimeout(() => {
+      let responseOptions: string[] = [];
+      let responseContent = '';
+
+      if (content === 'Schedule a call') {
+        responseContent = 'I can help you schedule a call with our team. When would you prefer?';
+        responseOptions = [
+          'Morning (9 AM - 12 PM)',
+          'Afternoon (1 PM - 5 PM)',
+          'Next Business Day'
+        ];
+      } else if (content === 'Learn About Services') {
+        responseContent = 'I\'d be happy to tell you about our services. What would you like to know?';
+        responseOptions = [
+          'View Service Catalog',
+          'Get Pricing Information',
+          'Talk to a Specialist'
+        ];
+      } else if (content === 'Get a Quote') {
+        responseContent = 'I can help you get a quote for our services. What type of project are you interested in?';
+        responseOptions = [
+          'Website Development',
+          'Custom Software',
+          'Consulting Services',
+          'Talk to Sales'
+        ];
+      } else {
+        responseContent = 'Thanks for your message! How would you like to proceed?';
+        responseOptions = ['Schedule a call', 'Learn more', 'Talk to a human'];
+      }
+
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
         type: 'bot',
-        content: 'Thanks for your message! I\'ll help you with that. Would you like to:',
+        content: responseContent,
         timestamp: new Date(),
-        options: ['Schedule a call', 'Learn more', 'Talk to a human']
+        options: responseOptions
       };
       setMessages(prev => [...prev, botResponse]);
       setIsTyping(false);
