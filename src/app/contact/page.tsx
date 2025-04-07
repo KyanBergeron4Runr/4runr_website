@@ -1,10 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { FiHome, FiBox, FiAward, FiMessageSquare, FiSend, FiDownload, FiRefreshCw } from 'react-icons/fi';
-import { RiShieldCheckLine, RiCustomerService2Line, RiQuestionLine } from 'react-icons/ri';
+import { FiMessageSquare, FiSend } from 'react-icons/fi';
+import { RiShieldCheckLine, RiCustomerService2Line } from 'react-icons/ri';
 import '@/app/styles/contact.css';
 
 interface Message {
@@ -122,23 +120,6 @@ export default function ContactPage() {
 
   return (
     <div className="app-container">
-      <nav className="app-nav">
-        <Link href="/" className="nav-logo">
-          <span className="logo-text">4Runr</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="/" className="nav-link">
-            <FiHome /> Home
-          </Link>
-          <Link href="/services" className="nav-link">
-            <FiBox /> Services
-          </Link>
-          <Link href="/about" className="nav-link">
-            <RiQuestionLine /> About
-          </Link>
-        </div>
-      </nav>
-
       <div className="app-content">
         <aside className="app-sidebar">
           <div className="app-sidebar-header">
@@ -201,14 +182,6 @@ export default function ContactPage() {
                     <h1>4Runr Assistant</h1>
                     <p className="header-subtitle">Typically replies in a few minutes</p>
                   </div>
-                </div>
-                <div className="header-actions">
-                  <button className="action-button" title="New Chat">
-                    <FiRefreshCw />
-                  </button>
-                  <button className="action-button" title="Download Chat">
-                    <FiDownload />
-                  </button>
                 </div>
               </div>
             </div>
