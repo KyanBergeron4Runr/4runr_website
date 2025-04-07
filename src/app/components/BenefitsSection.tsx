@@ -22,7 +22,7 @@ export default function BenefitsSection({
   heading3 = "Leverage AI",
   subheading3 = "Integrate AI into data analysis systems to uncover insights, predict trends, and support smarter decision-making.",
   buttonText = "Book a Call",
-  buttonLink = "/"
+  buttonLink = "/contact"
 }: BenefitsSectionProps) {
   const [isMobile, setIsMobile] = useState(false);
 
