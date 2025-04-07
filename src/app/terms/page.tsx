@@ -4,7 +4,8 @@ import React from 'react';
 import '@/app/styles/terms.css';
 
 export default function TermsPage() {
-  const currentDate = new Date().toLocaleDateString('en-US', {
+  // Use a fixed date to prevent hydration mismatches
+  const lastUpdatedDate = new Date('2025-04-06').toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
     year: 'numeric'
@@ -16,7 +17,7 @@ export default function TermsPage() {
         <div className="terms-title">
           <h1>Terms of Service</h1>
         </div>
-        <div className="last-updated">Last Updated: {currentDate}</div>
+        <div className="last-updated">Last Updated: {lastUpdatedDate}</div>
 
         <div className="terms-content">
           <p>

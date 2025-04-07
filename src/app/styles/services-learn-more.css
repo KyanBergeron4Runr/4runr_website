@@ -189,17 +189,21 @@
 
 .cta-section {
   max-width: calc(1100/1920*100vw);
-  margin: calc(48/1920*100vw) auto 0;
+  width: calc(100% - calc(128/1920*100vw));
+  margin: calc(48/1920*100vw) auto calc(48/1920*100vw);
   padding: calc(48/1920*100vw) calc(64/1920*100vw);
   text-align: center;
   background: linear-gradient(180deg, rgba(106, 90, 205, 0.1), transparent);
   border: calc(2/1920*100vw) solid rgba(106, 90, 205, 0.2);
   border-radius: calc(8/1920*100vw);
-  width: calc(100% - calc(128/1920*100vw));
-  left: 50%;
-  transform: translateX(-50%);
   position: relative;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .cta-heading {
@@ -209,6 +213,8 @@
   line-height: var(--line-height-h2);
   color: white;
   margin-bottom: calc(20/1920*100vw);
+  width: 100%;
+  text-align: center;
 }
 
 .cta-description {
@@ -218,6 +224,7 @@
   max-width: calc(800/1920*100vw);
   margin: 0 auto calc(24/1920*100vw);
   line-height: 1.6;
+  text-align: center;
 }
 
 .cta-buttons {
