@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { FiMessageSquare, FiSend } from 'react-icons/fi';
+import { FiMessageSquare, FiSend, FiBox, FiAward } from 'react-icons/fi';
 import { RiShieldCheckLine, RiCustomerService2Line } from 'react-icons/ri';
 import '@/app/styles/contact.css';
 
