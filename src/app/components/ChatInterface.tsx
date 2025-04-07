@@ -41,7 +41,7 @@ export default function ChatInterface() {
   const handleOptionSelect = async (option: string) => {
     // Add user's selection as a message
     const userMessage: Message = {
-      type: 'user',
+      type: 'user' as const,
       content: option,
       timestamp: new Date()
     };
