@@ -189,8 +189,8 @@
 
 .cta-section {
   max-width: calc(1100/1920*100vw);
-  width: calc(100% - calc(128/1920*100vw));
-  margin: calc(48/1920*100vw) auto calc(48/1920*100vw);
+  width: 100%;
+  margin: calc(48/1920*100vw) auto;
   padding: calc(48/1920*100vw) calc(64/1920*100vw);
   text-align: center;
   background: linear-gradient(180deg, rgba(106, 90, 205, 0.1), transparent);
@@ -202,8 +202,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .cta-heading {
@@ -222,7 +220,7 @@
   font-size: calc(18/1920*100vw);
   color: #ccc;
   max-width: calc(800/1920*100vw);
-  margin: 0 auto calc(24/1920*100vw);
+  margin: 0 auto calc(16/1920*100vw);
   line-height: 1.6;
   text-align: center;
 }
@@ -231,6 +229,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: calc(16/1920*100vw);
   width: 100%;
   margin-top: calc(32/1920*100vw);
 }
@@ -252,7 +251,6 @@
   white-space: nowrap;
   min-width: calc(240/1920*100vw);
   height: calc(50/1920*100vw);
-  margin: 0 auto;
 }
 
 .primary-button:hover {
@@ -296,24 +294,43 @@
     gap: calc(20/768*100vw);
   }
 
+  .cta-section {
+    width: calc(100% - 2rem);
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
   .cta-heading {
     font-size: calc(28/768*100vw);
   }
 
   .cta-description {
     font-size: calc(16/768*100vw);
-    max-width: 90%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .primary-button {
+    width: 100%;
+    min-width: auto;
     font-size: calc(16/768*100vw);
-    padding: calc(14/768*100vw) calc(28/768*100vw);
-    min-width: calc(220/768*100vw);
-    height: calc(45/768*100vw);
+    padding: 1rem;
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
+  .cta-section {
+    width: calc(100% - 1rem);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+  }
+
   .cta-heading {
     font-size: calc(24/480*100vw);
   }
@@ -324,9 +341,6 @@
 
   .primary-button {
     font-size: calc(14/480*100vw);
-    padding: calc(12/480*100vw) calc(24/480*100vw);
-    min-width: calc(200/480*100vw);
-    height: calc(40/480*100vw);
-    width: 90%;
+    padding: 0.875rem;
   }
 } 
