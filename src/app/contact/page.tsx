@@ -10,6 +10,8 @@ interface Message {
   type: 'user' | 'bot';
   content: string;
   timestamp: Date;
+  userId?: string;
+  sessionId: string;
   options?: string[];
 }
 
@@ -63,22 +65,11 @@ const securityBadges = [
 ];
 
 export default function ContactPage() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      type: 'bot',
-      content: 'Hi there! 👋 I\'m your AI assistant. How can I help you today?',
-      timestamp: new Date(),
-      options: [
-        'Schedule a Meeting',
-        'Learn About Services',
-        'Get a Quote',
-        'Technical Consultation'
-      ]
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [userId] = useState(() => `user_${Math.random().toString(36).substr(2, 9)}`);
+  const [sessionId] = useState(() => `session_${Math.random().toString(36).substr(2, 9)}`);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -89,9 +80,23 @@ export default function ContactPage() {
     scrollToBottom();
   }, [messages]);
 
-  const sendToWebhook = async (message: Message, isContactPage: boolean = true) => {
+  // Initialize chat with welcome message
+  useEffect(() => {
+    const welcomeMessage: Message = {
+      id: Date.now().toString(),
+      type: 'bot',
+      content: 'Welcome! How can I help you today?',
+      timestamp: new Date(),
+      sessionId,
+      options: ['Schedule a call', 'Learn About Services', 'Get a Quote']
+    };
+    setMessages([welcomeMessage]);
+    sendToWebhook(welcomeMessage);
+  }, []);
+
+  const sendToWebhook = async (message: Message) => {
     try {
-      const webhookUrl = isContactPage ? CONTACT_WEBHOOK_URL : 'https://hook.us1.make.com/ox6fokjihajrnfoli3d9hbattwxnts2p';
+      const webhookUrl = CONTACT_WEBHOOK_URL;
       
       const response = await fetch(webhookUrl, {
         method: 'POST',
@@ -103,9 +108,12 @@ export default function ContactPage() {
           type: message.type,
           content: message.content,
           timestamp: message.timestamp,
-          page: isContactPage ? 'contact' : 'main',
+          userId: userId,
+          sessionId: sessionId,
+          page: 'contact',
           userAgent: navigator.userAgent,
-          timestamp_iso: message.timestamp.toISOString()
+          timestamp_iso: message.timestamp.toISOString(),
+          options: message.options
         }),
       });
 
@@ -124,7 +132,9 @@ export default function ContactPage() {
       id: Date.now().toString(),
       type: 'user',
       content: content.trim(),
-      timestamp: new Date()
+      timestamp: new Date(),
+      userId,
+      sessionId
     };
 
     // Add message to UI
@@ -141,12 +151,15 @@ export default function ContactPage() {
       let responseContent = '';
 
       if (content === 'Schedule a call') {
-        responseContent = 'I can help you schedule a call with our team. When would you prefer?';
+        responseContent = 'When would you prefer to schedule your call?';
         responseOptions = [
           'Morning (9 AM - 12 PM)',
           'Afternoon (1 PM - 5 PM)',
           'Next Business Day'
         ];
+      } else if (content.includes('Morning') || content.includes('Afternoon') || content.includes('Next Business Day')) {
+        responseContent = 'Great! Please provide your email address to confirm the scheduling.';
+        responseOptions = ['Enter email manually'];
       } else if (content === 'Learn About Services') {
         responseContent = 'I\'d be happy to tell you about our services. What would you like to know?';
         responseOptions = [
@@ -162,9 +175,13 @@ export default function ContactPage() {
           'Consulting Services',
           'Talk to Sales'
         ];
+      } else if (content.includes('@')) {
+        // Email provided
+        responseContent = 'Thank you! I\'ve scheduled your call and sent a confirmation email. Is there anything else you need help with?';
+        responseOptions = ['Ask another question', 'End chat'];
       } else {
         responseContent = 'Thanks for your message! How would you like to proceed?';
-        responseOptions = ['Schedule a call', 'Learn more', 'Talk to a human'];
+        responseOptions = ['Schedule a call', 'Learn more', 'Get a Quote'];
       }
 
       const botResponse: Message = {
@@ -172,6 +189,7 @@ export default function ContactPage() {
         type: 'bot',
         content: responseContent,
         timestamp: new Date(),
+        sessionId,
         options: responseOptions
       };
 
@@ -184,8 +202,15 @@ export default function ContactPage() {
     }, 1000);
   };
 
-  const handleOptionSelect = (option: string) => {
-    handleSendMessage(option);
+  const handleQuestionClick = (question: string) => {
+    handleSendMessage(question);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage(inputValue);
+    }
   };
 
   return (
@@ -211,7 +236,7 @@ export default function ContactPage() {
                       <button
                         key={qIndex}
                         className="quick-question"
-                        onClick={() => handleOptionSelect(question)}
+                        onClick={() => handleQuestionClick(question)}
                       >
                         {question}
                       </button>
@@ -271,7 +296,7 @@ export default function ContactPage() {
                           <button
                             key={index}
                             className="option-button"
-                            onClick={() => handleOptionSelect(option)}
+                            onClick={() => handleQuestionClick(option)}
                           >
                             {option}
                           </button>
@@ -305,7 +330,7 @@ export default function ContactPage() {
                   className="chat-input"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage(inputValue)}
+                  onKeyPress={handleKeyPress}
                   placeholder="Type your message here..."
                 />
                 <button
