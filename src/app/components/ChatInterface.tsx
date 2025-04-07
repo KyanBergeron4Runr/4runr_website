@@ -119,7 +119,7 @@ export default function ChatInterface() {
 
     // Simulate bot response
     setTimeout(() => {
-      const botResponse = {
+      const botResponse: Message = {
         type: 'bot',
         content: "Thank you for sharing that. Would you like to schedule a meeting with our team to discuss this further?",
         options: ["Yes, schedule a meeting", "No, just exploring"],
@@ -290,4 +290,4 @@ export default function ChatInterface() {
       </div>
     </div>
   );
-} 
+}
