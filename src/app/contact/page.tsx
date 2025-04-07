@@ -21,27 +21,27 @@ const commonQuestions = [
       'What services do you offer?',
       'How much do your services cost?',
       'Do you offer custom solutions?',
-      'What industries do you serve?'
+      'What is your turnaround time?'
     ]
   },
   {
-    category: 'Scheduling',
-    icon: <FiMessageSquare />,
-    questions: [
-      'Can we schedule a consultation?',
-      'What is your availability?',
-      'How long are meetings typically?',
-      'Do you offer virtual meetings?'
-    ]
-  },
-  {
-    category: 'Technical',
+    category: 'Support',
     icon: <RiCustomerService2Line />,
     questions: [
-      'What technologies do you use?',
-      'Can you handle large-scale projects?',
-      'Do you provide ongoing support?',
-      'What is your development process?'
+      'How can I get technical support?',
+      'What are your support hours?',
+      'Do you offer emergency support?',
+      'How do I report an issue?'
+    ]
+  },
+  {
+    category: 'Security',
+    icon: <RiShieldCheckLine />,
+    questions: [
+      'How do you protect my data?',
+      'Are your services GDPR compliant?',
+      'What security certifications do you have?',
+      'How often do you backup data?'
     ]
   }
 ];
@@ -128,29 +128,28 @@ export default function ContactPage() {
           </div>
 
           <div className="sidebar-section">
-            <div className="section-header">
-              <span className="section-icon"><FiMessageSquare /></span>
-              <h3>Common Questions</h3>
+            <h3 className="section-title">Common Questions</h3>
+            <div className="question-categories">
+              {commonQuestions.map((category, index) => (
+                <details key={index} className="category-dropdown">
+                  <summary className="category-header">
+                    <span className="category-icon">{category.icon}</span>
+                    {category.category}
+                  </summary>
+                  <div className="category-questions">
+                    {category.questions.map((question, qIndex) => (
+                      <button
+                        key={qIndex}
+                        className="quick-question"
+                        onClick={() => handleOptionSelect(question)}
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
+                </details>
+              ))}
             </div>
-            {commonQuestions.map((category, index) => (
-              <div key={index} className="question-category">
-                <h4>
-                  <span className="category-icon">{category.icon}</span>
-                  {category.category}
-                </h4>
-                <div className="message-options">
-                  {category.questions.map((question, qIndex) => (
-                    <button
-                      key={qIndex}
-                      className="option-button"
-                      onClick={() => handleOptionSelect(question)}
-                    >
-                      {question}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
 
           <div className="sidebar-section">
