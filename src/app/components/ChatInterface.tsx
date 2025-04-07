@@ -107,8 +107,8 @@ export default function ChatInterface() {
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
-    const userMessage = {
-      type: 'user',
+    const userMessage: Message = {
+      type: 'user' as const,
       content: inputValue,
       timestamp: new Date()
     };
