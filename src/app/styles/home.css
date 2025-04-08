@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 6rem; /* Add gap between direct children */
 }
 
 /* Force all direct children to maintain full width */
@@ -45,6 +46,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* Special spacing for first and last sections */
+.home-page .cta-section {
+  padding-top: 2rem !important;
+}
+
+.home-page .pdf-form {
+  padding-bottom: 6rem !important;
 }
 
 /* Container styles */
@@ -85,12 +97,30 @@
 :root {
   --max-width: 1200px;
   --container-padding: 2rem;
+  --section-spacing: 6rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   :root {
     --container-padding: 1.5rem;
+    --section-spacing: 4rem;
+  }
+
+  .home-page {
+    gap: 4rem;
+  }
+
+  .home-page .cta-section,
+  .home-page .slogan-section,
+  .home-page .what-we-do,
+  .home-page .benefits-section,
+  .home-page .process-section,
+  .home-page .services-section,
+  .home-page .chatbot-section,
+  .home-page .pdf-form {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
 
   .home-page,
@@ -106,6 +136,23 @@
 @media (max-width: 768px) {
   :root {
     --container-padding: 1rem;
+    --section-spacing: 3rem;
+  }
+
+  .home-page {
+    gap: 3rem;
+  }
+
+  .home-page .cta-section,
+  .home-page .slogan-section,
+  .home-page .what-we-do,
+  .home-page .benefits-section,
+  .home-page .process-section,
+  .home-page .services-section,
+  .home-page .chatbot-section,
+  .home-page .pdf-form {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 
   .home-page {
