@@ -9,7 +9,6 @@ import BenefitsSection from './components/BenefitsSection'
 import ProcessSection from './components/ProcessSection'
 import PDFForm from './components/PDFForm'
 import ChatBot from './components/ChatBot'
-import CallToAction from './components/CallToAction'
 
 const InteractiveServices = dynamic(
   () => import('./components/InteractiveServices'),
@@ -54,13 +53,6 @@ export default function Home() {
 
       {/* PDF Form Section */}
       <PDFForm />
-
-      {/* Final CTA Section */}
-      <section className="page-section">
-        <h2>Ready to Transform Your Business?</h2>
-        <p className="fine-print">Schedule a consultation with our team to discover how we can revolutionize your operations with AI.</p>
-        <CallToAction />
-      </section>
     </div>
   )
 } 
