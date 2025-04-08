@@ -1,0 +1,122 @@
+.services-cta {
+  width: 100%;
+  background: #0A0A0F;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-cta-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services-cta-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+.services-cta-text {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.services-cta-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+}
+
+.services-cta-text p:last-child {
+  margin-bottom: 0;
+}
+
+.services-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.schedule-button,
+.chat-button {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  font-family: var(--font-sans);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.schedule-button {
+  background: linear-gradient(135deg, #6A5ACD, #483D8B);
+  color: white;
+}
+
+.chat-button {
+  background: #2A2A35;
+  color: white;
+}
+
+.schedule-button:hover,
+.chat-button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .services-cta {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-cta-title {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .services-cta-text {
+    margin-bottom: 2rem;
+  }
+
+  .services-cta-text p {
+    font-size: 1.125rem;
+  }
+
+  .services-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .schedule-button,
+  .chat-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-cta {
+    padding: 2.5rem 1rem;
+  }
+
+  .services-cta-title {
+    font-size: 2rem;
+  }
+
+  .services-cta-text p {
+    font-size: 1rem;
+  }
+} 
