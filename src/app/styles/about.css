@@ -1,9 +1,13 @@
 .about-section {
-  padding: 2.083vw 0;
+  padding: 2.083vw 0 0 0;
   text-align: center;
   background-color: #000;
   overflow-x: hidden;
   font-family: var(--font-sans);
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -1px; /* Remove gap between section and footer */
 }
 
 .section-title {
@@ -21,7 +25,9 @@
 
 .main-content {
   max-width: 75%;
-  margin: 0 auto 3.125vw;
+  margin: 0 auto;
+  padding-bottom: 4vw; /* Add padding at the bottom instead of margin */
+  flex: 1;
 }
 
 .main-content p {
@@ -50,6 +56,20 @@
   margin: 0 auto;
   padding: 0 2.083vw;
   overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure smooth transition to footer */
+.about-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #000;
 }
 
 @media screen and (max-width: 1400px) {
