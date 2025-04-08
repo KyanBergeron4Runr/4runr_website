@@ -399,7 +399,7 @@
   align-items: center;
   gap: 0.75rem;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
+  font-size: var(--text-small);
   margin-bottom: 1rem;
   padding: 0.75rem 1rem;
   background: rgba(106, 90, 205, 0.1);
@@ -408,7 +408,7 @@
 
 .security-notice svg {
   color: #6a5acd;
-  font-size: 1.1rem;
+  font-size: var(--text-body);
 }
 
 .chat-input-container {
@@ -431,10 +431,10 @@
   padding: 0.875rem 1.25rem;
   border-radius: 24px;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: var(--text-body);
   transition: all 0.3s ease;
   font-family: 'Poppins Regular', sans-serif;
-  height: 48px;
+  height: 56px;
 }
 
 .chat-input::placeholder {
@@ -508,14 +508,14 @@
 
 .badge-content h4 {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: var(--h3-size);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .badge-content p {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
+  font-size: var(--text-body);
   line-height: 1.5;
 }
 
@@ -692,5 +692,36 @@
   .chat-container {
     max-width: 700px;
     height: 800px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chat-container {
+    max-width: 600px;
+    height: 700px;
+  }
+
+  .message {
+    max-width: 75%;
+    font-size: var(--text-body);
+  }
+
+  .option-button {
+    font-size: var(--text-button);
+    padding: 1rem 1.5rem;
+  }
+
+  .send-button {
+    min-width: 56px;
+    height: 56px;
+    font-size: var(--text-button);
+  }
+
+  .security-badge {
+    padding: 1.5rem;
+  }
+
+  .badge-icon {
+    font-size: 2rem;
   }
 } 
