@@ -106,8 +106,8 @@
 }
 
 .fine-print {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: var(--text-small);
+  line-height: var(--line-height-body);
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
   max-width: 800px;
@@ -160,8 +160,8 @@
 .cta-button {
   display: inline-block;
   padding: 1.25rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: var(--text-button);
+  font-weight: var(--weight-button);
   color: #fff;
   background: linear-gradient(135deg, #6a5acd 0%, #5648b3 100%);
   border-radius: 12px;
@@ -266,11 +266,16 @@
   }
   
   .fine-print {
-    font-size: 1.3rem;
+    font-size: var(--text-small);
+    max-width: 900px;
   }
   
   .cta-button {
-    font-size: 1.4rem;
+    font-size: var(--text-button);
     padding: 1.5rem 3rem;
+  }
+
+  p {
+    font-size: var(--text-body);
   }
 } 
