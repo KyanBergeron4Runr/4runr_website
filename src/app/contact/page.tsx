@@ -97,7 +97,7 @@ export default function ContactPage() {
   const sendToWebhook = async (message: Message) => {
     try {
       const webhookUrl = CONTACT_WEBHOOK_URL;
-      
+
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
@@ -204,6 +204,11 @@ export default function ContactPage() {
 
   const handleQuestionClick = (question: string) => {
     handleSendMessage(question);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSendMessage(inputValue);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -330,13 +335,14 @@ export default function ContactPage() {
                   <RiLockLine />
                   End-to-end encrypted conversation
                 </div>
-                <form className="chat-input-container" onSubmit={handleKeyPress}>
+                <form className="chat-input-container" onSubmit={handleSubmit}>
                   <input
                     type="text"
                     className="chat-input"
                     placeholder="Type your message here..."
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
+                    onKeyDown={handleKeyPress}
                   />
                   <button
                     type="submit"
@@ -353,4 +359,4 @@ export default function ContactPage() {
       </div>
     </>
   );
-} 
+}
