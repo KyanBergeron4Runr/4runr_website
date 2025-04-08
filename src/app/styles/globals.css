@@ -3,13 +3,13 @@
   --font-heading: 'Poppins', sans-serif;
   --font-sans: 'Poppins Regular', sans-serif;
   
-  /* Base sizes using vw units */
-  --h1-size: 3vw;
-  --h2-size: 2.5vw;
-  --h3-size: 2vw;
-  --text-body: 1.2vw;
-  --text-small: 1vw;
-  --text-button: 1.2vw;
+  /* Base sizes using vw units - increased ratios */
+  --h1-size: 4.5vw;
+  --h2-size: 3.8vw;
+  --h3-size: 3vw;
+  --text-body: 1.8vw;
+  --text-small: 1.5vw;
+  --text-button: 1.8vw;
   
   /* Font weights */
   --weight-h1: 600;
