@@ -256,8 +256,8 @@
   }
 }
 
-/* Specific styles for 1920x1080 display */
-@media screen and (width: 1920px) and (height: 1080px) {
+/* Laptop and larger displays */
+@media screen and (min-width: 1024px) {
   .home-page .container,
   .home-page .section-container,
   .home-page .content-wrapper {
@@ -270,25 +270,15 @@
   }
 
   .fine-print {
-    font-size: 18px;
     max-width: 900px;
     margin: 32px auto;
-    line-height: 1.6;
   }
   
   .cta-button {
-    font-size: 20px;
     padding: 20px 40px;
-    border-radius: 12px;
   }
 
   .section-divider {
     height: 80px;
-  }
-
-  p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 16px;
   }
 } 

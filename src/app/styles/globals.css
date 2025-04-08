@@ -3,13 +3,13 @@
   --font-heading: 'Poppins', sans-serif;
   --font-sans: 'Poppins Regular', sans-serif;
   
-  /* Base sizes */
-  --h1-size: calc(32 / 1920 * 100vw);
-  --h2-size: calc(28 / 1920 * 100vw);
-  --h3-size: calc(24 / 1920 * 100vw);
-  --text-body: calc(16 / 1920 * 100vw);
-  --text-small: calc(14 / 1920 * 100vw);
-  --text-button: calc(16 / 1920 * 100vw);
+  /* Base sizes - smaller default sizes */
+  --h1-size: 24px;
+  --h2-size: 20px;
+  --h3-size: 18px;
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-button: 16px;
   
   /* Font weights */
   --weight-h1: 600;
@@ -74,8 +74,8 @@ p {
   font-weight: var(--weight-button);
 }
 
-/* Specific styles for 1920x1080 display */
-@media screen and (width: 1920px) and (height: 1080px) {
+/* Laptop and larger displays */
+@media screen and (min-width: 1024px) {
   :root {
     --h1-size: 48px;
     --h2-size: 36px;
@@ -86,32 +86,36 @@ p {
   }
 
   body {
-    font-size: 20px;
+    font-size: var(--text-body);
   }
 
   p {
-    font-size: 20px;
+    font-size: var(--text-body);
     margin-bottom: 16px;
   }
 
   .fine-print {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: var(--text-small);
   }
 
   .button,
   .cta-button {
-    font-size: 20px;
+    font-size: var(--text-button);
     padding: 20px 40px;
-    border-radius: 12px;
   }
-
-  h1 { font-size: 48px; }
-  h2 { font-size: 36px; }
-  h3 { font-size: 28px; }
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
+  :root {
+    --h1-size: 24px;
+    --h2-size: 20px;
+    --h3-size: 18px;
+    --text-body: 16px;
+    --text-small: 14px;
+    --text-button: 16px;
+  }
+
   h1 {
     font-size: var(--mobile-h1-size);
   }
