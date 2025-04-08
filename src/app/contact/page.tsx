@@ -335,7 +335,12 @@ export default function ContactPage() {
                   <RiLockLine />
                   End-to-end encrypted conversation
                 </div>
-                <form className="chat-input-container" onSubmit={handleSubmit}>
+                <form className="chat-input-container" onSubmit={(e) => {
+                  e.preventDefault();
+                  if (inputValue.trim()) {
+                    handleSendMessage(inputValue);
+                  }
+                }}>
                   <input
                     type="text"
                     className="chat-input"
