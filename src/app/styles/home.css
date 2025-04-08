@@ -1,0 +1,70 @@
+.home-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #000;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.home-page > * {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset any potential conflicting styles */
+.home-page .cta-section,
+.home-page .slogan-section,
+.home-page .what-we-do,
+.home-page .benefits-section,
+.home-page .process-section,
+.home-page .services-section,
+.home-page .chatbot-section,
+.home-page .pdf-form {
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper spacing between sections */
+.home-page > *:not(:first-child) {
+  margin-top: 0;
+}
+
+/* Prevent overflow issues */
+.home-page .container,
+.home-page .section-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Ensure proper stacking context */
+.home-page section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .home-page {
+    overflow-x: hidden;
+  }
+  
+  .home-page > * {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    overflow-x: hidden;
+  }
+} 

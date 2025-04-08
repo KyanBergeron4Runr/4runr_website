@@ -1,3 +1,4 @@
+import './styles/home.css'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import CTASection from './components/CTASection'
@@ -45,7 +46,7 @@ const PDFForm = dynamic(
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="home-page min-h-screen bg-black">
       <CTASection />
       
       {/* Partners Section */}
