@@ -149,7 +149,7 @@
 }
 
 .service-details p {
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: clamp(1.2rem, 1.4vw, 1.4rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   position: relative;
@@ -320,11 +320,36 @@
   }
 
   .service {
-    padding: 2.5vw;
+    padding: 1.8vw;
+    margin-bottom: 1vw;
+    width: 95%;
+  }
+
+  .category {
+    margin-bottom: 1vw;
+  }
+
+  .category-header {
+    padding: 1.2vw;
   }
 
   .results-grid {
-    gap: 3vw;
+    gap: 2vw;
+  }
+
+  .service-details p {
+    font-size: 1.25rem;
+  }
+
+  .feature-list li {
+    font-size: 1.15rem;
+    padding-left: 1.2vw;
+  }
+
+  /* Make chatbot interface more compact */
+  .chat-interface {
+    max-width: 85%;
+    margin: 0 auto;
   }
 }
 

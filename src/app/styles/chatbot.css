@@ -66,20 +66,11 @@
 
 .chat-container {
   width: 100%;
-  max-width: 500px;
-  height: 600px;
-  min-height: 400px;
-  background: rgba(25, 23, 36, 0.95);
-  border: 1px solid rgba(106, 90, 205, 0.25);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
+  max-width: 85%;
   margin: 0 auto;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(75, 0, 130, 0.1), rgba(72, 61, 139, 0.1));
+  border-radius: 0.5rem;
 }
 
 .chat-container::before {
@@ -222,29 +213,25 @@
 }
 
 .input-area {
+  width: 100%;
+  max-width: 85%;
+  margin: 1rem auto;
   padding: 1rem;
-  background: rgba(25, 23, 36, 0.95);
-  border-top: 1px solid rgba(106, 90, 205, 0.15);
-  backdrop-filter: blur(8px);
   display: flex;
-  gap: 0.75rem;
-  position: relative;
-  z-index: 1;
+  gap: 1rem;
   align-items: center;
-  border-radius: 0 0 16px 16px;
+  background: linear-gradient(135deg, rgba(75, 0, 130, 0.15), rgba(72, 61, 139, 0.15));
+  border-radius: 0.5rem;
 }
 
 .message-input {
   flex: 1;
-  background: rgba(35, 32, 52, 0.95);
-  border: 1px solid rgba(106, 90, 205, 0.25);
-  padding: 0.875rem 1.25rem;
-  border-radius: 24px;
-  color: #fff;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  font-family: 'Poppins Regular', sans-serif;
-  height: 48px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  border: 1px solid rgba(75, 0, 130, 0.3);
+  border-radius: 0.4rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
 }
 
 .message-input::placeholder {
@@ -504,6 +491,29 @@
   .cta-button {
     font-size: 4vw;
     min-width: 60vw;
+  }
+}
+
+/* Laptop/Desktop adjustments */
+@media (max-width: 1366px) {
+  .chat-container {
+    max-width: 80%;
+    padding: 1.2rem;
+  }
+
+  .input-area {
+    max-width: 80%;
+    padding: 0.8rem;
+  }
+
+  .message-input {
+    padding: 0.7rem 1rem;
+    font-size: 1.15rem;
+  }
+
+  .send-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
   }
 }
 
