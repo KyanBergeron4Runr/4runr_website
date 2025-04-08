@@ -431,8 +431,6 @@
   .top-nav .nav-items a {
     font-size: calc(1rem + 0.15vw);
     padding: 0.4vw 0.8vw;
-    color: #fff;
-    text-decoration: none;
     transition: color 0.3s ease;
   }
 
@@ -444,13 +442,11 @@
     background: linear-gradient(135deg, #6a5acd 0%, #5648b3 100%);
     padding: 0.6vw 1.2vw;
     border-radius: 0.4vw;
-    color: #fff;
     font-weight: 500;
   }
 
   .top-nav .nav-items .contact-button:hover {
     background: linear-gradient(135deg, #7b6bde 0%, #6759c4 100%);
-    color: #fff;
   }
 
   /* First CTA Section styles */
@@ -483,7 +479,6 @@
     font-size: calc(1.1rem + 0.2vw);
     border-radius: 0.6vw;
     background: linear-gradient(135deg, #6a5acd 0%, #5648b3 100%);
-    color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
     border: 1px solid rgba(106, 90, 205, 0.2);
