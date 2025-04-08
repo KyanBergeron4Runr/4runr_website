@@ -394,4 +394,105 @@
     padding: 20px 40px;
     font-size: 22px;
   }
+}
+
+/* Laptop/Medium Display Styles (1920x1080) */
+@media screen and (min-width: 1366px) and (max-width: 1920px) {
+  /* Base container styles */
+  .home-page .container,
+  .home-page .section-container,
+  .home-page .content-wrapper {
+    max-width: 85vw;
+    padding: 0 3vw;
+  }
+
+  /* Header styles */
+  .header-wrapper {
+    padding: 2vw 3vw;
+  }
+
+  .header__logo {
+    width: calc(180px + 2vw) !important;
+    height: auto !important;
+  }
+
+  .top-nav .nav-items {
+    gap: 2vw;
+  }
+
+  .top-nav .nav-items a {
+    font-size: calc(1rem + 0.2vw);
+  }
+
+  /* Services section styles */
+  .services-section .container {
+    max-width: 90vw;
+  }
+
+  .service-categories {
+    gap: 3vw;
+  }
+
+  .category-header h3 {
+    font-size: calc(1.5rem + 0.3vw);
+  }
+
+  .service h3, .service h4 {
+    font-size: calc(1.2rem + 0.2vw);
+  }
+
+  .service-details p {
+    font-size: calc(1rem + 0.1vw);
+    line-height: 1.6;
+  }
+
+  /* Results section */
+  .results-grid {
+    gap: 2vw;
+  }
+
+  .result-item .metric {
+    font-size: calc(2rem + 0.5vw);
+  }
+
+  .result-item .description {
+    font-size: calc(1rem + 0.2vw);
+  }
+
+  /* CTA sections */
+  .cta-section {
+    padding: 5vw 3vw;
+  }
+
+  .cta-section h2 {
+    font-size: calc(2rem + 0.5vw);
+  }
+
+  .cta-section p {
+    font-size: calc(1.1rem + 0.2vw);
+    max-width: 65vw;
+  }
+
+  .cta-button {
+    padding: 1.2vw 2.4vw;
+    font-size: calc(1rem + 0.3vw);
+    border-radius: 0.8vw;
+  }
+
+  /* General text adjustments */
+  .fine-print {
+    max-width: 55vw;
+    margin: 2vw auto;
+    font-size: calc(1rem + 0.2vw);
+  }
+
+  .section-divider {
+    height: 4vw;
+  }
+
+  /* Feature lists */
+  .feature-list li {
+    font-size: calc(1rem + 0.1vw);
+    margin-bottom: 1vw;
+  }
 } 
