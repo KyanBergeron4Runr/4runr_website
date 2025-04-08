@@ -1,7 +1,7 @@
 .services-cta {
   width: 100%;
   background: #0A0A0F;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,27 +11,36 @@
   max-width: 1200px;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 4rem;
+  align-items: flex-start;
 }
 
-.services-cta-title {
-  font-size: 3rem;
+.services-cta-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.services-cta-left h2 {
+  font-size: 3.5rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 2rem;
+  margin: 0;
   font-family: var(--font-heading);
   line-height: 1.2;
 }
 
+.services-cta-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .services-cta-text {
-  max-width: 800px;
-  margin: 0 auto 3rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .services-cta-text p {
-  color: rgba(255, 255, 255, 0.9);
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -45,7 +54,6 @@
 .services-cta-buttons {
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
 }
 
 .schedule-button,
@@ -59,6 +67,8 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
+  min-width: 180px;
+  text-align: center;
 }
 
 .schedule-button {
@@ -76,18 +86,39 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+  .services-cta {
+    padding: 4rem 2rem;
+  }
+
+  .services-cta-content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .services-cta-left {
+    min-width: unset;
+  }
+
+  .services-cta-left h2 {
+    font-size: 3rem;
+  }
+
+  .services-cta-right {
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
 @media (max-width: 768px) {
   .services-cta {
     padding: 3rem 1.5rem;
   }
 
-  .services-cta-title {
-    font-size: 2.25rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .services-cta-text {
-    margin-bottom: 2rem;
+  .services-cta-left h2 {
+    font-size: 2.5rem;
   }
 
   .services-cta-text p {
@@ -96,14 +127,12 @@
 
   .services-cta-buttons {
     flex-direction: column;
-    width: 100%;
-    max-width: 300px;
+    align-items: stretch;
   }
 
   .schedule-button,
   .chat-button {
     width: 100%;
-    text-align: center;
   }
 }
 
@@ -112,7 +141,7 @@
     padding: 2.5rem 1rem;
   }
 
-  .services-cta-title {
+  .services-cta-left h2 {
     font-size: 2rem;
   }
 
