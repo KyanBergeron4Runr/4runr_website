@@ -398,30 +398,71 @@
 
 /* Laptop/Medium Display Styles (1920x1080) */
 @media screen and (min-width: 1366px) and (max-width: 1920px) {
+  /* Header styles */
+  .header-wrapper {
+    padding: 1.5vw 3vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__logo {
+    width: calc(200px + 3vw) !important;
+    height: auto !important;
+    max-width: 300px;
+  }
+
+  .top-nav {
+    margin-left: auto;
+  }
+
+  .top-nav .nav-items {
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+  }
+
+  .top-nav .nav-items a {
+    font-size: calc(1.1rem + 0.2vw);
+    padding: 0.5vw 1vw;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .top-nav .nav-items a:hover {
+    color: #6a5acd;
+  }
+
+  .top-nav .nav-items .contact-button {
+    background: linear-gradient(135deg, #6a5acd 0%, #5648b3 100%);
+    padding: 0.8vw 1.5vw;
+    border-radius: 0.5vw;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .top-nav .nav-items .contact-button:hover {
+    background: linear-gradient(135deg, #7b6bde 0%, #6759c4 100%);
+    color: #fff;
+  }
+
+  /* Mobile header adjustments for laptop */
+  .header-mobile {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
   /* Base container styles */
   .home-page .container,
   .home-page .section-container,
   .home-page .content-wrapper {
     max-width: 85vw;
     padding: 0 3vw;
-  }
-
-  /* Header styles */
-  .header-wrapper {
-    padding: 2vw 3vw;
-  }
-
-  .header__logo {
-    width: calc(180px + 2vw) !important;
-    height: auto !important;
-  }
-
-  .top-nav .nav-items {
-    gap: 2vw;
-  }
-
-  .top-nav .nav-items a {
-    font-size: calc(1rem + 0.2vw);
   }
 
   /* Services section styles */
