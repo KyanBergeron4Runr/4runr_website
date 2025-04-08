@@ -130,10 +130,8 @@
 }
 
 .page-section {
-  min-height: 100vh;
   width: 100%;
-  padding: 6rem 2rem;
-  margin-bottom: 6rem;
+  padding: 4rem 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -145,6 +143,11 @@
 
 .page-section:last-child {
   margin-bottom: 0;
+}
+
+/* Special case for sections that need full height */
+.page-section.full-height {
+  min-height: 100vh;
 }
 
 .fine-print {
@@ -166,8 +169,7 @@
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .page-section {
-    padding: 4rem 1.5rem;
-    margin-bottom: 4rem;
+    padding: 3rem 1.5rem;
   }
 
   .fine-print {
@@ -182,8 +184,7 @@
 
 @media screen and (max-width: 480px) {
   .page-section {
-    padding: 3rem 1rem;
-    margin-bottom: 3rem;
+    padding: 2rem 1rem;
   }
 
   .fine-print {
