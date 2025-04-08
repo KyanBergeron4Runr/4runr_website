@@ -349,56 +349,9 @@
     margin: 0 1rem;
   }
 
-  .chat-container::before,
-  .chat-container::after {
-    border-radius: 20px;
-  }
-
-  .messages {
-    padding: 4vw;
-    gap: 3vw;
-  }
-
-  .messages::-webkit-scrollbar {
-    width: 1.5vw;
-  }
-
-  .messages::-webkit-scrollbar-track {
-    border-radius: 2vw;
-    margin: 2vw;
-  }
-
-  .messages::-webkit-scrollbar-thumb {
-    border-radius: 2vw;
-    border-width: 0.4vw;
-  }
-
-  .message {
-    max-width: 90%;
-    margin: 1.5vw 0;
-  }
-
   .message-bubble {
     padding: 1rem;
     font-size: 0.95rem;
-  }
-
-  .bot-message .message-bubble {
-    border-bottom-left-radius: 0.8vw;
-  }
-
-  .user-message .message-bubble {
-    border-bottom-right-radius: 0.8vw;
-  }
-
-  .typing-dots {
-    gap: 1vw;
-    min-width: 6vw;
-  }
-
-  .typing-dot {
-    width: 1.2vw;
-    height: 1.2vw;
   }
 
   .input-area {
@@ -417,26 +370,6 @@
     height: 44px;
     border-radius: 22px;
     font-size: 1.1rem;
-  }
-
-  .bottom-cta {
-    gap: 5vw;
-    margin-top: 5vw;
-    width: 100%;
-  }
-
-  .bottom-text {
-    font-size: 3.8vw;
-    max-width: 90%;
-    line-height: 1.6;
-  }
-
-  .cta-button {
-    padding: 3.5vw 8vw;
-    border-radius: 2vw;
-    font-size: 3.8vw;
-    min-width: 50vw;
-    height: 12vw;
   }
 }
 
@@ -462,24 +395,6 @@
     margin: 0 0.5rem;
   }
 
-  .chat-container::before,
-  .chat-container::after {
-    border-radius: 16px;
-  }
-
-  .message {
-    max-width: 90%;
-  }
-
-  .message-bubble {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .input-area {
-    padding: 0.5rem;
-  }
-
   .message-input {
     height: 40px;
     font-size: 0.875rem;
@@ -490,38 +405,6 @@
     min-width: 40px;
     height: 40px;
     border-radius: 20px;
-    font-size: 1rem;
-  }
-
-  .bottom-text {
-    font-size: 4vw;
-  }
-
-  .cta-button {
-    font-size: 4vw;
-    min-width: 60vw;
-  }
-}
-
-/* Laptop/Desktop adjustments */
-@media (max-width: 1366px) {
-  .chat-container {
-    max-width: 80%;
-    padding: 1.2rem;
-  }
-
-  .input-area {
-    max-width: 80%;
-    padding: 0.8rem;
-  }
-
-  .message-input {
-    padding: 0.7rem 1rem;
-    font-size: 1.15rem;
-  }
-
-  .send-button {
-    padding: 0.7rem 1.2rem;
     font-size: 1rem;
   }
 }
