@@ -42,7 +42,7 @@
 .title {
   font-family: var(--font-heading);
   color: #fff;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 2.5vw, 3rem);
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(106, 90, 205, 0.2);
   margin-bottom: 1rem;
@@ -56,7 +56,7 @@
 .subtitle {
   font-family: var(--font-sans);
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.125rem;
+  font-size: clamp(1.2rem, 1.4vw, 1.6rem);
   font-weight: 400;
   text-align: center;
   max-width: 600px;
@@ -66,7 +66,7 @@
 
 .chat-container {
   width: 100%;
-  max-width: 85%;
+  max-width: 75%;
   margin: 0 auto;
   padding: 1.5rem;
   background: linear-gradient(135deg, rgba(75, 0, 130, 0.1), rgba(72, 61, 139, 0.1));
@@ -153,7 +153,7 @@
 .message-bubble {
   padding: 1.25rem;
   border-radius: 16px;
-  font-size: 1rem;
+  font-size: clamp(1.1rem, 1.2vw, 1.4rem);
   line-height: 1.6;
   background: rgba(106, 90, 205, 0.1);
   color: #fff;
@@ -227,7 +227,7 @@
 .message-input {
   flex: 1;
   padding: 0.8rem 1.2rem;
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.2vw, 1.4rem);
   border: 1px solid rgba(75, 0, 130, 0.3);
   border-radius: 0.4rem;
   background: rgba(0, 0, 0, 0.7);
