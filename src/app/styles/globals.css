@@ -3,10 +3,10 @@
   --font-heading: 'Poppins', sans-serif;
   --font-sans: 'Poppins Regular', sans-serif;
   
-  /* Heading sizes - Increased for 1920x1080 */
-  --h1-size: calc(48 / 1920 * 100vw);
-  --h2-size: calc(36 / 1920 * 100vw);
-  --h3-size: calc(28 / 1920 * 100vw);
+  /* Heading sizes */
+  --h1-size: calc(32 / 1920 * 100vw);
+  --h2-size: calc(28 / 1920 * 100vw);
+  --h3-size: calc(24 / 1920 * 100vw);
   
   /* Font weights */
   --weight-h1: 600;
@@ -19,9 +19,9 @@
   --line-height-h3: 1.4;
   
   /* Text sizes */
-  --text-body: calc(18 / 1920 * 100vw);
-  --text-small: calc(16 / 1920 * 100vw);
-  --text-button: calc(18 / 1920 * 100vw);
+  --text-body: calc(16 / 1920 * 100vw);
+  --text-small: calc(14 / 1920 * 100vw);
+  --text-button: calc(16 / 1920 * 100vw);
   
   /* Mobile heading sizes */
   --mobile-h1-size: 24px;
@@ -49,6 +49,19 @@ h3 {
   font-size: var(--h3-size);
   font-weight: var(--weight-h3);
   line-height: var(--line-height-h3);
+}
+
+/* Specific styles for 1920x1080 display */
+@media screen and (min-width: 1920px) and (max-width: 1920px), 
+       screen and (min-height: 1080px) and (max-height: 1080px) {
+  :root {
+    --h1-size: 48px;
+    --h2-size: 36px;
+    --h3-size: 28px;
+    --text-body: 18px;
+    --text-small: 16px;
+    --text-button: 18px;
+  }
 }
 
 @media (max-width: 768px) {
