@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 100px;
   z-index: 1;
   font-family: var(--font-sans);
   margin: 0;
@@ -44,7 +44,7 @@
 .section-title {
   width: 100%;
   text-align: center;
-  margin: 1rem 0 2rem 0;
+  margin: 2rem 0 3rem 0;
   padding: 0;
   position: relative;
   z-index: 1;
@@ -55,7 +55,7 @@
   font-weight: 600;
   color: #fff;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -66,7 +66,7 @@
 .main-content {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2rem 4rem 2rem;
+  padding: 2rem 2rem 6rem 2rem;
   flex: 1;
   position: relative;
   z-index: 1;
@@ -80,7 +80,7 @@
   font-family: var(--font-sans);
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   max-width: 900px;
 }
 
@@ -91,7 +91,8 @@
   text-align: center;
   font-style: italic;
   opacity: 0.9;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
 }
 
 @media screen and (max-width: 1400px) {
@@ -110,51 +111,61 @@
 }
 
 @media screen and (max-width: 768px) {
+  .about-section {
+    padding-top: 80px;
+  }
+
+  .section-title {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem 4rem 1rem;
+  }
+
+  .main-content p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+  }
+
+  .ceo-attribution {
+    font-size: 1rem;
+    margin-top: 3rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-section {
+    padding-top: 60px;
+  }
+
   .section-title {
     margin: 1rem 0 1.5rem 0;
   }
 
   .section-title h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .main-content {
-    padding: 0 1rem 3rem 1rem;
-  }
-
-  .main-content p {
-    font-size: 1.15rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .ceo-attribution {
-    font-size: 1rem;
-    margin-top: 2rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .section-title {
-    margin: 0.75rem 0 1.25rem 0;
-  }
-
-  .section-title h2 {
     font-size: 2rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .main-content {
-    padding: 0 1rem 2rem 1rem;
+    padding: 1rem 1rem 3rem 1rem;
   }
 
   .main-content p {
     font-size: 1.1rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
   .ceo-attribution {
     font-size: 0.95rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
   }
 } 
