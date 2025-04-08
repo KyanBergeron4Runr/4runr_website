@@ -17,6 +17,8 @@
   width: 100%;
   margin: 0;
   padding: 4rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* First section special spacing */
@@ -40,13 +42,6 @@
   position: relative;
 }
 
-/* Ensure proper stacking context */
-.home-page section {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
-
 /* Reset any potential conflicting styles */
 .home-page .cta-section,
 .home-page .slogan-section,
@@ -66,8 +61,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
+  padding: 4rem 0 !important;
+  background: #000000;
 }
 
 /* Fix for specific sections that might cause issues */
@@ -79,6 +74,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* CSS Custom Properties for consistent spacing */
@@ -88,47 +87,7 @@
   --section-spacing: 6rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .home-page > * {
-    padding: 3rem 0;
-  }
-
-  .home-page .container,
-  .home-page .section-container,
-  .home-page .content-wrapper {
-    padding: 0 1.5rem;
-  }
-
-  .home-page > *:first-child {
-    padding-top: 2rem;
-  }
-
-  .home-page > *:last-child {
-    padding-bottom: 4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .home-page > * {
-    padding: 2rem 0;
-  }
-
-  .home-page .container,
-  .home-page .section-container,
-  .home-page .content-wrapper {
-    padding: 0 1rem;
-  }
-
-  .home-page > *:first-child {
-    padding-top: 1.5rem;
-  }
-
-  .home-page > *:last-child {
-    padding-bottom: 3rem;
-  }
-}
-
+/* Page section styles */
 .page-section {
   width: 100%;
   padding: 4rem 2rem;
@@ -139,10 +98,6 @@
   justify-content: center;
   background: #000000;
   z-index: 1;
-}
-
-.page-section:last-child {
-  margin-bottom: 0;
 }
 
 /* Special case for sections that need full height */
@@ -233,5 +188,70 @@
   .cta-button {
     padding: 0.875rem 1.75rem;
     font-size: 1rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .home-page > * {
+    padding: 3rem 0;
+  }
+
+  .home-page .container,
+  .home-page .section-container,
+  .home-page .content-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .home-page > *:first-child {
+    padding-top: 2rem;
+  }
+
+  .home-page > *:last-child {
+    padding-bottom: 4rem;
+  }
+
+  .page-section {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page > * {
+    padding: 2rem 0;
+  }
+
+  .home-page .container,
+  .home-page .section-container,
+  .home-page .content-wrapper {
+    padding: 0 1rem;
+  }
+
+  .home-page > *:first-child {
+    padding-top: 1.5rem;
+  }
+
+  .home-page > *:last-child {
+    padding-bottom: 3rem;
+  }
+
+  .page-section {
+    padding: 2rem 1rem;
+  }
+
+  .fine-print {
+    font-size: 1rem;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .fine-print {
+    font-size: 0.95rem;
+    margin: 1rem auto;
   }
 } 
