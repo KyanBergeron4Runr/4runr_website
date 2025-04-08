@@ -192,23 +192,6 @@ export default function ServicesSection() {
               understand your unique challenges and develop solutions that deliver measurable results.
             </p>
           </div>
-
-          <div className="cta-section">
-            <h3>Ready to Transform Your Business with AI?</h3>
-            <p>
-              Get instant insights about AI integration for your business by chatting with our 4Runr AI Assistant. 
-              Our intelligent assistant can provide detailed information about our services, answer your specific questions, 
-              and even create a customized blueprint showing how we could integrate AI into your existing systems.
-            </p>
-            <p>
-              Whether you're looking to automate processes, enhance analytics, or build custom AI solutions, 
-              our AI Assistant is available 24/7 to help you understand the possibilities and get started on your AI journey.
-            </p>
-            <div className="cta-buttons">
-              <Link href="/contact" className="cta-button">Schedule a Call</Link>
-              <Link href="/contact" className="cta-button cta-button-secondary">Talk to AI Assistant</Link>
-            </div>
-          </div>
         </div>
       </div>
     </section>
