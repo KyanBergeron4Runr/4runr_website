@@ -480,105 +480,63 @@
 /* Desktop styles (above 1366px) */
 @media screen and (min-width: 1367px) {
   .chat-container {
-    max-width: 75%;
-    padding: 1.5vw;
-  }
-
-  .header {
-    max-width: 60vw;
-    padding: 2vw 1.5vw;
-    gap: 1vw;
-    margin-bottom: 2vw;
-  }
-
-  .title {
-    font-size: var(--h1-size);
-    margin-bottom: 1vw;
-    line-height: var(--line-height-h1);
-  }
-
-  .subtitle {
-    font-size: var(--text-body);
-    max-width: 45vw;
-    line-height: var(--line-height-body);
-  }
-}
-
-/* Specific styles for 1920x1080 display */
-@media screen and (width: 1920px) and (height: 1080px) {
-  .chat-container {
-    max-width: 1200px;
-    min-height: 700px;
-    padding: 24px;
+    max-width: 800px !important;
+    min-height: 550px !important;
+    padding: 25px !important;
   }
   
-  .title {
-    font-size: 48px;
-    margin-bottom: 16px;
-  }
-  
-  .subtitle {
-    font-size: 24px;
-    max-width: 800px;
+  .messages {
+    padding: 20px !important;
+    gap: 18px !important;
   }
   
   .message-bubble {
-    font-size: 20px;
-    padding: 24px;
-    max-width: 70%;
+    font-size: 18px !important;
+    padding: 18px !important;
+    max-width: 75% !important;
+  }
+  
+  .input-area {
+    max-width: 90% !important;
+    padding: 18px !important;
+    margin-top: 18px !important;
   }
   
   .message-input {
-    font-size: 20px;
-    padding: 16px 24px;
-    height: 60px;
+    height: 50px !important;
+    font-size: 16px !important;
+    padding: 15px 18px !important;
   }
   
-  .input-area {
-    max-width: 1000px;
-    padding: 20px;
-    margin-top: 24px;
-  }
-
   .send-button {
-    font-size: 20px;
-    min-width: 60px;
-    height: 60px;
-  }
-
-  .bottom-text {
-    font-size: 20px;
-    max-width: 800px;
-  }
-
-  .messages {
-    padding: 24px;
-    gap: 20px;
+    min-width: 50px !important;
+    height: 50px !important;
+    font-size: 16px !important;
   }
 }
 
-/* Laptop and larger displays */
-@media screen and (min-width: 1024px) {
+/* Specific styles for larger desktop screens */
+@media screen and (min-width: 1920px) {
   .chat-container {
-    max-width: 1200px;
-    min-height: 700px;
-    padding: 24px;
+    max-width: 950px !important;
+    min-height: 650px !important;
+    padding: 30px !important;
   }
   
-  .messages {
-    padding: 24px;
-    gap: 20px;
+  .message-bubble {
+    font-size: 20px !important;
+    padding: 20px !important;
   }
   
-  .input-area {
-    max-width: 1000px;
-    padding: 20px;
-    margin-top: 24px;
+  .message-input {
+    height: 55px !important;
+    font-size: 18px !important;
   }
-
+  
   .send-button {
-    min-width: 60px;
-    height: 60px;
+    min-width: 55px !important;
+    height: 55px !important;
+    font-size: 18px !important;
   }
 }
 
