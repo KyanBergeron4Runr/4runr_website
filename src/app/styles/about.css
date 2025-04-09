@@ -106,7 +106,7 @@
   }
 
   .section-title h2 {
-    font-size: calc(2.5rem + 1.5vw); /* Base size + scaling */
+    font-size: calc(2.6rem + 1.8vw); /* Increased base and vw factor */
     margin-bottom: calc(1.5rem + 0.5vw);
     max-width: calc(700px + 15vw);
   }
@@ -117,13 +117,13 @@
   }
 
   .main-content p {
-    font-size: calc(1.1rem + 0.4vw); /* Base size + scaling */
+    font-size: calc(1.1rem + 0.5vw); /* Increased vw factor */
     margin-bottom: calc(2.5rem + 0.5vw);
     max-width: calc(700px + 15vw);
   }
 
   .ceo-attribution {
-    font-size: calc(1rem + 0.2vw); /* Base size + scaling */
+    font-size: calc(1rem + 0.25vw); /* Increased vw factor */
     margin-top: calc(3.5rem + 0.5vw);
     padding-bottom: calc(1.5rem + 0.5vw);
   }

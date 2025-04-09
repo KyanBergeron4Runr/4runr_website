@@ -99,22 +99,22 @@
   }
 
   .terms-title h1 {
-    font-size: calc(2rem + 1vw); /* Base size + scaling */
+    font-size: calc(2.1rem + 1.2vw); /* Increased base and vw factor */
     margin-bottom: calc(15px + 0.5vw);
   }
 
   .last-updated {
-    font-size: calc(0.9rem + 0.1vw); /* Base size + scaling */
+    font-size: calc(0.9rem + 0.15vw); /* Increased vw factor */
     margin-bottom: calc(20px + 0.5vw);
   }
 
   .terms-content {
-    font-size: calc(1rem + 0.1vw); /* Base size + scaling */
+    font-size: calc(1rem + 0.15vw); /* Increased vw factor */
     line-height: 1.7;
   }
 
   .terms-content h2 {
-    font-size: calc(1.3rem + 0.3vw); /* Base size + scaling */
+    font-size: calc(1.4rem + 0.4vw); /* Increased base and vw factor */
     margin-top: calc(20px + 0.5vw);
     margin-bottom: calc(10px + 0.3vw);
   }

@@ -270,14 +270,14 @@
   }
 
   .fine-print {
-    font-size: calc(0.9rem + 0.1vw);
+    font-size: calc(0.9rem + 0.15vw);
     max-width: calc(600px + 10vw);
     margin: calc(24px + 0.5vw) auto;
   }
   
   .cta-button {
     padding: calc(14px + 0.3vw) calc(28px + 0.6vw);
-    font-size: calc(1rem + 0.2vw);
+    font-size: calc(1rem + 0.25vw);
     border-radius: calc(8px + 0.2vw);
   }
 
@@ -290,12 +290,12 @@
   }
 
   .header h1 {
-    font-size: calc(2.2rem + 1.2vw);
+    font-size: calc(2.3rem + 1.5vw);
     margin-bottom: calc(24px + 0.5vw);
   }
 
   .header p {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(1.1rem + 0.4vw);
     max-width: calc(600px + 15vw);
   }
 
@@ -304,14 +304,44 @@
   }
 
   .cta-section h2 {
-    font-size: calc(2rem + 1vw);
+    font-size: calc(2.1rem + 1.2vw);
     margin-bottom: calc(24px + 0.5vw);
   }
 
   .cta-section p {
-    font-size: calc(1.1rem + 0.2vw);
+    font-size: calc(1.1rem + 0.3vw);
     max-width: calc(600px + 15vw);
     margin-bottom: calc(32px + 0.8vw);
+  }
+
+  /* Add scaling for other potential text elements if necessary */
+  /* Example for ServicesSection text if it exists in home.css */
+  .category-header h3 {
+    font-size: calc(1.6rem + 0.4vw);
+  }
+
+  .service h3, .service h4 {
+    font-size: calc(1.3rem + 0.3vw);
+  }
+
+  .service-details p {
+    font-size: calc(1rem + 0.15vw);
+  }
+  
+  .result-item .metric {
+    font-size: calc(2.2rem + 0.6vw);
+  }
+
+  .result-item .description {
+    font-size: calc(1.1rem + 0.25vw);
+  }
+  
+  .feature-list li {
+    font-size: calc(1rem + 0.15vw);
+  }
+  
+  .top-nav .nav-items a {
+    font-size: calc(1rem + 0.2vw);
   }
 }
 
@@ -398,12 +428,12 @@
   }
 
   .header h1 {
-    font-size: calc(2.2rem + 1.2vw);
+    font-size: calc(2.3rem + 1.5vw);
     margin-bottom: calc(24px + 0.5vw);
   }
 
   .header p {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(1.1rem + 0.4vw);
     max-width: calc(600px + 15vw);
   }
 
@@ -412,19 +442,19 @@
   }
 
   .cta-section h2 {
-    font-size: calc(2rem + 1vw);
+    font-size: calc(2.1rem + 1.2vw);
     margin-bottom: calc(24px + 0.5vw);
   }
 
   .cta-section p {
-    font-size: calc(1.1rem + 0.2vw);
+    font-size: calc(1.1rem + 0.3vw);
     max-width: calc(600px + 15vw);
     margin-bottom: calc(32px + 0.8vw);
   }
 
   .cta-button {
     padding: calc(14px + 0.3vw) calc(28px + 0.6vw);
-    font-size: calc(1rem + 0.2vw);
+    font-size: calc(1rem + 0.25vw);
     border-radius: calc(8px + 0.2vw);
   }
 }
