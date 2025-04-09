@@ -3,7 +3,7 @@
   background-color: #000000;
   color: #fff;
   text-align: center;
-  padding: 2vw 0;
+  padding: 3vw 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,12 +16,13 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  padding: 2vw 0;
 }
 
 .marquee-inner {
   display: flex;
   width: fit-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 80s linear infinite;
 }
 
 @keyframes marquee {
@@ -32,7 +33,7 @@
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 2vw;
+  gap: 6vw;
 }
 
 .logo-container {
@@ -40,17 +41,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 1vw;
 }
 
 .logo {
-  height: 5vw;
+  height: 6vw;
+  max-height: 80px;
   width: auto;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
 }
 
 .fine-print {
   font-size: 1vw;
-  margin-top: 1vw;
+  margin-top: 2vw;
 }
 
 /* Tablet styles */
