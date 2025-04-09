@@ -416,26 +416,39 @@
 /* Update text sizes for the What is 4Runr section */
 @media screen and (min-width: 1367px) {
   .what-we-do .titles h2 {
-    font-size: calc(var(--h2-size) * 1.15);
+    font-size: calc(var(--h2-size) * 1.3);
   }
 
   .heading h3, 
   .heading p {
-    font-size: calc(var(--h3-size) * 1.2);
+    font-size: calc(var(--h3-size) * 1.5);
+    min-width: calc(200 / 1920 * 100vw);
+    margin-bottom: 5px;
   }
   
   .rectangle-content p {
-    font-size: calc(var(--text-body) * 1.15);
+    font-size: 24px;
     line-height: 1.5;
+    max-width: 80%;
+  }
+
+  .rectangles {
+    height: calc(320 / 1920 * 100vw);
   }
   
   .fine-print {
-    font-size: calc(var(--text-small) * 1.3);
+    font-size: 20px;
     line-height: 1.5;
   }
   
   .fine-print-line {
     display: block;
     margin-bottom: 0.5vw;
+  }
+
+  .cta-button {
+    font-size: 20px;
+    min-width: 12vw;
+    height: 3.5vw;
   }
 } 

@@ -103,7 +103,7 @@ export default function WhatIs4Runr() {
                 className={`heading ${index === currentIndex ? 'active' : ''}`}
                 onMouseEnter={() => setCurrentIndex(index)}
               >
-                <p>{topic.title}</p>
+                <h3>{topic.title}</h3>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function WhatIs4Runr() {
               </svg>
             </button>
             <div className="current-title">
-              <p className="mobile-title">{topics[currentIndex].title}</p>
+              <h3>{topics[currentIndex].title}</h3>
             </div>
             <button className="nav-arrow next-btn" onClick={handleNext} aria-label="Next topic">
               <svg
