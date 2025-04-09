@@ -3,7 +3,7 @@
   display: flex;
   width: 100%;
   background: #000000;
-  min-height: 6.5vw;
+  min-height: 120px !important;
   position: relative;
   align-items: center;
   margin-top: -1.042vw;
@@ -13,7 +13,7 @@
   flex: 0 0 26.042vw;
   background: #000000;
   position: relative;
-  min-height: 10vw;
+  min-height: 120px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,8 +26,8 @@
 }
 
 .header-desktop .header__logo {
-  height: 10vw;
-  width: auto;
+  height: 100px !important;
+  width: auto !important;
   object-fit: contain;
   max-width: 90%;
 }
@@ -45,14 +45,14 @@
 .top-nav .nav-items {
   display: flex;
   align-items: center;
-  gap: 2.5vw;
+  gap: 30px !important;
   transform: translateX(-10.417vw);
 }
 
 .top-nav a {
   color: white;
   text-decoration: none;
-  font-size: calc(1.2rem + 0.3vw);
+  font-size: 18px !important;
   font-family: var(--font-heading);
   transition: transform 0.3s ease;
   white-space: nowrap;
@@ -65,28 +65,28 @@
 }
 
 .top-nav .contact-button {
-  padding: 1.2vw 2vw;
+  padding: 15px 25px !important;
   color: #000000;
   background: white;
-  border-radius: 0.4vw;
-  font-size: calc(1.2rem + 0.2vw);
+  border-radius: 5px !important;
+  font-size: 18px !important;
   font-weight: 700;
 }
 
 /* Laptop displays */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
   .header-desktop .header__logo {
-    height: 11vw;
+    height: 100px !important;
   }
   .top-nav a {
-    font-size: calc(1.1rem + 0.2vw);
+    font-size: 18px !important;
   }
   .top-nav .contact-button {
-    font-size: calc(1.1rem + 0.2vw);
-    padding: 1.2vw 2vw;
+    font-size: 18px !important;
+    padding: 15px 25px !important;
   }
   .header-wrapper {
-    min-height: 7.5vw;
+    min-height: 120px !important;
   }
 }
 

@@ -28,8 +28,8 @@ export default function Header() {
               <Image
                 src="https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_67.png?v=1738103105"
                 alt="4Runr"
-                width={200}
-                height={80}
+                width={300}
+                height={120}
                 className="header__logo"
                 priority
               />
