@@ -19,23 +19,26 @@
   min-height: 60vh;
 }
 
+/* Simple marquee implementation */
 .marquee {
   position: relative;
   width: 100%;
   overflow: hidden;
   padding: 5vw 0;
-  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 5%, #000 95%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 2%, #000 98%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 2%, #000 98%, transparent 100%);
 }
 
 .marquee-inner {
   display: flex;
   width: fit-content;
   will-change: transform;
+  /* Two separate animations to prevent lag */
   animation: primary-animation 60s linear infinite;
   -webkit-animation: primary-animation 60s linear infinite;
 }
 
+/* Animation definitions */
 @keyframes primary-animation {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -46,6 +49,7 @@
   100% { -webkit-transform: translateX(-50%); }
 }
 
+/* Logo styles */
 .logo-group {
   display: flex;
   align-items: center;
@@ -54,20 +58,33 @@
 
 .logo-container {
   min-width: 2400px;
+  padding: 0 calc(var(--logo-gap) / 2);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0 var(--logo-gap);
+  align-items: center;
 }
 
 .logo {
-  width: auto;
   height: var(--logo-height);
-  max-width: none;
+  width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.7;
   transition: opacity 0.3s ease;
+  /* Hardware acceleration properties */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .fine-print {
@@ -90,6 +107,7 @@
   margin-bottom: 1vw;
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
   :root {
     --section-padding-v: 6vw;
@@ -100,6 +118,11 @@
 
   .slogan-section {
     min-height: 55vh;
+  }
+
+  .marquee-inner {
+    animation: primary-animation 50s linear infinite;
+    -webkit-animation: primary-animation 50s linear infinite;
   }
 
   .logo-container {
@@ -126,6 +149,11 @@
 
   .slogan-section {
     min-height: 50vh;
+  }
+
+  .marquee-inner {
+    animation: primary-animation 40s linear infinite;
+    -webkit-animation: primary-animation 40s linear infinite;
   }
 
   .logo-container {
