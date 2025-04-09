@@ -1,8 +1,8 @@
 :root {
   --section-padding-v: 4vw;
   --section-padding-h: 3vw;
-  --logo-height: 30vw;
-  --logo-gap: 12vw;
+  --logo-height: 45vw;
+  --logo-gap: 6vw;
 }
 
 .slogan-section {
@@ -16,7 +16,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  min-height: 40vh;
+  min-height: 50vh;
 }
 
 .marquee {
@@ -32,8 +32,8 @@
   display: flex;
   width: fit-content;
   will-change: transform;
-  animation: primary-animation 40s linear infinite;
-  -webkit-animation: primary-animation 40s linear infinite;
+  animation: primary-animation 50s linear infinite;
+  -webkit-animation: primary-animation 50s linear infinite;
 }
 
 @keyframes primary-animation {
@@ -53,7 +53,7 @@
 }
 
 .logo-container {
-  min-width: 1200px;
+  min-width: 1800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +61,7 @@
 }
 
 .logo {
-  max-width: 1200px;
+  max-width: 1800px;
   height: var(--logo-height);
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -93,20 +93,20 @@
   :root {
     --section-padding-v: 6vw;
     --section-padding-h: 4vw;
-    --logo-height: 35vw;
-    --logo-gap: 15vw;
+    --logo-height: 50vw;
+    --logo-gap: 8vw;
   }
 
   .slogan-section {
-    min-height: 35vh;
+    min-height: 45vh;
   }
 
   .logo-container {
-    min-width: 800px;
+    min-width: 1200px;
   }
 
   .logo {
-    max-width: 800px;
+    max-width: 1200px;
   }
 
   .fine-print {
@@ -123,20 +123,20 @@
   :root {
     --section-padding-v: 8vw;
     --section-padding-h: 5vw;
-    --logo-height: 40vw;
-    --logo-gap: 18vw;
+    --logo-height: 55vw;
+    --logo-gap: 10vw;
   }
 
   .slogan-section {
-    min-height: 30vh;
+    min-height: 40vh;
   }
 
   .logo-container {
-    min-width: 500px;
+    min-width: 800px;
   }
 
   .logo {
-    max-width: 500px;
+    max-width: 800px;
   }
 
   .fine-print {
