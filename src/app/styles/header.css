@@ -27,7 +27,7 @@
 
 .header-desktop .header__logo {
   height: auto !important;
-  width: 170px !important;
+  width: 11vw !important;
   max-width: none !important;
   object-fit: contain !important;
   position: relative !important;
@@ -97,7 +97,7 @@
   }
   
   .header-desktop .header__logo {
-    width: 80px !important;
+    width: 70px !important;
     height: auto !important;
     position: relative !important;
     z-index: 10 !important;
@@ -116,6 +116,27 @@
   .top-nav .contact-button {
     font-size: 15px !important;
     padding: 8px 16px !important;
+  }
+}
+
+/* Desktop Large screens */
+@media screen and (min-width: 1537px) {
+  .header-wrapper {
+    min-height: 80px !important;
+    transform: translateY(-8px) !important;
+  }
+  
+  .header-desktop .header__logo {
+    width: 9vw !important; /* Reduced from 11vw */
+  }
+  
+  .top-nav a {
+    font-size: 24px !important;
+  }
+  
+  .top-nav .contact-button {
+    font-size: 24px !important;
+    padding: 20px 34px !important;
   }
 }
 
