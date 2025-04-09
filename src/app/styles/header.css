@@ -3,7 +3,7 @@
   display: flex;
   width: 100%;
   background: #000000;
-  min-height: 5.208vw;
+  min-height: 6.5vw;
   position: relative;
   align-items: center;
   margin-top: -1.042vw;
@@ -13,7 +13,7 @@
   flex: 0 0 26.042vw;
   background: #000000;
   position: relative;
-  min-height: 8.333vw;
+  min-height: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,10 +26,10 @@
 }
 
 .header-desktop .header__logo {
-  height: 7vw;
+  height: 10vw;
   width: auto;
   object-fit: contain;
-  max-width: 85%;
+  max-width: 90%;
 }
 
 .top-nav {
@@ -45,14 +45,14 @@
 .top-nav .nav-items {
   display: flex;
   align-items: center;
-  gap: 1.875vw;
+  gap: 2.5vw;
   transform: translateX(-10.417vw);
 }
 
 .top-nav a {
   color: white;
   text-decoration: none;
-  font-size: var(--text-body);
+  font-size: calc(1.2rem + 0.3vw);
   font-family: var(--font-heading);
   transition: transform 0.3s ease;
   white-space: nowrap;
@@ -65,28 +65,28 @@
 }
 
 .top-nav .contact-button {
-  padding: 0.825vw 1.242vw;
+  padding: 1.2vw 2vw;
   color: #000000;
   background: white;
-  border-radius: 0.313vw;
-  font-size: var(--text-button);
+  border-radius: 0.4vw;
+  font-size: calc(1.2rem + 0.2vw);
   font-weight: 700;
 }
 
 /* Laptop displays */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
   .header-desktop .header__logo {
-    height: 9vw;
+    height: 11vw;
   }
   .top-nav a {
-    font-size: 1.138vw;
+    font-size: calc(1.1rem + 0.2vw);
   }
   .top-nav .contact-button {
-    font-size: 1.138vw;
-    padding: 1.033vw 1.554vw;
+    font-size: calc(1.1rem + 0.2vw);
+    padding: 1.2vw 2vw;
   }
   .header-wrapper {
-    min-height: 6.25vw;
+    min-height: 7.5vw;
   }
 }
 
