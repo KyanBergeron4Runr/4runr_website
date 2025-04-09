@@ -90,53 +90,52 @@
 /* Scaling for Laptops/Desktops */
 @media screen and (min-width: 1024px) {
   .terms-container {
-    max-width: calc(600px + 25vw); /* Base width + scaling */
-    padding: 0 calc(20px + 1vw); /* Base padding + scaling */
+    max-width: calc(550px + 8vw);
+    padding: calc(1.2rem + 0.3vw);
   }
 
   .terms-title {
-    margin-bottom: calc(30px + 1vw);
+    margin-bottom: calc(1.5rem + 0.3vw);
   }
 
   .terms-title h1 {
-    font-size: calc(2.1rem + 1.2vw); /* Increased base and vw factor */
-    margin-bottom: calc(15px + 0.5vw);
+    font-size: calc(1.8rem + 0.5vw);
+    margin-bottom: calc(0.8rem + 0.2vw);
   }
 
   .last-updated {
-    font-size: calc(0.9rem + 0.15vw); /* Increased vw factor */
-    margin-bottom: calc(20px + 0.5vw);
+    font-size: calc(0.85rem + 0.08vw);
+    margin-bottom: calc(1.2rem + 0.2vw);
   }
 
   .terms-content {
-    font-size: calc(1rem + 0.15vw); /* Increased vw factor */
-    line-height: 1.7;
+    font-size: calc(0.95rem + 0.1vw);
+    line-height: 1.6;
   }
 
   .terms-content h2 {
-    font-size: calc(1.4rem + 0.4vw); /* Increased base and vw factor */
-    margin-top: calc(20px + 0.5vw);
-    margin-bottom: calc(10px + 0.3vw);
+    font-size: calc(1.2rem + 0.15vw);
+    margin: calc(1.5rem + 0.2vw) 0 calc(0.8rem + 0.15vw) 0;
   }
 
   .terms-content p {
-    margin-bottom: calc(15px + 0.5vw);
+    margin-bottom: calc(1.2rem + 0.15vw);
   }
 
   .terms-content ul {
-    padding-left: calc(20px + 0.5vw);
-    margin-bottom: calc(15px + 0.5vw);
+    padding: calc(0.6rem + 0.15vw) 0;
+    margin-bottom: calc(1.2rem + 0.15vw);
   }
 
   .terms-content li {
-    margin-bottom: calc(5px + 0.2vw);
-    padding-left: calc(5px + 0.2vw);
+    margin-bottom: calc(0.6rem + 0.15vw);
+    padding-left: calc(1.2rem + 0.2vw);
   }
 
   .contact-info {
-    margin-top: calc(30px + 1vw);
-    padding: calc(20px + 0.5vw);
-    border-radius: calc(6px + 0.2vw);
+    margin-top: calc(1.5rem + 0.3vw);
+    padding: calc(1.2rem + 0.2vw);
+    border-radius: calc(3px + 0.08vw);
   }
 }
 

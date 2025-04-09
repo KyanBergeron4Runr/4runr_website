@@ -261,169 +261,169 @@
   .home-page .container,
   .home-page .section-container,
   .home-page .content-wrapper {
-    max-width: calc(1200px + 10vw);
-    padding: 0 calc(2rem + 1vw);
+    max-width: calc(900px + 8vw);
+    padding: 0 calc(1.5rem + 0.3vw);
   }
   
   .home-page > * {
-    padding: calc(4rem + 1vw) 0;
+    padding: calc(2.5rem + 0.4vw) 0;
   }
 
   .page-section {
-    padding: calc(4vw + 1rem) calc(2vw + 1rem);
+    padding: calc(1.5rem + 0.5vw) calc(1rem + 0.3vw);
   }
 
   /* Benefits Section Scaling */
   .benefits-section .container {
-    max-width: calc(1200px + 10vw);
-    padding: 0 calc(2rem + 1vw);
+    max-width: calc(900px + 8vw);
+    padding: 0 calc(1.5rem + 0.3vw);
   }
 
   .benefits-section .section-title h2 {
-    font-size: calc(2.5rem + 1.5vw);
-    margin-bottom: calc(3rem + 1vw);
+    font-size: calc(2rem + 0.5vw);
+    margin-bottom: calc(1.5rem + 0.3vw);
   }
 
   .benefit-item {
-    padding: calc(2rem + 1vw);
-    margin-bottom: calc(2rem + 1vw);
+    padding: calc(1.2rem + 0.3vw);
+    margin-bottom: calc(1.2rem + 0.3vw);
   }
 
   .benefit-bg h3 {
-    font-size: calc(1.8rem + 0.5vw);
-    margin-bottom: calc(1rem + 0.5vw);
+    font-size: calc(1.4rem + 0.2vw);
+    margin-bottom: calc(0.6rem + 0.2vw);
   }
 
   .benefit-bg p {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(0.95rem + 0.1vw);
     line-height: 1.6;
   }
 
   .benefit-items {
-    gap: calc(2rem + 1vw);
+    gap: calc(1.2rem + 0.3vw);
   }
 
   .button-group {
-    margin-top: calc(3rem + 1vw);
-    gap: calc(2rem + 0.5vw);
+    margin-top: calc(1.5rem + 0.3vw);
+    gap: calc(1.2rem + 0.2vw);
   }
 
   .btn,
   .btn-primary,
   .btn-secondary {
-    padding: calc(1.2rem + 0.5vw) calc(2.4rem + 1vw);
-    font-size: calc(1.1rem + 0.2vw);
-    border-radius: calc(0.6vw + 0.3rem);
-    margin: calc(1rem + 0.5vw) 0;
+    padding: calc(0.9rem + 0.2vw) calc(1.8rem + 0.3vw);
+    font-size: calc(0.95rem + 0.08vw);
+    border-radius: calc(0.3vw + 0.15rem);
+    margin: calc(0.6rem + 0.2vw) 0;
     font-weight: 600;
     letter-spacing: 0.02em;
   }
 
   .button-wrapper {
-    margin-top: calc(2rem + 0.5vw);
+    margin-top: calc(1.2rem + 0.2vw);
   }
 
   /* Process Section Scaling */
   .our-process-section {
-    padding: calc(4rem + 2vw) 0;
+    padding: calc(2.5rem + 0.5vw) 0;
   }
 
   .our-process-section .section-header h2 {
-    font-size: calc(2.5rem + 1.5vw);
-    margin-bottom: calc(1rem + 0.5vw);
+    font-size: calc(2rem + 0.5vw);
+    margin-bottom: calc(0.6rem + 0.2vw);
   }
 
   .our-process-section .subtitle {
-    font-size: calc(1.2rem + 0.3vw);
-    margin-bottom: calc(3rem + 1vw);
+    font-size: calc(1rem + 0.15vw);
+    margin-bottom: calc(1.5rem + 0.3vw);
   }
 
   .process-steps {
-    gap: calc(3rem + 1vw);
+    gap: calc(1.5rem + 0.3vw);
   }
 
   .process-step h3 {
-    font-size: calc(1.8rem + 0.5vw);
-    margin-bottom: calc(0.5rem + 0.2vw);
+    font-size: calc(1.4rem + 0.2vw);
+    margin-bottom: calc(0.3rem + 0.1vw);
   }
 
   .process-step .subtitle {
-    font-size: calc(1.2rem + 0.3vw);
-    margin-bottom: calc(1rem + 0.5vw);
+    font-size: calc(1rem + 0.15vw);
+    margin-bottom: calc(0.6rem + 0.2vw);
   }
 
   .process-step p {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(0.95rem + 0.1vw);
     line-height: 1.6;
   }
 
   /* Services Section Scaling */
   .services-section .section-container {
-    max-width: calc(1200px + 10vw);
-    padding: 0 calc(2rem + 1vw);
+    max-width: calc(900px + 8vw);
+    padding: 0 calc(1.5rem + 0.3vw);
   }
 
   .services-section .main-title h2 {
-    font-size: calc(2.5rem + 1.5vw);
-    margin-bottom: calc(3rem + 1vw);
+    font-size: calc(2rem + 0.5vw);
+    margin-bottom: calc(1.5rem + 0.3vw);
   }
 
   .subheadings-container {
-    gap: calc(2rem + 1vw);
-    margin-bottom: calc(3rem + 1vw);
+    gap: calc(1.2rem + 0.3vw);
+    margin-bottom: calc(1.5rem + 0.3vw);
   }
 
   .subheading h2 {
-    font-size: calc(1.8rem + 0.5vw);
-    margin-bottom: calc(0.5rem + 0.2vw);
+    font-size: calc(1.4rem + 0.2vw);
+    margin-bottom: calc(0.3rem + 0.1vw);
   }
 
   .content p {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(0.95rem + 0.1vw);
     line-height: 1.6;
-    max-width: calc(45vw + 300px);
+    max-width: calc(35vw + 150px);
     margin: 0 auto;
   }
 
   .footer-content {
-    margin-top: calc(3rem + 1vw);
+    margin-top: calc(1.5rem + 0.3vw);
   }
 
   .footer-content .fine-print {
-    font-size: calc(1rem + 0.15vw);
-    max-width: calc(45vw + 200px);
-    margin: 0 auto calc(2rem + 1vw);
+    font-size: calc(0.85rem + 0.08vw);
+    max-width: calc(35vw + 120px);
+    margin: 0 auto calc(1.2rem + 0.3vw);
   }
 
   /* Header logo scaling */
   .header__logo {
-    width: calc(200px + 5vw) !important;
-    height: calc(80px + 2vw) !important;
-    max-width: 400px;
+    width: calc(160px + 2.5vw) !important;
+    height: calc(64px + 1vw) !important;
+    max-width: 280px;
   }
 
   /* Marquee section scaling */
   .marquee {
     width: 100%;
     overflow: hidden;
-    padding: calc(3rem + 1vw) 0;
+    padding: calc(1.5rem + 0.3vw) 0;
   }
 
   .marquee-inner {
     display: flex;
-    gap: calc(3rem + 1vw);
+    gap: calc(1.5rem + 0.3vw);
   }
 
   .logo-group {
     display: flex;
-    gap: calc(3rem + 1vw);
+    gap: calc(1.5rem + 0.3vw);
     align-items: center;
   }
 
   .logo-container {
-    width: calc(160px + 4vw);
-    height: calc(80px + 2vw);
-    max-width: 300px;
+    width: calc(120px + 1.5vw);
+    height: calc(60px + 0.8vw);
+    max-width: 220px;
   }
 
   .logo {
@@ -434,30 +434,30 @@
 
   /* What is 4Runr section scaling */
   .what-we-do .container {
-    max-width: calc(1200px + 10vw);
-    padding: 0 calc(2rem + 1vw);
+    max-width: calc(900px + 8vw);
+    padding: 0 calc(1.5rem + 0.3vw);
   }
 
   .what-we-do .titles h2 {
-    font-size: calc(2.5rem + 1.5vw);
-    margin-bottom: calc(2rem + 1vw);
+    font-size: calc(2rem + 0.5vw);
+    margin-bottom: calc(1.2rem + 0.3vw);
   }
 
   .what-we-do .heading p {
-    font-size: calc(1.4rem + 0.4vw);
-    margin-bottom: calc(1rem + 0.5vw);
+    font-size: calc(1.1rem + 0.15vw);
+    margin-bottom: calc(0.6rem + 0.2vw);
   }
 
   .what-we-do .rectangle-content p {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(0.95rem + 0.1vw);
     line-height: 1.6;
-    padding: calc(1.5rem + 0.5vw);
+    padding: calc(1rem + 0.2vw);
   }
 
   .what-we-do .fine-print {
-    font-size: calc(1rem + 0.15vw);
-    max-width: calc(45vw + 200px);
-    margin: calc(1.5vw + 0.5rem) auto;
+    font-size: calc(0.85rem + 0.08vw);
+    max-width: calc(35vw + 120px);
+    margin: calc(0.8rem + 0.2vw) auto;
   }
 
   /* Button scaling */
@@ -465,221 +465,221 @@
   .btn,
   .btn-primary,
   .btn-secondary {
-    padding: calc(1.2rem + 0.5vw) calc(2.4rem + 1vw);
-    font-size: calc(1.1rem + 0.2vw);
-    border-radius: calc(0.6vw + 0.3rem);
-    margin: calc(1rem + 0.5vw) 0;
+    padding: calc(0.9rem + 0.2vw) calc(1.8rem + 0.3vw);
+    font-size: calc(0.95rem + 0.08vw);
+    border-radius: calc(0.3vw + 0.15rem);
+    margin: calc(0.6rem + 0.2vw) 0;
     font-weight: 600;
     letter-spacing: 0.02em;
   }
 
   .button-wrapper {
-    margin-top: calc(2rem + 0.5vw);
+    margin-top: calc(1.2rem + 0.2vw);
   }
 
   /* Fine print scaling */
   .fine-print {
-    font-size: calc(1rem + 0.15vw);
-    max-width: calc(45vw + 200px);
-    margin: calc(1.5vw + 0.5rem) auto;
+    font-size: calc(0.85rem + 0.08vw);
+    max-width: calc(35vw + 120px);
+    margin: calc(0.8rem + 0.2vw) auto;
     line-height: 1.6;
   }
 
   /* Existing text scaling rules */
   .header h1 {
-    font-size: calc(2.3rem + 1.5vw);
-    margin-bottom: calc(1rem + 0.5vw);
+    font-size: calc(1.8rem + 0.6vw);
+    margin-bottom: calc(0.6rem + 0.2vw);
   }
 
   .header p {
-    font-size: calc(1.1rem + 0.3vw);
-    max-width: calc(50vw + 300px);
+    font-size: calc(0.95rem + 0.1vw);
+    max-width: calc(40vw + 150px);
     margin: 0 auto;
   }
 
   .cta-section h2 {
-    font-size: calc(2.1rem + 1.2vw);
-    margin-bottom: calc(1rem + 0.5vw);
+    font-size: calc(1.6rem + 0.4vw);
+    margin-bottom: calc(0.6rem + 0.2vw);
   }
 
   .cta-section p {
-    font-size: calc(1.1rem + 0.3vw);
-    max-width: calc(45vw + 200px);
-    margin: 0 auto calc(2rem + 1vw);
+    font-size: calc(0.95rem + 0.1vw);
+    max-width: calc(35vw + 120px);
+    margin: 0 auto calc(1.2rem + 0.3vw);
   }
 
   .service h3, 
   .service h4 {
-    font-size: calc(1.4rem + 0.4vw);
-    margin-bottom: calc(0.5rem + 0.2vw);
+    font-size: calc(1.1rem + 0.15vw);
+    margin-bottom: calc(0.3rem + 0.1vw);
   }
 
   .service-details p {
-    font-size: calc(1rem + 0.15vw);
+    font-size: calc(0.85rem + 0.08vw);
     line-height: 1.6;
   }
 
   .result-item .metric {
-    font-size: calc(1.6rem + 0.5vw);
-    margin-bottom: calc(0.5rem + 0.2vw);
+    font-size: calc(1.2rem + 0.2vw);
+    margin-bottom: calc(0.3rem + 0.1vw);
   }
 
   .result-item .description {
-    font-size: calc(1rem + 0.15vw);
+    font-size: calc(0.85rem + 0.08vw);
   }
 
   .feature-list li {
-    font-size: calc(1rem + 0.15vw);
-    margin-bottom: calc(0.5rem + 0.2vw);
+    font-size: calc(0.85rem + 0.08vw);
+    margin-bottom: calc(0.3rem + 0.1vw);
   }
 
   .top-nav .nav-items a {
-    font-size: calc(1rem + 0.15vw);
-    padding: calc(0.5rem + 0.2vw) calc(1rem + 0.5vw);
+    font-size: calc(0.85rem + 0.08vw);
+    padding: calc(0.3rem + 0.1vw) calc(0.6rem + 0.2vw);
   }
 
   /* Chatbot Section Scaling */
   .chat-container {
-    max-width: calc(800px + 10vw);
-    margin: calc(2rem + 1vw) auto;
-    padding: calc(2rem + 1vw);
+    max-width: calc(600px + 4vw);
+    margin: calc(1.2rem + 0.3vw) auto;
+    padding: calc(1.2rem + 0.3vw);
   }
 
   .message-bubble {
-    font-size: calc(1rem + 0.15vw);
-    padding: calc(1rem + 0.5vw) calc(1.5rem + 0.5vw);
-    margin-bottom: calc(1rem + 0.5vw);
-    max-width: calc(45vw + 200px);
+    font-size: calc(0.85rem + 0.08vw);
+    padding: calc(0.6rem + 0.2vw) calc(1rem + 0.2vw);
+    margin-bottom: calc(0.6rem + 0.2vw);
+    max-width: calc(35vw + 120px);
   }
 
   .input-area {
-    margin-top: calc(2rem + 1vw);
-    gap: calc(1rem + 0.5vw);
+    margin-top: calc(1.2rem + 0.3vw);
+    gap: calc(0.6rem + 0.2vw);
   }
 
   .message-input {
-    font-size: calc(1rem + 0.15vw);
-    padding: calc(1rem + 0.5vw) calc(1.5rem + 0.5vw);
-    border-radius: calc(0.6vw + 0.3rem);
+    font-size: calc(0.85rem + 0.08vw);
+    padding: calc(0.6rem + 0.2vw) calc(1rem + 0.2vw);
+    border-radius: calc(0.3vw + 0.15rem);
   }
 
   .send-button {
-    font-size: calc(1.2rem + 0.2vw);
-    padding: calc(0.8rem + 0.3vw) calc(1.2rem + 0.4vw);
-    border-radius: calc(0.6vw + 0.3rem);
+    font-size: calc(1rem + 0.1vw);
+    padding: calc(0.5rem + 0.15vw) calc(0.8rem + 0.2vw);
+    border-radius: calc(0.3vw + 0.15rem);
   }
 
   .bottom-cta {
-    margin-top: calc(3rem + 1vw);
+    margin-top: calc(1.5rem + 0.3vw);
   }
 
   .bottom-text {
-    font-size: calc(1.1rem + 0.3vw);
-    margin-bottom: calc(1.5rem + 0.5vw);
-    max-width: calc(45vw + 300px);
+    font-size: calc(0.95rem + 0.1vw);
+    margin-bottom: calc(1rem + 0.2vw);
+    max-width: calc(35vw + 150px);
   }
 
   /* PDF Form Section Scaling */
   .pdf-form {
-    max-width: calc(800px + 10vw);
+    max-width: calc(600px + 4vw);
     margin: 0 auto;
-    padding: calc(3rem + 1vw);
+    padding: calc(1.5rem + 0.3vw);
   }
 
   .pdf-form__heading {
-    font-size: calc(2.2rem + 1.2vw);
-    margin-bottom: calc(1.5rem + 0.5vw);
+    font-size: calc(1.6rem + 0.4vw);
+    margin-bottom: calc(1rem + 0.2vw);
   }
 
   .pdf-form__description {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(0.95rem + 0.1vw);
     line-height: 1.6;
-    margin-bottom: calc(2rem + 1vw);
-    max-width: calc(45vw + 300px);
+    margin-bottom: calc(1.2rem + 0.3vw);
+    max-width: calc(35vw + 150px);
   }
 
   .pdf-form__main-action {
-    gap: calc(1.5rem + 0.5vw);
-    margin-bottom: calc(2rem + 1vw);
+    gap: calc(1rem + 0.2vw);
+    margin-bottom: calc(1.2rem + 0.3vw);
   }
 
   .language-option {
-    font-size: calc(1rem + 0.15vw);
-    padding: calc(0.5rem + 0.2vw) calc(1rem + 0.5vw);
-    border-radius: calc(0.4vw + 0.2rem);
+    font-size: calc(0.85rem + 0.08vw);
+    padding: calc(0.3rem + 0.1vw) calc(0.6rem + 0.2vw);
+    border-radius: calc(0.25vw + 0.1rem);
   }
 
   .pdf-form__button {
-    font-size: calc(1.1rem + 0.2vw);
-    padding: calc(1rem + 0.5vw) calc(2rem + 1vw);
-    border-radius: calc(0.6vw + 0.3rem);
+    font-size: calc(0.95rem + 0.1vw);
+    padding: calc(0.6rem + 0.2vw) calc(1.2rem + 0.3vw);
+    border-radius: calc(0.3vw + 0.15rem);
   }
 
   .button-text {
-    margin-right: calc(0.5rem + 0.2vw);
+    margin-right: calc(0.3rem + 0.1vw);
   }
 
   .button-icon {
-    font-size: calc(1.2rem + 0.2vw);
+    font-size: calc(1rem + 0.1vw);
   }
 
   .pdf-form__fine-print {
-    font-size: calc(0.9rem + 0.1vw);
-    max-width: calc(45vw + 200px);
+    font-size: calc(0.75rem + 0.06vw);
+    max-width: calc(35vw + 120px);
     margin: 0 auto;
   }
 
   /* Footer Section Scaling */
   .custom-footer-section {
-    padding: calc(4rem + 2vw) 0;
+    padding: calc(2.5rem + 0.5vw) 0;
   }
 
   .custom-footer-container {
-    max-width: calc(1200px + 10vw);
-    padding: 0 calc(2rem + 1vw);
+    max-width: calc(900px + 8vw);
+    padding: 0 calc(1.5rem + 0.3vw);
   }
 
   .custom-footer-grid {
-    gap: calc(3rem + 1vw);
-    margin-bottom: calc(3rem + 1vw);
+    gap: calc(1.5rem + 0.3vw);
+    margin-bottom: calc(1.5rem + 0.3vw);
   }
 
   .custom-footer-logo {
-    width: calc(180px + 4vw);
-    height: calc(72px + 1.5vw);
-    max-width: 300px;
+    width: calc(140px + 1.5vw);
+    height: calc(56px + 0.6vw);
+    max-width: 220px;
   }
 
   .footer-contact-info {
-    gap: calc(1.5rem + 0.5vw);
+    gap: calc(1rem + 0.2vw);
   }
 
   .footer-contact-item {
-    font-size: calc(1rem + 0.15vw);
-    gap: calc(0.8rem + 0.2vw);
+    font-size: calc(0.85rem + 0.08vw);
+    gap: calc(0.5rem + 0.1vw);
   }
 
   .footer-contact-item svg {
-    width: calc(1.2rem + 0.2vw);
-    height: calc(1.2rem + 0.2vw);
+    width: calc(1rem + 0.1vw);
+    height: calc(1rem + 0.1vw);
   }
 
   .footer-bottom {
-    margin-top: calc(3rem + 1vw);
-    padding-top: calc(2rem + 1vw);
-    gap: calc(2rem + 1vw);
+    margin-top: calc(1.5rem + 0.3vw);
+    padding-top: calc(1.2rem + 0.3vw);
+    gap: calc(1.2rem + 0.3vw);
   }
 
   .footer-copyright {
-    font-size: calc(0.9rem + 0.1vw);
+    font-size: calc(0.75rem + 0.06vw);
   }
 
   .footer-bottom-links {
-    gap: calc(1.5rem + 0.5vw);
+    gap: calc(1rem + 0.2vw);
   }
 
   .footer-bottom-links a {
-    font-size: calc(0.9rem + 0.1vw);
+    font-size: calc(0.75rem + 0.06vw);
   }
 }
 
