@@ -363,4 +363,35 @@
     width: 20px;
     height: 20px;
   }
+}
+
+/* Add desktop specific styles */
+@media screen and (min-width: 1367px) {
+  .heading h3 {
+    font-size: calc(var(--h3-size) * 1.2);
+  }
+  
+  .rectangle-content p {
+    font-size: calc(var(--text-body) * 1.15);
+    line-height: 1.5;
+  }
+}
+
+/* Update the button to match the let's-talk-button style */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw 2.5vw;
+  background: linear-gradient(45deg, #4B0082, #483D8B);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.521vw;
+  font-size: 1vw;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  min-width: 9.375vw;
+  height: 3.125vw;
+  border: none;
+  font-family: var(--font-heading);
 } 

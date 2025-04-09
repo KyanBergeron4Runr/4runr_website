@@ -26,8 +26,10 @@
 }
 
 .header-desktop .header__logo {
-  width: 120px !important;
   height: auto !important;
+  width: 170px !important;
+  max-width: none !important;
+  object-fit: contain !important;
   position: relative !important;
   z-index: 10 !important;
   top: 3px !important;
@@ -339,9 +341,8 @@ body.menu-open {
 }
 
 .header-desktop .header__logo {
-  width: 110px !important;
   height: auto !important;
-  position: relative !important;
-  z-index: 10 !important;
-  top: 3px !important;
+  width: 11vw !important;
+  max-width: none !important;
+  object-fit: contain !important;
 } 
