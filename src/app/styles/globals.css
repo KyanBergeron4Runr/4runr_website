@@ -127,4 +127,25 @@ p {
   h3 {
     font-size: var(--mobile-h3-size);
   }
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: #000000;
+  padding-top: 90px; /* Add padding for fixed header */
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1536px) {
+  main {
+    padding-top: 80px;
+  }
+}
+
+@media screen and (min-width: 1537px) {
+  main {
+    padding-top: 100px;
+  }
 } 

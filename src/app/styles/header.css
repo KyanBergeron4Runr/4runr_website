@@ -4,58 +4,64 @@
   width: 100%;
   background: #000000;
   min-height: 90px !important;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   align-items: center;
   margin-top: 0 !important;
+  padding: 0;
+  justify-content: space-between;
 }
 
 .header-desktop {
-  flex: 0 0 26.042vw;
+  flex: 0 0 30%;
   background: #000000;
   position: relative;
   min-height: 90px !important;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 5vw;
 }
 
 .header-desktop .header__logo-wrapper {
-  width: 100%;
-  text-align: center;
-  transform: translate(9.375vw, 0) !important;
+  width: auto;
+  text-align: left;
+  transform: none !important;
 }
 
 .header-desktop .header__logo {
   height: auto !important;
-  width: 11vw !important;
+  width: 180px !important;
   max-width: none !important;
   object-fit: contain !important;
   position: relative !important;
   z-index: 10 !important;
-  top: 3px !important;
+  top: 0 !important;
 }
 
 .top-nav {
-  flex: 1;
+  flex: 0 0 70%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   background: #000000;
-  padding-right: 5.208vw;
-  transform: translateY(0) !important;
+  padding-right: 5vw;
+  transform: none !important;
 }
 
 .top-nav .nav-items {
   display: flex;
   align-items: center;
   gap: 40px !important;
-  transform: translateX(-10.417vw);
+  transform: none;
 }
 
 .top-nav a {
   color: white;
   text-decoration: none;
-  font-size: 22px !important;
+  font-size: 20px !important;
   font-family: var(--font-heading);
   transition: transform 0.3s ease;
   white-space: nowrap;
@@ -68,40 +74,34 @@
 }
 
 .top-nav .contact-button {
-  padding: 18px 30px !important;
+  padding: 12px 24px !important;
   color: #000000;
   background: white;
   border-radius: 6px !important;
-  font-size: 22px !important;
+  font-size: 20px !important;
   font-weight: 700;
 }
 
 /* Laptop displays */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
   .header-wrapper {
-    min-height: 60px !important;
-    max-height: 60px !important;
-    overflow: visible !important;
+    min-height: 80px !important;
   }
   
   .header-desktop {
-    min-height: 60px !important;
-    max-height: 60px !important;
-    overflow: visible !important;
+    min-height: 80px !important;
   }
   
   .header-desktop .header__logo-wrapper {
     position: relative !important;
-    transform: translate(9.375vw, 0) !important;
     z-index: 10 !important;
   }
   
   .header-desktop .header__logo {
-    width: 70px !important;
+    width: 160px !important;
     height: auto !important;
     position: relative !important;
     z-index: 10 !important;
-    top: 3px !important;
   }
   
   .top-nav {
@@ -110,33 +110,53 @@
   }
   
   .top-nav a {
-    font-size: 15px !important;
+    font-size: 18px !important;
   }
   
   .top-nav .contact-button {
-    font-size: 15px !important;
-    padding: 8px 16px !important;
+    font-size: 18px !important;
+    padding: 10px 20px !important;
   }
 }
 
 /* Desktop Large screens */
 @media screen and (min-width: 1537px) {
   .header-wrapper {
-    min-height: 80px !important;
-    transform: translateY(-8px) !important;
+    min-height: 100px !important;
+  }
+  
+  .header-desktop {
+    min-height: 100px !important;
   }
   
   .header-desktop .header__logo {
-    width: 9vw !important; /* Reduced from 11vw */
+    width: 200px !important;
   }
   
   .top-nav a {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
   
   .top-nav .contact-button {
-    font-size: 24px !important;
-    padding: 20px 34px !important;
+    font-size: 22px !important;
+    padding: 14px 28px !important;
+  }
+}
+
+/* Add space for fixed header */
+main {
+  padding-top: 90px;
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1536px) {
+  main {
+    padding-top: 80px;
+  }
+}
+
+@media screen and (min-width: 1537px) {
+  main {
+    padding-top: 100px;
   }
 }
 
