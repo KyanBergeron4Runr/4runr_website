@@ -91,7 +91,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: transparent;
   backdrop-filter: blur(0.26vw);
 }
 
@@ -287,8 +287,9 @@
 /* Adding desktop-specific styles to increase text size */
 @media screen and (min-width: 769px) {
   .desktop-version .benefit-bg p {
-    font-size: var(--text-body);
-    line-height: 1.3;
+    font-size: calc(var(--text-body) * 0.9);
+    line-height: 1.2;
+    margin-top: -0.5vw;
   }
   
   .desktop-version + .button-group .btn {

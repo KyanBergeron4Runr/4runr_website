@@ -313,21 +313,21 @@
 }
 
 .cta-button {
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 1vw 2.5vw;
+  background: linear-gradient(45deg, #4B0082, #483D8B);
+  color: #fff;
+  text-decoration: none;
   border-radius: 0.521vw;
   font-size: 1vw;
   font-weight: bold;
   transition: transform 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Poppins Bold', sans-serif;
   min-width: 9.375vw;
   height: 3.125vw;
-  background: linear-gradient(45deg, #4B0082, #483D8B);
-  color: #fff;
   border: none;
+  font-family: var(--font-heading);
   cursor: pointer;
 }
 
