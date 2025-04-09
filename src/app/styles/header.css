@@ -3,17 +3,17 @@
   display: flex;
   width: 100%;
   background: #000000;
-  min-height: 120px !important;
+  min-height: 90px !important;
   position: relative;
   align-items: center;
-  margin-top: -1.042vw;
+  margin-top: 0 !important;
 }
 
 .header-desktop {
   flex: 0 0 26.042vw;
   background: #000000;
   position: relative;
-  min-height: 120px !important;
+  min-height: 90px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,14 +22,14 @@
 .header-desktop .header__logo-wrapper {
   width: 100%;
   text-align: center;
-  transform: translate(9.375vw, -0.833vw);
+  transform: translate(9.375vw, 0) !important;
 }
 
 .header-desktop .header__logo {
-  height: 100px !important;
+  height: 120px !important;
   width: auto !important;
   object-fit: contain;
-  max-width: 90%;
+  max-width: 100% !important;
 }
 
 .top-nav {
@@ -39,20 +39,20 @@
   justify-content: center;
   background: #000000;
   padding-right: 5.208vw;
-  transform: translateY(-0.833vw);
+  transform: translateY(0) !important;
 }
 
 .top-nav .nav-items {
   display: flex;
   align-items: center;
-  gap: 30px !important;
+  gap: 40px !important;
   transform: translateX(-10.417vw);
 }
 
 .top-nav a {
   color: white;
   text-decoration: none;
-  font-size: 18px !important;
+  font-size: 22px !important;
   font-family: var(--font-heading);
   transition: transform 0.3s ease;
   white-space: nowrap;
@@ -65,11 +65,11 @@
 }
 
 .top-nav .contact-button {
-  padding: 15px 25px !important;
+  padding: 18px 30px !important;
   color: #000000;
   background: white;
-  border-radius: 5px !important;
-  font-size: 18px !important;
+  border-radius: 6px !important;
+  font-size: 22px !important;
   font-weight: 700;
 }
 
