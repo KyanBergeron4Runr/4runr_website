@@ -3,7 +3,7 @@
   background-color: #000000;
   color: #fff;
   text-align: center;
-  padding: 50px 0;
+  padding: 60px 0;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -13,13 +13,13 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 .marquee-inner {
   display: flex;
   width: fit-content;
-  animation: marquee 100s linear infinite;
+  animation: marquee 120s linear infinite;
 }
 
 @keyframes marquee {
@@ -30,19 +30,19 @@
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 120px;
+  gap: 200px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 20px;
 }
 
 /* Direct logo sizing - much larger than before */
 .logo {
-  height: 200px !important; /* Force large height */
+  height: 300px !important; /* Force large height */
   width: auto !important;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -50,8 +50,8 @@
 }
 
 .fine-print {
-  font-size: 18px;
-  margin-top: 40px;
+  font-size: 20px;
+  margin-top: 50px;
   max-width: 800px;
   padding: 0 20px;
   margin-left: auto;
@@ -61,30 +61,30 @@
 /* Media queries for responsive design */
 @media (max-width: 1024px) {
   .logo {
-    height: 180px !important;
+    height: 240px !important;
   }
   
   .logo-group {
-    gap: 100px;
+    gap: 160px;
   }
 }
 
 @media (max-width: 768px) {
   .logo {
-    height: 150px !important;
+    height: 180px !important;
   }
   
   .logo-group {
-    gap: 80px;
+    gap: 120px;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    height: 100px !important;
+    height: 140px !important;
   }
   
   .logo-group {
-    gap: 60px;
+    gap: 80px;
   }
 } 
