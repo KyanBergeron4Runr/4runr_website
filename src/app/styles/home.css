@@ -305,13 +305,22 @@
 
   .button-group {
     margin-top: calc(3rem + 1vw);
-    gap: calc(1.5rem + 0.5vw);
+    gap: calc(2rem + 0.5vw);
   }
 
-  .btn {
-    padding: calc(1rem + 0.5vw) calc(2rem + 1vw);
-    font-size: calc(1rem + 0.15vw);
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    padding: calc(1.2rem + 0.5vw) calc(2.4rem + 1vw);
+    font-size: calc(1.1rem + 0.2vw);
     border-radius: calc(0.6vw + 0.3rem);
+    margin: calc(1rem + 0.5vw) 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .button-wrapper {
+    margin-top: calc(2rem + 0.5vw);
   }
 
   /* Process Section Scaling */
@@ -397,24 +406,24 @@
   .marquee {
     width: 100%;
     overflow: hidden;
-    padding: calc(2rem + 1vw) 0;
+    padding: calc(3rem + 1vw) 0;
   }
 
   .marquee-inner {
     display: flex;
-    gap: calc(2rem + 1vw);
+    gap: calc(3rem + 1vw);
   }
 
   .logo-group {
     display: flex;
-    gap: calc(2rem + 1vw);
+    gap: calc(3rem + 1vw);
     align-items: center;
   }
 
   .logo-container {
-    width: calc(120px + 3vw);
-    height: calc(60px + 1.5vw);
-    max-width: 200px;
+    width: calc(160px + 4vw);
+    height: calc(80px + 2vw);
+    max-width: 300px;
   }
 
   .logo {
@@ -452,15 +461,20 @@
   }
 
   /* Button scaling */
-  .cta-button {
-    padding: calc(1vw + 0.5rem) calc(2vw + 1rem);
-    font-size: calc(1rem + 0.15vw);
+  .cta-button,
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    padding: calc(1.2rem + 0.5vw) calc(2.4rem + 1vw);
+    font-size: calc(1.1rem + 0.2vw);
     border-radius: calc(0.6vw + 0.3rem);
     margin: calc(1rem + 0.5vw) 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
   .button-wrapper {
-    margin-top: calc(1.5rem + 0.5vw);
+    margin-top: calc(2rem + 0.5vw);
   }
 
   /* Fine print scaling */
