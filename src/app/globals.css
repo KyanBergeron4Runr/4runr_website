@@ -11,12 +11,12 @@
   --font-heading: var(--font-poppins-bold);
   
   /* Text Sizes - Using vw for better scaling */
-  --h1-size: calc(56 / 1920 * 100vw);      /* Main titles */
-  --h2-size: calc(40 / 1920 * 100vw);      /* Section headings */
-  --h3-size: calc(28 / 1920 * 100vw);      /* Subsection headings */
-  --text-body: calc(18 / 1920 * 100vw);    /* Normal text */
-  --text-small: calc(14 / 1920 * 100vw);   /* Small text */
-  --text-button: calc(16 / 1920 * 100vw);  /* Button text */
+  --h1-size: calc(64 / 1920 * 100vw);      /* Main titles - increased from 56 */
+  --h2-size: calc(48 / 1920 * 100vw);      /* Section headings - increased from 40 */
+  --h3-size: calc(32 / 1920 * 100vw);      /* Subsection headings - increased from 28 */
+  --text-body: calc(20 / 1920 * 100vw);    /* Normal text - increased from 18 */
+  --text-small: calc(16 / 1920 * 100vw);   /* Small text - increased from 14 */
+  --text-button: calc(18 / 1920 * 100vw);  /* Button text - increased from 16 */
   
   /* Line Heights */
   --line-height-h1: 1.2;
