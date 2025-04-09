@@ -273,6 +273,119 @@
     padding: calc(4vw + 1rem) calc(2vw + 1rem);
   }
 
+  /* Benefits Section Scaling */
+  .benefits-section .container {
+    max-width: calc(1200px + 10vw);
+    padding: 0 calc(2rem + 1vw);
+  }
+
+  .benefits-section .section-title h2 {
+    font-size: calc(2.5rem + 1.5vw);
+    margin-bottom: calc(3rem + 1vw);
+  }
+
+  .benefit-item {
+    padding: calc(2rem + 1vw);
+    margin-bottom: calc(2rem + 1vw);
+  }
+
+  .benefit-bg h3 {
+    font-size: calc(1.8rem + 0.5vw);
+    margin-bottom: calc(1rem + 0.5vw);
+  }
+
+  .benefit-bg p {
+    font-size: calc(1.1rem + 0.3vw);
+    line-height: 1.6;
+  }
+
+  .benefit-items {
+    gap: calc(2rem + 1vw);
+  }
+
+  .button-group {
+    margin-top: calc(3rem + 1vw);
+    gap: calc(1.5rem + 0.5vw);
+  }
+
+  .btn {
+    padding: calc(1rem + 0.5vw) calc(2rem + 1vw);
+    font-size: calc(1rem + 0.15vw);
+    border-radius: calc(0.6vw + 0.3rem);
+  }
+
+  /* Process Section Scaling */
+  .our-process-section {
+    padding: calc(4rem + 2vw) 0;
+  }
+
+  .our-process-section .section-header h2 {
+    font-size: calc(2.5rem + 1.5vw);
+    margin-bottom: calc(1rem + 0.5vw);
+  }
+
+  .our-process-section .subtitle {
+    font-size: calc(1.2rem + 0.3vw);
+    margin-bottom: calc(3rem + 1vw);
+  }
+
+  .process-steps {
+    gap: calc(3rem + 1vw);
+  }
+
+  .process-step h3 {
+    font-size: calc(1.8rem + 0.5vw);
+    margin-bottom: calc(0.5rem + 0.2vw);
+  }
+
+  .process-step .subtitle {
+    font-size: calc(1.2rem + 0.3vw);
+    margin-bottom: calc(1rem + 0.5vw);
+  }
+
+  .process-step p {
+    font-size: calc(1.1rem + 0.3vw);
+    line-height: 1.6;
+  }
+
+  /* Services Section Scaling */
+  .services-section .section-container {
+    max-width: calc(1200px + 10vw);
+    padding: 0 calc(2rem + 1vw);
+  }
+
+  .services-section .main-title h2 {
+    font-size: calc(2.5rem + 1.5vw);
+    margin-bottom: calc(3rem + 1vw);
+  }
+
+  .subheadings-container {
+    gap: calc(2rem + 1vw);
+    margin-bottom: calc(3rem + 1vw);
+  }
+
+  .subheading h2 {
+    font-size: calc(1.8rem + 0.5vw);
+    margin-bottom: calc(0.5rem + 0.2vw);
+  }
+
+  .content p {
+    font-size: calc(1.1rem + 0.3vw);
+    line-height: 1.6;
+    max-width: calc(45vw + 300px);
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    margin-top: calc(3rem + 1vw);
+  }
+
+  .footer-content .fine-print {
+    font-size: calc(1rem + 0.15vw);
+    max-width: calc(45vw + 200px);
+    margin: 0 auto calc(2rem + 1vw);
+  }
+
   /* Header logo scaling */
   .header__logo {
     width: calc(200px + 5vw) !important;
