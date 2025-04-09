@@ -3,7 +3,7 @@
   background-color: #000000;
   color: #fff;
   text-align: center;
-  padding: 40px 0;
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 30px 0;
+  padding: 40px 0;
 }
 
 .marquee-inner {
@@ -33,16 +33,16 @@
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 100px;
 }
 
 .logo-container {
-  width: 250px;
-  height: 150px;
+  width: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 20px;
 }
 
 .logo {
@@ -57,8 +57,8 @@
 }
 
 .fine-print {
-  font-size: 16px;
-  margin-top: 30px;
+  font-size: 18px;
+  margin-top: 40px;
   max-width: 800px;
   padding: 0 20px;
 }
@@ -66,37 +66,37 @@
 /* Media queries for responsive design */
 @media (max-width: 1024px) {
   .logo-container {
-    width: 200px;
-    height: 120px;
+    width: 320px;
+    height: 240px;
   }
   
   .logo-group {
-    gap: 60px;
+    gap: 80px;
   }
 }
 
 @media (max-width: 768px) {
   .logo-container {
-    width: 180px;
-    height: 100px;
+    width: 280px;
+    height: 210px;
   }
   
   .logo-group {
-    gap: 40px;
+    gap: 60px;
   }
   
   .fine-print {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
   .logo-container {
-    width: 150px;
-    height: 80px;
+    width: 220px;
+    height: 165px;
   }
   
   .logo-group {
-    gap: 30px;
+    gap: 40px;
   }
 } 
