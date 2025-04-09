@@ -37,7 +37,7 @@
 }
 
 .logo-container {
-  min-width: 200px;
+  min-width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,8 +45,8 @@
 }
 
 .logo {
-  height: 6vw;
-  max-height: 80px;
+  height: 10vw;
+  max-height: 120px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
