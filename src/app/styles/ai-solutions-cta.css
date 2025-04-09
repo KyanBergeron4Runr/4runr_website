@@ -92,11 +92,15 @@
   width: 100%;
 }
 
-.lets-talk-button {
+.lets-talk-button,
+.see-our-solutions-button,
+.start-building-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 1vw 2.5vw;
+  background: linear-gradient(45deg, #4B0082, #483D8B);
+  color: #fff;
   text-decoration: none;
   border-radius: 0.521vw;
   font-size: 1vw;
@@ -104,10 +108,15 @@
   transition: transform 0.3s ease;
   min-width: 9.375vw;
   height: 3.125vw;
-  background: linear-gradient(45deg, #4B0082, #483D8B);
-  color: #fff;
   border: none;
   font-family: var(--font-heading);
+  cursor: pointer;
+}
+
+.lets-talk-button:hover,
+.see-our-solutions-button:hover,
+.start-building-button:hover {
+  transform: scale(1.05);
 }
 
 .our-services-button {
@@ -209,23 +218,31 @@
   max-width: 280px;
 }
 
-.lets-talk-button-mobile {
+.lets-talk-button-mobile,
+.see-our-solutions-button-mobile,
+.start-building-button-mobile {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 20px;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #4B0082, #483D8B);
+  color: #fff;
   text-decoration: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
-  transition: all 0.3s ease;
-  background: linear-gradient(45deg, #4B0082, #483D8B);
-  color: #fff;
+  transition: transform 0.3s ease;
+  min-width: 180px;
+  height: 50px;
   border: none;
   font-family: var(--font-heading);
-  text-align: center;
-  width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.lets-talk-button-mobile:hover,
+.see-our-solutions-button-mobile:hover,
+.start-building-button-mobile:hover {
+  transform: scale(1.05);
 }
 
 .our-services-button-mobile {
@@ -289,9 +306,12 @@
   .cta-body-mobile {
     font-size: 14px !important;
   }
-  .lets-talk-button-mobile, .our-services-button-mobile {
-    font-size: 14px !important;
-    padding: 12px 16px !important;
+  .lets-talk-button-mobile,
+  .see-our-solutions-button-mobile,
+  .start-building-button-mobile {
+    min-width: 160px;
+    height: 45px;
+    font-size: 14px;
   }
 }
 
