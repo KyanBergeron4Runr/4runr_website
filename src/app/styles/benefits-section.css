@@ -287,12 +287,12 @@
 /* Adding desktop-specific styles to increase text size */
 @media screen and (min-width: 769px) {
   .desktop-version .benefit-bg p {
-    font-size: calc(var(--text-body) * 1.2);
-    line-height: 1.5;
+    font-size: calc(var(--text-body) * 1.1);
+    line-height: 1.4;
   }
   
   .desktop-version + .button-group .btn {
-    font-size: 1.2vw;
-    padding: 1.2vw 2.8vw;
+    font-size: 1.1vw;
+    padding: 1.1vw 2.6vw;
   }
 } 
