@@ -87,6 +87,59 @@
   text-decoration: underline;
 }
 
+/* Scaling for Laptops/Desktops */
+@media screen and (min-width: 1024px) {
+  .terms-container {
+    max-width: calc(600px + 25vw); /* Base width + scaling */
+    padding: 0 calc(20px + 1vw); /* Base padding + scaling */
+  }
+
+  .terms-title {
+    margin-bottom: calc(30px + 1vw);
+  }
+
+  .terms-title h1 {
+    font-size: calc(2rem + 1vw); /* Base size + scaling */
+    margin-bottom: calc(15px + 0.5vw);
+  }
+
+  .last-updated {
+    font-size: calc(0.9rem + 0.1vw); /* Base size + scaling */
+    margin-bottom: calc(20px + 0.5vw);
+  }
+
+  .terms-content {
+    font-size: calc(1rem + 0.1vw); /* Base size + scaling */
+    line-height: 1.7;
+  }
+
+  .terms-content h2 {
+    font-size: calc(1.3rem + 0.3vw); /* Base size + scaling */
+    margin-top: calc(20px + 0.5vw);
+    margin-bottom: calc(10px + 0.3vw);
+  }
+
+  .terms-content p {
+    margin-bottom: calc(15px + 0.5vw);
+  }
+
+  .terms-content ul {
+    padding-left: calc(20px + 0.5vw);
+    margin-bottom: calc(15px + 0.5vw);
+  }
+
+  .terms-content li {
+    margin-bottom: calc(5px + 0.2vw);
+    padding-left: calc(5px + 0.2vw);
+  }
+
+  .contact-info {
+    margin-top: calc(30px + 1vw);
+    padding: calc(20px + 0.5vw);
+    border-radius: calc(6px + 0.2vw);
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .terms-title h1 {
     font-size: 28px;

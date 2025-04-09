@@ -95,6 +95,40 @@
   padding-bottom: 2rem;
 }
 
+/* Scaling for Laptops/Desktops */
+@media screen and (min-width: 1024px) {
+  .about-section {
+    padding-top: calc(80px + 2vw);
+  }
+
+  .section-title {
+    margin: calc(1rem + 0.5vw) 0 calc(1.5rem + 0.5vw) 0;
+  }
+
+  .section-title h2 {
+    font-size: calc(2.5rem + 1.5vw); /* Base size + scaling */
+    margin-bottom: calc(1.5rem + 0.5vw);
+    max-width: calc(700px + 15vw);
+  }
+
+  .main-content {
+    max-width: calc(700px + 20vw); /* Base width + scaling */
+    padding: calc(1rem + 0.5vw) calc(2rem + 1vw) calc(6rem + 1vw) calc(2rem + 1vw);
+  }
+
+  .main-content p {
+    font-size: calc(1.1rem + 0.4vw); /* Base size + scaling */
+    margin-bottom: calc(2.5rem + 0.5vw);
+    max-width: calc(700px + 15vw);
+  }
+
+  .ceo-attribution {
+    font-size: calc(1rem + 0.2vw); /* Base size + scaling */
+    margin-top: calc(3.5rem + 0.5vw);
+    padding-bottom: calc(1.5rem + 0.5vw);
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .section-title h2 {
     font-size: 3rem;
