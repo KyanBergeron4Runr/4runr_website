@@ -523,6 +523,150 @@
     font-size: calc(1rem + 0.15vw);
     padding: calc(0.5rem + 0.2vw) calc(1rem + 0.5vw);
   }
+
+  /* Chatbot Section Scaling */
+  .chat-container {
+    max-width: calc(800px + 10vw);
+    margin: calc(2rem + 1vw) auto;
+    padding: calc(2rem + 1vw);
+  }
+
+  .message-bubble {
+    font-size: calc(1rem + 0.15vw);
+    padding: calc(1rem + 0.5vw) calc(1.5rem + 0.5vw);
+    margin-bottom: calc(1rem + 0.5vw);
+    max-width: calc(45vw + 200px);
+  }
+
+  .input-area {
+    margin-top: calc(2rem + 1vw);
+    gap: calc(1rem + 0.5vw);
+  }
+
+  .message-input {
+    font-size: calc(1rem + 0.15vw);
+    padding: calc(1rem + 0.5vw) calc(1.5rem + 0.5vw);
+    border-radius: calc(0.6vw + 0.3rem);
+  }
+
+  .send-button {
+    font-size: calc(1.2rem + 0.2vw);
+    padding: calc(0.8rem + 0.3vw) calc(1.2rem + 0.4vw);
+    border-radius: calc(0.6vw + 0.3rem);
+  }
+
+  .bottom-cta {
+    margin-top: calc(3rem + 1vw);
+  }
+
+  .bottom-text {
+    font-size: calc(1.1rem + 0.3vw);
+    margin-bottom: calc(1.5rem + 0.5vw);
+    max-width: calc(45vw + 300px);
+  }
+
+  /* PDF Form Section Scaling */
+  .pdf-form {
+    max-width: calc(800px + 10vw);
+    margin: 0 auto;
+    padding: calc(3rem + 1vw);
+  }
+
+  .pdf-form__heading {
+    font-size: calc(2.2rem + 1.2vw);
+    margin-bottom: calc(1.5rem + 0.5vw);
+  }
+
+  .pdf-form__description {
+    font-size: calc(1.1rem + 0.3vw);
+    line-height: 1.6;
+    margin-bottom: calc(2rem + 1vw);
+    max-width: calc(45vw + 300px);
+  }
+
+  .pdf-form__main-action {
+    gap: calc(1.5rem + 0.5vw);
+    margin-bottom: calc(2rem + 1vw);
+  }
+
+  .language-option {
+    font-size: calc(1rem + 0.15vw);
+    padding: calc(0.5rem + 0.2vw) calc(1rem + 0.5vw);
+    border-radius: calc(0.4vw + 0.2rem);
+  }
+
+  .pdf-form__button {
+    font-size: calc(1.1rem + 0.2vw);
+    padding: calc(1rem + 0.5vw) calc(2rem + 1vw);
+    border-radius: calc(0.6vw + 0.3rem);
+  }
+
+  .button-text {
+    margin-right: calc(0.5rem + 0.2vw);
+  }
+
+  .button-icon {
+    font-size: calc(1.2rem + 0.2vw);
+  }
+
+  .pdf-form__fine-print {
+    font-size: calc(0.9rem + 0.1vw);
+    max-width: calc(45vw + 200px);
+    margin: 0 auto;
+  }
+
+  /* Footer Section Scaling */
+  .custom-footer-section {
+    padding: calc(4rem + 2vw) 0;
+  }
+
+  .custom-footer-container {
+    max-width: calc(1200px + 10vw);
+    padding: 0 calc(2rem + 1vw);
+  }
+
+  .custom-footer-grid {
+    gap: calc(3rem + 1vw);
+    margin-bottom: calc(3rem + 1vw);
+  }
+
+  .custom-footer-logo {
+    width: calc(180px + 4vw);
+    height: calc(72px + 1.5vw);
+    max-width: 300px;
+  }
+
+  .footer-contact-info {
+    gap: calc(1.5rem + 0.5vw);
+  }
+
+  .footer-contact-item {
+    font-size: calc(1rem + 0.15vw);
+    gap: calc(0.8rem + 0.2vw);
+  }
+
+  .footer-contact-item svg {
+    width: calc(1.2rem + 0.2vw);
+    height: calc(1.2rem + 0.2vw);
+  }
+
+  .footer-bottom {
+    margin-top: calc(3rem + 1vw);
+    padding-top: calc(2rem + 1vw);
+    gap: calc(2rem + 1vw);
+  }
+
+  .footer-copyright {
+    font-size: calc(0.9rem + 0.1vw);
+  }
+
+  .footer-bottom-links {
+    gap: calc(1.5rem + 0.5vw);
+  }
+
+  .footer-bottom-links a {
+    font-size: calc(0.9rem + 0.1vw);
+  }
 }
 
 /* Header Section */
