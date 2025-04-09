@@ -261,87 +261,92 @@
   .home-page .container,
   .home-page .section-container,
   .home-page .content-wrapper {
-    max-width: calc(800px + 15vw);
-    padding: 0 calc(20px + 1vw);
+    max-width: calc(1200px + 10vw);
+    padding: 0 calc(2rem + 1vw);
   }
   
+  .home-page > * {
+    padding: calc(4rem + 1vw) 0;
+  }
+
   .page-section {
-    padding: calc(60px + 2vw) calc(30px + 1vw);
+    padding: calc(4vw + 1rem) calc(2vw + 1rem);
   }
 
   .fine-print {
-    font-size: calc(0.9rem + 0.15vw);
-    max-width: calc(600px + 10vw);
-    margin: calc(24px + 0.5vw) auto;
+    font-size: calc(1rem + 0.15vw);
+    max-width: calc(45vw + 200px);
+    margin: calc(1.5vw + 0.5rem) auto;
   }
   
-  .cta-button {
-    padding: calc(14px + 0.3vw) calc(28px + 0.6vw);
-    font-size: calc(1rem + 0.25vw);
-    border-radius: calc(8px + 0.2vw);
+  .section-divider {
+    height: calc(3vw + 1rem);
   }
 
-  .section-divider {
-    height: calc(50px + 1.5vw);
+  .cta-button {
+    padding: calc(1vw + 0.5rem) calc(2vw + 1rem);
+    font-size: calc(1rem + 0.15vw);
+    border-radius: calc(0.6vw + 0.3rem);
   }
 
   .header {
-    padding: calc(48px + 1vw) calc(24px + 1vw);
+    padding: calc(2rem + 1vw) 0;
   }
 
   .header h1 {
     font-size: calc(2.3rem + 1.5vw);
-    margin-bottom: calc(24px + 0.5vw);
+    margin-bottom: calc(1rem + 0.5vw);
   }
 
   .header p {
-    font-size: calc(1.1rem + 0.4vw);
-    max-width: calc(600px + 15vw);
+    font-size: calc(1.1rem + 0.3vw);
+    max-width: calc(50vw + 300px);
+    margin: 0 auto;
   }
 
   .cta-section {
-    padding: calc(48px + 1vw) calc(24px + 1vw);
+    padding: calc(3rem + 1vw) 0;
   }
 
   .cta-section h2 {
     font-size: calc(2.1rem + 1.2vw);
-    margin-bottom: calc(24px + 0.5vw);
+    margin-bottom: calc(1rem + 0.5vw);
   }
 
   .cta-section p {
     font-size: calc(1.1rem + 0.3vw);
-    max-width: calc(600px + 15vw);
-    margin-bottom: calc(32px + 0.8vw);
+    max-width: calc(45vw + 200px);
+    margin: 0 auto calc(2rem + 1vw);
   }
 
-  /* Add scaling for other potential text elements if necessary */
-  /* Example for ServicesSection text if it exists in home.css */
-  .category-header h3 {
-    font-size: calc(1.6rem + 0.4vw);
-  }
-
-  .service h3, .service h4 {
-    font-size: calc(1.3rem + 0.3vw);
+  .service h3, 
+  .service h4 {
+    font-size: calc(1.4rem + 0.4vw);
+    margin-bottom: calc(0.5rem + 0.2vw);
   }
 
   .service-details p {
     font-size: calc(1rem + 0.15vw);
+    line-height: 1.6;
   }
-  
+
   .result-item .metric {
-    font-size: calc(2.2rem + 0.6vw);
+    font-size: calc(1.6rem + 0.5vw);
+    margin-bottom: calc(0.5rem + 0.2vw);
   }
 
   .result-item .description {
-    font-size: calc(1.1rem + 0.25vw);
-  }
-  
-  .feature-list li {
     font-size: calc(1rem + 0.15vw);
   }
-  
+
+  .feature-list li {
+    font-size: calc(1rem + 0.15vw);
+    margin-bottom: calc(0.5rem + 0.2vw);
+  }
+
   .top-nav .nav-items a {
-    font-size: calc(1rem + 0.2vw);
+    font-size: calc(1rem + 0.15vw);
+    padding: calc(0.5rem + 0.2vw) calc(1rem + 0.5vw);
   }
 }
 
