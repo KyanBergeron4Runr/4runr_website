@@ -42,7 +42,7 @@
 .title {
   font-family: var(--font-heading);
   color: #fff;
-  font-size: 2rem !important;
+  font-size: 2.5rem !important;
   font-weight: var(--weight-h1);
   text-shadow: 0 2px 4px rgba(106, 90, 205, 0.2);
   margin-bottom: 1vw;
@@ -515,7 +515,7 @@
   }
   
   .title {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
     color: #ffffff !important;
     background: none !important;
     -webkit-background-clip: initial !important;
