@@ -3,7 +3,7 @@
   background-color: #000000;
   color: #fff;
   text-align: center;
-  padding: 80px 0;
+  padding: 60px 0;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -13,13 +13,13 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .marquee-inner {
   display: flex;
   width: fit-content;
-  animation: marquee 150s linear infinite;
+  animation: marquee 120s linear infinite;
 }
 
 @keyframes marquee {
@@ -30,34 +30,34 @@
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 300px;
+  gap: 160px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
-  /* Add explicit sizing to container */
-  min-width: 400px;
-  min-height: 400px;
+  padding: 20px;
+  /* More reasonable container size */
+  min-width: 260px;
+  min-height: 180px;
 }
 
-/* Direct logo sizing - extreme size */
+/* Direct logo sizing - balanced size */
 .logo {
-  height: 400px !important; /* Force extreme height */
+  height: 140px !important; /* More balanced height */
   width: auto !important;
-  min-width: 300px !important;
+  min-width: 120px !important;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 1;
 }
 
 .fine-print {
-  font-size: 22px;
-  margin-top: 60px;
-  max-width: 900px;
-  padding: 0 30px;
+  font-size: 18px;
+  margin-top: 40px;
+  max-width: 800px;
+  padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -65,40 +65,40 @@
 /* Media queries for responsive design */
 @media (max-width: 1400px) {
   .logo {
-    height: 350px !important;
+    height: 130px !important;
   }
   
   .logo-group {
-    gap: 250px;
+    gap: 140px;
   }
 }
 
 @media (max-width: 1024px) {
   .logo {
-    height: 300px !important;
+    height: 120px !important;
   }
   
   .logo-group {
-    gap: 200px;
+    gap: 120px;
   }
 }
 
 @media (max-width: 768px) {
   .logo {
-    height: 250px !important;
+    height: 100px !important;
   }
   
   .logo-group {
-    gap: 150px;
+    gap: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    height: 200px !important;
+    height: 80px !important;
   }
   
   .logo-group {
-    gap: 100px;
+    gap: 60px;
   }
 } 
