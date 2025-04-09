@@ -62,7 +62,7 @@
 
 .subheading {
   font-family: var(--font-heading);
-  font-size: calc(18 / 1920 * 100vw);
+  font-size: calc(16 / 1920 * 100vw);
   color: #ccc;
   position: relative;
   text-align: center;
@@ -264,6 +264,10 @@
 
   .main-title h1 {
     font-size: var(--mobile-text-title);
+  }
+
+  .subheading {
+    font-size: calc(14 / 768 * 100vw);
   }
 
   /* Mobile tab system for subheadings */
