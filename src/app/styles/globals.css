@@ -135,7 +135,6 @@ main {
   position: relative;
   z-index: 1;
   background: #000000;
-  padding-top: 90px; /* Add padding for fixed header */
 }
 
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
