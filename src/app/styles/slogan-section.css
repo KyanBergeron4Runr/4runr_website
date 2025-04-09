@@ -20,11 +20,13 @@
   display: flex;
   width: fit-content;
   animation: marquee 120s linear infinite;
+  will-change: transform;
 }
 
+/* Ensure proper animation for infinite scrolling */
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(calc(-50% - 80px)); } /* Half width plus half gap */
 }
 
 .logo-group {
@@ -38,16 +40,16 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  /* More reasonable container size */
-  min-width: 260px;
-  min-height: 180px;
+  /* Slightly larger container */
+  min-width: 300px;
+  min-height: 200px;
 }
 
-/* Direct logo sizing - balanced size */
+/* Direct logo sizing - slightly bigger */
 .logo {
-  height: 140px !important; /* More balanced height */
+  height: 160px !important; /* Slightly increased height */
   width: auto !important;
-  min-width: 120px !important;
+  min-width: 140px !important;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 1;
@@ -65,7 +67,7 @@
 /* Media queries for responsive design */
 @media (max-width: 1400px) {
   .logo {
-    height: 130px !important;
+    height: 150px !important;
   }
   
   .logo-group {
@@ -75,7 +77,7 @@
 
 @media (max-width: 1024px) {
   .logo {
-    height: 120px !important;
+    height: 140px !important;
   }
   
   .logo-group {
@@ -85,20 +87,30 @@
 
 @media (max-width: 768px) {
   .logo {
-    height: 100px !important;
+    height: 120px !important;
   }
   
   .logo-group {
     gap: 80px;
   }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 40px)); } /* Half width plus half gap for mobile */
+  }
 }
 
 @media (max-width: 480px) {
   .logo {
-    height: 80px !important;
+    height: 100px !important;
   }
   
   .logo-group {
     gap: 60px;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 30px)); } /* Half width plus half gap for small mobile */
   }
 } 
