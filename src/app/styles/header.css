@@ -26,10 +26,10 @@
 }
 
 .header-desktop .header__logo {
-  height: 120px !important;
-  width: auto !important;
-  object-fit: contain;
-  max-width: 100% !important;
+  height: auto !important;
+  width: 300px !important;
+  max-width: none !important;
+  object-fit: contain !important;
 }
 
 .top-nav {
@@ -75,21 +75,44 @@
 
 /* Laptop displays */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
-  .header-desktop .header__logo {
-    height: 150px !important;
+  .header-wrapper {
+    min-height: 70px !important;
+    max-height: 70px !important;
+    overflow: visible !important;
   }
+  
+  .header-desktop {
+    min-height: 70px !important;
+    max-height: 70px !important;
+    overflow: visible !important;
+  }
+  
+  .header-desktop .header__logo-wrapper {
+    position: relative !important;
+    transform: translate(9.375vw, 0) !important;
+    z-index: 10 !important;
+  }
+  
+  .header-desktop .header__logo {
+    width: 280px !important;
+    height: auto !important;
+    position: relative !important;
+    z-index: 10 !important;
+    top: 10px !important;
+  }
+  
+  .top-nav {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+  
   .top-nav a {
     font-size: 18px !important;
   }
+  
   .top-nav .contact-button {
     font-size: 18px !important;
-    padding: 15px 25px !important;
-  }
-  .header-wrapper {
-    min-height: 80px !important;
-  }
-  .header-desktop {
-    min-height: 80px !important;
+    padding: 12px 25px !important;
   }
 }
 
