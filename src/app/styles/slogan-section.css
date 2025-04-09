@@ -1,8 +1,8 @@
 :root {
-  --section-padding-v: 1.5vw;
+  --section-padding-v: 2.5vw;
   --section-padding-h: 2vw;
-  --logo-height: 7vw;
-  --logo-gap: 4vw;
+  --logo-height: 10vw;
+  --logo-gap: 6vw;
 }
 
 .slogan-section {
@@ -22,7 +22,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 2vw 0;
+  padding: 3vw 0;
   -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 5%, #000 95%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
 }
@@ -48,6 +48,7 @@
 .logo-group {
   display: flex;
   align-items: center;
+  gap: var(--logo-gap);
 }
 
 .logo-container {
@@ -55,7 +56,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 300px;
+  min-width: 400px;
 }
 
 .logo {
@@ -71,15 +72,15 @@
   -webkit-perspective: 1000px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 300px;
+  max-width: 400px;
   filter: brightness(0) invert(1);
 }
 
 .fine-print {
   font-family: var(--font-body);
-  font-size: 0.8vw;
-  color: #666;
-  margin-top: 0.390625vw;
+  font-size: 1.2vw;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2vw;
   line-height: 1.4;
   text-align: center;
   width: 100%;
@@ -92,17 +93,47 @@
   display: block;
   text-align: center;
   width: 100%;
-  margin-bottom: 0.1953125vw;
+  margin-bottom: 0.5vw;
 }
 
 @media (max-width: 768px) {
+  :root {
+    --logo-height: 120px;
+    --logo-gap: 40px;
+  }
+
   .marquee-inner {
     animation: primary-animation 30s linear infinite;
     -webkit-animation: primary-animation 30s linear infinite;
   }
 
   .logo {
-    height: 80px;
+    height: var(--logo-height);
+    max-width: 240px;
+  }
+
+  .logo-container {
+    min-width: 240px;
+  }
+
+  .fine-print {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+  .fine-print-line {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --logo-height: 80px;
+    --logo-gap: 30px;
+  }
+
+  .logo {
+    height: var(--logo-height);
     max-width: 180px;
   }
 
@@ -112,30 +143,10 @@
 
   .fine-print {
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .fine-print-line {
-    margin-bottom: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    height: 60px;
-    max-width: 140px;
-  }
-
-  .logo-container {
-    min-width: 140px;
-  }
-
-  .fine-print {
-    font-size: 12px;
-    margin-top: 15px;
-  }
-
-  .fine-print-line {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
 } 
