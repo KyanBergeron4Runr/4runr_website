@@ -1,16 +1,9 @@
-/* Slogan Section - Fresh Implementation */
-:root {
-  --section-padding-v: 5vw;
-  --section-padding-h: 4vw;
-  --logo-height: 80vw;
-  --logo-gap: 3vw;
-}
-
+/* Slogan Section - Simplified Implementation */
 .slogan-section {
   background-color: #000000;
   color: #fff;
   text-align: center;
-  padding: var(--section-padding-v) var(--section-padding-h);
+  padding: 5vw 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,9 +18,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 6vw 0;
-  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, #000 1%, #000 99%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 1%, #000 99%, transparent 100%);
+  padding: 5vw 0;
 }
 
 /* Marquee animation container */
@@ -35,8 +26,7 @@
   display: flex;
   width: fit-content;
   will-change: transform;
-  animation: marquee 80s linear infinite;
-  -webkit-animation: marquee 80s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 /* Animation keyframes */
@@ -45,54 +35,38 @@
   100% { transform: translateX(-50%); }
 }
 
-@-webkit-keyframes marquee {
-  0% { -webkit-transform: translateX(0); }
-  100% { -webkit-transform: translateX(-50%); }
-}
-
 /* Logo group container */
 .logo-group {
   display: flex;
   align-items: center;
-  gap: var(--logo-gap);
+  gap: 5vw;
 }
 
 /* Individual logo container */
 .logo-container {
-  min-width: 3000px;
+  min-width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 calc(var(--logo-gap) / 2);
+  padding: 0 2.5vw;
 }
 
 /* Logo image styling */
 .logo {
-  height: var(--logo-height);
+  height: 50vw;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  
-  /* Performance optimizations */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Fine print text */
 .fine-print {
   font-family: var(--font-body);
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: rgba(255, 255, 255, 0.9);
-  margin-top: 4vw;
+  margin-top: 5vw;
   line-height: 1.4;
   text-align: center;
   width: 100%;
@@ -105,61 +79,30 @@
   display: block;
   text-align: center;
   width: 100%;
-  margin-bottom: 1.5vw;
+  margin-bottom: 1vw;
 }
 
 /* Tablet styles */
 @media (max-width: 768px) {
-  :root {
-    --section-padding-v: 7vw;
-    --section-padding-h: 5vw;
-    --logo-height: 85vw;
-    --logo-gap: 5vw;
-  }
-
-  .slogan-section {
-    min-height: 65vh;
-  }
-
-  .marquee-inner {
-    animation: marquee 70s linear infinite;
-    -webkit-animation: marquee 70s linear infinite;
-  }
-
-  .logo-container {
-    min-width: 2000px;
-  }
-
-  .fine-print {
-    font-size: 28px;
-    margin-top: 50px;
-  }
-
-  .fine-print-line {
-    margin-bottom: 20px;
-  }
-}
-
-/* Mobile styles */
-@media (max-width: 480px) {
-  :root {
-    --section-padding-v: 10vw;
-    --section-padding-h: 6vw;
-    --logo-height: 90vw;
-    --logo-gap: 7vw;
-  }
-
   .slogan-section {
     min-height: 60vh;
+    padding: 7vw 0;
+  }
+
+  .marquee {
+    padding: 7vw 0;
   }
 
   .marquee-inner {
-    animation: marquee 60s linear infinite;
-    -webkit-animation: marquee 60s linear infinite;
+    animation: marquee 50s linear infinite;
   }
 
   .logo-container {
-    min-width: 1500px;
+    min-width: 300px;
+  }
+
+  .logo {
+    height: 60vw;
   }
 
   .fine-print {
@@ -168,6 +111,39 @@
   }
 
   .fine-print-line {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .slogan-section {
+    min-height: 50vh;
+    padding: 10vw 0;
+  }
+
+  .marquee {
+    padding: 10vw 0;
+  }
+
+  .marquee-inner {
+    animation: marquee 40s linear infinite;
+  }
+
+  .logo-container {
+    min-width: 250px;
+  }
+
+  .logo {
+    height: 70vw;
+  }
+
+  .fine-print {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .fine-print-line {
+    margin-bottom: 10px;
   }
 } 
