@@ -26,10 +26,11 @@
 }
 
 .header-desktop .header__logo {
+  width: 120px !important;
   height: auto !important;
-  width: 220px !important;
-  max-width: none !important;
-  object-fit: contain !important;
+  position: relative !important;
+  z-index: 10 !important;
+  top: 3px !important;
 }
 
 .top-nav {
@@ -338,7 +339,7 @@ body.menu-open {
 }
 
 .header-desktop .header__logo {
-  width: 80px !important;
+  width: 110px !important;
   height: auto !important;
   position: relative !important;
   z-index: 10 !important;

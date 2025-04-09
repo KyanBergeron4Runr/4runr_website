@@ -182,7 +182,7 @@
   align-items: center;
   justify-content: center;
   padding: calc(16 / 1920 * 100vw) calc(32 / 1920 * 100vw);
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(45deg, #4B0082, #483D8B);
   color: #fff;
   text-decoration: none;
   border-radius: calc(10 / 1920 * 100vw);
