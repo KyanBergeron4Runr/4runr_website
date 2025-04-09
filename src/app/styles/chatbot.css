@@ -424,45 +424,55 @@
 /* Laptop-specific styles (1024px to 1366px) */
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .chat-container {
-    max-width: 800px;
-    padding: 24px;
+    max-width: 650px !important;
+    min-height: 500px !important;
+    padding: 20px !important;
+  }
+
+  .messages {
+    padding: 16px !important;
+    gap: 16px !important;
+  }
+
+  .message-bubble {
+    font-size: 16px !important;
+    padding: 16px !important;
+    max-width: 75% !important;
+  }
+
+  .input-area {
+    max-width: 90% !important;
+    padding: 15px !important;
+    margin-top: 15px !important;
+  }
+
+  .message-input {
+    height: 45px !important;
+    font-size: 15px !important;
+    padding: 12px 15px !important;
+  }
+
+  .send-button {
+    min-width: 45px !important;
+    height: 45px !important;
+    font-size: 15px !important;
   }
 
   .header {
-    max-width: 800px;
-    padding: 32px 24px;
-    gap: 24px;
-    margin-bottom: 32px;
+    max-width: 700px !important;
+    padding: 25px 20px !important;
+    gap: 20px !important;
+    margin-bottom: 25px !important;
   }
 
   .title {
-    font-size: 42px;
-    margin-bottom: 16px;
-    line-height: 1.2;
+    font-size: 36px !important;
+    margin-bottom: 12px !important;
   }
 
   .subtitle {
-    font-size: 24px;
-    max-width: 600px;
-    line-height: 1.5;
-  }
-
-  .message-content {
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
-  .chat-input {
-    font-size: 20px;
-    padding: 20px 28px;
-  }
-
-  .chat-input::placeholder {
-    font-size: 20px;
-  }
-
-  .bottom-text {
-    font-size: 18px;
+    font-size: 18px !important;
+    max-width: 550px !important;
   }
 }
 

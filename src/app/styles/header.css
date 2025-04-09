@@ -76,7 +76,7 @@
 /* Laptop displays */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
   .header-desktop .header__logo {
-    height: 100px !important;
+    height: 150px !important;
   }
   .top-nav a {
     font-size: 18px !important;
@@ -86,7 +86,10 @@
     padding: 15px 25px !important;
   }
   .header-wrapper {
-    min-height: 120px !important;
+    min-height: 80px !important;
+  }
+  .header-desktop {
+    min-height: 80px !important;
   }
 }
 
