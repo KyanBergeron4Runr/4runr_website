@@ -1,5 +1,29 @@
 /* Slogan Section Component - Updated Styles */
 
+/* Laptop view (1024px-1400px) - Adjust spacing and fine print size */
+@media (min-width: 769px) and (max-width: 1400px) {
+  html body div.slogan-section {
+    padding: 40px 0 !important; /* Reduced overall section padding */
+  }
+  
+  html body div.slogan-section .marquee {
+    padding: 25px 0 !important; /* Less space above/below carousel */
+  }
+  
+  html body div.slogan-section .fine-print {
+    font-size: 22px !important; /* Smaller text */
+    margin-top: 25px !important; /* Less space above fine print */
+    margin-bottom: 15px !important; /* Less space below fine print */
+    line-height: 1.4 !important;
+  }
+  
+  html body div.slogan-section .fine-print-line {
+    font-size: 22px !important; /* Smaller text */
+    margin-bottom: 8px !important; /* Less space between lines */
+    display: block !important;
+  }
+}
+
 /* Special mobile view overrides with maximum specificity */
 @media (max-width: 768px) {
   /* Logo sizing and spacing */
