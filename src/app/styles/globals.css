@@ -137,14 +137,15 @@ main {
   background: #000000;
 }
 
+/* Removing padding-top from media queries since header is no longer fixed */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
   main {
-    padding-top: 80px;
+    /* removed padding-top: 80px; */
   }
 }
 
 @media screen and (min-width: 1537px) {
   main {
-    padding-top: 100px;
+    /* removed padding-top: 100px; */
   }
 } 
