@@ -142,6 +142,10 @@ div.cta-section a.lets-talk-button {
   box-shadow: 0 6px 8px rgba(75, 0, 130, 0.25) !important;
   min-width: 320px !important;
   min-height: 80px !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  white-space: normal !important; /* Allow text to wrap */
+  max-width: 320px !important;
 }
 
 div.cta-section-mobile a.lets-talk-button-mobile {
@@ -222,14 +226,17 @@ div.cta-section-mobile a.lets-talk-button-mobile {
   }
   
   div.cta-section a.lets-talk-button {
-    font-size: 1.5rem !important; /* Much larger text */
-    padding: 1.3rem 3rem !important;
-    min-height: 75px !important;
-    min-width: 300px !important;
+    font-size: 1.5rem !important;
+    padding: 1.5rem 2rem !important; /* Reduced horizontal padding */
+    min-height: 85px !important; /* Increased height for 2 lines */
+    min-width: 280px !important;
+    max-width: 280px !important;
     background: linear-gradient(45deg, var(--ultra-vibrant-purple-start), var(--ultra-vibrant-purple-end)) !important;
     background-size: 200% 200% !important;
-    box-shadow: 0 5px 10px rgba(112, 0, 181, 0.35) !important; /* Stronger shadow */
+    box-shadow: 0 5px 10px rgba(112, 0, 181, 0.35) !important;
     font-weight: 700 !important;
+    line-height: 1.2 !important;
+    white-space: normal !important; /* Allow text to wrap */
   }
 }
 
@@ -254,6 +261,16 @@ div.cta-section-mobile a.lets-talk-button-mobile {
     margin-left: auto !important;
     margin-right: auto !important;
     line-height: 1.6 !important;
+  }
+  
+  div.cta-section a.lets-talk-button {
+    font-size: 1.7rem !important;
+    padding: 1.7rem 2.2rem !important; /* Reduced horizontal padding */
+    min-height: 100px !important; /* Increased height for 2 lines */
+    min-width: 320px !important;
+    max-width: 320px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important; /* Allow text to wrap */
   }
 }
 
