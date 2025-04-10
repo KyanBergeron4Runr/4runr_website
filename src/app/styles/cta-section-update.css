@@ -60,22 +60,66 @@
 
 /* MOBILE - Add space around text and prevent line wrapping during animation */
 @media screen and (max-width: 767px) {
-  /* Add spacing around the typed text */
-  div.cta-section-mobile span.typed-text-mobile {
-    padding: 0 0.4rem !important;
-    margin: 0 0.2rem !important;
-    display: inline-block !important;
-    min-width: 120px !important; /* Set fixed width to prevent layout shifts */
-    text-align: left !important;
+  /* Fix text cutting off issue */
+  div.cta-section-mobile p.cta-body-mobile {
+    white-space: normal !important; /* Allow normal text wrapping */
+    overflow: visible !important;
+    text-overflow: clip !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin: 0 auto 25px auto !important;
+    padding: 0 15px !important;
   }
   
-  /* Improve animation appearance */
+  /* Structure the typed animation to prevent movement */
   div.cta-section-mobile div.typed-wrapper-mobile {
-    min-height: 2.5rem !important; /* Set minimum height to prevent shifting */
-    margin: 0.8rem 0 !important;
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 6rem !important;
+    margin: 0.8rem 0 1.5rem !important;
     width: 100% !important;
     position: relative !important;
+  }
+  
+  /* Style the h2 containing "Automate" */
+  div.cta-section-mobile div.typed-wrapper-mobile h2 {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    margin: 0 0 0.5rem 0 !important;
+    line-height: 1.3 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  /* Make the typed text consistent size with surrounding text */
+  div.cta-section-mobile span.typed-text-mobile {
+    font-size: 22px !important; /* Match surrounding text */
+    font-weight: 700 !important;
+    padding: 0.5rem 0 !important;
+    margin: 0.3rem 0 !important;
+    display: block !important;
+    min-width: 200px !important;
+    max-width: 90% !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+    color: #6a5acd !important;
+  }
+  
+  /* Add "with AI" as a separate line */
+  div.cta-section-mobile div.typed-wrapper-mobile h2::after {
+    content: "with AI." !important;
+    display: block !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    margin: 0.5rem 0 0 0 !important;
+    line-height: 1.3 !important;
+    width: 100% !important;
+    text-align: center !important;
   }
   
   /* Handle cursor blinking */
@@ -83,15 +127,6 @@
     display: inline-block !important;
     position: relative !important;
     margin-left: 2px !important;
-  }
-  
-  /* Make text container non-wrapping during animation */
-  div.cta-section-mobile p,
-  div.cta-section-mobile div.typed-wrapper-mobile p {
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    width: 100% !important;
-    padding: 0 1rem !important;
+    color: #6a5acd !important;
   }
 } 

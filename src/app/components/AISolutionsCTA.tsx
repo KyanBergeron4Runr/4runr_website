@@ -123,12 +123,11 @@ export default function AISolutionsCTA({
             <h2>
               Automate
               <span className="typed-text-mobile"></span>
-              with AI.
             </h2>
           </div>
           <p className="cta-body-mobile">
             You're not just running a business—you're shaping the future. Break free from outdated processes and the confusion
-            of navigating AI alone.
+            of navigating AI alone, with solutions that streamline operations and keep you ahead.
           </p>
           <div className="cta-buttons-mobile">
             <a href={button1Url} className="lets-talk-button-mobile">
