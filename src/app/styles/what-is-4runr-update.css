@@ -1,0 +1,101 @@
+/* WhatIs4Runr Component - Updated Styles */
+
+/* Desktop overrides (1367px+) */
+@media screen and (min-width: 1367px) {
+  /* Increase button height */
+  html body .what-we-do .cta-button {
+    min-height: 4vw !important; /* Increased from 3.125vw */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Laptop overrides (1024px-1366px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  /* Make heading smaller */
+  html body .what-we-do .titles h2 {
+    font-size: calc(var(--h2-size) * 1.1) !important; /* Reduced from 1.3 */
+  }
+  
+  /* Make rectangle taller for better text fit */
+  html body .what-we-do .rectangles {
+    height: calc(320 / 1920 * 100vw) !important; /* Increased from 280/1920 */
+  }
+  
+  /* Make fine print smaller */
+  html body .what-we-do .fine-print {
+    font-size: calc(var(--text-small) * 1.2) !important; /* Reduced from 1.5 */
+    line-height: 1.4 !important;
+  }
+  
+  /* Increase button height */
+  html body .what-we-do .cta-button {
+    min-height: 3.5vw !important; /* Increased from original */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Mobile overrides (767px and below) */
+@media (max-width: 767px) {
+  /* Increase heading size */
+  html body .what-we-do .titles h2 {
+    font-size: 2.5rem !important; /* Larger from 2.2rem + 1vw */
+    margin-bottom: 1.3rem !important;
+  }
+  
+  /* Make rectangle background transparent */
+  html body .what-we-do .rectangle {
+    background: transparent !important;
+    box-shadow: 0 calc(8 / 1920 * 100vw) calc(12 / 1920 * 100vw) rgba(106, 90, 205, 0.6) !important;
+    transition: opacity 400ms ease !important; /* Smoother transitions */
+  }
+  
+  html body .what-we-do .rectangle-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+  
+  /* Smoother transitions between content */
+  html body .what-we-do .rectangle {
+    transition: opacity 400ms ease-in-out !important;
+  }
+  
+  /* Make fine print smaller and ensure horizontal structure */
+  html body .what-we-do .fine-print {
+    font-size: 0.95rem !important; /* Smaller */
+    text-align: center !important; /* Center align */
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+  
+  /* Restructure bottom flex to horizontal */
+  html body .what-we-do .bottom-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+  }
+  
+  /* Button wrapper full width for better alignment */
+  html body .what-we-do .button-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 375px) {
+  html body .what-we-do .titles h2 {
+    font-size: 2.3rem !important;
+  }
+  
+  html body .what-we-do .fine-print {
+    font-size: 0.9rem !important;
+  }
+} 

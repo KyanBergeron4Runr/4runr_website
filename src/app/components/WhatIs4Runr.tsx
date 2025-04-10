@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import '../styles/what-is-4runr.css'
+import '../styles/what-is-4runr-update.css'
 
 interface Topic {
   title: string;
