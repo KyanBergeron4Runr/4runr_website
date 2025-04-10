@@ -127,38 +127,38 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 1.3rem 3rem !important;
+  padding: 1.5rem 3.5rem !important;
   border: none !important;
   border-radius: 0.6rem !important;
   color: white !important;
-  background: linear-gradient(45deg, #4B0082, #483D8B) !important;
-  background-size: 100% 100% !important;
+  background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+  background-size: 200% 200% !important;
   text-decoration: none !important;
-  font-size: 1.3rem !important;
+  font-size: 1.5rem !important;
   font-weight: 700 !important;
   transition: transform 0.3s ease, background 0.3s ease !important;
-  box-shadow: 0 4px 6px rgba(75, 0, 130, 0.2) !important;
-  min-width: 280px !important;
-  min-height: 70px !important;
+  box-shadow: 0 6px 8px rgba(75, 0, 130, 0.25) !important;
+  min-width: 320px !important;
+  min-height: 80px !important;
 }
 
 .lets-talk-button-mobile {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 1rem 2rem !important;
+  padding: 1.2rem 2rem !important;
   border: none !important;
   border-radius: 8px !important;
   color: white !important;
-  background: linear-gradient(45deg, #4B0082, #483D8B) !important;
-  background-size: 100% 100% !important;
+  background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+  background-size: 200% 200% !important;
   text-decoration: none !important;
-  font-size: 1rem !important;
+  font-size: 1.1rem !important;
   font-weight: 700 !important;
   transition: transform 0.3s ease, background 0.3s ease !important;
-  box-shadow: 0 4px 6px rgba(75, 0, 130, 0.2) !important;
+  box-shadow: 0 4px 6px rgba(75, 0, 130, 0.25) !important;
   width: 100% !important;
-  min-height: 60px !important;
+  min-height: 65px !important;
 }
 
 /* Media queries for responsive display */
@@ -178,20 +178,22 @@
   
   /* Tablet CTA enhancements */
   .cta-section .cta-heading-main {
-    font-size: calc(2rem + 0.2vw) !important;
+    font-size: calc(2.1rem + 0.2vw) !important;
     margin-bottom: 1.8rem !important;
   }
   
   .cta-section .cta-subtext {
-    font-size: calc(1.1rem + 0.1vw) !important;
+    font-size: calc(1.2rem + 0.1vw) !important;
     margin-bottom: 2rem !important;
   }
   
   .cta-section .lets-talk-button {
-    font-size: 1.1rem !important;
-    padding: 1rem 2.3rem !important;
-    min-height: 60px !important;
-    min-width: 240px !important;
+    font-size: 1.2rem !important;
+    padding: 1.1rem 2.4rem !important;
+    min-height: 65px !important;
+    min-width: 260px !important;
+    background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+    background-size: 200% 200% !important;
   }
 }
 
@@ -202,22 +204,23 @@
   
   /* Laptop CTA enhancements */
   .cta-section .cta-heading-main {
-    font-size: calc(2.2rem + 0.2vw) !important;
+    font-size: calc(2.3rem + 0.2vw) !important;
     margin-bottom: 2rem !important;
   }
   
   .cta-section .cta-subtext {
-    font-size: calc(1.2rem + 0.1vw) !important;
+    font-size: calc(1.3rem + 0.1vw) !important;
     margin-bottom: 2.2rem !important;
   }
   
   .cta-section .lets-talk-button {
-    font-size: 1.2rem !important;
-    padding: 1.2rem 2.8rem !important;
-    min-height: 65px !important;
-    min-width: 260px !important;
-    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
-    background-size: 100% 100% !important;
+    font-size: 1.3rem !important;
+    padding: 1.3rem 3rem !important;
+    min-height: 70px !important;
+    min-width: 280px !important;
+    background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+    background-size: 200% 200% !important;
+    box-shadow: 0 5px 7px rgba(75, 0, 130, 0.25) !important;
   }
 }
 
@@ -228,7 +231,7 @@
   
   /* Desktop CTA enhancements */
   .cta-section .cta-heading-main {
-    font-size: calc(3rem + 0.3vw) !important;
+    font-size: calc(3.4rem + 0.3vw) !important;
     margin-bottom: 2.5rem !important;
     max-width: 80% !important;
     margin-left: auto !important;
@@ -236,8 +239,8 @@
   }
   
   .cta-section .cta-subtext {
-    font-size: calc(1.4rem + 0.1vw) !important;
-    margin-bottom: 2.5rem !important;
+    font-size: calc(1.6rem + 0.1vw) !important;
+    margin-bottom: 2.8rem !important;
     max-width: 70% !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -248,8 +251,10 @@
 /* Small mobile adjustments */
 @media (max-width: 480px) {
   .lets-talk-button-mobile {
-    min-height: 55px !important;
-    font-size: 0.95rem !important;
-    padding: 0.9rem 1.8rem !important;
+    min-height: 60px !important;
+    font-size: 1rem !important;
+    padding: 1rem 1.8rem !important;
+    background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+    background-size: 200% 200% !important;
   }
 } 
