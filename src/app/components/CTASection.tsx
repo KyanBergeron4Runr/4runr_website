@@ -20,85 +20,16 @@ export default function CTASection({
   return (
     <>
       {/* Desktop Version */}
-      <div
-        className="cta-section"
-        style={{
-          background: '#000000',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          padding: '4.16vw 0',
-          margin: 0,
-          backgroundRepeat: 'no-repeat',
-          overflow: 'hidden',
-          border: 'none',
-        }}
-      >
-        <div
-          className="cta-container"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            color: 'white',
-            maxWidth: '83.33vw',
-            margin: '0 auto',
-            textAlign: 'center',
-            padding: 0,
-          }}
-        >
-          <h2
-            className="cta-heading-main"
-            style={{
-              fontSize: 'var(--h2-size)',
-              lineHeight: 'var(--line-height-h2)',
-              letterSpacing: 'var(--letter-spacing-h2)',
-              fontWeight: 'var(--weight-h2)',
-              color: 'white',
-              maxWidth: '83.33vw',
-              textAlign: 'center',
-              marginBottom: '2rem',
-              fontFamily: 'var(--font-heading)',
-            }}
-          >
+      <div className="cta-section">
+        <div className="cta-container">
+          <h2 className="cta-heading-main">
             {heading}
           </h2>
-          <p
-            className="cta-subtext"
-            style={{
-              fontSize: 'var(--text-body)',
-              lineHeight: 'var(--line-height-body)',
-              fontWeight: 'var(--weight-body)',
-              margin: '0 0 2rem 0',
-              maxWidth: '57.29vw',
-              color: 'var(--color-text-light)',
-              textAlign: 'center',
-              fontFamily: 'var(--font-sans)',
-            }}
-          >
+          <p className="cta-subtext">
             {subtext}
           </p>
-          <div className="cta-buttons" style={{ marginTop: '2rem' }}>
-            <a
-              href={buttonUrl}
-              className="lets-talk-button"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '1rem 2rem',
-                border: '1.5px solid transparent',
-                borderRadius: '0.5rem',
-                color: 'white',
-                background: 'linear-gradient(45deg, var(--color-primary), var(--color-secondary))',
-                textDecoration: 'none',
-                fontSize: 'var(--text-button)',
-                fontWeight: 'var(--weight-button)',
-                transition: 'transform 0.3s',
-                fontFamily: 'var(--font-heading)',
-                minHeight: '3.5rem'
-              }}
-            >
+          <div className="cta-buttons">
+            <a href={buttonUrl} className="lets-talk-button">
               {buttonText}
             </a>
           </div>
@@ -106,86 +37,16 @@ export default function CTASection({
       </div>
 
       {/* Mobile Version */}
-      <div
-        className="cta-section-mobile"
-        style={{
-          background: '#000000',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          padding: '3.5rem 1.25rem',
-          margin: 0,
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <div
-          className="cta-container-mobile"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            color: 'white',
-            maxWidth: '100%',
-            margin: '0 auto',
-            textAlign: 'center',
-          }}
-        >
-          <h1
-            className="cta-heading-mobile"
-            style={{
-              fontSize: 'var(--mobile-text-title)',
-              margin: '0 0 1.2rem 0',
-              color: 'white',
-              lineHeight: '1.2',
-              fontWeight: 900,
-              textAlign: 'center',
-              fontFamily: 'var(--font-heading)',
-            }}
-          >
+      <div className="cta-section-mobile">
+        <div className="cta-container-mobile">
+          <h1 className="cta-heading-mobile">
             {heading}
           </h1>
-          <p
-            className="cta-body-mobile"
-            style={{
-              fontSize: 'var(--mobile-text-body)',
-              margin: '0 0 2rem 0',
-              lineHeight: '1.6',
-              fontWeight: 400,
-              maxWidth: '90%',
-              textAlign: 'center',
-              color: 'white',
-              opacity: 0.9,
-              fontFamily: 'var(--font-sans)',
-            }}
-          >
+          <p className="cta-body-mobile">
             {subtext}
           </p>
-          <div
-            className="cta-buttons-mobile"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '100%',
-              maxWidth: '180px',
-            }}
-          >
-            <a
-              href={buttonUrl}
-              className="lets-talk-button-mobile"
-              style={{
-                display: 'block',
-                padding: '10px 16px',
-                border: '1.5px solid transparent',
-                borderRadius: '6px',
-                color: 'white',
-                background: 'linear-gradient(45deg, #4B0082, #483D8B)',
-                textDecoration: 'none',
-                fontSize: 'var(--mobile-text-button)',
-                textAlign: 'center',
-                fontWeight: 700,
-                transition: 'transform 0.3s ease',
-                fontFamily: 'var(--font-heading)',
-              }}
-            >
+          <div className="cta-buttons-mobile">
+            <a href={buttonUrl} className="lets-talk-button-mobile">
               {buttonText}
             </a>
           </div>
