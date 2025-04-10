@@ -99,8 +99,37 @@
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
+/* Logo display control */
+.desktop-only-logo {
+  display: inline-block !important;
+}
+
+.laptop-only-logo {
+  display: none !important;
+}
+
+/* Default desktop logo styles */
+.header-desktop .header__logo {
+  height: auto !important;
+  width: 220px !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  position: relative !important;
+  z-index: 10 !important;
+  top: 0 !important;
+}
+
 /* Adjust laptop display (1025px - 1366px) - Add new range for medium laptops */
 @media screen and (min-width: 1025px) and (max-width: 1365px) {
+  /* Show laptop logo, hide desktop logo */
+  .desktop-only-logo {
+    display: none !important;
+  }
+  
+  .laptop-only-logo {
+    display: inline-block !important;
+  }
+  
   .header-wrapper {
     min-height: 70px !important;
     margin-top: -10px !important;
@@ -109,8 +138,8 @@
   
   .header-desktop {
     min-height: 70px !important;
-    padding-right: 150px !important; /* Reduced padding to bring logo closer to center */
-    flex: 0 0 30% !important; /* Adjusted flex value to bring elements closer to center */
+    padding-right: 150px !important;
+    flex: 0 0 30% !important;
   }
   
   .header-desktop .header__logo-wrapper {
@@ -118,9 +147,10 @@
     z-index: 10 !important;
   }
   
-  .header-desktop .header__logo {
-    width: 160px !important; /* Smaller logo */
-    max-width: 160px !important;
+  /* Laptop-specific logo size */
+  .header-desktop .laptop-only-logo {
+    width: 140px !important;
+    max-width: 140px !important;
     height: auto !important;
     position: relative !important;
     z-index: 10 !important;
@@ -147,6 +177,15 @@
 
 /* Adjust existing laptop display for larger laptops */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
+  /* Show laptop logo, hide desktop logo */
+  .desktop-only-logo {
+    display: none !important;
+  }
+  
+  .laptop-only-logo {
+    display: inline-block !important;
+  }
+  
   .header-wrapper {
     min-height: 70px !important;
     margin-top: -15px !important;
@@ -155,8 +194,8 @@
   
   .header-desktop {
     min-height: 70px !important;
-    padding-right: 220px !important; /* Reduced padding to bring logo closer to center */
-    flex: 0 0 32% !important; /* Adjusted flex value to bring elements closer to center */
+    padding-right: 220px !important;
+    flex: 0 0 32% !important;
   }
   
   .header-desktop .header__logo-wrapper {
@@ -164,9 +203,10 @@
     z-index: 10 !important;
   }
   
-  .header-desktop .header__logo {
-    width: 180px !important;
-    max-width: 180px !important;
+  /* Larger laptop-specific logo size */
+  .header-desktop .laptop-only-logo {
+    width: 160px !important;
+    max-width: 160px !important;
     height: auto !important;
     position: relative !important;
     z-index: 10 !important;
@@ -194,6 +234,15 @@
 
 /* Desktop Large screens */
 @media screen and (min-width: 1537px) {
+  /* Show desktop logo, hide laptop logo */
+  .desktop-only-logo {
+    display: inline-block !important;
+  }
+  
+  .laptop-only-logo {
+    display: none !important;
+  }
+  
   .header-wrapper {
     min-height: 100px !important;
     margin-top: -25px !important;
@@ -411,6 +460,11 @@
   .header-mobile {
     display: flex;
   }
+  
+  /* Ensure mobile logo always shows on mobile */
+  .mobile-only-logo {
+    display: inline-block !important;
+  }
 
   /* Stagger delays for menu items opening */
   .mobile-menu.open .nav-button:nth-child(1) { transition-delay: 0.1s; }
@@ -450,13 +504,6 @@ body.menu-open {
   position: fixed;
   width: 100%;
   height: 100%;
-}
-
-.header-desktop .header__logo {
-  height: auto !important;
-  width: 220px !important;
-  max-width: 220px !important;
-  object-fit: contain !important;
 }
 
 /* Fix close button position in mobile menu */

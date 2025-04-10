@@ -30,7 +30,15 @@ export default function Header() {
                 alt="4Runr"
                 width={180}
                 height={72}
-                className="header__logo"
+                className="header__logo desktop-only-logo"
+                priority
+              />
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0891/9610/1908/files/Untitled_design_67.png?v=1738103105"
+                alt="4Runr"
+                width={140}
+                height={56}
+                className="header__logo laptop-only-logo"
                 priority
               />
             </Link>
@@ -55,7 +63,7 @@ export default function Header() {
               alt="4Runr"
               width={150}
               height={60}
-              className="mobile-logo"
+              className="mobile-logo mobile-only-logo"
               priority
             />
           </Link>
