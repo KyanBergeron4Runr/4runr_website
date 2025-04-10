@@ -76,11 +76,18 @@ export default function AISolutionsCTA({
 
       if (charIndex === 0) {
         setIsDeleting(false);
-        // Add pause between words for mobile
-        const pauseDelay = isMobile ? 800 : 0;
-        setTimeout(() => {
+        
+        // FIX: For mobile, clear the element content completely before starting the next word
+        if (isMobile) {
+          element.innerHTML = '<span class="typing-cursor">_</span>';
+          
+          // Add a longer pause at the transition point
+          setTimeout(() => {
+            setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
+          }, 1200);
+        } else {
           setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
-        }, pauseDelay);
+        }
         return;
       }
 

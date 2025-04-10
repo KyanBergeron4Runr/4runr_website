@@ -104,6 +104,17 @@
     margin: 0.5rem auto 1rem !important; /* Center and add spacing */
     padding: 0 !important;
     line-height: 1.2 !important;
+    
+    /* Fix transition glitch */
+    height: 40px !important; /* Fixed height instead of min-height */
+    position: relative !important;
+    overflow: visible !important; /* Allow cursor to be visible */
+    opacity: 1 !important; /* Prevent any opacity animations */
+    
+    /* Disable any transitions that might cause flicker */
+    transition-property: none !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
   }
   
   /* Improve cursor styling */
@@ -112,6 +123,12 @@
     color: #6a5acd !important;
     animation: cursor-blink 1s step-end infinite !important; /* Slower, more stable blink */
     margin-left: 3px !important;
+    /* Fix cursor positioning */
+    vertical-align: baseline !important;
+    height: 28px !important; /* Match to font size */
+    position: relative !important;
+    top: 0 !important;
+    bottom: 0 !important;
   }
   
   /* Line 3: "with AI" */
