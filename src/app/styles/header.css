@@ -3,11 +3,11 @@
   display: flex;
   width: 100%;
   background: #000000;
-  min-height: 110px !important;
+  min-height: 90px !important;
   position: static;
   z-index: 100;
   align-items: center;
-  margin-top: 0 !important;
+  margin-top: -20px !important;
   padding: 0;
   justify-content: center;
 }
@@ -16,11 +16,11 @@
   flex: 0 0 35%;
   background: #000000;
   position: relative;
-  min-height: 110px !important;
+  min-height: 90px !important;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 220px;
+  padding-right: 300px;
   padding-left: 0;
 }
 
@@ -49,7 +49,7 @@
   padding-right: 3vw;
   transform: none !important;
   position: relative;
-  margin-top: -10px;
+  margin-top: -25px;
 }
 
 .top-nav .nav-items {
@@ -102,12 +102,13 @@
 /* Laptop displays */
 @media screen and (min-width: 1366px) and (max-width: 1536px) {
   .header-wrapper {
-    min-height: 80px !important;
+    min-height: 70px !important;
+    margin-top: -15px !important;
   }
   
   .header-desktop {
-    min-height: 80px !important;
-    padding-right: 200px;
+    min-height: 70px !important;
+    padding-right: 280px;
   }
   
   .header-desktop .header__logo-wrapper {
@@ -124,9 +125,7 @@
   }
   
   .top-nav {
-    position: relative !important;
-    z-index: 5 !important;
-    margin-top: -8px;
+    margin-top: -20px;
   }
   
   .top-nav .nav-items {
@@ -146,12 +145,13 @@
 /* Desktop Large screens */
 @media screen and (min-width: 1537px) {
   .header-wrapper {
-    min-height: 120px !important;
+    min-height: 100px !important;
+    margin-top: -25px !important;
   }
   
   .header-desktop {
-    min-height: 120px !important;
-    padding-right: 240px;
+    min-height: 100px !important;
+    padding-right: 320px;
   }
   
   .header-desktop .header__logo {
@@ -160,7 +160,7 @@
   }
   
   .top-nav {
-    margin-top: -12px;
+    margin-top: -30px;
   }
   
   .top-nav .nav-items {
