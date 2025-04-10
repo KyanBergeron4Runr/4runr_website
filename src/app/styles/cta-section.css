@@ -1,129 +1,131 @@
-/* CTA Section Styling */
-.cta-section {
-  background: #000000;
-  background-size: cover;
-  background-position: center;
-  padding: 4.16vw 0;
-  margin: 0;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  border: none;
-  width: 100%;
+/* CTA Section Styling - With ultra-high specificity to avoid conflicts */
+:root {
+  --ultra-vibrant-purple-start: #7000B5;
+  --ultra-vibrant-purple-end: #6B61CC;
 }
 
-.cta-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  color: white;
-  max-width: 83.33vw;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0;
+/* Desktop CTA Section */
+div.cta-section {
+  background: #000000 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 4.16vw 0 !important;
+  margin: 0 !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden !important;
+  border: none !important;
+  width: 100% !important;
 }
 
-.cta-heading-main {
-  font-size: var(--h2-size);
-  line-height: var(--line-height-h2);
-  letter-spacing: var(--letter-spacing-h2);
-  font-weight: var(--weight-h2);
-  color: white;
-  max-width: 83.33vw;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-family: var(--font-heading);
+div.cta-section div.cta-container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  color: white !important;
+  max-width: 83.33vw !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  padding: 0 !important;
 }
 
-.cta-subtext {
-  font-size: var(--text-body);
-  line-height: var(--line-height-body);
-  font-weight: var(--weight-body);
-  margin: 0 0 2rem 0;
-  max-width: 57.29vw;
-  color: var(--color-text-light);
-  text-align: center;
-  font-family: var(--font-sans);
+div.cta-section h2.cta-heading-main {
+  font-size: var(--h2-size) !important;
+  line-height: var(--line-height-h2) !important;
+  letter-spacing: var(--letter-spacing-h2) !important;
+  font-weight: var(--weight-h2) !important;
+  color: white !important;
+  max-width: 83.33vw !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+  font-family: var(--font-heading) !important;
 }
 
-.cta-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1.56vw;
-  margin-top: 2rem;
-  width: 100%;
+div.cta-section p.cta-subtext {
+  font-size: var(--text-body) !important;
+  line-height: var(--line-height-body) !important;
+  font-weight: var(--weight-body) !important;
+  margin: 0 0 2rem 0 !important;
+  max-width: 57.29vw !important;
+  color: var(--color-text-light) !important;
+  text-align: center !important;
+  font-family: var(--font-sans) !important;
 }
 
-/* Mobile CTA Section Styling */
-.cta-section-mobile {
-  background: #000000;
-  background-size: cover;
-  background-position: center;
-  padding: 3.5rem 1.25rem;
-  margin: 0;
-  background-repeat: no-repeat;
-  display: none;
+div.cta-section div.cta-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.56vw !important;
+  margin-top: 2rem !important;
+  width: 100% !important;
 }
 
-.cta-container-mobile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
+/* Mobile CTA Section */
+div.cta-section-mobile {
+  background: #000000 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 3.5rem 1.25rem !important;
+  margin: 0 !important;
+  background-repeat: no-repeat !important;
+  display: none !important;
 }
 
-.cta-heading-mobile {
-  font-size: var(--mobile-text-title, 28px);
-  margin: 0 0 1.2rem 0;
-  color: white;
-  line-height: 1.2;
-  font-weight: 900;
-  text-align: center;
-  font-family: var(--font-heading);
+div.cta-section-mobile div.cta-container-mobile {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  color: white !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center !important;
 }
 
-.cta-body-mobile {
-  font-size: var(--mobile-text-body, 16px);
-  margin: 0 0 2rem 0;
-  line-height: 1.6;
-  font-weight: 400;
-  max-width: 90%;
-  text-align: center;
-  color: white;
-  opacity: 0.9;
-  font-family: var(--font-sans);
+div.cta-section-mobile h1.cta-heading-mobile {
+  font-size: var(--mobile-text-title, 28px) !important;
+  margin: 0 0 1.2rem 0 !important;
+  color: white !important;
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  text-align: center !important;
+  font-family: var(--font-heading) !important;
 }
 
-.cta-buttons-mobile {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 220px;
-  margin: 0 auto;
+div.cta-section-mobile p.cta-body-mobile {
+  font-size: var(--mobile-text-body, 16px) !important;
+  margin: 0 0 2rem 0 !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  max-width: 90% !important;
+  text-align: center !important;
+  color: white !important;
+  opacity: 0.9 !important;
+  font-family: var(--font-sans) !important;
+}
+
+div.cta-section-mobile div.cta-buttons-mobile {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 220px !important;
+  margin: 0 auto !important;
 }
 
 /* Button hover effects */
-.lets-talk-button:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease, background 0.3s ease;
+div.cta-section a.lets-talk-button:hover,
+div.cta-section-mobile a.lets-talk-button-mobile:hover {
+  transform: scale(1.05) !important;
+  transition: transform 0.3s ease, background 0.3s ease !important;
 }
 
-.lets-talk-button-mobile:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.lets-talk-button-mobile:active {
-  transform: scale(0.98);
+div.cta-section-mobile a.lets-talk-button-mobile:active {
+  transform: scale(0.98) !important;
 }
 
 /* Enhanced CTA Button Styling */
-.lets-talk-button {
+div.cta-section a.lets-talk-button {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -142,7 +144,7 @@
   min-height: 80px !important;
 }
 
-.lets-talk-button-mobile {
+div.cta-section-mobile a.lets-talk-button-mobile {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -150,7 +152,7 @@
   border: none !important;
   border-radius: 8px !important;
   color: white !important;
-  background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+  background: linear-gradient(45deg, var(--ultra-vibrant-purple-start), var(--ultra-vibrant-purple-end)) !important;
   background-size: 200% 200% !important;
   text-decoration: none !important;
   font-size: 1.1rem !important;
@@ -163,74 +165,81 @@
 
 /* Media queries for responsive display */
 @media (max-width: 767px) {
-  .cta-section {
-    display: none;
+  div.cta-section {
+    display: none !important;
   }
-  .cta-section-mobile {
-    display: block;
+  div.cta-section-mobile {
+    display: block !important; /* Force display of the better version */
+  }
+  
+  /* Ensure buttons have ultra-vibrant color */
+  div.cta-section-mobile a.lets-talk-button-mobile {
+    background: linear-gradient(45deg, var(--ultra-vibrant-purple-start), var(--ultra-vibrant-purple-end)) !important;
+    background-size: 200% 200% !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .cta-section-mobile {
-    display: none;
+  /* Tablet CTA enhancements */
+  div.cta-section-mobile {
+    display: none !important;
   }
   
-  /* Tablet CTA enhancements */
-  .cta-section .cta-heading-main {
+  div.cta-section h2.cta-heading-main {
     font-size: calc(2.1rem + 0.2vw) !important;
     margin-bottom: 1.8rem !important;
   }
   
-  .cta-section .cta-subtext {
+  div.cta-section p.cta-subtext {
     font-size: calc(1.2rem + 0.1vw) !important;
     margin-bottom: 2rem !important;
   }
   
-  .cta-section .lets-talk-button {
-    font-size: 1.2rem !important;
-    padding: 1.1rem 2.4rem !important;
+  div.cta-section a.lets-talk-button {
+    font-size: 1.25rem !important;
+    padding: 1.15rem 2.5rem !important;
     min-height: 65px !important;
     min-width: 260px !important;
-    background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+    background: linear-gradient(45deg, var(--ultra-vibrant-purple-start), var(--ultra-vibrant-purple-end)) !important;
     background-size: 200% 200% !important;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1366px) {
-  .cta-section-mobile {
-    display: none;
+  /* Laptop CTA enhancements */
+  div.cta-section-mobile {
+    display: none !important;
   }
   
-  /* Laptop CTA enhancements */
-  .cta-section .cta-heading-main {
+  div.cta-section h2.cta-heading-main {
     font-size: calc(2.3rem + 0.2vw) !important;
     margin-bottom: 2rem !important;
   }
   
-  .cta-section .cta-subtext {
+  div.cta-section p.cta-subtext {
     font-size: calc(1.3rem + 0.1vw) !important;
     margin-bottom: 2.2rem !important;
   }
   
-  .cta-section .lets-talk-button {
-    font-size: 1.3rem !important;
+  div.cta-section a.lets-talk-button {
+    font-size: 1.5rem !important; /* Much larger text */
     padding: 1.3rem 3rem !important;
-    min-height: 70px !important;
-    min-width: 280px !important;
-    background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+    min-height: 75px !important;
+    min-width: 300px !important;
+    background: linear-gradient(45deg, var(--ultra-vibrant-purple-start), var(--ultra-vibrant-purple-end)) !important;
     background-size: 200% 200% !important;
-    box-shadow: 0 5px 7px rgba(75, 0, 130, 0.25) !important;
+    box-shadow: 0 5px 10px rgba(112, 0, 181, 0.35) !important; /* Stronger shadow */
+    font-weight: 700 !important;
   }
 }
 
 @media (min-width: 1367px) {
-  .cta-section-mobile {
-    display: none;
+  /* Desktop CTA enhancements */
+  div.cta-section-mobile {
+    display: none !important;
   }
   
-  /* Desktop CTA enhancements */
-  .cta-section .cta-heading-main {
+  div.cta-section h2.cta-heading-main {
     font-size: calc(3.4rem + 0.3vw) !important;
     margin-bottom: 2.5rem !important;
     max-width: 80% !important;
@@ -238,7 +247,7 @@
     margin-right: auto !important;
   }
   
-  .cta-section .cta-subtext {
+  div.cta-section p.cta-subtext {
     font-size: calc(1.6rem + 0.1vw) !important;
     margin-bottom: 2.8rem !important;
     max-width: 70% !important;
@@ -250,11 +259,11 @@
 
 /* Small mobile adjustments */
 @media (max-width: 480px) {
-  .lets-talk-button-mobile {
+  div.cta-section-mobile a.lets-talk-button-mobile {
     min-height: 60px !important;
     font-size: 1rem !important;
     padding: 1rem 1.8rem !important;
-    background: linear-gradient(45deg, #5B0092, #584D9B) !important;
+    background: linear-gradient(45deg, var(--ultra-vibrant-purple-start), var(--ultra-vibrant-purple-end)) !important;
     background-size: 200% 200% !important;
   }
 } 
