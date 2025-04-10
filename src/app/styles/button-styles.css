@@ -5,7 +5,8 @@
 .see-our-solutions-button,
 .start-building-button,
 .cta-button,
-.btn-primary {
+.btn-primary,
+.bottom-cta .cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -51,6 +52,7 @@
 .start-building-button:hover,
 .cta-button:hover,
 .btn-primary:hover,
+.bottom-cta .cta-button:hover,
 .our-services-button:hover,
 .btn-secondary:hover {
   transform: scale(1.05);
@@ -128,6 +130,7 @@
   .start-building-button,
   .cta-button,
   .btn-primary,
+  .bottom-cta .cta-button,
   .our-services-button,
   .btn-secondary {
     font-size: var(--text-button);
@@ -149,6 +152,7 @@
   .start-building-button,
   .cta-button,
   .btn-primary,
+  .bottom-cta .cta-button,
   .our-services-button,
   .btn-secondary {
     font-size: 16px;
