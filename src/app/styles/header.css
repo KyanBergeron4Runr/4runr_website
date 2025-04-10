@@ -9,7 +9,7 @@
   align-items: center;
   margin-top: 0 !important;
   padding: 0;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .header-desktop {
@@ -40,13 +40,14 @@
 }
 
 .top-nav {
-  flex: 0 0 75%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #000000;
   padding-right: 5vw;
   transform: none !important;
+  position: relative;
 }
 
 .top-nav .nav-items {
@@ -56,6 +57,12 @@
   gap: 40px !important;
   transform: none;
   height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .top-nav a {
