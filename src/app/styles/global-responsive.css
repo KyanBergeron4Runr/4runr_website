@@ -1,0 +1,585 @@
+/* global-responsive.css - Comprehensive responsive framework */
+
+/* Base element size ratios - these ensure text and containers maintain proportional relationships */
+:root {
+  /* Device breakpoints */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1366px;
+  --breakpoint-xxl: 1600px;
+  
+  /* Container sizing */
+  --container-ratio: 0.9; /* Container to viewport ratio */
+  --section-padding-ratio: 0.05; /* Section padding to viewport ratio */
+  
+  /* Typography ratios - ensures text stays proportional to containers */
+  --h1-container-ratio: 0.07; /* H1 font-size to container width */
+  --h2-container-ratio: 0.06; /* H2 font-size to container width */
+  --h3-container-ratio: 0.05; /* H3 font-size to container width */
+  --p-container-ratio: 0.0375; /* Paragraph font-size to container width */
+  --small-text-container-ratio: 0.0325; /* Small text font-size to container width */
+  
+  /* Element spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  
+  /* Standard sizing multipliers */
+  --text-multiplier-xs: 1;
+  --text-multiplier-sm: 1.1;
+  --text-multiplier-md: 1.2;
+  --text-multiplier-lg: 1.3;
+  --text-multiplier-xl: 1.4;
+}
+
+/* Global container classes */
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc(var(--spacing-sm) * var(--text-multiplier-xs));
+  padding-left: calc(var(--spacing-sm) * var(--text-multiplier-xs));
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc(var(--spacing-sm) * var(--text-multiplier-xs));
+  padding-left: calc(var(--spacing-sm) * var(--text-multiplier-xs));
+}
+
+/* Base typography responsive classes */
+.responsive-h1 {
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.responsive-h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+}
+
+.responsive-h3 {
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-sm);
+}
+
+.responsive-text {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.responsive-small-text {
+  font-size: clamp(0.875rem, 2vw, 1.1rem);
+  line-height: 1.5;
+}
+
+/* Section spacing */
+.section-padding {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+/* Mobile First: Extra Small Devices (< 480px) */
+@media screen and (max-width: 480px) {
+  :root {
+    --text-multiplier-xs: 1;
+  }
+  
+  /* Container to hold benefit items */
+  .benefit-container {
+    width: 100%;
+    padding: var(--spacing-sm);
+  }
+  
+  /* Individual benefit item */
+  .benefit-item {
+    min-height: 200px;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Headers */
+  .header h1 {
+    font-size: 1.8rem;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header p {
+    font-size: 0.95rem;
+    max-width: 95%;
+  }
+  
+  /* Rectangle content */
+  .rectangle-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .rectangle-content p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+  
+  /* Keep text proportional to container */
+  .benefit-bg h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .benefit-bg p {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+    /* Ensure text doesn't overflow container */
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Small Devices (480px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --text-multiplier-sm: 1.1;
+  }
+  
+  .benefit-container {
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+  
+  .benefit-item {
+    min-height: 220px;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Headers */
+  .header h1 {
+    font-size: 2.1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  
+  /* Rectangle content */
+  .rectangle-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .rectangle-content p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    max-width: 95%;
+  }
+  
+  /* Benefit items */
+  .benefit-bg h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .benefit-bg p {
+    font-size: 1rem;
+    padding: 0 0.8rem;
+    max-width: 95%;
+  }
+}
+
+/* Medium Devices (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --text-multiplier-md: 1.2;
+  }
+  
+  .container {
+    width: 85%;
+  }
+  
+  .benefit-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .benefit-item {
+    min-height: 250px;
+    padding: var(--spacing-md);
+  }
+  
+  /* Headers */
+  .header h1 {
+    font-size: 2.4rem;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+    max-width: 85%;
+  }
+  
+  /* Rectangle content */
+  .rectangle-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .rectangle-content p {
+    font-size: 1.2rem;
+    padding: 0 1.2rem;
+    max-width: 90%;
+  }
+  
+  /* Benefit items */
+  .benefit-bg h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-bg p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    max-width: 90%;
+  }
+}
+
+/* Laptops (1025px - 1366px) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  :root {
+    --text-multiplier-lg: 1.3;
+  }
+  
+  .container {
+    width: 80%;
+  }
+  
+  .section-padding {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+  
+  /* Headers - properly sized for laptops */
+  .header h1 {
+    font-size: 2.7rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.3;
+  }
+  
+  .header p {
+    font-size: 1.15rem;
+    max-width: 75%;
+  }
+  
+  /* Rectangle content */
+  .rectangle-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .rectangle-content p {
+    font-size: 1.4rem;
+    padding: 0 1.5rem;
+    max-width: 85%;
+  }
+  
+  /* Benefit items */
+  .benefit-item {
+    min-height: 280px;
+  }
+  
+  /* Top benefit items */
+  .benefit-item-wrapper .benefit-item {
+    height: 22vw;
+    min-width: 380px;
+    max-width: 650px;
+  }
+  
+  .benefit-item-wrapper .benefit-bg h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-item-wrapper .benefit-bg p {
+    font-size: 1.2rem;
+    padding: 0 1.2rem;
+    /* Ensure text fits container */
+    max-width: 90%;
+    overflow-wrap: break-word;
+  }
+  
+  /* Bottom benefit item */
+  .bottom-item-wrapper .benefit-item {
+    height: 24vw;
+    min-width: 400px;
+    max-width: 750px;
+  }
+  
+  .bottom-item-wrapper .benefit-bg h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .bottom-item-wrapper .benefit-bg p {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+    max-width: 90%;
+  }
+  
+  /* Section titles */
+  .section-title h2 {
+    font-size: 2.5rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.2rem;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* What we do section */
+  .what-we-do .titles h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Desktop (1367px - 1600px) */
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  :root {
+    --text-multiplier-xl: 1.4;
+  }
+  
+  .container {
+    width: 75%;
+  }
+  
+  /* Headers */
+  .header h1 {
+    font-size: 3.2rem;
+    max-width: 70%;
+  }
+  
+  .header p {
+    font-size: 1.3rem;
+    max-width: 70%;
+  }
+  
+  /* Rectangle content */
+  .rectangle-content h3 {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .rectangle-content p {
+    font-size: 1.6rem;
+    padding: 0 2rem;
+    max-width: 80%;
+  }
+  
+  /* Benefit items */
+  .benefit-item {
+    min-height: 320px;
+  }
+  
+  /* Top benefit items */
+  .benefit-item-wrapper .benefit-item {
+    height: 24vw;
+    min-width: 420px;
+    max-width: 700px;
+  }
+  
+  .benefit-item-wrapper .benefit-bg h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .benefit-item-wrapper .benefit-bg p {
+    font-size: 1.4rem;
+    padding: 0 1.5rem;
+  }
+  
+  /* Bottom benefit item */
+  .bottom-item-wrapper .benefit-item {
+    height: 26vw;
+    min-width: 500px;
+    max-width: 800px;
+  }
+  
+  .bottom-item-wrapper .benefit-bg h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bottom-item-wrapper .benefit-bg p {
+    font-size: 1.4rem;
+    padding: 0 2rem;
+  }
+  
+  /* Section titles */
+  .section-title h2 {
+    font-size: 3rem;
+    max-width: 75%;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.7rem;
+    max-width: 70%;
+  }
+  
+  /* What we do section */
+  .what-we-do .titles h2 {
+    font-size: 3.5rem;
+  }
+}
+
+/* Large Desktop (1601px+) */
+@media screen and (min-width: 1601px) {
+  .container {
+    width: 70%;
+    max-width: 1600px;
+  }
+  
+  /* Headers */
+  .header h1 {
+    font-size: 3.8rem;
+    max-width: 65%;
+  }
+  
+  .header p {
+    font-size: 1.5rem;
+    max-width: 60%;
+  }
+  
+  /* Rectangle content */
+  .rectangle-content h3 {
+    font-size: 2.6rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  .rectangle-content p {
+    font-size: 1.8rem;
+    padding: 0 2.5rem;
+    max-width: 75%;
+  }
+  
+  /* Benefit items */
+  .benefit-item {
+    min-height: 360px;
+  }
+  
+  /* Top benefit items */
+  .benefit-item-wrapper .benefit-item {
+    height: 22vw;
+    min-width: 500px;
+    max-width: 800px;
+  }
+  
+  .benefit-item-wrapper .benefit-bg h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .benefit-item-wrapper .benefit-bg p {
+    font-size: 1.6rem;
+    padding: 0 2rem;
+    /* Prevent text from being too big for container */
+    max-width: 85%;
+  }
+  
+  /* Bottom benefit item */
+  .bottom-item-wrapper .benefit-item {
+    height: 24vw;
+    min-width: 600px;
+    max-width: 900px;
+  }
+  
+  .bottom-item-wrapper .benefit-bg h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  .bottom-item-wrapper .benefit-bg p {
+    font-size: 1.6rem;
+    padding: 0 2.5rem;
+    max-width: 85%;
+  }
+  
+  /* Section titles */
+  .section-title h2 {
+    font-size: 3.5rem;
+    max-width: 70%;
+  }
+  
+  .cta-section h2 {
+    font-size: 3.2rem;
+    max-width: 65%;
+  }
+  
+  /* What we do section */
+  .what-we-do .titles h2 {
+    font-size: 4rem;
+  }
+}
+
+/* Utility classes for maintaining text-container proportion */
+.text-container-balanced {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Special case for rectangles with more text */
+.text-heavy-container p {
+  font-size: min(1.2rem, 4vw, 3.5%);
+}
+
+/* Utility classes for maintaining aspect ratios */
+.aspect-ratio-1-1 {
+  aspect-ratio: 1/1;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4/3;
+}
+
+.aspect-ratio-16-9 {
+  aspect-ratio: 16/9;
+}
+
+/* Ensures images maintain aspect ratio */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Ensures content doesn't overflow containers */
+.overflow-protection {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} 
