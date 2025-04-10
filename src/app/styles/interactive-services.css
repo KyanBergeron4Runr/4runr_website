@@ -228,28 +228,29 @@
   font-size: var(--text-small);
   line-height: var(--line-height-body);
   color: var(--color-text-muted);
+  font-weight: 500;
+  opacity: 0.9;
   text-align: right;
   flex: 1;
 }
 
 .services-section .cta-button {
-  font-family: var(--font-heading);
-  font-size: 1vw;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(45deg, #4B0082, #483D8B);
-  border: none;
-  padding: 1vw 2.5vw;
-  border-radius: 0.521vw;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 1vw 2.5vw;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.521vw;
+  font-size: 1vw;
+  font-weight: bold;
+  transition: transform 0.3s ease;
   min-width: 9.375vw;
   height: 3.125vw;
+  border: none;
+  font-family: var(--font-heading);
+  cursor: pointer;
 }
 
 .services-section .cta-button:hover {

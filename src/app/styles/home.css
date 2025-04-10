@@ -106,13 +106,15 @@
 }
 
 .fine-print {
+  font-family: var(--font-sans);
   font-size: var(--text-small);
   line-height: var(--line-height-body);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-muted);
   text-align: center;
-  max-width: 45vw;
-  margin: 1.5vw auto;
-  font-family: var(--font-sans);
+  max-width: 57.29vw;
+  margin: 1.04vw auto 1.56vw;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 .section-divider {
@@ -165,22 +167,26 @@
 }
 
 .cta-button {
-  display: inline-block;
-  padding: 1vw 2vw;
-  font-size: var(--text-button);
-  font-weight: var(--weight-button);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw 2.5vw;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
   color: #fff;
-  background: linear-gradient(135deg, #6a5acd 0%, #5648b3 100%);
-  border-radius: 0.6vw;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.2);
+  border-radius: 0.521vw;
+  font-size: 1vw;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  min-width: 9.375vw;
+  height: 3.125vw;
+  border: none;
+  font-family: var(--font-heading);
+  cursor: pointer;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(106, 90, 205, 0.3);
-  background: linear-gradient(135deg, #7b6bde 0%, #6759c4 100%);
+  transform: scale(1.05);
 }
 
 /* Mobile Styles */
