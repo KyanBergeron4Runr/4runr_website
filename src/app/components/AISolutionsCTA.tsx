@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import '../styles/ai-solutions-cta.css'
+import '../styles/cta-section-update.css'
 
 interface AISolutionsCTAProps {
   button1Text?: string;

@@ -1,0 +1,97 @@
+/* CTA Section Update - Ultra-specific selectors to guarantee proper styling */
+
+/* DESKTOP - Make text size the same for both heading and typed text */
+@media screen and (min-width: 1367px) {
+  /* Ensure both heading and typed animation have the same font size */
+  div.cta-section h2.cta-heading-main,
+  div.cta-section div.typed-wrapper h2 {
+    font-size: calc(3.2rem + 0.3vw) !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Ensure typed text has same size as surrounding text */
+  div.cta-section div.typed-wrapper span.typed-text {
+    font-size: inherit !important;
+    font-weight: 700 !important;
+    min-width: 17vw !important;
+    padding: 0 0.8vw !important;
+    display: inline-block !important;
+  }
+  
+  /* Ensure buttons are well-sized */
+  div.cta-section a.our-services-button {
+    font-size: 1.5rem !important; /* Match the Let's Talk button */
+    min-height: 90px !important;
+    height: auto !important;
+    min-width: 280px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #000 !important;
+  }
+}
+
+/* LAPTOP - Match button text sizes */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  /* Make both button text sizes match */
+  div.cta-section a.lets-talk-button,
+  div.cta-section a.our-services-button {
+    font-size: 1.3rem !important;
+    min-height: 75px !important;
+    height: auto !important;
+    padding: 1.3rem 1.8rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Ensure specific styling for each button type is preserved */
+  div.cta-section a.our-services-button {
+    background: #000 !important;
+    color: white !important;
+  }
+  
+  div.cta-section a.lets-talk-button {
+    background: linear-gradient(45deg, var(--ultra-vibrant-purple-start), var(--ultra-vibrant-purple-end)) !important;
+    color: white !important;
+  }
+}
+
+/* MOBILE - Add space around text and prevent line wrapping during animation */
+@media screen and (max-width: 767px) {
+  /* Add spacing around the typed text */
+  div.cta-section-mobile span.typed-text-mobile {
+    padding: 0 0.4rem !important;
+    margin: 0 0.2rem !important;
+    display: inline-block !important;
+    min-width: 120px !important; /* Set fixed width to prevent layout shifts */
+    text-align: left !important;
+  }
+  
+  /* Improve animation appearance */
+  div.cta-section-mobile div.typed-wrapper-mobile {
+    min-height: 2.5rem !important; /* Set minimum height to prevent shifting */
+    margin: 0.8rem 0 !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+  
+  /* Handle cursor blinking */
+  div.cta-section-mobile span.typing-cursor {
+    display: inline-block !important;
+    position: relative !important;
+    margin-left: 2px !important;
+  }
+  
+  /* Make text container non-wrapping during animation */
+  div.cta-section-mobile p,
+  div.cta-section-mobile div.typed-wrapper-mobile p {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+} 
