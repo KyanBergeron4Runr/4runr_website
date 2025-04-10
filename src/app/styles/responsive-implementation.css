@@ -10,72 +10,81 @@
   /* ==========  HEADER SECTION FIXES ========== */
   /* Main header text properly scaled for laptop screens */
   .header h1 {
-    font-size: calc(2.2rem + 0.3vw) !important;
-    max-width: 80% !important;
+    font-size: calc(2.4rem + 0.3vw) !important;
+    max-width: 85% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     line-height: 1.3 !important;
+    text-align: center !important;
   }
   
   .header p {
-    font-size: calc(1rem + 0.15vw) !important;
+    font-size: calc(1.05rem + 0.15vw) !important;
     max-width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     line-height: 1.5 !important;
+    text-align: center !important;
   }
   
   /* ==========  BENEFITS SECTION FIXES ========== */
   /* Set fixed proportions between containers and text */
   .benefits-section .section-title h2 {
-    font-size: calc(2.1rem + 0.3vw) !important;
+    font-size: calc(2.2rem + 0.3vw) !important;
     max-width: 85% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    text-align: center !important;
   }
 
   /* Top benefit boxes */
   .benefit-item-wrapper .benefit-item {
-    flex: 0 1 32vw !important;
-    height: 22vw !important;
-    min-width: 350px !important;
-    max-width: 500px !important;
-    min-height: 260px !important;
+    flex: 0 1 31vw !important;
+    height: 21vw !important;
+    min-width: 320px !important;
+    max-width: 480px !important;
+    min-height: 240px !important;
+    margin: 10px !important;
   }
   
   .benefit-item-wrapper .benefit-bg h3 {
-    font-size: calc(1.4rem + 0.2vw) !important;
-    margin-bottom: 1rem !important;
+    font-size: calc(1.4rem + 0.1vw) !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.3 !important;
   }
   
   .benefit-item-wrapper .benefit-bg p {
-    font-size: calc(1rem + 0.1vw) !important;
-    padding: 0 1rem !important;
+    font-size: calc(0.95rem + 0.05vw) !important;
+    padding: 0 0.8rem !important;
     max-width: 90% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    line-height: 1.5 !important;
   }
   
   /* Bottom benefit box */
   .bottom-item-wrapper .benefit-item {
     flex: 0 1 38vw !important;
-    height: 24vw !important;
-    min-width: 400px !important;
-    max-width: 600px !important;
-    min-height: 280px !important;
+    height: 22vw !important;
+    min-width: 380px !important;
+    max-width: 580px !important;
+    min-height: 260px !important;
+    margin: 10px auto !important;
   }
   
   .bottom-item-wrapper .benefit-bg h3 {
-    font-size: calc(1.4rem + 0.2vw) !important;
-    margin-bottom: 1.2rem !important;
+    font-size: calc(1.4rem + 0.1vw) !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
   }
   
   .bottom-item-wrapper .benefit-bg p {
-    font-size: calc(1rem + 0.1vw) !important;
-    padding: 0 1.2rem !important;
-    max-width: 90% !important;
+    font-size: calc(0.95rem + 0.05vw) !important;
+    padding: 0 1rem !important;
+    max-width: 92% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    line-height: 1.5 !important;
   }
   
   /* ==========  WHAT WE DO SECTION FIXES ========== */
@@ -84,6 +93,7 @@
     max-width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    text-align: center !important;
   }
   
   .what-we-do .rectangle-content p {
@@ -92,6 +102,7 @@
     margin-left: auto !important;
     margin-right: auto !important;
     font-weight: 500 !important;
+    text-align: center !important;
   }
   
   /* ==========  CTA SECTION FIXES ========== */
@@ -100,6 +111,7 @@
     max-width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    text-align: center !important;
   }
   
   .cta-section p {
@@ -108,6 +120,7 @@
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: 1.5rem !important;
+    text-align: center !important;
   }
   
   /* ==========  BUTTON FIXES ========== */
@@ -117,6 +130,9 @@
     min-width: 160px !important;
     height: auto !important;
     min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
@@ -125,39 +141,50 @@
   /* Ensure text fits properly in containers */
   .benefit-item-wrapper .benefit-item {
     width: 100% !important;
-    min-height: 220px !important;
+    min-height: 200px !important;
     margin-bottom: 20px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 500px !important;
   }
   
   .benefit-item-wrapper .benefit-bg h3 {
-    font-size: calc(1.2rem + 0.1vw) !important;
-    margin-bottom: 12px !important;
+    font-size: calc(1.15rem + 0.1vw) !important;
+    margin-bottom: 10px !important;
+    line-height: 1.3 !important;
   }
   
   .benefit-item-wrapper .benefit-bg p {
-    font-size: calc(0.9rem + 0.1vw) !important;
+    font-size: calc(0.85rem + 0.1vw) !important;
     padding: 0 10px !important;
     max-width: 95% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    line-height: 1.4 !important;
   }
   
   .bottom-item-wrapper .benefit-item {
     width: 100% !important;
-    min-height: 250px !important;
+    min-height: 220px !important;
+    margin-bottom: 20px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 500px !important;
   }
   
   .bottom-item-wrapper .benefit-bg h3 {
-    font-size: calc(1.2rem + 0.1vw) !important;
-    margin-bottom: 12px !important;
+    font-size: calc(1.15rem + 0.1vw) !important;
+    margin-bottom: 10px !important;
+    line-height: 1.3 !important;
   }
   
   .bottom-item-wrapper .benefit-bg p {
-    font-size: calc(0.9rem + 0.1vw) !important;
-    padding: 0 15px !important;
+    font-size: calc(0.85rem + 0.1vw) !important;
+    padding: 0 12px !important;
     max-width: 95% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    line-height: 1.4 !important;
   }
   
   /* Fix header elements */
@@ -166,6 +193,8 @@
     max-width: 90% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
   }
   
   .header p {
@@ -173,6 +202,8 @@
     max-width: 90% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
   }
   
   /* Fix What We Do section */
@@ -181,14 +212,46 @@
     max-width: 90% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    text-align: center !important;
   }
   
   .what-we-do .rectangle-content p {
-    font-size: 1.1rem !important;
+    font-size: 1.05rem !important;
     max-width: 90% !important;
     padding: 0 15px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Fix button and CTA elements */
+  .cta-button {
+    font-size: 0.95rem !important;
+    padding: 0.8rem 1.6rem !important;
+    min-width: 160px !important;
+    height: auto !important;
+    min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.9rem !important;
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  
+  .cta-section p {
+    font-size: 1rem !important;
+    max-width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 1.2rem !important;
+    text-align: center !important;
   }
 }
 
@@ -198,103 +261,263 @@
   .benefit-item-wrapper .benefit-item,
   .bottom-item-wrapper .benefit-item {
     width: 100% !important;
-    min-height: 200px !important;
+    min-height: 190px !important;
     margin-bottom: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 360px !important;
   }
   
   .benefit-item-wrapper .benefit-bg h3,
   .bottom-item-wrapper .benefit-bg h3 {
-    font-size: 1.1rem !important;
-    margin-bottom: 8px !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
   }
   
   .benefit-item-wrapper .benefit-bg p,
   .bottom-item-wrapper .benefit-bg p {
-    font-size: 0.9rem !important;
-    padding: 0 10px !important;
+    font-size: 0.85rem !important;
+    padding: 0 8px !important;
     max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    line-height: 1.4 !important;
   }
   
   /* Fix header elements */
   .header h1 {
-    font-size: 1.6rem !important;
+    font-size: 1.5rem !important;
     max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
   }
   
   .header p {
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
   }
   
   /* Fix What We Do section */
   .what-we-do .titles h2 {
-    font-size: 1.8rem !important;
+    font-size: 1.7rem !important;
     max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
   
   .what-we-do .rectangle-content p {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     max-width: 95% !important;
     padding: 0 10px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
   }
   
   /* Fix CTA sections */
   .cta-section h2 {
-    font-size: 1.7rem !important;
+    font-size: 1.6rem !important;
     max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
   
   .cta-section p {
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
   }
   
   /* Fix button sizes */
   .cta-button {
-    min-width: 160px !important;
-    height: 45px !important;
-    font-size: 0.9rem !important;
+    min-width: 150px !important;
+    height: 42px !important;
+    font-size: 0.85rem !important;
     padding: 0.6rem 1.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
 /* For larger desktop screens (1367px+) */
 @media screen and (min-width: 1367px) {
   /* Keep text proportional to containers */
+  /* Header section */
+  .header h1 {
+    font-size: calc(2.8rem + 0.3vw) !important;
+    max-width: 75% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  
+  .header p {
+    font-size: calc(1.1rem + 0.1vw) !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  
+  /* Benefits section */
+  .benefits-section .section-title h2 {
+    font-size: calc(2.5rem + 0.3vw) !important;
+    max-width: 75% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  
   .benefit-item-wrapper .benefit-item {
-    height: 22vw !important;
+    height: 20vw !important;
     min-width: 400px !important;
     max-width: 650px !important;
+    min-height: 280px !important;
+    margin: 15px !important;
   }
   
   .benefit-item-wrapper .benefit-bg h3 {
-    font-size: calc(1.8rem + 0.2vw) !important;
+    font-size: calc(1.6rem + 0.2vw) !important;
     margin-bottom: 1.2rem !important;
+    line-height: 1.3 !important;
   }
   
   .benefit-item-wrapper .benefit-bg p {
-    font-size: calc(1.2rem + 0.1vw) !important;
+    font-size: calc(1.1rem + 0.1vw) !important;
     max-width: 85% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    line-height: 1.5 !important;
+    padding: 0 1rem !important;
   }
   
   .bottom-item-wrapper .benefit-item {
-    height: 26vw !important;
-    min-width: 500px !important;
-    max-width: 800px !important;
+    height: 24vw !important;
+    min-width: 480px !important;
+    max-width: 750px !important;
+    min-height: 300px !important;
+    margin: 15px auto !important;
   }
   
   .bottom-item-wrapper .benefit-bg h3 {
-    font-size: calc(1.8rem + 0.2vw) !important;
+    font-size: calc(1.6rem + 0.2vw) !important;
     margin-bottom: 1.5rem !important;
+    line-height: 1.3 !important;
   }
   
   .bottom-item-wrapper .benefit-bg p {
-    font-size: calc(1.2rem + 0.1vw) !important;
+    font-size: calc(1.1rem + 0.1vw) !important;
     max-width: 85% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    line-height: 1.5 !important;
+    padding: 0 1.2rem !important;
+  }
+  
+  /* What We Do section */
+  .what-we-do .titles h2 {
+    font-size: calc(2.8rem + 0.3vw) !important;
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  
+  .what-we-do .rectangle-content p {
+    font-size: calc(1.3rem + 0.1vw) !important;
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+  }
+  
+  /* CTA sections */
+  .cta-section h2 {
+    font-size: calc(2.4rem + 0.2vw) !important;
+    max-width: 75% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  
+  .cta-section p {
+    font-size: calc(1.1rem + 0.1vw) !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Buttons */
+  .cta-button {
+    font-size: calc(1rem + 0.1vw) !important;
+    padding: 1rem 2rem !important;
+    min-width: 180px !important;
+    height: auto !important;
+    min-height: 55px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* For very large screens (1601px+) */
+@media screen and (min-width: 1601px) {
+  /* Benefits section - prevent oversized boxes */
+  .benefit-item-wrapper .benefit-item {
+    height: 18vw !important;
+    min-width: 450px !important;
+    max-width: 700px !important;
+  }
+  
+  .bottom-item-wrapper .benefit-item {
+    height: 22vw !important;
+    min-width: 550px !important;
+    max-width: 850px !important;
+  }
+  
+  /* Cap text sizes to maintain readability */
+  .header h1 {
+    font-size: 3.2rem !important;
+  }
+  
+  .header p {
+    font-size: 1.3rem !important;
+  }
+  
+  .what-we-do .titles h2 {
+    font-size: 3.2rem !important;
+  }
+  
+  .what-we-do .rectangle-content p {
+    font-size: 1.5rem !important;
+  }
+  
+  .benefit-item-wrapper .benefit-bg h3,
+  .bottom-item-wrapper .benefit-bg h3 {
+    font-size: 1.8rem !important;
+  }
+  
+  .benefit-item-wrapper .benefit-bg p,
+  .bottom-item-wrapper .benefit-bg p {
+    font-size: 1.2rem !important;
   }
 }
 
