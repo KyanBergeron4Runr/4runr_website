@@ -290,9 +290,9 @@
 }
 
 .mobile-logo {
-  height: 85px;
-  width: auto;
-  object-fit: contain;
+  height: 95px !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
 .mobile-menu-button {
@@ -481,7 +481,7 @@
   }
 
   .mobile-logo {
-    height: 65px;
+    height: 75px !important;
   }
 
   .mobile-menu .nav-button {
