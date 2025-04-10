@@ -12,25 +12,26 @@
   /* Increase rectangle width and reduce height */
   section.benefits-section div.benefit-item-wrapper div.benefit-item {
     flex: 0 1 44vw !important; /* Increased from 42vw to 44vw for wider rectangles */
-    height: 26vw !important; /* Reduced from 30vw to 26vw */
-    min-width: 520px !important; /* Increased from 480px for more width */
-    max-width: 900px !important; /* Increased from 850px */
-    min-height: 300px !important; /* Reduced from 350px */
+    height: 28vw !important; /* Increased from 26vw to 28vw to prevent cutoff */
+    min-width: 520px !important;
+    max-width: 900px !important;
+    min-height: 340px !important; /* Increased from 300px to 340px to prevent cutoff */
+    overflow: visible !important; /* Ensure content isn't cut off */
   }
   
   /* Reduce heading text size further */
   section.benefits-section div.benefit-item div.benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.1) !important; /* Reduced from 1.2 to 1.1 */
-    margin-bottom: 1vw !important; /* Reduced from 1.5vw to 1vw */
+    font-size: calc(var(--h3-size) * 1.1) !important;
+    margin-bottom: 1vw !important;
     line-height: 1.2 !important;
   }
   
   /* Reduce paragraph text size and increase width */
   section.benefits-section div.benefit-item div.benefit-bg p {
-    font-size: calc(var(--text-body) * 0.9) !important; /* Reduced from 1.0 to 0.9 */
-    line-height: 1.4 !important; /* Reduced from 1.5 to 1.4 */
-    padding: 0 !important; /* Remove horizontal padding */
-    max-width: 95% !important; /* Increased from 90% to 95% for wider text */
+    font-size: calc(var(--text-body) * 0.9) !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    max-width: 95% !important;
     margin: 0 auto !important;
   }
   
@@ -44,26 +45,27 @@
   
   /* Ensure bottom rectangle matches top in text styling */
   section.benefits-section div.bottom-item-wrapper div.benefit-item {
-    height: 26vw !important; /* Reduced to match top rectangles */
-    min-height: 300px !important; /* Reduced to match top rectangles */
-    width: 44vw !important; /* Match width of top rectangles */
+    height: 28vw !important; /* Increased to match top rectangles */
+    min-height: 340px !important; /* Increased to match top rectangles */
+    width: 44vw !important;
+    overflow: visible !important; /* Ensure content isn't cut off */
   }
 
   section.benefits-section div.bottom-item-wrapper div.benefit-item div.benefit-bg h3,
   section.benefits-section div.benefit-item-wrapper div.benefit-item div.benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.1) !important; /* Match reduced heading sizes */
+    font-size: calc(var(--h3-size) * 1.1) !important;
   }
   
   section.benefits-section div.bottom-item-wrapper div.benefit-item div.benefit-bg p,
   section.benefits-section div.benefit-item-wrapper div.benefit-item div.benefit-bg p {
-    font-size: calc(var(--text-body) * 0.9) !important; /* Match reduced paragraph sizes */
-    max-width: 95% !important; /* Match increased width */
+    font-size: calc(var(--text-body) * 0.9) !important;
+    max-width: 95% !important;
     margin: 0 auto !important;
   }
 
   /* Use more horizontal padding and less vertical padding */
   section.benefits-section div.benefit-item div.benefit-bg {
-    padding: 2vw 3vw !important; /* Reduced vertical, increased horizontal padding */
+    padding: 3vw 3vw !important; /* Increased vertical padding from 2vw to 3vw */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
@@ -71,10 +73,45 @@
     height: 100% !important;
     box-sizing: border-box !important;
   }
+  
+  /* Add purple neon effect to desktop rectangles */
+  section.benefits-section div.benefit-item {
+    position: relative !important;
+    border-radius: 15px !important;
+    box-shadow: 0 0 20px rgba(106, 90, 205, 0.4) !important;
+    overflow: hidden !important;
+  }
+  
+  section.benefits-section div.benefit-item::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 15px !important;
+    box-shadow: 0 0 25px rgba(106, 90, 205, 0.6) !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+  }
 }
 
 /* LAPTOP: Make buttons bigger */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
+  /* Fix rectangle size for laptop too */
+  section.benefits-section div.benefit-item-wrapper div.benefit-item,
+  section.benefits-section div.bottom-item-wrapper div.benefit-item {
+    height: auto !important;
+    min-height: 320px !important;
+    padding-bottom: 20px !important;
+    overflow: visible !important;
+  }
+  
+  /* Add more padding to content */
+  section.benefits-section div.benefit-item div.benefit-bg {
+    padding: 30px 25px !important;
+  }
+  
   section.benefits-section div.button-group a.btn {
     font-size: 1.3vw !important;
     padding: 1.3vw 3vw !important;
@@ -93,6 +130,27 @@
   section.benefits-section div.button-group a.btn-secondary {
     background: #000000 !important;
   }
+  
+  /* Add purple neon effect to laptop rectangles */
+  section.benefits-section div.benefit-item {
+    position: relative !important;
+    border-radius: 15px !important;
+    box-shadow: 0 0 15px rgba(106, 90, 205, 0.4) !important;
+    overflow: hidden !important;
+  }
+  
+  section.benefits-section div.benefit-item::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 15px !important;
+    box-shadow: 0 0 20px rgba(106, 90, 205, 0.5) !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+  }
 }
 
 /* MOBILE: Remove background and add purple border */
@@ -105,9 +163,11 @@
     border-radius: 12px !important;
     overflow: hidden !important;
     position: relative !important;
+    margin-bottom: 25px !important; /* Add more space between items */
+    min-height: 200px !important; /* Ensure minimum height */
   }
   
-  /* Add subtle glow effect */
+  /* Enhance purple neon glow effect */
   section.benefits-section div.mobile-version div.benefit-item::after {
     content: "" !important;
     position: absolute !important;
@@ -116,15 +176,41 @@
     right: 0 !important;
     bottom: 0 !important;
     border-radius: 12px !important;
-    box-shadow: 0 0 15px rgba(106, 90, 205, 0.4) !important;
+    box-shadow: 0 0 15px rgba(106, 90, 205, 0.6), inset 0 0 8px rgba(106, 90, 205, 0.4) !important; /* Enhanced glow */
     pointer-events: none !important;
     z-index: -1 !important;
+  }
+  
+  /* Add additional glow layer for stronger effect */
+  section.benefits-section div.mobile-version div.benefit-item::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 0 20px rgba(106, 90, 205, 0.4) !important;
+    z-index: -2 !important;
+    pointer-events: none !important;
+    opacity: 0.7 !important;
   }
   
   section.benefits-section div.mobile-version div.benefit-bg {
     background: transparent !important;
     backdrop-filter: none !important;
-    padding: 20px 15px !important;
+    padding: 25px 20px !important; /* Increased padding */
+  }
+  
+  /* Ensure text is properly sized */
+  section.benefits-section div.mobile-version div.benefit-bg h3 {
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  section.benefits-section div.mobile-version div.benefit-bg p {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
   }
   
   /* Keep buttons taller */
