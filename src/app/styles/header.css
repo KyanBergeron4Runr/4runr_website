@@ -13,19 +13,20 @@
 }
 
 .header-desktop {
-  flex: 0 0 28%;
+  flex: 0 0 35%;
   background: #000000;
   position: relative;
   min-height: 110px !important;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 7vw;
+  justify-content: flex-end;
+  padding-right: 40px;
+  padding-left: 0;
 }
 
 .header-desktop .header__logo-wrapper {
   width: auto;
-  text-align: left;
+  text-align: right;
   transform: none !important;
 }
 
@@ -43,7 +44,7 @@
   flex: 1;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   background: #000000;
   padding-right: 3vw;
   transform: none !important;
@@ -58,12 +59,12 @@
   gap: 50px !important;
   transform: none;
   height: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   width: auto;
-  position: absolute;
-  left: 34%;
-  transform: translateX(-50%);
+  position: relative;
+  left: 0;
+  transform: none;
 }
 
 .top-nav a {
@@ -106,6 +107,7 @@
   
   .header-desktop {
     min-height: 80px !important;
+    padding-right: 30px;
   }
   
   .header-desktop .header__logo-wrapper {
@@ -128,7 +130,7 @@
   }
   
   .top-nav .nav-items {
-    left: 34%;
+    left: 0;
   }
   
   .top-nav a {
@@ -149,6 +151,7 @@
   
   .header-desktop {
     min-height: 120px !important;
+    padding-right: 50px;
   }
   
   .header-desktop .header__logo {
@@ -161,7 +164,7 @@
   }
   
   .top-nav .nav-items {
-    left: 34%;
+    left: 0;
   }
   
   .top-nav a {
