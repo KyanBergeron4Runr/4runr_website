@@ -13,14 +13,14 @@
 }
 
 .header-desktop {
-  flex: 0 0 22%;
+  flex: 0 0 25%;
   background: #000000;
   position: relative;
   min-height: 110px !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 4vw;
+  padding-left: 5vw;
 }
 
 .header-desktop .header__logo-wrapper {
@@ -62,7 +62,7 @@
   padding: 0;
   width: auto;
   position: absolute;
-  left: 38%;
+  left: 36%;
   transform: translateX(-50%);
 }
 
@@ -86,7 +86,7 @@
 }
 
 .top-nav .contact-button {
-  padding: 18px 36px !important;
+  padding: 22px 30px !important;
   color: #000000;
   background: white;
   border-radius: 8px !important;
@@ -128,7 +128,7 @@
   }
   
   .top-nav .nav-items {
-    left: 38%;
+    left: 36%;
   }
   
   .top-nav a {
@@ -137,7 +137,7 @@
   
   .top-nav .contact-button {
     font-size: 24px !important;
-    padding: 16px 32px !important;
+    padding: 18px 26px !important;
   }
 }
 
@@ -161,7 +161,7 @@
   }
   
   .top-nav .nav-items {
-    left: 38%;
+    left: 36%;
   }
   
   .top-nav a {
@@ -170,7 +170,7 @@
   
   .top-nav .contact-button {
     font-size: 28px !important;
-    padding: 20px 40px !important;
+    padding: 26px 34px !important;
   }
 }
 
