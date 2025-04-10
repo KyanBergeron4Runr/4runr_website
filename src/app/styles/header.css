@@ -13,14 +13,14 @@
 }
 
 .header-desktop {
-  flex: 0 0 25%;
+  flex: 0 0 28%;
   background: #000000;
   position: relative;
   min-height: 110px !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 5vw;
+  padding-left: 7vw;
 }
 
 .header-desktop .header__logo-wrapper {
@@ -62,7 +62,7 @@
   padding: 0;
   width: auto;
   position: absolute;
-  left: 36%;
+  left: 34%;
   transform: translateX(-50%);
 }
 
@@ -128,7 +128,7 @@
   }
   
   .top-nav .nav-items {
-    left: 36%;
+    left: 34%;
   }
   
   .top-nav a {
@@ -161,7 +161,7 @@
   }
   
   .top-nav .nav-items {
-    left: 36%;
+    left: 34%;
   }
   
   .top-nav a {
