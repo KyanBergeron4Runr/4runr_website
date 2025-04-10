@@ -11,12 +11,15 @@
 
   /* Increase rectangle width and reduce height */
   section.benefits-section div.benefit-item-wrapper div.benefit-item {
-    flex: 0 1 44vw !important; /* Increased from 42vw to 44vw for wider rectangles */
-    height: 28vw !important; /* Increased from 26vw to 28vw to prevent cutoff */
+    flex: 0 1 44vw !important;
+    height: 28vw !important;
     min-width: 520px !important;
     max-width: 900px !important;
-    min-height: 340px !important; /* Increased from 300px to 340px to prevent cutoff */
+    min-height: 340px !important;
     overflow: visible !important; /* Ensure content isn't cut off */
+    position: relative !important;
+    box-shadow: 0 0 20px rgba(106, 90, 205, 0.4) !important;
+    border-radius: 15px !important;
   }
   
   /* Reduce heading text size further */
@@ -24,15 +27,22 @@
     font-size: calc(var(--h3-size) * 1.1) !important;
     margin-bottom: 1vw !important;
     line-height: 1.2 !important;
+    padding: 0 1.5vw !important; /* Add horizontal padding to headings */
+    width: 90% !important; /* Limit width to prevent overflow */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
   
-  /* Reduce paragraph text size and increase width */
+  /* Reduce paragraph text size and increase width, prevent cutoff */
   section.benefits-section div.benefit-item div.benefit-bg p {
-    font-size: calc(var(--text-body) * 0.9) !important;
+    font-size: calc(var(--text-body) * 0.85) !important; /* Reduced further from 0.9 to 0.85 */
     line-height: 1.4 !important;
-    padding: 0 !important;
-    max-width: 95% !important;
+    padding: 0 2vw !important; /* Add horizontal padding to paragraphs */
+    max-width: 85% !important; /* Reduced from 95% to 85% to prevent cutoff */
     margin: 0 auto !important;
+    word-wrap: break-word !important; /* Ensure words wrap properly */
+    text-align: center !important;
   }
   
   /* Make button text smaller */
@@ -45,43 +55,47 @@
   
   /* Ensure bottom rectangle matches top in text styling */
   section.benefits-section div.bottom-item-wrapper div.benefit-item {
-    height: 28vw !important; /* Increased to match top rectangles */
-    min-height: 340px !important; /* Increased to match top rectangles */
+    height: 28vw !important;
+    min-height: 340px !important;
     width: 44vw !important;
-    overflow: visible !important; /* Ensure content isn't cut off */
+    overflow: visible !important;
+    position: relative !important;
+    box-shadow: 0 0 20px rgba(106, 90, 205, 0.4) !important;
+    border-radius: 15px !important;
   }
 
   section.benefits-section div.bottom-item-wrapper div.benefit-item div.benefit-bg h3,
   section.benefits-section div.benefit-item-wrapper div.benefit-item div.benefit-bg h3 {
     font-size: calc(var(--h3-size) * 1.1) !important;
+    padding: 0 1.5vw !important;
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   
   section.benefits-section div.bottom-item-wrapper div.benefit-item div.benefit-bg p,
   section.benefits-section div.benefit-item-wrapper div.benefit-item div.benefit-bg p {
-    font-size: calc(var(--text-body) * 0.9) !important;
-    max-width: 95% !important;
+    font-size: calc(var(--text-body) * 0.85) !important;
+    max-width: 85% !important;
     margin: 0 auto !important;
+    padding: 0 2vw !important;
+    word-wrap: break-word !important;
   }
 
   /* Use more horizontal padding and less vertical padding */
   section.benefits-section div.benefit-item div.benefit-bg {
-    padding: 3vw 3vw !important; /* Increased vertical padding from 2vw to 3vw */
+    padding: 2.5vw 2vw !important; /* Adjusted padding to allow more horizontal space */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     height: 100% !important;
     box-sizing: border-box !important;
+    width: 100% !important; /* Ensure full width is used */
+    border-radius: 15px !important;
   }
   
   /* Add purple neon effect to desktop rectangles */
-  section.benefits-section div.benefit-item {
-    position: relative !important;
-    border-radius: 15px !important;
-    box-shadow: 0 0 20px rgba(106, 90, 205, 0.4) !important;
-    overflow: hidden !important;
-  }
-  
   section.benefits-section div.benefit-item::before {
     content: "" !important;
     position: absolute !important;
@@ -107,9 +121,30 @@
     overflow: visible !important;
   }
   
+  /* Fix text getting cut off */
+  section.benefits-section div.benefit-item div.benefit-bg h3 {
+    padding: 0 15px !important;
+    max-width: 90% !important;
+    margin: 0 auto 15px auto !important;
+    text-align: center !important;
+  }
+  
+  section.benefits-section div.benefit-item div.benefit-bg p {
+    padding: 0 15px !important;
+    max-width: 85% !important;
+    margin: 0 auto !important;
+    word-wrap: break-word !important;
+    text-align: center !important;
+  }
+  
   /* Add more padding to content */
   section.benefits-section div.benefit-item div.benefit-bg {
-    padding: 30px 25px !important;
+    padding: 25px 15px !important; /* Reduced side padding to prevent cutoff */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
   }
   
   section.benefits-section div.button-group a.btn {
@@ -161,10 +196,14 @@
     box-shadow: none !important;
     border: 2px solid rgba(106, 90, 205, 0.6) !important; /* Purple border */
     border-radius: 12px !important;
-    overflow: hidden !important;
+    overflow: visible !important; /* Changed from hidden to visible to prevent cutoff */
     position: relative !important;
-    margin-bottom: 25px !important; /* Add more space between items */
-    min-height: 200px !important; /* Ensure minimum height */
+    margin-bottom: 25px !important;
+    min-height: 200px !important;
+    width: 90% !important; /* Limit width on mobile to prevent cutoff */
+    max-width: 400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   
   /* Enhance purple neon glow effect */
@@ -176,7 +215,7 @@
     right: 0 !important;
     bottom: 0 !important;
     border-radius: 12px !important;
-    box-shadow: 0 0 15px rgba(106, 90, 205, 0.6), inset 0 0 8px rgba(106, 90, 205, 0.4) !important; /* Enhanced glow */
+    box-shadow: 0 0 15px rgba(106, 90, 205, 0.6), inset 0 0 8px rgba(106, 90, 205, 0.4) !important;
     pointer-events: none !important;
     z-index: -1 !important;
   }
@@ -199,18 +238,45 @@
   section.benefits-section div.mobile-version div.benefit-bg {
     background: transparent !important;
     backdrop-filter: none !important;
-    padding: 25px 20px !important; /* Increased padding */
+    padding: 20px 10px !important; /* Reduced horizontal padding to prevent text cutoff */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
-  /* Ensure text is properly sized */
+  /* Ensure text is properly sized and centered with no cutoff */
   section.benefits-section div.mobile-version div.benefit-bg h3 {
     font-size: 22px !important;
     margin-bottom: 12px !important;
+    text-align: center !important;
+    width: 90% !important;
+    max-width: 300px !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   
   section.benefits-section div.mobile-version div.benefit-bg p {
     font-size: 16px !important;
     line-height: 1.4 !important;
+    text-align: center !important;
+    width: 90% !important;
+    max-width: 300px !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    word-wrap: break-word !important;
+  }
+  
+  /* Ensure mobile container has proper width */
+  section.benefits-section div.mobile-version {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
   }
   
   /* Keep buttons taller */
