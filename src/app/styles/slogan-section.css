@@ -58,7 +58,7 @@
 /* Slogan-specific fine print styles */
 .slogan-section .fine-print {
   /* Using global properties, but with larger size for this section */
-  font-size: 30px;
+  font-size: 26px;
   max-width: 1200px;
   margin-top: 60px;
   margin-bottom: 30px;
@@ -69,7 +69,7 @@
 .slogan-section .fine-print-line {
   display: block;
   margin-bottom: 16px;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
 }
 
@@ -84,12 +84,12 @@
   }
   
   .slogan-section .fine-print {
-    font-size: 28px;
+    font-size: 24px;
     max-width: 1000px;
   }
   
   .slogan-section .fine-print-line {
-    font-size: 30px;
+    font-size: 26px;
   }
 }
 
@@ -103,12 +103,12 @@
   }
   
   .slogan-section .fine-print {
-    font-size: 26px;
+    font-size: 22px;
     max-width: 900px;
   }
   
   .slogan-section .fine-print-line {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 14px;
   }
 }
@@ -123,13 +123,13 @@
   }
   
   .slogan-section .fine-print {
-    font-size: 24px;
+    font-size: 20px;
     max-width: 92%;
     margin-top: 40px;
   }
   
   .slogan-section .fine-print-line {
-    font-size: 26px;
+    font-size: 22px;
     margin-bottom: 12px;
   }
   
@@ -149,12 +149,12 @@
   }
   
   .slogan-section .fine-print {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 30px;
   }
   
   .slogan-section .fine-print-line {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
   
