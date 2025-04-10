@@ -205,6 +205,20 @@
     height: 48px;
     min-width: 140px;
   }
+
+  .benefit-item-wrapper .benefit-item {
+    flex: 0 1 520px !important;
+    height: 300px !important;
+  }
+
+  .benefit-item-wrapper .benefit-bg h3 {
+    font-size: calc(var(--h3-size) * 1.4) !important;
+  }
+
+  .benefit-item-wrapper .benefit-bg p {
+    font-size: calc(var(--text-body) * 1.4) !important;
+    padding: 0 15px !important;
+  }
 }
 
 /* Tablet/Mobile breakpoint */
@@ -256,6 +270,22 @@
     height: 50px;
     font-size: 16px;
     padding: 12px 20px;
+  }
+
+  .mobile-version .benefit-item-wrapper .benefit-item {
+    width: 100% !important;
+    min-height: 250px !important;
+  }
+
+  .mobile-version .benefit-item-wrapper .benefit-bg h3 {
+    font-size: calc(var(--h3-size) * 1.3) !important;
+    margin-bottom: 15px !important;
+    transform: none !important;
+  }
+
+  .mobile-version .benefit-item-wrapper .benefit-bg p {
+    font-size: calc(var(--text-body) * 1.3) !important;
+    padding: 0 15px !important;
   }
 }
 
@@ -318,6 +348,24 @@
     line-height: 1.5;
     padding: 0 2.5vw;
   }
+
+  .benefit-item-wrapper .benefit-item {
+    flex: 0 1 38vw !important;
+    height: 26vw !important;
+    min-width: 450px !important;
+    max-width: 750px !important;
+  }
+  
+  .benefit-item-wrapper .benefit-bg h3 {
+    font-size: calc(var(--h3-size) * 1.8) !important;
+    margin-bottom: 1.8vw !important;
+  }
+  
+  .benefit-item-wrapper .benefit-bg p {
+    font-size: calc(var(--text-body) * 1.8) !important;
+    line-height: 1.5 !important;
+    padding: 0 2vw !important;
+  }
 }
 
 /* Adding desktop-specific styles to increase text size */
@@ -343,4 +391,23 @@
   font-size: var(--h3-size);
   transform: translateY(-12px);
   margin-top: 0;
+}
+
+.benefit-item-wrapper .benefit-item {
+  flex: 0 1 35vw !important; /* Wider than regular benefit items */
+  width: auto;
+  max-width: 700px !important;
+}
+
+.benefit-item-wrapper .benefit-bg h3 {
+  font-size: calc(var(--h3-size) * 1.6) !important;
+  margin-bottom: 1.5vw !important;
+  transform: none !important;
+}
+
+.benefit-item-wrapper .benefit-bg p {
+  font-size: calc(var(--text-body) * 1.6) !important;
+  padding: 0 1.5vw !important;
+  line-height: 1.5 !important;
+  transform: none !important;
 } 
