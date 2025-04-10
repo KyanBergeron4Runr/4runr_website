@@ -143,12 +143,13 @@
 }
 
 .rectangle-content p {
-  font-size: var(--text-body);
+  font-size: calc(var(--text-body) * 1.25);
   line-height: var(--line-height-body);
   color: var(--color-text-light);
   margin-bottom: calc(16 / 1920 * 100vw);
   max-width: calc(500 / 1920 * 100vw);
   margin: 0 auto;
+  font-weight: 500;
 }
 
 .bottom-content {
@@ -185,18 +186,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1vw 2.5vw;
+  padding: 1rem 2rem;
+  border: 1.5px solid transparent;
+  border-radius: 0.5rem;
+  color: white;
   background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-  color: #fff;
   text-decoration: none;
-  border-radius: 0.521vw;
-  font-size: 1vw;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-  min-width: 9.375vw;
-  height: 3.125vw;
-  border: none;
+  font-size: var(--text-button);
+  font-weight: var(--weight-button);
+  transition: transform 0.3s;
   font-family: var(--font-heading);
+  min-height: 3.5rem;
+  min-width: 12vw;
   cursor: pointer;
 }
 
@@ -299,8 +300,10 @@
   }
 
   .rectangle-content p {
-    font-size: var(--text-body);
+    font-size: calc(var(--text-body) * 1.2);
     max-width: 100%;
+    margin-bottom: 15px;
+    font-weight: 500;
   }
 
   .bottom-content {
@@ -332,19 +335,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 24px;
-    background: linear-gradient(45deg, #4B0082, #483D8B);
-    color: #fff;
+    padding: 1rem 2rem;
+    border: 1.5px solid transparent;
+    border-radius: 0.5rem;
+    color: white;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-    min-width: 180px;
-    height: 50px;
-    border: none;
+    font-size: 18px;
+    font-weight: var(--weight-button);
+    transition: transform 0.3s;
+    min-width: 200px;
+    height: 60px;
     font-family: var(--font-heading);
-    cursor: pointer;
   }
 
   .cta-button:hover {
@@ -366,13 +368,13 @@
   }
 
   .rectangle-content p {
-    font-size: var(--text-body);
+    font-size: calc(var(--text-body) * 1.15);
   }
 
   .cta-button {
-    min-width: 160px;
-    height: 45px;
-    font-size: 14px;
+    min-width: 180px;
+    height: 55px;
+    font-size: 16px;
   }
 
   .nav-arrow {
@@ -393,28 +395,9 @@
   }
   
   .rectangle-content p {
-    font-size: calc(var(--text-body) * 1.15);
+    font-size: calc(var(--text-body) * 1.25);
     line-height: 1.5;
   }
-}
-
-/* Update the button to match the let's-talk-button style */
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1vw 2.5vw;
-  background: linear-gradient(45deg, #4B0082, #483D8B);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 0.521vw;
-  font-size: 1vw;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-  min-width: 9.375vw;
-  height: 3.125vw;
-  border: none;
-  font-family: var(--font-heading);
 }
 
 /* Update text sizes for the What is 4Runr section */
@@ -430,9 +413,10 @@
   }
   
   .rectangle-content p {
-    font-size: 24px;
+    font-size: 26px;
     line-height: 1.5;
     max-width: 80%;
+    font-weight: 500;
   }
 
   .rectangles {
@@ -450,9 +434,10 @@
   }
 
   .cta-button {
-    font-size: 20px;
-    min-width: 12vw;
-    height: 3.5vw;
+    font-size: 22px;
+    min-width: 14vw;
+    height: 4vw;
+    padding: 1.2rem 2.5rem;
   }
 }
 
