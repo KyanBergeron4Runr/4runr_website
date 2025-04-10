@@ -71,56 +71,74 @@
     padding: 0 15px !important;
   }
   
-  /* Simplified structure for typing animation */
+  /* Create clear 3-line structure for typing animation */
   div.cta-section-mobile div.typed-wrapper-mobile {
-    margin: 1rem 0 1.5rem !important;
+    margin: 1.5rem 0 2rem !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    min-height: 130px !important; /* Fixed height to prevent movement */
   }
   
-  /* Keep h2 larger but simplify styling */
+  /* Line 1: "Automate" */
   div.cta-section-mobile div.typed-wrapper-mobile h2 {
     font-size: 28px !important;
     font-weight: 700 !important;
     text-align: center !important;
     width: 100% !important;
+    margin-bottom: 1rem !important; /* Add clear spacing between lines */
+    line-height: 1.2 !important;
   }
   
-  /* Keep typed text container simple but larger */
+  /* Line 2: Typing animation */
   div.cta-section-mobile span.typed-text-mobile {
     font-size: 28px !important;
     font-weight: 700 !important;
     color: #6a5acd !important;
-    display: inline-block !important;
-    min-width: 60px !important;
+    display: block !important; /* Changed to block for clear line break */
+    min-width: 200px !important; /* Prevent too small space */
+    max-width: 90% !important;
     text-align: center !important;
+    min-height: 40px !important; /* Maintain stable height */
+    margin: 0.5rem auto 1rem !important; /* Center and add spacing */
+    padding: 0 !important;
+    line-height: 1.2 !important;
   }
   
-  /* Basic cursor styling */
+  /* Improve cursor styling */
   div.cta-section-mobile span.typing-cursor {
     display: inline-block !important;
     color: #6a5acd !important;
-    animation: cursor-blink 0.8s steps(2) infinite !important;
+    animation: cursor-blink 1s step-end infinite !important; /* Slower, more stable blink */
+    margin-left: 3px !important;
   }
   
-  /* Add the "with AI" text via CSS to keep the structure stable */
+  /* Line 3: "with AI" */
   div.cta-section-mobile div.typed-wrapper-mobile h2::after {
     content: "with AI." !important;
     display: block !important;
     font-size: 28px !important;
     font-weight: 700 !important;
-    margin-top: 0.5rem !important;
+    margin-top: 1rem !important; /* Clear spacing */
     text-align: center !important;
+    line-height: 1.2 !important;
   }
   
   /* Mobile devices with larger screens */
   @media screen and (min-width: 480px) and (max-width: 767px) {
+    div.cta-section-mobile div.typed-wrapper-mobile {
+      min-height: 150px !important; /* Adjusted for larger text */
+    }
+    
     div.cta-section-mobile div.typed-wrapper-mobile h2,
     div.cta-section-mobile span.typed-text-mobile,
     div.cta-section-mobile div.typed-wrapper-mobile h2::after {
       font-size: 32px !important;
+    }
+    
+    div.cta-section-mobile span.typed-text-mobile {
+      min-height: 45px !important;
     }
   }
 } 

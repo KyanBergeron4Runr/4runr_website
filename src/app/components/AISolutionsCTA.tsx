@@ -67,7 +67,7 @@ export default function AISolutionsCTA({
       }
 
       // Slower typing speed on mobile
-      const typingSpeed = isMobile ? 300 : 200;
+      const typingSpeed = isMobile ? 400 : 200;
       setTimeout(() => setCharIndex(prev => prev + 1), typingSpeed);
     } else {
       const textContent = currentWord.slice(0, charIndex - 1);
@@ -76,12 +76,16 @@ export default function AISolutionsCTA({
 
       if (charIndex === 0) {
         setIsDeleting(false);
-        setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
+        // Add pause between words for mobile
+        const pauseDelay = isMobile ? 800 : 0;
+        setTimeout(() => {
+          setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
+        }, pauseDelay);
         return;
       }
 
       // Slower deleting speed on mobile
-      const deletingSpeed = isMobile ? 250 : 150;
+      const deletingSpeed = isMobile ? 350 : 150;
       setTimeout(() => setCharIndex(prev => prev - 1), deletingSpeed);
     }
   }, [charIndex, isDeleting, currentWordIndex, isMobile]);
