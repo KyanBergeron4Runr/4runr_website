@@ -1,0 +1,103 @@
+/* Slogan Section Component - Updated Styles */
+
+/* Special mobile view overrides with maximum specificity */
+@media (max-width: 768px) {
+  /* Logo sizing and spacing */
+  html body div.slogan-section .logo {
+    height: 95px !important;
+    width: auto !important;
+    min-width: 85px !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(1) !important;
+    opacity: 1 !important;
+  }
+  
+  html body div.slogan-section .logo-container {
+    padding: 15px !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  html body div.slogan-section .logo-group {
+    gap: 35px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  /* Fine print styling */
+  html body div.slogan-section .fine-print {
+    font-size: 17px !important;
+    max-width: 92% !important;
+    margin: 25px auto 20px !important;
+    line-height: 1.4 !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    text-align: center !important;
+  }
+  
+  html body div.slogan-section .fine-print-line {
+    font-size: 19px !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    font-weight: 500 !important;
+  }
+  
+  /* Marquee animation */
+  html body div.slogan-section .marquee {
+    padding: 30px 0 !important;
+    position: relative !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  html body div.slogan-section .marquee-inner {
+    display: flex !important;
+    width: fit-content !important;
+    animation: slogan_marquee 120s linear infinite !important;
+    will-change: transform !important;
+  }
+  
+  @keyframes slogan_marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 17.5px)); }
+  }
+}
+
+/* Small mobile overrides */
+@media (max-width: 480px) {
+  html body div.slogan-section .logo {
+    height: 60px !important;
+    min-width: 60px !important;
+  }
+  
+  html body div.slogan-section .logo-container {
+    padding: 10px !important;
+  }
+  
+  html body div.slogan-section .logo-group {
+    gap: 25px !important;
+  }
+  
+  html body div.slogan-section .fine-print {
+    font-size: 14px !important;
+    margin-top: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  html body div.slogan-section .fine-print-line {
+    font-size: 16px !important;
+    margin-bottom: 5px !important;
+  }
+  
+  html body div.slogan-section .marquee {
+    padding: 20px 0 !important;
+  }
+  
+  @keyframes slogan_marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 12.5px)); }
+  }
+} 

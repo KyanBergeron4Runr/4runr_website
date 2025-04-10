@@ -1,6 +1,7 @@
 'use client'
 
 import '../styles/slogan-section.css'
+import '../styles/slogan-section-update.css'
 
 interface SloganSectionProps {
   subtitle_line1?: string;
