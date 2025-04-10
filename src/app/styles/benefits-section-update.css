@@ -167,35 +167,42 @@ section.benefits-section div.desktop-version {
     width: 42% !important;
     max-width: 500px !important;
     box-sizing: border-box !important;
+    background: rgba(0, 0, 0, 0.7) !important; /* Added black background */
+    border-radius: 15px !important;
   }
   
   /* Fix text getting cut off */
   section.benefits-section div.benefit-item div.benefit-bg h3 {
     padding: 0 !important;
-    max-width: 80% !important; /* Reduced from 90% */
+    max-width: 80% !important;
     margin: 0 auto 15px auto !important;
     text-align: center !important;
     box-sizing: border-box !important;
+    color: white !important;
   }
   
   section.benefits-section div.benefit-item div.benefit-bg p {
     padding: 0 !important;
-    max-width: 80% !important; /* Reduced from 85% */
+    max-width: 80% !important;
     margin: 0 auto !important;
     word-wrap: break-word !important;
     text-align: center !important;
     box-sizing: border-box !important;
+    color: #ccc !important;
   }
   
   /* Fix padding inside benefit backgrounds */
   section.benefits-section div.benefit-item div.benefit-bg {
-    padding: 25px 0 !important; /* Removed horizontal padding */
+    padding: 25px 0 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
     overflow: visible !important;
+    background: transparent !important;
+    backdrop-filter: blur(5px) !important;
+    border-radius: 15px !important;
   }
   
   section.benefits-section div.button-group a.btn {
@@ -217,12 +224,12 @@ section.benefits-section div.desktop-version {
     background: #000000 !important;
   }
   
-  /* Add purple neon effect to laptop rectangles */
+  /* Enhanced purple neon effect to laptop rectangles */
   section.benefits-section div.benefit-item {
     position: relative !important;
     border-radius: 15px !important;
-    box-shadow: 0 0 15px rgba(106, 90, 205, 0.4) !important;
-    overflow: visible !important; /* Changed from hidden */
+    box-shadow: 0 0 15px rgba(106, 90, 205, 0.4), inset 0 0 8px rgba(106, 90, 205, 0.3) !important; /* Added inset glow */
+    overflow: visible !important;
   }
   
   section.benefits-section div.benefit-item::before {
@@ -245,7 +252,7 @@ section.benefits-section div.desktop-version {
   section.benefits-section div.mobile-version {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 10px !important; /* Reduced from 15px to 10px */
+    padding: 0 10px !important;
     box-sizing: border-box !important;
     overflow: visible !important;
   }
@@ -260,11 +267,11 @@ section.benefits-section div.desktop-version {
     position: relative !important;
     margin-bottom: 25px !important;
     min-height: 200px !important;
-    width: 85% !important; /* Reduced from 90% */
-    max-width: 350px !important; /* Reduced from 400px */
+    width: 85% !important;
+    max-width: 350px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding: 0 !important; /* Ensure no padding on item */
+    padding: 0 !important;
   }
   
   /* Enhance purple neon glow effect */
@@ -299,7 +306,7 @@ section.benefits-section div.desktop-version {
   section.benefits-section div.mobile-version div.benefit-bg {
     background: transparent !important;
     backdrop-filter: none !important;
-    padding: 20px 0 !important; /* Removed horizontal padding */
+    padding: 20px 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
     display: flex !important;
@@ -314,8 +321,8 @@ section.benefits-section div.desktop-version {
     font-size: 22px !important;
     margin-bottom: 12px !important;
     text-align: center !important;
-    width: 80% !important; /* Reduced from 90% */
-    max-width: 280px !important; /* Reduced from 300px */
+    width: 80% !important;
+    max-width: 280px !important;
     padding: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -326,8 +333,8 @@ section.benefits-section div.desktop-version {
     font-size: 16px !important;
     line-height: 1.4 !important;
     text-align: center !important;
-    width: 80% !important; /* Reduced from 90% */
-    max-width: 280px !important; /* Reduced from 300px */
+    width: 80% !important;
+    max-width: 280px !important;
     padding: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -335,13 +342,35 @@ section.benefits-section div.desktop-version {
     box-sizing: border-box !important;
   }
   
-  /* Keep buttons taller */
+  /* Make buttons smaller with rounded corners */
+  section.benefits-section div.button-group {
+    margin-top: 25px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 15px !important;
+  }
+  
   section.benefits-section div.button-group a.btn {
-    height: 60px !important;
-    min-height: 60px !important;
-    font-size: 18px !important;
+    height: 50px !important; /* Reduced from 60px */
+    min-height: 50px !important; /* Reduced from 60px */
+    font-size: 16px !important; /* Reduced from 18px */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    border-radius: 8px !important; /* Added slightly rounded corners */
+    width: 70% !important; /* Set explicit width */
+    max-width: 280px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Set specific button styles for mobile */
+  section.benefits-section div.button-group a.btn-primary {
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+  }
+  
+  section.benefits-section div.button-group a.btn-secondary {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(106, 90, 205, 0.4) !important;
   }
 } 
