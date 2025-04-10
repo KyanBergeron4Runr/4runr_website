@@ -3,7 +3,7 @@
   display: flex;
   width: 100%;
   background: #000000;
-  min-height: 90px !important;
+  min-height: 110px !important;
   position: static;
   z-index: 100;
   align-items: center;
@@ -16,7 +16,7 @@
   flex: 0 0 25%;
   background: #000000;
   position: relative;
-  min-height: 90px !important;
+  min-height: 110px !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -42,19 +42,20 @@
 .top-nav {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: #000000;
   padding-right: 5vw;
   transform: none !important;
   position: relative;
+  margin-top: -10px;
 }
 
 .top-nav .nav-items {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px !important;
+  gap: 50px !important;
   transform: none;
   height: 100%;
   margin: 0 auto;
@@ -68,7 +69,7 @@
 .top-nav a {
   color: white;
   text-decoration: none;
-  font-size: 20px !important;
+  font-size: 24px !important;
   font-family: var(--font-heading);
   transition: transform 0.3s ease;
   white-space: nowrap;
@@ -77,6 +78,7 @@
   display: flex;
   align-items: center;
   height: 100%;
+  padding: 10px 0;
 }
 
 .top-nav a:hover {
@@ -84,11 +86,11 @@
 }
 
 .top-nav .contact-button {
-  padding: 12px 24px !important;
+  padding: 16px 32px !important;
   color: #000000;
   background: white;
-  border-radius: 6px !important;
-  font-size: 20px !important;
+  border-radius: 8px !important;
+  font-size: 24px !important;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -120,30 +122,7 @@
   .top-nav {
     position: relative !important;
     z-index: 5 !important;
-  }
-  
-  .top-nav a {
-    font-size: 18px !important;
-  }
-  
-  .top-nav .contact-button {
-    font-size: 18px !important;
-    padding: 10px 20px !important;
-  }
-}
-
-/* Desktop Large screens */
-@media screen and (min-width: 1537px) {
-  .header-wrapper {
-    min-height: 100px !important;
-  }
-  
-  .header-desktop {
-    min-height: 100px !important;
-  }
-  
-  .header-desktop .header__logo {
-    width: 200px !important;
+    margin-top: -8px;
   }
   
   .top-nav a {
@@ -153,6 +132,34 @@
   .top-nav .contact-button {
     font-size: 22px !important;
     padding: 14px 28px !important;
+  }
+}
+
+/* Desktop Large screens */
+@media screen and (min-width: 1537px) {
+  .header-wrapper {
+    min-height: 120px !important;
+  }
+  
+  .header-desktop {
+    min-height: 120px !important;
+  }
+  
+  .header-desktop .header__logo {
+    width: 200px !important;
+  }
+  
+  .top-nav {
+    margin-top: -12px;
+  }
+  
+  .top-nav a {
+    font-size: 26px !important;
+  }
+  
+  .top-nav .contact-button {
+    font-size: 26px !important;
+    padding: 18px 36px !important;
   }
 }
 
