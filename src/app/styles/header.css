@@ -13,14 +13,14 @@
 }
 
 .header-desktop {
-  flex: 0 0 20%;
+  flex: 0 0 22%;
   background: #000000;
   position: relative;
   min-height: 110px !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 3vw;
+  padding-left: 4vw;
 }
 
 .header-desktop .header__logo-wrapper {
@@ -31,7 +31,7 @@
 
 .header-desktop .header__logo {
   height: auto !important;
-  width: 130px !important;
+  width: 150px !important;
   max-width: none !important;
   object-fit: contain !important;
   position: relative !important;
@@ -62,7 +62,7 @@
   padding: 0;
   width: auto;
   position: absolute;
-  left: 40%;
+  left: 38%;
   transform: translateX(-50%);
 }
 
@@ -86,15 +86,16 @@
 }
 
 .top-nav .contact-button {
-  padding: 16px 32px !important;
+  padding: 18px 36px !important;
   color: #000000;
   background: white;
   border-radius: 8px !important;
-  font-size: 24px !important;
+  font-size: 26px !important;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Laptop displays */
@@ -113,8 +114,8 @@
   }
   
   .header-desktop .header__logo {
-    width: 110px !important;
-    max-width: 110px !important;
+    width: 130px !important;
+    max-width: 130px !important;
     height: auto !important;
     position: relative !important;
     z-index: 10 !important;
@@ -127,7 +128,7 @@
   }
   
   .top-nav .nav-items {
-    left: 40%;
+    left: 38%;
   }
   
   .top-nav a {
@@ -135,8 +136,8 @@
   }
   
   .top-nav .contact-button {
-    font-size: 22px !important;
-    padding: 14px 28px !important;
+    font-size: 24px !important;
+    padding: 16px 32px !important;
   }
 }
 
@@ -151,8 +152,8 @@
   }
   
   .header-desktop .header__logo {
-    width: 150px !important;
-    max-width: 150px !important;
+    width: 170px !important;
+    max-width: 170px !important;
   }
   
   .top-nav {
@@ -160,7 +161,7 @@
   }
   
   .top-nav .nav-items {
-    left: 40%;
+    left: 38%;
   }
   
   .top-nav a {
@@ -168,8 +169,8 @@
   }
   
   .top-nav .contact-button {
-    font-size: 26px !important;
-    padding: 18px 36px !important;
+    font-size: 28px !important;
+    padding: 20px 40px !important;
   }
 }
 
@@ -396,7 +397,7 @@ body.menu-open {
 
 .header-desktop .header__logo {
   height: auto !important;
-  width: 130px !important;
-  max-width: 130px !important;
+  width: 150px !important;
+  max-width: 150px !important;
   object-fit: contain !important;
 } 
