@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import '../styles/benefits-section.css'
+import '../styles/benefits-section-update.css'
 
 interface BenefitsSectionProps {
   heading1?: string;
