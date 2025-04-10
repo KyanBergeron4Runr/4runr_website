@@ -115,41 +115,16 @@
 
 @media (max-width: 768px) {
   .logo {
-    height: 120px !important;
+    height: 110px !important;
   }
   
   .logo-group {
-    gap: 80px;
-  }
-  
-  .slogan-section .fine-print {
-    font-size: 20px;
-    max-width: 92%;
-    margin-top: 40px;
-  }
-  
-  .slogan-section .fine-print-line {
-    font-size: 22px;
-    margin-bottom: 12px;
-  }
-  
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 40px)); } /* Half width plus half gap for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    height: 100px !important;
-  }
-  
-  .logo-group {
-    gap: 60px;
+    gap: 50px;
   }
   
   .slogan-section .fine-print {
     font-size: 18px;
+    max-width: 92%;
     margin-top: 30px;
   }
   
@@ -160,6 +135,31 @@
   
   @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 30px)); } /* Half width plus half gap for small mobile */
+    100% { transform: translateX(calc(-50% - 25px)); }
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 80px !important;
+  }
+  
+  .logo-group {
+    gap: 40px;
+  }
+  
+  .slogan-section .fine-print {
+    font-size: 16px;
+    margin-top: 25px;
+  }
+  
+  .slogan-section .fine-print-line {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 20px)); }
   }
 } 
