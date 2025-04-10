@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 160px;
+  padding-right: 220px;
   padding-left: 0;
 }
 
@@ -107,7 +107,7 @@
   
   .header-desktop {
     min-height: 80px !important;
-    padding-right: 140px;
+    padding-right: 200px;
   }
   
   .header-desktop .header__logo-wrapper {
@@ -151,7 +151,7 @@
   
   .header-desktop {
     min-height: 120px !important;
-    padding-right: 180px;
+    padding-right: 240px;
   }
   
   .header-desktop .header__logo {
