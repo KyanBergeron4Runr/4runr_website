@@ -39,24 +39,9 @@ export default function AISolutionsCTA({
   const [isDeleting, setIsDeleting] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [displayText, setDisplayText] = useState('');
-  const [typingSpeed, setTypingSpeed] = useState(200);
-  const [deletingSpeed, setDeletingSpeed] = useState(150);
 
   useEffect(() => {
-    const checkMobile = () => {
-      const isMobileView = window.innerWidth <= 767;
-      setIsMobile(isMobileView);
-      
-      // Adjust timing based on device for smoother animation
-      if (isMobileView) {
-        setTypingSpeed(250); // Slower on mobile for better rendering
-        setDeletingSpeed(180);
-      } else {
-        setTypingSpeed(200);
-        setDeletingSpeed(150);
-      }
-    };
-    
+    const checkMobile = () => setIsMobile(window.innerWidth <= 767);
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
@@ -77,14 +62,13 @@ export default function AISolutionsCTA({
       element.innerHTML = textContent + '<span class="typing-cursor">_</span>';
 
       if (charIndex === currentWord.length) {
-        // Pause longer at the end of the word before deleting
-        setTimeout(() => setIsDeleting(true), 2200);
+        setTimeout(() => setIsDeleting(true), 2000);
         return;
       }
 
-      // Randomize typing speed slightly for more natural effect
-      const randomDelay = Math.floor(Math.random() * 30);
-      setTimeout(() => setCharIndex(prev => prev + 1), typingSpeed + randomDelay);
+      // Slower typing speed on mobile
+      const typingSpeed = isMobile ? 300 : 200;
+      setTimeout(() => setCharIndex(prev => prev + 1), typingSpeed);
     } else {
       const textContent = currentWord.slice(0, charIndex - 1);
       setDisplayText(textContent);
@@ -92,17 +76,15 @@ export default function AISolutionsCTA({
 
       if (charIndex === 0) {
         setIsDeleting(false);
-        // Pause briefly before typing the next word
-        setTimeout(() => {
-          setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
-        }, 800);
+        setCurrentWordIndex(prev => (prev + 1) % wordsToType.length);
         return;
       }
 
-      // Delete characters at a consistent pace
+      // Slower deleting speed on mobile
+      const deletingSpeed = isMobile ? 250 : 150;
       setTimeout(() => setCharIndex(prev => prev - 1), deletingSpeed);
     }
-  }, [charIndex, isDeleting, currentWordIndex, isMobile, typingSpeed, deletingSpeed]);
+  }, [charIndex, isDeleting, currentWordIndex, isMobile]);
 
   return (
     <>

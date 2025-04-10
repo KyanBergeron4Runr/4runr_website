@@ -64,7 +64,6 @@
   div.cta-section-mobile p.cta-body-mobile {
     white-space: normal !important; /* Allow normal text wrapping */
     overflow: visible !important;
-    text-overflow: clip !important;
     max-width: 100% !important;
     font-size: 16px !important;
     line-height: 1.5 !important;
@@ -72,77 +71,48 @@
     padding: 0 15px !important;
   }
   
-  /* Structure the typed animation to prevent movement */
+  /* Simplified structure for typing animation */
   div.cta-section-mobile div.typed-wrapper-mobile {
+    margin: 1rem 0 1.5rem !important;
+    width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
-    min-height: 8rem !important; /* Increased from 6rem */
-    margin: 0.8rem 0 1.5rem !important;
-    width: 100% !important;
-    position: relative !important;
   }
   
-  /* Style the h2 containing "Automate" - INCREASED SIZE */
+  /* Keep h2 larger but simplify styling */
   div.cta-section-mobile div.typed-wrapper-mobile h2 {
-    font-size: 28px !important; /* Increased from 22px */
+    font-size: 28px !important;
     font-weight: 700 !important;
-    margin: 0 0 0.5rem 0 !important;
-    line-height: 1.3 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+    text-align: center !important;
     width: 100% !important;
   }
   
-  /* Make the typed text consistent size with surrounding text - INCREASED SIZE */
+  /* Keep typed text container simple but larger */
   div.cta-section-mobile span.typed-text-mobile {
-    font-size: 28px !important; /* Increased from 22px */
+    font-size: 28px !important;
     font-weight: 700 !important;
-    padding: 0.5rem 0 !important;
-    margin: 0.3rem 0 !important;
-    display: block !important;
-    min-width: 220px !important; /* Increased to allow for larger text */
-    max-width: 90% !important;
-    text-align: center !important;
-    line-height: 1.3 !important;
     color: #6a5acd !important;
-    
-    /* Fix animation glitching */
-    min-height: 40px !important; /* Fixed height container */
-    overflow: hidden !important;
-    position: relative !important;
-    border: none !important;
-    outline: none !important;
-    transition: none !important; /* Remove transitions that could cause glitching */
+    display: inline-block !important;
+    min-width: 60px !important;
+    text-align: center !important;
   }
   
-  /* Add "with AI" as a separate line - INCREASED SIZE */
+  /* Basic cursor styling */
+  div.cta-section-mobile span.typing-cursor {
+    display: inline-block !important;
+    color: #6a5acd !important;
+    animation: cursor-blink 0.8s steps(2) infinite !important;
+  }
+  
+  /* Add the "with AI" text via CSS to keep the structure stable */
   div.cta-section-mobile div.typed-wrapper-mobile h2::after {
     content: "with AI." !important;
     display: block !important;
-    font-size: 28px !important; /* Increased from 22px */
+    font-size: 28px !important;
     font-weight: 700 !important;
-    margin: 0.5rem 0 0 0 !important;
-    line-height: 1.3 !important;
-    width: 100% !important;
+    margin-top: 0.5rem !important;
     text-align: center !important;
-  }
-  
-  /* Handle cursor blinking */
-  div.cta-section-mobile span.typing-cursor {
-    display: inline-block !important;
-    position: relative !important;
-    margin-left: 2px !important;
-    color: #6a5acd !important;
-    animation: cursor-blink-mobile 0.7s steps(1) infinite !important; /* Improved animation */
-  }
-  
-  /* Custom mobile cursor blink animation */
-  @keyframes cursor-blink-mobile {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
   }
   
   /* Mobile devices with larger screens */
@@ -150,12 +120,7 @@
     div.cta-section-mobile div.typed-wrapper-mobile h2,
     div.cta-section-mobile span.typed-text-mobile,
     div.cta-section-mobile div.typed-wrapper-mobile h2::after {
-      font-size: 32px !important; /* Even larger for bigger mobile screens */
-    }
-    
-    div.cta-section-mobile span.typed-text-mobile {
-      min-width: 260px !important;
-      min-height: 48px !important;
+      font-size: 32px !important;
     }
   }
 } 
