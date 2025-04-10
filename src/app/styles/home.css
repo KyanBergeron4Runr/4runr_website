@@ -465,8 +465,9 @@
   }
 
   .what-we-do .titles h2 {
-    font-size: calc(2rem + 0.5vw);
+    font-size: calc(3rem + 1vw) !important;
     margin-bottom: calc(1.2rem + 0.3vw);
+    font-weight: 700 !important;
   }
 
   .what-we-do .heading p {
