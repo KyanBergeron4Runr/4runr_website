@@ -99,16 +99,64 @@
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Laptop displays */
-@media screen and (min-width: 1366px) and (max-width: 1536px) {
+/* Adjust laptop display (1025px - 1366px) - Add new range for medium laptops */
+@media screen and (min-width: 1025px) and (max-width: 1365px) {
   .header-wrapper {
     min-height: 70px !important;
-    margin-top: -15px !important;
+    margin-top: -10px !important;
+    justify-content: center !important;
   }
   
   .header-desktop {
     min-height: 70px !important;
-    padding-right: 280px;
+    padding-right: 150px !important; /* Reduced padding to bring logo closer to center */
+    flex: 0 0 30% !important; /* Adjusted flex value to bring elements closer to center */
+  }
+  
+  .header-desktop .header__logo-wrapper {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  .header-desktop .header__logo {
+    width: 160px !important; /* Smaller logo */
+    max-width: 160px !important;
+    height: auto !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  .top-nav {
+    margin-top: -18px !important;
+    padding-right: 2vw !important;
+  }
+  
+  .top-nav .nav-items {
+    gap: 30px !important; /* Reduced gap between nav items */
+  }
+  
+  .top-nav a {
+    font-size: 20px !important; /* Smaller text */
+  }
+  
+  .top-nav .contact-button {
+    font-size: 20px !important; /* Smaller button text */
+    padding: 16px 22px !important; /* Smaller padding */
+  }
+}
+
+/* Adjust existing laptop display for larger laptops */
+@media screen and (min-width: 1366px) and (max-width: 1536px) {
+  .header-wrapper {
+    min-height: 70px !important;
+    margin-top: -15px !important;
+    justify-content: center !important;
+  }
+  
+  .header-desktop {
+    min-height: 70px !important;
+    padding-right: 220px !important; /* Reduced padding to bring logo closer to center */
+    flex: 0 0 32% !important; /* Adjusted flex value to bring elements closer to center */
   }
   
   .header-desktop .header__logo-wrapper {
@@ -126,10 +174,12 @@
   
   .top-nav {
     margin-top: -20px;
+    padding-right: 2.5vw !important;
   }
   
   .top-nav .nav-items {
     left: 0;
+    gap: 40px !important; /* Reduced gap from 50px */
   }
   
   .top-nav a {
@@ -137,7 +187,7 @@
   }
   
   .top-nav .contact-button {
-    font-size: 24px !important;
+    font-size: 22px !important; /* Slightly smaller */
     padding: 18px 26px !important;
   }
 }
@@ -388,6 +438,10 @@
   .mobile-menu .menu-footer p {
     font-size: 0.75rem;
   }
+
+  .mobile-menu .close-button {
+    top: 25px !important; /* Adjusted for smaller screens */
+  }
 }
 
 /* Utility class for when mobile menu is open */
@@ -403,4 +457,19 @@ body.menu-open {
   width: 220px !important;
   max-width: 220px !important;
   object-fit: contain !important;
+}
+
+/* Fix close button position in mobile menu */
+.mobile-menu .close-button {
+  position: absolute !important;
+  top: 32px !important; /* Position at the same height as the hamburger icon */
+  right: 20px !important; /* Position at the same horizontal position as the hamburger icon */
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  z-index: 2001 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 } 
