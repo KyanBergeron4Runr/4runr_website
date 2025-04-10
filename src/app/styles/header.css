@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 40px;
+  padding-right: 60px;
   padding-left: 0;
 }
 
@@ -32,7 +32,7 @@
 
 .header-desktop .header__logo {
   height: auto !important;
-  width: 150px !important;
+  width: 180px !important;
   max-width: none !important;
   object-fit: contain !important;
   position: relative !important;
@@ -107,7 +107,7 @@
   
   .header-desktop {
     min-height: 80px !important;
-    padding-right: 30px;
+    padding-right: 50px;
   }
   
   .header-desktop .header__logo-wrapper {
@@ -116,8 +116,8 @@
   }
   
   .header-desktop .header__logo {
-    width: 130px !important;
-    max-width: 130px !important;
+    width: 150px !important;
+    max-width: 150px !important;
     height: auto !important;
     position: relative !important;
     z-index: 10 !important;
@@ -151,12 +151,12 @@
   
   .header-desktop {
     min-height: 120px !important;
-    padding-right: 50px;
+    padding-right: 70px;
   }
   
   .header-desktop .header__logo {
-    width: 170px !important;
-    max-width: 170px !important;
+    width: 200px !important;
+    max-width: 200px !important;
   }
   
   .top-nav {
@@ -400,7 +400,7 @@ body.menu-open {
 
 .header-desktop .header__logo {
   height: auto !important;
-  width: 150px !important;
-  max-width: 150px !important;
+  width: 180px !important;
+  max-width: 180px !important;
   object-fit: contain !important;
 } 
