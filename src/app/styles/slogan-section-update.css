@@ -3,7 +3,8 @@
 /* Laptop view (1024px-1400px) - Adjust spacing and fine print size */
 @media (min-width: 769px) and (max-width: 1400px) {
   html body div.slogan-section {
-    padding: 40px 0 !important; /* Reduced overall section padding */
+    padding: 20px 0 20px 0 !important; /* Significantly reduced top padding to reduce gap with CTA */
+    margin-top: -10px !important; /* Negative margin to further reduce gap with CTA */
   }
   
   html body div.slogan-section .marquee {
@@ -28,9 +29,9 @@
 @media (max-width: 768px) {
   /* Logo sizing and spacing */
   html body div.slogan-section .logo {
-    height: 95px !important;
+    height: 120px !important; /* Increased height from 95px */
     width: auto !important;
-    min-width: 85px !important;
+    min-width: 100px !important; /* Increased min-width from 85px */
     object-fit: contain !important;
     filter: brightness(0) invert(1) !important;
     opacity: 1 !important;
@@ -93,8 +94,8 @@
 /* Small mobile overrides */
 @media (max-width: 480px) {
   html body div.slogan-section .logo {
-    height: 60px !important;
-    min-width: 60px !important;
+    height: 75px !important; /* Increased from 60px for better visibility */
+    min-width: 75px !important; /* Increased from 60px */
   }
   
   html body div.slogan-section .logo-container {
