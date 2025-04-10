@@ -78,15 +78,15 @@
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    min-height: 6rem !important;
+    min-height: 8rem !important; /* Increased from 6rem */
     margin: 0.8rem 0 1.5rem !important;
     width: 100% !important;
     position: relative !important;
   }
   
-  /* Style the h2 containing "Automate" */
+  /* Style the h2 containing "Automate" - INCREASED SIZE */
   div.cta-section-mobile div.typed-wrapper-mobile h2 {
-    font-size: 22px !important;
+    font-size: 28px !important; /* Increased from 22px */
     font-weight: 700 !important;
     margin: 0 0 0.5rem 0 !important;
     line-height: 1.3 !important;
@@ -96,25 +96,33 @@
     width: 100% !important;
   }
   
-  /* Make the typed text consistent size with surrounding text */
+  /* Make the typed text consistent size with surrounding text - INCREASED SIZE */
   div.cta-section-mobile span.typed-text-mobile {
-    font-size: 22px !important; /* Match surrounding text */
+    font-size: 28px !important; /* Increased from 22px */
     font-weight: 700 !important;
     padding: 0.5rem 0 !important;
     margin: 0.3rem 0 !important;
     display: block !important;
-    min-width: 200px !important;
+    min-width: 220px !important; /* Increased to allow for larger text */
     max-width: 90% !important;
     text-align: center !important;
     line-height: 1.3 !important;
     color: #6a5acd !important;
+    
+    /* Fix animation glitching */
+    min-height: 40px !important; /* Fixed height container */
+    overflow: hidden !important;
+    position: relative !important;
+    border: none !important;
+    outline: none !important;
+    transition: none !important; /* Remove transitions that could cause glitching */
   }
   
-  /* Add "with AI" as a separate line */
+  /* Add "with AI" as a separate line - INCREASED SIZE */
   div.cta-section-mobile div.typed-wrapper-mobile h2::after {
     content: "with AI." !important;
     display: block !important;
-    font-size: 22px !important;
+    font-size: 28px !important; /* Increased from 22px */
     font-weight: 700 !important;
     margin: 0.5rem 0 0 0 !important;
     line-height: 1.3 !important;
@@ -128,5 +136,26 @@
     position: relative !important;
     margin-left: 2px !important;
     color: #6a5acd !important;
+    animation: cursor-blink-mobile 0.7s steps(1) infinite !important; /* Improved animation */
+  }
+  
+  /* Custom mobile cursor blink animation */
+  @keyframes cursor-blink-mobile {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  /* Mobile devices with larger screens */
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    div.cta-section-mobile div.typed-wrapper-mobile h2,
+    div.cta-section-mobile span.typed-text-mobile,
+    div.cta-section-mobile div.typed-wrapper-mobile h2::after {
+      font-size: 32px !important; /* Even larger for bigger mobile screens */
+    }
+    
+    div.cta-section-mobile span.typed-text-mobile {
+      min-width: 260px !important;
+      min-height: 48px !important;
+    }
   }
 } 
