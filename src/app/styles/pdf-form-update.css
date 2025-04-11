@@ -1,0 +1,49 @@
+/* PDF Form Section - Updated Styles */
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  .pdf-form__heading {
+    font-size: calc(48 / 1920 * 100vw) !important;
+    margin-bottom: 1.5vw !important;
+    line-height: 1.2 !important;
+  }
+
+  .pdf-form__button {
+    padding: 1.2vw 2.8vw !important;
+    font-size: calc(24 / 1920 * 100vw) !important;
+    min-width: 12vw !important;
+    height: 4vw !important;
+  }
+}
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .pdf-form__heading {
+    font-size: calc(42 / 1920 * 100vw) !important;
+    margin-bottom: 1.3vw !important;
+    line-height: 1.2 !important;
+  }
+
+  .pdf-form__button {
+    padding: 1.1vw 2.6vw !important;
+    font-size: calc(22 / 1920 * 100vw) !important;
+    min-width: 11vw !important;
+    height: 3.8vw !important;
+  }
+}
+
+/* Mobile styles (max-width: 767px) */
+@media (max-width: 767px) {
+  .pdf-form__heading {
+    font-size: calc(36 / 768 * 100vw) !important;
+    margin-bottom: 15px !important;
+    line-height: 1.2 !important;
+  }
+
+  .pdf-form__button {
+    padding: 14px 24px !important;
+    font-size: 18px !important;
+    min-width: 200px !important;
+    height: 60px !important;
+  }
+} 
