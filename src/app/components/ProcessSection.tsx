@@ -1,6 +1,7 @@
 'use client'
 
 import '../styles/process-section.css'
+import '../styles/process-section-update.css'
 
 interface ProcessStep {
   title: string;
