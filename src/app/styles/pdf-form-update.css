@@ -47,7 +47,7 @@
 /* Mobile styles (max-width: 767px) */
 @media (max-width: 767px) {
   .pdf-form__heading {
-    font-size: calc(46 / 768 * 100vw) !important;
+    font-size: calc(52 / 768 * 100vw) !important;
     margin-bottom: 15px !important;
     line-height: 1.2 !important;
   }
