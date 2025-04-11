@@ -31,9 +31,13 @@
   body .pdf-form .pdf-form__heading,
   .home-page .pdf-form .pdf-form__heading,
   .pdf-form h2.pdf-form__heading {
-    font-size: calc(54 / 1920 * 100vw) !important;
+    font-size: calc(56 / 1920 * 100vw) !important;
     margin-bottom: 1.3vw !important;
     line-height: 1.2 !important;
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    white-space: normal !important;
   }
 
   body .pdf-form .pdf-form__description,
