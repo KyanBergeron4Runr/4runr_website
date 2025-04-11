@@ -25,13 +25,13 @@
 /* Laptop styles (min-width: 1024px and max-width: 1366px) */
 @media (min-width: 1024px) and (max-width: 1366px) {
   .pdf-form__heading {
-    font-size: calc(50 / 1920 * 100vw) !important;
+    font-size: calc(54 / 1920 * 100vw) !important;
     margin-bottom: 1.3vw !important;
     line-height: 1.2 !important;
   }
 
   .pdf-form__description {
-    font-size: calc(19 / 1920 * 100vw) !important;
+    font-size: calc(22 / 1920 * 100vw) !important;
     line-height: 1.5 !important;
     margin-bottom: 1.8vw !important;
   }
@@ -47,7 +47,7 @@
 /* Mobile styles (max-width: 767px) */
 @media (max-width: 767px) {
   .pdf-form__heading {
-    font-size: calc(52 / 768 * 100vw) !important;
+    font-size: calc(58 / 768 * 100vw) !important;
     margin-bottom: 15px !important;
     line-height: 1.2 !important;
   }
