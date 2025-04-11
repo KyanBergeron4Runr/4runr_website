@@ -55,12 +55,12 @@
     font-size: 1.5rem !important;
   }
   
-  /* Make button a little bigger on laptop */
+  /* Make button bigger on laptop */
   .services-section .cta-button {
-    padding: 1.1vw 2.6vw !important;
-    font-size: 1.05vw !important;
-    min-width: 9vw !important;
-    height: 3vw !important;
+    padding: 1.3vw 3vw !important;
+    font-size: 1.2vw !important;
+    min-width: 10vw !important;
+    height: 3.5vw !important;
   }
 }
 
