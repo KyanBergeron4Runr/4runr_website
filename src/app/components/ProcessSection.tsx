@@ -2,6 +2,7 @@
 
 import '../styles/process-section.css'
 import '../styles/process-section-update.css'
+import '../styles/process-section-override.css'
 
 interface ProcessStep {
   title: string;
