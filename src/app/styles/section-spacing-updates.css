@@ -1,0 +1,44 @@
+/* Section Spacing Updates */
+
+/* Global section spacing adjustments */
+.page-section {
+  padding-top: 2vw !important; /* Reduced from 4vw */
+  padding-bottom: 2vw !important; /* Reduced from 4vw */
+  margin-top: -1vw !important; /* Negative margin to bring sections closer */
+}
+
+/* Adjust spacing for specific sections */
+.page-section + .page-section {
+  margin-top: -2vw !important; /* Additional negative margin between consecutive sections */
+}
+
+/* Adjust spacing for full-height sections */
+.page-section.full-height {
+  padding-top: 3vw !important; /* Slightly more padding for full-height sections */
+  padding-bottom: 3vw !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .page-section {
+    padding-top: 1.5vw !important;
+    padding-bottom: 1.5vw !important;
+    margin-top: -0.5vw !important;
+  }
+  
+  .page-section + .page-section {
+    margin-top: -1.5vw !important;
+  }
+}
+
+@media screen and (min-width: 1367px) {
+  .page-section {
+    padding-top: 2.5vw !important;
+    padding-bottom: 2.5vw !important;
+    margin-top: -1.5vw !important;
+  }
+  
+  .page-section + .page-section {
+    margin-top: -2.5vw !important;
+  }
+} 
