@@ -1,0 +1,86 @@
+/* PDF Form Section - Override Styles with Higher Specificity */
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  body .pdf-form .pdf-form__heading,
+  .home-page .pdf-form .pdf-form__heading,
+  .pdf-form h2.pdf-form__heading {
+    font-size: calc(52 / 1920 * 100vw) !important;
+    margin-bottom: 1.5vw !important;
+    line-height: 1.2 !important;
+  }
+
+  body .pdf-form .pdf-form__description,
+  .home-page .pdf-form .pdf-form__description {
+    font-size: calc(20 / 1920 * 100vw) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 2vw !important;
+  }
+
+  body .pdf-form .pdf-form__button,
+  .home-page .pdf-form .pdf-form__button {
+    padding: 0.9vw 2.3vw !important;
+    font-size: calc(20 / 1920 * 100vw) !important;
+    min-width: 9vw !important;
+    height: 3.2vw !important;
+  }
+}
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body .pdf-form .pdf-form__heading,
+  .home-page .pdf-form .pdf-form__heading,
+  .pdf-form h2.pdf-form__heading {
+    font-size: calc(54 / 1920 * 100vw) !important;
+    margin-bottom: 1.3vw !important;
+    line-height: 1.2 !important;
+  }
+
+  body .pdf-form .pdf-form__description,
+  .home-page .pdf-form .pdf-form__description {
+    font-size: calc(22 / 1920 * 100vw) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.8vw !important;
+  }
+
+  body .pdf-form .pdf-form__button,
+  .home-page .pdf-form .pdf-form__button {
+    padding: 1.1vw 2.6vw !important;
+    font-size: calc(22 / 1920 * 100vw) !important;
+    min-width: 11vw !important;
+    height: 4.2vw !important;
+  }
+}
+
+/* Mobile styles (max-width: 767px) */
+@media (max-width: 767px) {
+  body .pdf-form .pdf-form__heading,
+  .home-page .pdf-form .pdf-form__heading,
+  .pdf-form h2.pdf-form__heading {
+    font-size: calc(58 / 768 * 100vw) !important;
+    margin-bottom: 15px !important;
+    line-height: 1.2 !important;
+  }
+
+  body .pdf-form .pdf-form__description,
+  .home-page .pdf-form .pdf-form__description {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 20px !important;
+  }
+
+  body .pdf-form .pdf-form__fine-print,
+  .home-page .pdf-form .pdf-form__fine-print {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    opacity: 0.8 !important;
+  }
+
+  body .pdf-form .pdf-form__button,
+  .home-page .pdf-form .pdf-form__button {
+    padding: 14px 24px !important;
+    font-size: 18px !important;
+    min-width: 200px !important;
+    height: 60px !important;
+  }
+} 
