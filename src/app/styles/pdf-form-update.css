@@ -3,25 +3,37 @@
 /* Desktop styles (min-width: 1367px) */
 @media (min-width: 1367px) {
   .pdf-form__heading {
-    font-size: calc(48 / 1920 * 100vw) !important;
+    font-size: calc(52 / 1920 * 100vw) !important;
     margin-bottom: 1.5vw !important;
     line-height: 1.2 !important;
   }
 
+  .pdf-form__description {
+    font-size: calc(20 / 1920 * 100vw) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 2vw !important;
+  }
+
   .pdf-form__button {
-    padding: 1vw 2.5vw !important;
-    font-size: calc(22 / 1920 * 100vw) !important;
-    min-width: 10vw !important;
-    height: 3.5vw !important;
+    padding: 0.9vw 2.3vw !important;
+    font-size: calc(20 / 1920 * 100vw) !important;
+    min-width: 9vw !important;
+    height: 3.2vw !important;
   }
 }
 
 /* Laptop styles (min-width: 1024px and max-width: 1366px) */
 @media (min-width: 1024px) and (max-width: 1366px) {
   .pdf-form__heading {
-    font-size: calc(46 / 1920 * 100vw) !important;
+    font-size: calc(50 / 1920 * 100vw) !important;
     margin-bottom: 1.3vw !important;
     line-height: 1.2 !important;
+  }
+
+  .pdf-form__description {
+    font-size: calc(19 / 1920 * 100vw) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.8vw !important;
   }
 
   .pdf-form__button {
@@ -35,9 +47,21 @@
 /* Mobile styles (max-width: 767px) */
 @media (max-width: 767px) {
   .pdf-form__heading {
-    font-size: calc(42 / 768 * 100vw) !important;
+    font-size: calc(46 / 768 * 100vw) !important;
     margin-bottom: 15px !important;
     line-height: 1.2 !important;
+  }
+
+  .pdf-form__description {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .pdf-form__fine-print {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    opacity: 0.8 !important;
   }
 
   .pdf-form__button {
