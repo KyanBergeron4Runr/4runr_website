@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import '../styles/interactive-services.css'
+import '../styles/services-section-updates.css'
 
 interface InteractiveServicesProps {
   heading?: string;
