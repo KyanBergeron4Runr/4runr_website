@@ -47,7 +47,6 @@ export default function Home() {
 
       {/* Chat Bot Section */}
       <section className="page-section full-height">
-        <h1>Transform Your Business Challenges</h1>
         <ChatBot />
       </section>
 

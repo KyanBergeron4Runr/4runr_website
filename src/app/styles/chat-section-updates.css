@@ -43,13 +43,14 @@
     padding: 15px !important;
     min-height: 350px !important;
     overflow-x: hidden !important;
+    margin: 0 !important;
   }
   
   /* Adjust message bubbles for better mobile fit */
   .page-section .message-bubble {
     padding: 12px !important;
     font-size: 14px !important;
-    max-width: 85% !important;
+    max-width: 90% !important;
     word-wrap: break-word !important;
   }
   
