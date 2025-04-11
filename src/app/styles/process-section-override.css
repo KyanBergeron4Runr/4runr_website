@@ -1,5 +1,35 @@
 /* Process Section Final Overrides - Using ultra-specific selectors with !important */
 
+/* Add desktop styles to make the heading text larger */
+@media screen and (min-width: 1367px) {
+  /* Target heading with ultra-specific selector */
+  html body .home-page div.our-process-section div.section-header h2 {
+    font-size: 3rem !important; /* Increased from default size */
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important; /* Tighter letter spacing for large headings */
+  }
+  
+  html body .home-page div.our-process-section div.section-header p.subtitle {
+    font-size: 1.25rem !important; /* Increased from default size */
+    margin-bottom: 2.5rem !important;
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    color: #ccc !important;
+  }
+  
+  /* Also increase paragraph text size on desktop for consistency */
+  html body .home-page div.our-process-section div.process-steps div.process-step p:not(.subtitle) {
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+    max-width: 95% !important;
+    color: #e0e0e0 !important;
+    font-family: var(--font-sans) !important;
+  }
+}
+
 /* Force laptop styles to take precedence */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
   /* Target with multiple selectors for higher specificity */
