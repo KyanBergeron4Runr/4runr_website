@@ -31,10 +31,12 @@
     font-size: 1.1rem !important;
   }
   
-  /* Keep Learn More button similar size */
+  /* Make button smaller on desktop */
   .services-section .cta-button {
-    padding: 1.2vw 2.8vw !important;
-    font-size: 1.1vw !important;
+    padding: 0.9vw 2.2vw !important;
+    font-size: 0.9vw !important;
+    min-width: 8vw !important;
+    height: 2.8vw !important;
   }
 }
 
@@ -48,16 +50,25 @@
     margin: 0 auto !important;
   }
   
-  /* Don't change the subheadings on laptop */
-  .services-section .subheading h2 {
-    font-size: inherit !important;
+  /* Make "Built for Tomorrow's Success" heading bigger on laptop */
+  .services-section .subheading:nth-child(2) h2 {
+    font-size: 1.5rem !important;
   }
   
-  /* Keep button size the same */
+  /* Make button a little bigger on laptop */
   .services-section .cta-button {
-    font-size: inherit !important;
-    padding: inherit !important;
+    padding: 1.1vw 2.6vw !important;
+    font-size: 1.05vw !important;
+    min-width: 9vw !important;
+    height: 3vw !important;
   }
 }
 
-/* Mobile stays the same, so no overrides needed */ 
+/* Mobile styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Make fine-print smaller on mobile */
+  .services-section .footer-content .fine-print {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+  }
+} 
