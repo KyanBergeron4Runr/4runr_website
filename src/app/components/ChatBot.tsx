@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import '../styles/chatbot.css'
+import '../styles/chat-section-updates.css'
 
 interface Message {
   text: string;
