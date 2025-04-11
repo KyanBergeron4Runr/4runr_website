@@ -12,9 +12,9 @@
 
 /* Laptop styles (min-width: 769px and max-width: 1366px) */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
-  /* Make the title bigger on laptop */
+  /* Make the title smaller on laptop */
   .page-section .header .title {
-    font-size: 2.8rem !important;
+    font-size: 2.5rem !important;
     line-height: 1.2 !important;
     margin-bottom: 1.5vw !important;
   }
@@ -29,12 +29,20 @@
     margin-bottom: 1rem !important;
   }
   
+  /* Fix horizontal scrollbar issue */
+  .page-section {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    padding: 2vw 1vw !important;
+  }
+  
   /* Improve chat container fit on mobile */
   .page-section .chat-container {
-    width: 95% !important;
+    width: 100% !important;
     max-width: 100% !important;
     padding: 15px !important;
     min-height: 350px !important;
+    overflow-x: hidden !important;
   }
   
   /* Adjust message bubbles for better mobile fit */
@@ -42,42 +50,47 @@
     padding: 12px !important;
     font-size: 14px !important;
     max-width: 85% !important;
+    word-wrap: break-word !important;
   }
   
-  /* Fix input area on mobile - make it smaller */
+  /* Make input area bigger on mobile */
   .page-section .input-area {
-    width: 90% !important;
-    padding: 8px !important;
-    gap: 8px !important;
+    width: 100% !important;
+    padding: 10px !important;
+    gap: 10px !important;
     margin-top: 10px !important;
+    overflow-x: hidden !important;
   }
   
-  /* Fix message input on mobile - make it smaller */
+  /* Make message input bigger on mobile */
   .page-section .message-input {
-    padding: 8px !important;
-    font-size: 14px !important;
-    height: 36px !important;
-    width: calc(100% - 40px) !important;
+    padding: 10px !important;
+    font-size: 15px !important;
+    height: 42px !important;
+    width: calc(100% - 50px) !important;
   }
   
   /* Adjust send button on mobile */
   .page-section .send-button {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 14px !important;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 16px !important;
     padding: 0 !important;
   }
   
   /* Improve bottom CTA on mobile */
   .page-section .bottom-cta {
-    width: 90% !important;
+    width: 100% !important;
     padding: 1.2rem 0.8rem !important;
     gap: 0.8rem !important;
+    overflow-x: hidden !important;
   }
   
   /* Adjust bottom text on mobile */
   .page-section .bottom-text {
     font-size: 0.85rem !important;
     line-height: 1.4 !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
   }
 } 
