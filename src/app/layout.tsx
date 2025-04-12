@@ -15,6 +15,7 @@ import './styles/pdf-form.css'
 import './styles/pdf-form-update.css'
 import './styles/pdf-form-override.css'
 import './styles/footer.css'
+import './styles/footer-override.css'
 // Import our comprehensive responsive frameworks last to override any conflicting styles
 import './styles/global-responsive.css'
 import './styles/responsive-implementation.css'
