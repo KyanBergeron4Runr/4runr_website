@@ -1,0 +1,32 @@
+/* Chatbot Button Override Styles with Higher Specificity */
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  body .page-section .bottom-cta .cta-button,
+  .home-page .page-section .bottom-cta .cta-button,
+  .page-section .bottom-cta a.cta-button {
+    height: 4.5vw !important;
+    padding: 1.2vw 2.8vw !important;
+    font-size: 1.2vw !important;
+    min-width: 12vw !important;
+    border-radius: 0.6vw !important;
+  }
+}
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body .page-section .bottom-cta .cta-button,
+  .home-page .page-section .bottom-cta .cta-button,
+  .page-section .bottom-cta a.cta-button {
+    height: 4vw !important;
+    padding: 1.1vw 2.6vw !important;
+    font-size: 1.1vw !important;
+    min-width: 11vw !important;
+    border-radius: 0.55vw !important;
+  }
+}
+
+/* Mobile styles (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Mobile styles are already good, no changes needed */
+} 
