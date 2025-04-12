@@ -1,0 +1,32 @@
+/* What is 4Runr Button Override Styles with Higher Specificity */
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  body .what-we-do .button-wrapper .cta-button,
+  .home-page .what-we-do .button-wrapper .cta-button,
+  .what-we-do .button-wrapper a.cta-button {
+    height: 3.8vw !important;
+    padding: 1.1vw 2.6vw !important;
+    font-size: 1.1vw !important;
+    min-width: 10.5vw !important;
+    border-radius: 0.55vw !important;
+  }
+}
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body .what-we-do .button-wrapper .cta-button,
+  .home-page .what-we-do .button-wrapper .cta-button,
+  .what-we-do .button-wrapper a.cta-button {
+    height: 3.7vw !important;
+    padding: 1.05vw 2.55vw !important;
+    font-size: 1.05vw !important;
+    min-width: 10.2vw !important;
+    border-radius: 0.53vw !important;
+  }
+}
+
+/* Mobile styles (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Mobile styles are already good, no changes needed */
+} 
