@@ -1,0 +1,32 @@
+/* CTA Button Override Styles with Higher Specificity */
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body .cta-section .cta-buttons .lets-talk-button,
+  .home-page .cta-section .cta-buttons .lets-talk-button,
+  .cta-section .cta-buttons a.lets-talk-button {
+    height: 3.5vw !important;
+    padding: 1vw 2.5vw !important;
+    font-size: 1vw !important;
+    min-width: 9vw !important;
+    border-radius: 0.5vw !important;
+  }
+}
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  body .cta-section .cta-buttons .lets-talk-button,
+  .home-page .cta-section .cta-buttons .lets-talk-button,
+  .cta-section .cta-buttons a.lets-talk-button {
+    height: 3.8vw !important;
+    padding: 1.1vw 2.6vw !important;
+    font-size: 1.1vw !important;
+    min-width: 10.5vw !important;
+    border-radius: 0.55vw !important;
+  }
+}
+
+/* Mobile styles (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Mobile styles are already good, no changes needed */
+} 
