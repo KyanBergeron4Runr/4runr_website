@@ -18,11 +18,11 @@
   body .page-section .bottom-cta .cta-button,
   .home-page .page-section .bottom-cta .cta-button,
   .page-section .bottom-cta a.cta-button {
-    height: 3.5vw !important;
-    padding: 1vw 2.5vw !important;
-    font-size: 1vw !important;
-    min-width: 10vw !important;
-    border-radius: 0.52vw !important;
+    height: 3.7vw !important;
+    padding: 1.05vw 2.55vw !important;
+    font-size: 1.05vw !important;
+    min-width: 10.2vw !important;
+    border-radius: 0.53vw !important;
   }
 }
 
