@@ -1,0 +1,59 @@
+/* Contact Page Layout Updates */
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  body .contact-page .sidebar-section,
+  .contact-page .sidebar-section {
+    width: 25% !important;
+    max-width: 300px !important;
+  }
+
+  body .contact-page .chat-container,
+  .contact-page .chat-container {
+    width: 75% !important;
+    max-width: 900px !important;
+  }
+}
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body .contact-page .chat-container,
+  .contact-page .chat-container {
+    width: 70% !important;
+    max-width: 850px !important;
+  }
+}
+
+/* Mobile styles (max-width: 767px) */
+@media (max-width: 767px) {
+  body .contact-page .sidebar-section,
+  .contact-page .sidebar-section {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 2rem !important;
+  }
+
+  body .contact-page .chat-container,
+  .contact-page .chat-container {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body .contact-page .security-badges,
+  .contact-page .security-badges {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin-top: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  body .contact-page .security-badge,
+  .contact-page .security-badge {
+    flex: 1 !important;
+    max-width: 200px !important;
+  }
+} 
