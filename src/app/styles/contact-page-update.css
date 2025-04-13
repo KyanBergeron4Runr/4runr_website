@@ -17,9 +17,15 @@
 
 /* Laptop styles (min-width: 1024px and max-width: 1366px) */
 @media (min-width: 1024px) and (max-width: 1366px) {
+  body .contact-page .sidebar-section,
+  .contact-page .sidebar-section {
+    width: 20% !important;
+    max-width: 250px !important;
+  }
+
   body .contact-page .chat-container,
   .contact-page .chat-container {
-    width: 70% !important;
+    width: 80% !important;
     max-width: 850px !important;
   }
 }
@@ -28,15 +34,11 @@
 @media (max-width: 767px) {
   body .contact-page .sidebar-section,
   .contact-page .sidebar-section {
-    order: 2 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-top: 2rem !important;
+    display: none !important;
   }
 
   body .contact-page .chat-container,
   .contact-page .chat-container {
-    order: 1 !important;
     width: 100% !important;
     max-width: 100% !important;
   }
