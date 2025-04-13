@@ -1,13 +1,17 @@
-/* Contact Page Layout Updates */
+/* Contact Page Layout Updates with Higher Specificity */
 
 /* Desktop styles (min-width: 1367px) */
 @media (min-width: 1367px) {
+  body .app-content .sidebar-section,
+  .app-content .sidebar-section,
   body .contact-page .sidebar-section,
   .contact-page .sidebar-section {
     width: 25% !important;
     max-width: 300px !important;
   }
 
+  body .app-content .chat-container,
+  .app-content .chat-container,
   body .contact-page .chat-container,
   .contact-page .chat-container {
     width: 75% !important;
@@ -17,12 +21,16 @@
 
 /* Laptop styles (min-width: 1024px and max-width: 1366px) */
 @media (min-width: 1024px) and (max-width: 1366px) {
+  body .app-content .sidebar-section,
+  .app-content .sidebar-section,
   body .contact-page .sidebar-section,
   .contact-page .sidebar-section {
     width: 20% !important;
     max-width: 250px !important;
   }
 
+  body .app-content .chat-container,
+  .app-content .chat-container,
   body .contact-page .chat-container,
   .contact-page .chat-container {
     width: 80% !important;
@@ -32,11 +40,15 @@
 
 /* Mobile styles (max-width: 767px) */
 @media (max-width: 767px) {
+  body .app-content .sidebar-section,
+  .app-content .sidebar-section,
   body .contact-page .sidebar-section,
   .contact-page .sidebar-section {
     display: none !important;
   }
 
+  body .app-content .chat-container,
+  .app-content .chat-container,
   body .contact-page .chat-container,
   .contact-page .chat-container {
     width: 100% !important;
