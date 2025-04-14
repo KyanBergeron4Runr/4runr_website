@@ -529,7 +529,84 @@
 
 /* Mobile Only Badges (Outside Main) */
 .security-badges-mobile {
-  /* Styles for mobile are further down */
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+  margin-top: 1rem !important;
+  padding: 0 0.75rem !important;
+  justify-content: space-between !important;
+}
+
+.security-badges-mobile .security-badge {
+  flex: 1 1 calc(50% - 0.375rem) !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  padding: 0.75rem !important;
+  margin: 0 !important;
+  text-align: left !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.security-badges-mobile .badge-icon {
+  font-size: 1rem !important;
+  min-width: 1rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.security-badges-mobile .badge-content {
+  flex: 1 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.security-badges-mobile .badge-content h4 {
+  font-size: 0.9rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 0.25rem !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.security-badges-mobile .badge-content p {
+  font-size: 0.8rem !important;
+  line-height: 1.2 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+}
+
+/* Override the max-width: 480px media query */
+@media (max-width: 480px) {
+  .security-badges-mobile {
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  .security-badges-mobile .security-badge {
+    flex: 1 1 calc(50% - 0.25rem) !important;
+    padding: 0.5rem !important;
+  }
+
+  .security-badges-mobile .badge-icon {
+    font-size: 0.9rem !important;
+  }
+
+  .security-badges-mobile .badge-content h4 {
+    font-size: 0.8rem !important;
+  }
+
+  .security-badges-mobile .badge-content p {
+    font-size: 0.7rem !important;
+    -webkit-line-clamp: 1 !important;
+  }
 }
 
 /* Desktop Only Badges (Inside Main) */
