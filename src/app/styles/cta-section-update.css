@@ -19,15 +19,33 @@
     display: inline-block !important;
   }
   
-  /* Ensure buttons are well-sized */
+  /* Ensure buttons are well-sized and aligned */
+  div.cta-section div.cta-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.56vw !important;
+    margin-top: 2.5vw !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  div.cta-section a.lets-talk-button,
   div.cta-section a.our-services-button {
-    font-size: 1.5rem !important; /* Match the Let's Talk button */
+    font-size: 1.5rem !important;
     min-height: 90px !important;
     height: auto !important;
     min-width: 280px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    margin: 0 !important;
+  }
+  
+  div.cta-section a.our-services-button {
     background: #000 !important;
   }
 }
