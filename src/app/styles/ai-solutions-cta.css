@@ -87,7 +87,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1.56vw;
+  gap: 0.5vw !important;
   margin-top: 1.04vw;
   width: 100%;
   max-width: 800px;
