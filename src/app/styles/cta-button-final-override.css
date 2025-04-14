@@ -46,4 +46,20 @@
     margin-right: auto !important;
     padding: 0 !important;
   }
+
+  html body main div.cta-section div.cta-container div.cta-buttons a.lets-talk-button {
+    font-size: 0.9rem !important;
+    padding: 0.8rem 1.2rem !important;
+    min-height: 70px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    min-width: 160px !important;
+    max-width: 180px !important;
+    line-height: 1.2 !important;
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+  }
 } 
