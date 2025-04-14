@@ -1,0 +1,41 @@
+/* Final CTA Button Override with Maximum Specificity */
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  html body .cta-section .cta-buttons a.lets-talk-button,
+  html body .cta-section .cta-buttons .lets-talk-button,
+  html body .home-page .cta-section .cta-buttons a.lets-talk-button,
+  html body .home-page .cta-section .cta-buttons .lets-talk-button {
+    font-size: 0.85vw !important;
+    line-height: 1.1 !important;
+    padding: 0.7vw 2.5vw !important;
+    height: 3vw !important;
+    white-space: normal !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 20vw !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  html body .cta-section .cta-buttons a.lets-talk-button,
+  html body .cta-section .cta-buttons .lets-talk-button,
+  html body .home-page .cta-section .cta-buttons a.lets-talk-button,
+  html body .home-page .cta-section .cta-buttons .lets-talk-button {
+    font-size: 0.95vw !important;
+    line-height: 1.2 !important;
+    padding: 0.8vw 2.5vw !important;
+    height: 3.2vw !important;
+    white-space: normal !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 22vw !important;
+    margin: 0 auto !important;
+  }
+} 
