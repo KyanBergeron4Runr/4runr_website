@@ -568,12 +568,13 @@
 
   .app-main {
     align-items: center;
-    margin-left: 0; /* Remove potential conflicting margins */
+    margin-left: 0;
+    padding-top: 3rem; /* Push content down within main */
   }
 
   .chat-container {
     max-width: 800px;
-    margin-top: 6rem; /* Increased space above chat further */
+    margin-top: 0; /* Remove direct margin, handled by parent padding */
   }
 
   /* Expand Common Questions by default on desktop/laptop */
@@ -594,6 +595,81 @@
     max-width: 800px;
     margin-left: auto; /* Center align with chat */
     margin-right: auto;
+  }
+}
+
+/* --- LAPTOP SPECIFIC --- */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .app-main {
+    padding-top: 2rem; /* Slightly less push down than full desktop */
+  }
+
+  /* More Vibrant Purples for Laptop */
+  .app-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(123, 104, 238, 0.4); /* Vibrant */
+  }
+  .app-sidebar-header,
+  .sidebar-section,
+  .category-dropdown,
+  .quick-question,
+  .chat-container,
+  .message-bubble,
+  .option-button,
+  .chat-footer,
+  .security-notice,
+  .chat-input-container,
+  .chat-input,
+  .security-badge {
+    border-color: rgba(123, 104, 238, 0.25); /* Vibrant border */
+  }
+  .section-title svg,
+  .category-icon,
+  .bot-avatar,
+  .security-notice svg,
+  .badge-icon {
+    color: #7B68EE; /* Vibrant icon color */
+  }
+  .category-header {
+    background: linear-gradient(to right, rgba(123, 104, 238, 0.2), rgba(106, 90, 205, 0.1));
+  }
+  .category-header:hover {
+     background: linear-gradient(to right, rgba(123, 104, 238, 0.3), rgba(106, 90, 205, 0.15));
+  }
+  .quick-question:hover,
+  .option-button:hover,
+  .security-badge:hover {
+    border-color: rgba(123, 104, 238, 0.4);
+    box-shadow: 0 4px 12px rgba(123, 104, 238, 0.2);
+  }
+  .user-message .message-bubble {
+    background: rgba(123, 104, 238, 0.2);
+    border-color: rgba(123, 104, 238, 0.35);
+  }
+  .send-button {
+    background: linear-gradient(135deg, #7B68EE 0%, #6a5acd 100%);
+    box-shadow: 0 4px 12px rgba(123, 104, 238, 0.25);
+  }
+  .send-button:hover {
+    background: linear-gradient(135deg, #8a7ff0 0%, #7B68EE 100%);
+    box-shadow: 0 6px 16px rgba(123, 104, 238, 0.35);
+  }
+
+  /* Smaller Security Badges on Laptop */
+  .security-badges-desktop .security-badge {
+    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .security-badges-desktop .badge-icon {
+    font-size: 1.5rem;
+  }
+  .security-badges-desktop .badge-content h4 {
+    font-size: 1rem; /* Adjust based on --h3-size if needed */
+    margin-bottom: 0.25rem;
+  }
+   .security-badges-desktop .badge-content p {
+    font-size: 0.9rem; /* Adjust based on --text-body if needed */
+    line-height: 1.4;
   }
 }
 
