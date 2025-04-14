@@ -6,7 +6,7 @@
   html body .cta-section .cta-buttons .lets-talk-button,
   html body .home-page .cta-section .cta-buttons a.lets-talk-button,
   html body .home-page .cta-section .cta-buttons .lets-talk-button {
-    font-size: 0.85vw !important;
+    font-size: 1vw !important;
     line-height: 1.1 !important;
     padding: 0.7vw 2.5vw !important;
     height: 3vw !important;
@@ -26,7 +26,7 @@
   html body .cta-section .cta-buttons .lets-talk-button,
   html body .home-page .cta-section .cta-buttons a.lets-talk-button,
   html body .home-page .cta-section .cta-buttons .lets-talk-button {
-    font-size: 0.95vw !important;
+    font-size: 1.1vw !important;
     line-height: 1.2 !important;
     padding: 0.8vw 2.5vw !important;
     height: 3.2vw !important;
