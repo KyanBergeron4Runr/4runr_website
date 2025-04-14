@@ -16,7 +16,7 @@
     padding: 0 !important;
   }
 
-  /* Style for both buttons */
+  /* Make both buttons smaller for laptop */
   html body main div.cta-section div.cta-container div.cta-buttons a.lets-talk-button,
   html body main div.cta-section div.cta-container div.cta-buttons a.our-services-button {
     font-size: 1.1rem !important;
