@@ -74,6 +74,19 @@ html body div.what-we-do {
     font-size: 1vw !important;
     font-weight: bold !important;
   }
+  
+  /* Make the button slightly bigger for laptop */
+  html body div.what-we-do div.container div.content-wrapper div.bottom-content div.bottom-flex div.button-wrapper a.cta-button {
+    font-size: 1.2rem !important;
+    padding: 1rem 1.6rem !important;
+    min-height: 60px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    min-width: 180px !important;
+  }
 }
 
 /* Mobile overrides (767px and below) */
