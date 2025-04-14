@@ -16,16 +16,18 @@
     padding: 0 !important;
   }
 
-  /* Increase font size for Let's Talk Today button on laptop */
-  html body main div.cta-section div.cta-container div.cta-buttons a.lets-talk-button {
-    font-size: 1.4rem !important;
-    padding: 1.2rem 1.8rem !important;
-    min-height: 70px !important;
+  /* Style for both buttons */
+  html body main div.cta-section div.cta-container div.cta-buttons a.lets-talk-button,
+  html body main div.cta-section div.cta-container div.cta-buttons a.our-services-button {
+    font-size: 1.1rem !important;
+    padding: 0.9rem 1.4rem !important;
+    min-height: 55px !important;
     height: auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     white-space: nowrap !important;
+    min-width: 160px !important;
   }
 }
 
