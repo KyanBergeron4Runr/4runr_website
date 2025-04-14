@@ -48,8 +48,10 @@ html body div.what-we-do {
   }
   
   html body div.what-we-do div.rectangle-content p {
-    font-size: calc(var(--text-body) * 1.4) !important; /* Ensure text is readable */
-    line-height: 1.6 !important;
+    font-size: calc(var(--text-body) * 1.1) !important; /* REDUCED from 1.4 to 1.1 */
+    line-height: 1.4 !important; /* REDUCED from 1.6 to 1.4 */
+    max-width: 85% !important; /* ADDED max-width constraint */
+    margin: 0 auto !important; /* Center the text */
   }
   
   /* Make fine print slightly bigger */
