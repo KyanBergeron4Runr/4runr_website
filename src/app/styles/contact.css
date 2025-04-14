@@ -555,8 +555,8 @@
     justify-content: center;
     align-items: flex-start;
     gap: 0; /* Ensure gap is 0 */
-    padding-left: 4rem; /* Add padding for centering */
-    padding-right: 4rem;
+    padding-left: 2rem; /* Reset padding, rely on margins/centering */
+    padding-right: 2rem;
   }
 
   .app-sidebar {
@@ -564,12 +564,16 @@
     max-height: none;
     overflow-y: visible;
     margin-right: 2rem; /* Adjust margin */
+    border: none !important; /* Explicitly remove border */
+    box-shadow: none !important; /* Explicitly remove shadow */
   }
 
   .app-main {
     align-items: center;
     margin-left: 0;
-    padding-top: 3rem; /* Push content down within main */
+    padding-top: 3rem;
+    border: none !important; /* Explicitly remove border */
+    box-shadow: none !important; /* Explicitly remove shadow */
   }
 
   .chat-container {
@@ -904,33 +908,46 @@
 /* @media (min-width: 1441px) { ... } */
 /* @media (min-width: 1024px) { ... } */
 
+/* Comment out conflicting general desktop styles */
 @media (min-width: 1024px) {
+/*
   .chat-container {
     max-width: 600px;
     height: 700px;
   }
+*/
 
+/*
   .message {
     max-width: 75%;
     font-size: var(--text-body);
   }
+*/
 
+/*
   .option-button {
     font-size: var(--text-button);
     padding: 1rem 1.5rem;
   }
+*/
 
+/*
   .send-button {
     min-width: 56px;
     height: 56px;
     font-size: var(--text-button);
   }
+*/
 
+/*
   .security-badge {
     padding: 1.5rem;
   }
+*/
 
+/*
   .badge-icon {
     font-size: 2rem;
   }
+*/
 } 
