@@ -2,25 +2,20 @@
 
 /* Global section spacing adjustments */
 .page-section {
-  padding-top: 2vw !important;
-  padding-bottom: 2vw !important;
-  margin: 0 !important;
-  width: 100vw !important;
-  max-width: 100vw !important;
-  overflow-x: hidden !important;
+  padding-top: 2vw !important; /* Reduced from 4vw */
+  padding-bottom: 2vw !important; /* Reduced from 4vw */
+  margin-top: -1vw !important; /* Negative margin to bring sections closer */
 }
 
 /* Adjust spacing for specific sections */
 .page-section + .page-section {
-  margin: 0 !important;
-  padding-top: 2vw !important;
+  margin-top: -2vw !important; /* Additional negative margin between consecutive sections */
 }
 
 /* Adjust spacing for full-height sections */
 .page-section.full-height {
-  padding-top: 3vw !important;
+  padding-top: 3vw !important; /* Slightly more padding for full-height sections */
   padding-bottom: 3vw !important;
-  margin: 0 !important;
 }
 
 /* Responsive adjustments */
@@ -28,12 +23,11 @@
   .page-section {
     padding-top: 1.5vw !important;
     padding-bottom: 1.5vw !important;
-    margin: 0 !important;
+    margin-top: -0.5vw !important;
   }
   
   .page-section + .page-section {
-    margin: 0 !important;
-    padding-top: 1.5vw !important;
+    margin-top: -1.5vw !important;
   }
 }
 
@@ -41,19 +35,10 @@
   .page-section {
     padding-top: 2.5vw !important;
     padding-bottom: 2.5vw !important;
-    margin: 0 !important;
+    margin-top: -1.5vw !important;
   }
   
   .page-section + .page-section {
-    margin: 0 !important;
-    padding-top: 2.5vw !important;
+    margin-top: -2.5vw !important;
   }
-}
-
-/* Inner content width control */
-.page-section .inner-content {
-  width: 100% !important;
-  max-width: 1400px !important;
-  margin: 0 auto !important;
-  padding: 0 2rem !important;
 } 

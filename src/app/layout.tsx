@@ -27,8 +27,6 @@ import './styles/cta-button-final-override.css'
 // Import our comprehensive responsive frameworks last to override any conflicting styles
 import './styles/global-responsive.css'
 import './styles/responsive-implementation.css'
-import './styles/contact.css'
-import './styles/contact-fixes.css'
 import { Metadata } from 'next'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
