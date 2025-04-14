@@ -6,8 +6,8 @@
   .app-content .sidebar-section,
   body .contact-page .sidebar-section,
   .contact-page .sidebar-section {
-    width: 25% !important;
-    max-width: 300px !important;
+    /* REMOVED: width: 25% !important; */
+    /* REMOVED: max-width: 300px !important; */
   }
 
   body .app-content .chat-container,
@@ -25,8 +25,8 @@
   .app-content .sidebar-section,
   body .contact-page .sidebar-section,
   .contact-page .sidebar-section {
-    width: 20% !important;
-    max-width: 250px !important;
+    /* REMOVED: width: 20% !important; */
+    /* REMOVED: max-width: 250px !important; */
   }
 
   body .app-content .chat-container,
@@ -44,7 +44,7 @@
   .app-content .sidebar-section,
   body .contact-page .sidebar-section,
   .contact-page .sidebar-section {
-    display: none !important;
+    /* REMOVED: display: none !important; */
   }
 
   body .app-content .chat-container,

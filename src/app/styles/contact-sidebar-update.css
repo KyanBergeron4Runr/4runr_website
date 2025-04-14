@@ -5,7 +5,6 @@
   html body .app-content .app-sidebar,
   .app-content .app-sidebar {
     width: 25% !important;
-    max-width: 300px !important;
     padding: 1.5rem !important;
   }
 
@@ -69,7 +68,6 @@
   html body .app-content .app-sidebar,
   .app-content .app-sidebar {
     width: 30% !important;
-    max-width: 350px !important;
     padding: 1.25rem !important;
   }
 
