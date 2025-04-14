@@ -27,13 +27,13 @@ html body div.what-we-do {
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   /* Make heading slightly bigger than before */
   html body div.what-we-do div.titles h2 {
-    font-size: calc(var(--h2-size) * 1.15) !important; /* INCREASED from 0.95 to 1.15 */
+    font-size: calc(var(--h2-size) * 1.15) !important;
     margin-bottom: calc(24 / 1920 * 100vw) !important;
   }
   
   /* Make rectangle taller for better text fit */
   html body div.what-we-do div.rectangles {
-    height: calc(350 / 1920 * 100vw) !important; /* INCREASED from 320/1920 to 350/1920 */
+    height: calc(350 / 1920 * 100vw) !important;
   }
   
   /* Improve rectangle content for better text display */
@@ -43,27 +43,28 @@ html body div.what-we-do {
   }
   
   html body div.what-we-do div.rectangle-content {
-    padding: calc(32 / 1920 * 100vw) !important; /* INCREASED from 24/1920 to 32/1920 */
+    padding: calc(32 / 1920 * 100vw) !important;
     background: rgba(0, 0, 0, 0.4) !important;
   }
   
   html body div.what-we-do div.rectangle-content p {
-    font-size: calc(var(--text-body) * 1.1) !important; /* REDUCED from 1.4 to 1.1 */
-    line-height: 1.4 !important; /* REDUCED from 1.6 to 1.4 */
-    max-width: 85% !important; /* ADDED max-width constraint */
-    margin: 0 auto !important; /* Center the text */
+    font-size: calc(var(--text-body) * 0.85) !important; /* REDUCED from 1.1 to 0.85 */
+    line-height: 1.3 !important; /* REDUCED from 1.4 to 1.3 for tighter spacing */
+    max-width: 80% !important; /* REDUCED from 85% to 80% for better containment */
+    margin: 0 auto !important;
+    padding: 0 !important; /* Added to remove any potential padding */
   }
   
   /* Make fine print slightly bigger */
   html body div.what-we-do p.fine-print {
-    font-size: calc(var(--text-small) * 1.1) !important; /* INCREASED from 0.95 to 1.1 */
+    font-size: calc(var(--text-small) * 1.1) !important;
     line-height: 1.3 !important;
   }
   
   /* Increase button height */
   html body div.what-we-do div.button-wrapper a.cta-button,
   html body div.what-we-do a.cta-button {
-    min-height: 4vw !important; /* INCREASED from 3.5vw to 4vw */
+    min-height: 4vw !important;
     height: 4vw !important;
     display: flex !important;
     align-items: center !important;
