@@ -20,12 +20,12 @@
   }
   
   /* Ensure buttons are well-sized and aligned */
-  div.cta-section div.cta-buttons {
+  html body div.cta-section div.cta-buttons {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 1.56vw !important;
+    gap: 0.2vw !important;
     margin-top: 2.5vw !important;
     width: 100% !important;
     max-width: 800px !important;
@@ -62,6 +62,7 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    margin: 0 !important;
   }
   
   /* Ensure specific styling for each button type is preserved */
@@ -81,9 +82,12 @@
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 0.5vw !important;
+    gap: 0.2vw !important;
     margin-top: 1.04vw !important;
     width: 100% !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
