@@ -1,41 +1,35 @@
 /* Final CTA Button Override with Maximum Specificity */
 
-/* Desktop styles (min-width: 1367px) */
-@media (min-width: 1367px) {
-  html body .cta-section .cta-buttons a.lets-talk-button,
-  html body .cta-section .cta-buttons .lets-talk-button,
-  html body .home-page .cta-section .cta-buttons a.lets-talk-button,
-  html body .home-page .cta-section .cta-buttons .lets-talk-button {
-    font-size: 1vw !important;
-    line-height: 1.1 !important;
-    padding: 0.7vw 2.5vw !important;
-    height: 3vw !important;
-    white-space: normal !important;
-    text-align: center !important;
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  html body main div.cta-section div.cta-container div.cta-buttons {
     display: flex !important;
-    align-items: center !important;
+    flex-direction: row !important;
     justify-content: center !important;
-    max-width: 20vw !important;
-    margin: 0 auto !important;
+    align-items: center !important;
+    gap: 0.2vw !important;
+    margin-top: 1.04vw !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
   }
 }
 
-/* Laptop styles (min-width: 1024px and max-width: 1366px) */
-@media (min-width: 1024px) and (max-width: 1366px) {
-  html body .cta-section .cta-buttons a.lets-talk-button,
-  html body .cta-section .cta-buttons .lets-talk-button,
-  html body .home-page .cta-section .cta-buttons a.lets-talk-button,
-  html body .home-page .cta-section .cta-buttons .lets-talk-button {
-    font-size: 1.1vw !important;
-    line-height: 1.2 !important;
-    padding: 0.8vw 2.5vw !important;
-    height: 3.2vw !important;
-    white-space: normal !important;
-    text-align: center !important;
+/* Desktop styles (min-width: 1367px) */
+@media screen and (min-width: 1367px) {
+  html body main div.cta-section div.cta-container div.cta-buttons {
     display: flex !important;
-    align-items: center !important;
+    flex-direction: row !important;
     justify-content: center !important;
-    max-width: 22vw !important;
-    margin: 0 auto !important;
+    align-items: center !important;
+    gap: 0.2vw !important;
+    margin-top: 1.04vw !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
   }
 } 
