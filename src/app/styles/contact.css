@@ -144,6 +144,7 @@
   padding: 1rem 1.25rem;
   cursor: pointer;
   font-weight: 500;
+  font-family: var(--font-sans); /* Ensure correct font */
   color: #fff;
   transition: all 0.3s ease;
   user-select: none;
@@ -179,6 +180,7 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   font-size: 0.95rem;
+  font-family: var(--font-sans); /* Ensure correct font */
   position: relative;
   overflow: hidden;
 }
@@ -553,7 +555,8 @@
 
   .app-sidebar {
     width: 350px;
-    max-height: calc(100vh - 150px);
+    max-height: none; /* Allow sidebar to grow, removing scrollbar */
+    overflow-y: visible; /* Ensure overflow isn't hidden */
   }
 
   .app-main {
