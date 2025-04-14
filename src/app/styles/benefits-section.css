@@ -397,12 +397,12 @@
   }
   
   .benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.5);
+    font-size: calc(var(--h3-size) * 1.8);
     margin-bottom: 1.5vw;
   }
   
   .benefit-bg p {
-    font-size: calc(var(--text-body) * 1.5);
+    font-size: calc(var(--text-body) * 1.8);
     line-height: 1.5;
     padding: 0 2.5vw;
   }
@@ -415,12 +415,12 @@
   }
   
   .benefit-item-wrapper .benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.8) !important;
+    font-size: calc(var(--h3-size) * 2) !important;
     margin-bottom: 1.8vw !important;
   }
   
   .benefit-item-wrapper .benefit-bg p {
-    font-size: calc(var(--text-body) * 1.8) !important;
+    font-size: calc(var(--text-body) * 2) !important;
     line-height: 1.5 !important;
     padding: 0 2vw !important;
   }
@@ -435,12 +435,12 @@
   }
 
   .bottom-item-wrapper .benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.8) !important;
+    font-size: calc(var(--h3-size) * 2) !important;
     margin-bottom: 1.8vw !important;
   }
 
   .bottom-item-wrapper .benefit-bg p {
-    font-size: calc(var(--text-body) * 1.7) !important;
+    font-size: calc(var(--text-body) * 2) !important;
     line-height: 1.5 !important;
     padding: 0 2.2vw !important;
   }
