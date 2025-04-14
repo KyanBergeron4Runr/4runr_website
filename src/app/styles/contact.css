@@ -1,16 +1,15 @@
 /* Contact Page Container */
 .app-container {
-  min-height: 100vh;
-  width: 100vw; /* Full viewport width */
-  max-width: 100vw; /* Prevent overflow */
+  min-height: calc(100vh - 80px);
+  width: 100%;
   padding: 0;
-  margin: 0;
   box-sizing: border-box;
-  background: linear-gradient(180deg, #000000 0%, #13111C 2%, #1F1B2E 15%, #1F1B2E 85%, #13111C 98%, #000000 100%);
+  background: linear-gradient(180deg, #000000 0%, #13111C 5%, #1F1B2E 20%, #1F1B2E 80%, #13111C 95%, #000000 100%);
   position: relative;
   z-index: 1;
+  margin: 0;
   border: none;
-  overflow-x: hidden;
+  margin-top: -1px; /* Remove the gap between header and container */
 }
 
 /* Reset default styles for contact page */
@@ -22,12 +21,11 @@
 }
 
 .app-content {
-  width: 100vw; /* Full viewport width */
-  max-width: 100vw;
+  max-width: 100%;
   min-height: calc(100vh - 80px);
   display: flex;
-  gap: 0;
-  padding: 2rem 0; /* Remove horizontal padding */
+  gap: 1.5rem;
+  padding: 2rem;
   padding-top: calc(80px + 2rem);
   background: linear-gradient(180deg, 
     rgba(19, 17, 28, 0) 0%,
@@ -37,7 +35,6 @@
   );
   backdrop-filter: blur(10px);
   align-items: flex-start;
-  justify-content: center; /* Center content horizontally */
 }
 
 /* Sidebar Styles */
@@ -50,7 +47,6 @@
   height: auto;
   max-height: calc(100vh - 120px);
   overflow-y: auto;
-  margin-right: 1.5rem; /* Add margin instead of gap */
 }
 
 .app-sidebar::-webkit-scrollbar {
@@ -204,7 +200,6 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Center chat + desktop badges */
-  margin-left: 0; /* Remove potential conflicting margins */
 }
 
 .chat-container {
@@ -529,84 +524,7 @@
 
 /* Mobile Only Badges (Outside Main) */
 .security-badges-mobile {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  gap: 0.75rem !important;
-  width: 100% !important;
-  margin-top: 1rem !important;
-  padding: 0 0.75rem !important;
-  justify-content: space-between !important;
-}
-
-.security-badges-mobile .security-badge {
-  flex: 1 1 calc(50% - 0.375rem) !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  padding: 0.75rem !important;
-  margin: 0 !important;
-  text-align: left !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-}
-
-.security-badges-mobile .badge-icon {
-  font-size: 1rem !important;
-  min-width: 1rem !important;
-  margin-right: 0.5rem !important;
-}
-
-.security-badges-mobile .badge-content {
-  flex: 1 !important;
-  min-width: 0 !important;
-  overflow: hidden !important;
-}
-
-.security-badges-mobile .badge-content h4 {
-  font-size: 0.9rem !important;
-  line-height: 1.2 !important;
-  margin-bottom: 0.25rem !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-}
-
-.security-badges-mobile .badge-content p {
-  font-size: 0.8rem !important;
-  line-height: 1.2 !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-}
-
-/* Override the max-width: 480px media query */
-@media (max-width: 480px) {
-  .security-badges-mobile {
-    flex-direction: row !important;
-    gap: 0.5rem !important;
-    padding: 0 0.5rem !important;
-  }
-  
-  .security-badges-mobile .security-badge {
-    flex: 1 1 calc(50% - 0.25rem) !important;
-    padding: 0.5rem !important;
-  }
-
-  .security-badges-mobile .badge-icon {
-    font-size: 0.9rem !important;
-  }
-
-  .security-badges-mobile .badge-content h4 {
-    font-size: 0.8rem !important;
-  }
-
-  .security-badges-mobile .badge-content p {
-    font-size: 0.7rem !important;
-    -webkit-line-clamp: 1 !important;
-  }
+  /* Styles for mobile are further down */
 }
 
 /* Desktop Only Badges (Inside Main) */
@@ -632,31 +550,22 @@
   .app-content {
     justify-content: center;
     align-items: flex-start;
-    gap: 0; /* Ensure gap is 0 */
-    padding-left: 2rem; /* Reset padding, rely on margins/centering */
-    padding-right: 2rem;
+    gap: 2rem;
   }
 
   .app-sidebar {
     width: 350px;
-    max-height: none;
-    overflow-y: visible;
-    margin-right: 2rem; /* Adjust margin */
-    border: none !important; /* Explicitly remove border */
-    box-shadow: none !important; /* Explicitly remove shadow */
+    max-height: none; /* Allow sidebar to grow, removing scrollbar */
+    overflow-y: visible; /* Ensure overflow isn't hidden */
   }
 
   .app-main {
-    align-items: center;
-    margin-left: 0;
-    padding-top: 3rem;
-    border: none !important; /* Explicitly remove border */
-    box-shadow: none !important; /* Explicitly remove shadow */
+    align-items: center; /* Keep centering main content */
   }
 
   .chat-container {
     max-width: 800px;
-    margin-top: 0; /* Remove direct margin, handled by parent padding */
+    margin-top: 4rem; /* Increased space above chat */
   }
 
   /* Expand Common Questions by default on desktop/laptop */
@@ -673,107 +582,23 @@
     display: none !important; 
   }
   .security-badges-desktop {
-    display: block;
-    max-width: 800px;
-    margin-left: auto; /* Center align with chat */
-    margin-right: auto;
-  }
-}
-
-/* --- LAPTOP SPECIFIC --- */
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .app-main {
-    padding-top: 2rem; /* Slightly less push down than full desktop */
-  }
-
-  /* More Vibrant Purples for Laptop */
-  .app-sidebar::-webkit-scrollbar-thumb {
-    background: rgba(123, 104, 238, 0.4); /* Vibrant */
-  }
-  .app-sidebar-header,
-  .sidebar-section,
-  .category-dropdown,
-  .quick-question,
-  .chat-container,
-  .message-bubble,
-  .option-button,
-  .chat-footer,
-  .security-notice,
-  .chat-input-container,
-  .chat-input,
-  .security-badge {
-    border-color: rgba(123, 104, 238, 0.25); /* Vibrant border */
-  }
-  .section-title svg,
-  .category-icon,
-  .bot-avatar,
-  .security-notice svg,
-  .badge-icon {
-    color: #7B68EE; /* Vibrant icon color */
-  }
-  .category-header {
-    background: linear-gradient(to right, rgba(123, 104, 238, 0.2), rgba(106, 90, 205, 0.1));
-  }
-  .category-header:hover {
-     background: linear-gradient(to right, rgba(123, 104, 238, 0.3), rgba(106, 90, 205, 0.15));
-  }
-  .quick-question:hover,
-  .option-button:hover,
-  .security-badge:hover {
-    border-color: rgba(123, 104, 238, 0.4);
-    box-shadow: 0 4px 12px rgba(123, 104, 238, 0.2);
-  }
-  .user-message .message-bubble {
-    background: rgba(123, 104, 238, 0.2);
-    border-color: rgba(123, 104, 238, 0.35);
-  }
-  .send-button {
-    background: linear-gradient(135deg, #7B68EE 0%, #6a5acd 100%);
-    box-shadow: 0 4px 12px rgba(123, 104, 238, 0.25);
-  }
-  .send-button:hover {
-    background: linear-gradient(135deg, #8a7ff0 0%, #7B68EE 100%);
-    box-shadow: 0 6px 16px rgba(123, 104, 238, 0.35);
-  }
-
-  /* Smaller Security Badges on Laptop */
-  .security-badges-desktop .security-badge {
-    padding: 1rem;
-    gap: 1rem;
-    margin-bottom: 0.75rem;
-  }
-  .security-badges-desktop .badge-icon {
-    font-size: 1.5rem;
-  }
-  .security-badges-desktop .badge-content h4 {
-    font-size: 1rem; /* Adjust based on --h3-size if needed */
-    margin-bottom: 0.25rem;
-  }
-   .security-badges-desktop .badge-content p {
-    font-size: 0.9rem; /* Adjust based on --text-body if needed */
-    line-height: 1.4;
+    display: block; /* Show desktop badges */
+    max-width: 800px; /* Match chat container width */
   }
 }
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
   .app-container {
-    width: 100vw;
-    max-width: 100vw;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    margin-top: -1px;
   }
 
   .app-content {
-    width: 100vw;
-    max-width: 100vw;
     min-height: 100vh;
-    padding: 1rem 0.5rem; /* Reduce horizontal padding */
+    padding: 1rem;
     padding-top: calc(90px + 1rem);
     flex-direction: column;
-    align-items: stretch;
   }
 
   .app-sidebar {
@@ -828,81 +653,57 @@
   /* Ensure mobile badges are displayed horizontally */
   .security-badges-mobile {
     order: 3;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 0.35rem;
+    display: flex;
+    flex-direction: row; /* Display side-by-side */
+    gap: 1rem;
     width: 100%;
     margin-top: 1rem;
-    padding: 0 0.35rem;
-    justify-content: space-between;
+    justify-content: center; /* Center badges */
+  }
+
+  .security-badges-mobile .section-header {
+    display: none; /* Hide header on mobile */
   }
 
   .security-badges-mobile .security-badge {
-    flex: 1 1 calc(50% - 0.175rem) !important;
-    min-width: 0;
-    max-width: none;
-    padding: 0.35rem;
-    margin: 0 !important;
-    text-align: left;
-    flex-direction: row !important;
-    align-items: center;
-    gap: 0.2rem;
+    flex: 1; /* Allow badges to share space */
+    max-width: 200px; /* Limit width of each badge */
+    text-align: center;
+    padding: 1rem 0.5rem; /* Adjust padding */
+    gap: 0.5rem; /* Reduce gap inside badge */
+    flex-direction: column; /* Stack icon and text */
   }
 
   .security-badges-mobile .badge-icon {
-    font-size: 0.85rem;
-    min-width: 0.85rem;
-    margin-right: 0.2rem;
-  }
-
-  .security-badges-mobile .badge-content {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
+    font-size: 1.5rem; /* Smaller icon */
+    margin-bottom: 0.25rem;
   }
 
   .security-badges-mobile .badge-content h4 {
-    font-size: 0.6rem;
-    line-height: 1;
-    margin-bottom: 0.05rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 0.85rem;
+    margin-bottom: 0.1rem;
   }
 
   .security-badges-mobile .badge-content p {
-    font-size: 0.5rem;
-    line-height: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
   }
 
-  /* Override the max-width: 480px media query */
+  /* Make sure Common Questions are collapsed on mobile */
+  .category-dropdown > .category-questions {
+     display: none; /* Collapse by default */
+  }
+  .category-dropdown[open] > .category-questions {
+     display: flex; /* Show when open */
+  }
+  .category-dropdown > summary::marker, 
+  .category-dropdown > summary::-webkit-details-marker {
+    display: list-item; /* Show default arrow on mobile */
+  }
+
   @media (max-width: 480px) {
     .security-badges-mobile {
-      flex-direction: row !important;
-      gap: 0.2rem;
-    }
-    
-    .security-badges-mobile .security-badge {
-      flex: 1 1 calc(50% - 0.1rem) !important;
-      padding: 0.25rem;
-    }
-
-    .security-badges-mobile .badge-icon {
-      font-size: 0.75rem;
-    }
-
-    .security-badges-mobile .badge-content h4 {
-      font-size: 0.55rem;
-    }
-
-    .security-badges-mobile .badge-content p {
-      font-size: 0.45rem;
+      flex-direction: column;
     }
   }
 
@@ -952,17 +753,11 @@
 
 @media (max-width: 480px) {
   .app-container {
-    width: 100vw;
-    max-width: 100vw;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    margin-top: -1px;
   }
 
   .app-content {
-    width: 100vw;
-    max-width: 100vw;
     min-height: 100vh;
     padding: 0.75rem;
     padding-top: calc(75px + 0.75rem);
@@ -1023,46 +818,33 @@
 /* @media (min-width: 1441px) { ... } */
 /* @media (min-width: 1024px) { ... } */
 
-/* Comment out conflicting general desktop styles */
 @media (min-width: 1024px) {
-/*
   .chat-container {
     max-width: 600px;
     height: 700px;
   }
-*/
 
-/*
   .message {
     max-width: 75%;
     font-size: var(--text-body);
   }
-*/
 
-/*
   .option-button {
     font-size: var(--text-button);
     padding: 1rem 1.5rem;
   }
-*/
 
-/*
   .send-button {
     min-width: 56px;
     height: 56px;
     font-size: var(--text-button);
   }
-*/
 
-/*
   .security-badge {
     padding: 1.5rem;
   }
-*/
 
-/*
   .badge-icon {
     font-size: 2rem;
   }
-*/
 } 
