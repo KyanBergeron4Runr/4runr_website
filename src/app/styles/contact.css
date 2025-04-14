@@ -1,15 +1,16 @@
 /* Contact Page Container */
 .app-container {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh; /* Ensure it covers viewport height */
   width: 100%;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(180deg, #000000 0%, #13111C 5%, #1F1B2E 20%, #1F1B2E 80%, #13111C 95%, #000000 100%);
+  /* Refined gradient for smoother fade */
+  background: linear-gradient(180deg, #000000 0%, #13111C 2%, #1F1B2E 15%, #1F1B2E 85%, #13111C 98%, #000000 100%);
   position: relative;
   z-index: 1;
-  margin: 0;
+  margin: 0; /* Remove negative margin */
   border: none;
-  margin-top: -1px; /* Remove the gap between header and container */
+  overflow-x: hidden; /* Prevent horizontal scroll/lines */
 }
 
 /* Reset default styles for contact page */
@@ -22,11 +23,12 @@
 
 .app-content {
   max-width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px); /* Adjust based on header/footer */
   display: flex;
-  gap: 1.5rem;
-  padding: 2rem;
-  padding-top: calc(80px + 2rem);
+  gap: 0; /* Remove gap, use margins for spacing */
+  padding: 2rem; /* Adjust padding as needed */
+  /* Ensure padding-top accounts for header height */
+  padding-top: calc(80px + 2rem); 
   background: linear-gradient(180deg, 
     rgba(19, 17, 28, 0) 0%,
     rgba(19, 17, 28, 0.7) 5%,
@@ -47,6 +49,7 @@
   height: auto;
   max-height: calc(100vh - 120px);
   overflow-y: auto;
+  margin-right: 1.5rem; /* Add margin instead of gap */
 }
 
 .app-sidebar::-webkit-scrollbar {
@@ -200,6 +203,7 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Center chat + desktop badges */
+  margin-left: 0; /* Remove potential conflicting margins */
 }
 
 .chat-container {
@@ -550,22 +554,26 @@
   .app-content {
     justify-content: center;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 0; /* Ensure gap is 0 */
+    padding-left: 4rem; /* Add padding for centering */
+    padding-right: 4rem;
   }
 
   .app-sidebar {
     width: 350px;
-    max-height: none; /* Allow sidebar to grow, removing scrollbar */
-    overflow-y: visible; /* Ensure overflow isn't hidden */
+    max-height: none;
+    overflow-y: visible;
+    margin-right: 2rem; /* Adjust margin */
   }
 
   .app-main {
-    align-items: center; /* Keep centering main content */
+    align-items: center;
+    margin-left: 0; /* Remove potential conflicting margins */
   }
 
   .chat-container {
     max-width: 800px;
-    margin-top: 4rem; /* Increased space above chat */
+    margin-top: 6rem; /* Increased space above chat further */
   }
 
   /* Expand Common Questions by default on desktop/laptop */
@@ -582,8 +590,10 @@
     display: none !important; 
   }
   .security-badges-desktop {
-    display: block; /* Show desktop badges */
-    max-width: 800px; /* Match chat container width */
+    display: block;
+    max-width: 800px;
+    margin-left: auto; /* Center align with chat */
+    margin-right: auto;
   }
 }
 
