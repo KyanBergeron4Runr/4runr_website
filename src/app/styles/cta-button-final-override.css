@@ -18,9 +18,9 @@
 
   /* Increase font size for Let's Talk Today button on laptop */
   html body main div.cta-section div.cta-container div.cta-buttons a.lets-talk-button {
-    font-size: 1.8rem !important;
-    padding: 1.3rem 2rem !important;
-    min-height: 75px !important;
+    font-size: 1.4rem !important;
+    padding: 1.2rem 1.8rem !important;
+    min-height: 70px !important;
     height: auto !important;
     display: flex !important;
     align-items: center !important;
