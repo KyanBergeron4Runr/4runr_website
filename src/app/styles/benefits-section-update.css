@@ -28,7 +28,7 @@ section.benefits-section div.desktop-version {
     padding: 0 !important;
     margin: 0 auto !important;
     overflow: visible !important;
-    gap: 3vw !important; /* Increased from 2.083vw */
+    gap: 3vw !important;
   }
   
   /* Make section title smaller */
@@ -40,10 +40,10 @@ section.benefits-section div.desktop-version {
 
   /* Adjust rectangle size to prevent text cutoff */
   section.benefits-section div.benefit-item-wrapper div.benefit-item {
-    flex: 0 1 42vw !important; /* Reduced from 44vw */
+    flex: 0 1 42vw !important;
     height: 28vw !important;
     min-width: 520px !important;
-    max-width: 750px !important; /* Reduced from 900px */
+    max-width: 750px !important;
     min-height: 340px !important;
     overflow: visible !important;
     position: relative !important;
@@ -53,24 +53,24 @@ section.benefits-section div.desktop-version {
     box-sizing: border-box !important;
   }
   
-  /* Reduce heading text size further */
+  /* Increase heading text size */
   section.benefits-section div.benefit-item div.benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.1) !important;
+    font-size: calc(var(--h3-size) * 1.8) !important;
     margin-bottom: 1vw !important;
     line-height: 1.2 !important;
-    padding: 0 !important; /* Remove padding from heading */
-    width: 80% !important; /* Reduced from 90% */
+    padding: 0 !important;
+    width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
   }
   
-  /* Reduce paragraph text size and prevent cutoff */
+  /* Increase paragraph text size */
   section.benefits-section div.benefit-item div.benefit-bg p {
-    font-size: calc(var(--text-body) * 0.85) !important;
+    font-size: calc(var(--text-body) * 1.8) !important;
     line-height: 1.4 !important;
-    padding: 0 !important; /* Remove padding from paragraph */
-    max-width: 80% !important; /* Reduced from 85% */
+    padding: 0 !important;
+    max-width: 80% !important;
     margin: 0 auto !important;
     word-wrap: break-word !important;
     text-align: center !important;
@@ -89,8 +89,8 @@ section.benefits-section div.desktop-version {
   section.benefits-section div.bottom-item-wrapper div.benefit-item {
     height: 28vw !important;
     min-height: 340px !important;
-    width: 42vw !important; /* Reduced from 44vw */
-    max-width: 750px !important; /* Added maximum width */
+    width: 42vw !important;
+    max-width: 750px !important;
     overflow: visible !important;
     position: relative !important;
     box-shadow: 0 0 20px rgba(106, 90, 205, 0.4) !important;
@@ -100,17 +100,17 @@ section.benefits-section div.desktop-version {
 
   section.benefits-section div.bottom-item-wrapper div.benefit-item div.benefit-bg h3,
   section.benefits-section div.benefit-item-wrapper div.benefit-item div.benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.1) !important;
+    font-size: calc(var(--h3-size) * 1.8) !important;
     padding: 0 !important;
-    width: 80% !important; /* Reduced from 90% */
+    width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
   
   section.benefits-section div.bottom-item-wrapper div.benefit-item div.benefit-bg p,
   section.benefits-section div.benefit-item-wrapper div.benefit-item div.benefit-bg p {
-    font-size: calc(var(--text-body) * 0.85) !important;
-    max-width: 80% !important; /* Reduced from 85% */
+    font-size: calc(var(--text-body) * 1.8) !important;
+    max-width: 80% !important;
     margin: 0 auto !important;
     padding: 0 !important;
     word-wrap: break-word !important;
