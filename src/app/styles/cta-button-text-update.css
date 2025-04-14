@@ -1,0 +1,28 @@
+/* CTA Button Text Updates with Higher Specificity */
+
+/* Desktop styles (min-width: 1367px) */
+@media (min-width: 1367px) {
+  body .cta-section .cta-buttons .lets-talk-button,
+  .cta-section .cta-buttons a.lets-talk-button {
+    font-size: 0.9vw !important;
+    line-height: 1.2 !important;
+    padding: 0.8vw 2.5vw !important;
+    height: 3.2vw !important;
+    white-space: normal !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Laptop styles (min-width: 1024px and max-width: 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  body .cta-section .cta-buttons .lets-talk-button,
+  .cta-section .cta-buttons a.lets-talk-button {
+    font-size: 1vw !important;
+    line-height: 1.3 !important;
+    padding: 0.9vw 2.5vw !important;
+    height: 3.5vw !important;
+  }
+} 
