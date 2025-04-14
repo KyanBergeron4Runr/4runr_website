@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { FiMessageSquare, FiSend, FiBox, FiAward, FiHelpCircle } from 'react-icons/fi';
+import { FiMessageSquare, FiSend, FiBox, FiAward, FiHelpCircle, FiCpu, FiTrendingUp, FiDollarSign, FiZap, FiLayers } from 'react-icons/fi';
 import { RiShieldCheckLine, RiCustomerService2Line, RiLockLine } from 'react-icons/ri';
 import '@/app/styles/contact.css';
 
@@ -18,49 +18,51 @@ interface Message {
 // Webhook URLs
 const CONTACT_WEBHOOK_URL = 'https://n8n-mcp-u37169.vm.elestio.app/webhook/e1eb39f3-30e5-4f4f-9342-ff5e0b8b03d4';
 
+// Updated Common Questions based on Brand Doc
 const commonQuestions = [
   {
-    category: 'Services',
-    icon: <FiBox />,
+    category: 'About 4Runr Systems',
+    icon: <FiCpu />,
     questions: [
-      'What services do you offer?',
-      'How much do your services cost?',
-      'Do you offer custom solutions?',
-      'What is your turnaround time?'
+      'What is a 4Runr System?',
+      'How are they different from standard SaaS tools?',
+      'Are the systems truly custom?',
+      'How do you ensure systems are future-proof?'
     ]
   },
   {
-    category: 'Support',
-    icon: <RiCustomerService2Line />,
+    category: 'Our Approach & Process',
+    icon: <FiTrendingUp />,
     questions: [
-      'How can I get technical support?',
-      'What are your support hours?',
-      'Do you offer emergency support?',
-      'How do I report an issue?'
+      'What\'s your development process like?',
+      'How do you choose the right technology?',
+      'What industries do you work with?',
+      'How long does a project typically take?'
     ]
   },
   {
-    category: 'Security',
-    icon: <RiShieldCheckLine />,
+    category: 'Partnership & Support',
+    icon: <FiDollarSign />,
     questions: [
-      'How do you protect my data?',
-      'Are your services GDPR compliant?',
-      'What security certifications do you have?',
-      'How often do you backup data?'
+      'What happens after deployment?',
+      'What support options are available?',
+      'How is pricing determined?',
+      'Do you offer retainers?'
     ]
   }
 ];
 
+// Updated Security Badges based on Brand Doc
 const securityBadges = [
   {
-    icon: <RiShieldCheckLine />,
-    title: 'End-to-End Encryption',
-    description: 'Your conversations are secure and private'
+    icon: <FiLayers />,
+    title: 'Future-Proof Design',
+    description: 'Systems built to adapt and scale with your growth'
   },
   {
-    icon: <FiAward />,
-    title: 'Certified Experts',
-    description: 'Our team is certified in modern web technologies'
+    icon: <RiShieldCheckLine />,
+    title: 'Data Privacy & Security',
+    description: 'Prioritizing protection and ethical AI principles'
   }
 ];
 
@@ -224,7 +226,7 @@ export default function ContactPage() {
           <aside className="app-sidebar">
             <div className="app-sidebar-header">
               <h2>Welcome to 4Runr Support</h2>
-              <p>Get quick answers or schedule a meeting with our team</p>
+              <p>Explore FAQs or connect with our AI Assistant below.</p>
             </div>
 
             <div className="sidebar-section">
@@ -363,10 +365,6 @@ export default function ContactPage() {
 
           {/* Mobile Security Badges - Outside Main */}
           <div className="sidebar-section security-badges-mobile">
-            <div className="section-header">
-              <span className="section-icon"><RiShieldCheckLine /></span>
-              <h3>Security & Trust</h3>
-            </div>
             {securityBadges.map((badge, index) => (
               <div key={index} className="security-badge">
                 <span className="badge-icon">{badge.icon}</span>
