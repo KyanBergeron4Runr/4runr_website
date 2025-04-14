@@ -1,12 +1,13 @@
 .home-page {
   min-height: 100vh;
-  width: 100%;
+  width: 100vw !important;
+  max-width: 100vw !important;
   background: #000;
   position: relative;
   z-index: 1;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,11 +15,13 @@
 
 /* Base section spacing */
 .home-page > * {
-  width: 100%;
-  margin: 0;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
   padding: 4rem 0;
   position: relative;
   z-index: 1;
+  overflow-x: hidden !important;
 }
 
 /* First section special spacing */
@@ -35,10 +38,10 @@
 .home-page .container,
 .home-page .section-container,
 .home-page .content-wrapper {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
   position: relative;
 }
 
@@ -51,15 +54,19 @@
 .home-page .services-section,
 .home-page .chatbot-section,
 .home-page .pdf-form {
-  width: 100%;
-  margin: 0;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
   position: relative;
   z-index: 1;
+  left: 0 !important;
+  right: 0 !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0;
+  padding: 4rem 0 !important;
   background: #000000;
+  overflow-x: hidden !important;
 }
 
 /* Fix for specific sections that might cause issues */
