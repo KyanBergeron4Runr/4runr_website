@@ -59,15 +59,15 @@
 }
 
 .app-sidebar::-webkit-scrollbar-thumb {
-  background: rgba(93, 63, 211, 0.4); /* Darker Vibrant Purple */
+  background: rgba(106, 90, 205, 0.3); /* Original Purple */
   border-radius: 3px;
 }
 
 .app-sidebar-header {
   padding: 1.5rem;
-  background: rgba(75, 0, 130, 0.15); /* Darker Purple BG */
+  background: rgba(106, 90, 205, 0.1);
   border-radius: 16px;
-  border: 1px solid rgba(93, 63, 211, 0.25); /* Vibrant Purple Border */
+  border: 1px solid rgba(106, 90, 205, 0.2);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -89,10 +89,10 @@
 
 /* Common Questions Section */
 .sidebar-section {
-  background: rgba(75, 0, 130, 0.1); /* Darker Purple BG */
+  background: rgba(106, 90, 205, 0.05);
   border-radius: 16px;
   padding: 1.5rem;
-  border: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
+  border: 1px solid rgba(106, 90, 205, 0.15);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
@@ -107,7 +107,7 @@
 }
 
 .section-title svg {
-  color: #7B68EE; /* Vibrant Purple Icon */
+  color: #6a5acd; /* Original Purple */
 }
 
 .question-categories {
@@ -118,7 +118,7 @@
 
 /* Category Dropdowns */
 .category-dropdown {
-  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
+  border: 1px solid rgba(106, 90, 205, 0.2);
   border-radius: 12px;
   overflow: hidden;
   background: rgba(30, 28, 44, 0.95);
@@ -126,15 +126,15 @@
 }
 
 .category-dropdown:hover {
-  border-color: rgba(123, 104, 238, 0.5); /* Lighter Vibrant on Hover */
-  box-shadow: 0 4px 20px rgba(93, 63, 211, 0.2); /* Vibrant Shadow */
+  border-color: rgba(106, 90, 205, 0.4);
+  box-shadow: 0 4px 20px rgba(106, 90, 205, 0.15);
   transform: translateY(-1px);
 }
 
 .category-dropdown[open] {
   background: rgba(35, 32, 52, 0.95);
-  border-color: rgba(123, 104, 238, 0.6); /* Brighter Vibrant Open */
-  box-shadow: 0 8px 32px rgba(93, 63, 211, 0.25); /* Vibrant Shadow Open */
+  border-color: rgba(106, 90, 205, 0.4);
+  box-shadow: 0 8px 32px rgba(106, 90, 205, 0.2);
 }
 
 .category-header {
@@ -147,15 +147,15 @@
   color: #fff;
   transition: all 0.3s ease;
   user-select: none;
-  background: linear-gradient(to right, rgba(93, 63, 211, 0.2), rgba(75, 0, 130, 0.1)); /* Vibrant to Dark Purple Gradient */
+  background: linear-gradient(to right, rgba(106, 90, 205, 0.15), rgba(106, 90, 205, 0.05));
 }
 
 .category-header:hover {
-  background: linear-gradient(to right, rgba(123, 104, 238, 0.3), rgba(93, 63, 211, 0.15)); /* Brighter Vibrant Hover Gradient */
+  background: linear-gradient(to right, rgba(106, 90, 205, 0.25), rgba(106, 90, 205, 0.1));
 }
 
 .category-icon {
-  color: #7B68EE; /* Vibrant Purple Icon */
+  color: #6a5acd; /* Original Purple */
   display: flex;
   align-items: center;
   font-size: 1.25rem;
@@ -170,8 +170,8 @@
 }
 
 .quick-question {
-  background: rgba(93, 63, 211, 0.15); /* Vibrant Purple BG */
-  border: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
+  background: rgba(106, 90, 205, 0.1);
+  border: 1px solid rgba(106, 90, 205, 0.15);
   padding: 0.875rem 1.25rem;
   text-align: left;
   color: rgba(255, 255, 255, 0.9);
@@ -184,8 +184,8 @@
 }
 
 .quick-question:hover {
-  background: rgba(123, 104, 238, 0.25); /* Brighter Vibrant Hover BG */
-  border-color: rgba(123, 104, 238, 0.4); /* Brighter Vibrant Hover Border */
+  background: rgba(106, 90, 205, 0.2);
+  border-color: rgba(106, 90, 205, 0.3);
   color: #fff;
   transform: translateX(4px);
 }
@@ -205,7 +205,7 @@
   max-width: 700px;
   height: auto; /* Let content dictate height */
   background: rgba(25, 23, 36, 0.95);
-  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
+  border: 1px solid rgba(106, 90, 205, 0.25); /* Revert Border */
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(8px);
@@ -224,7 +224,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(145deg, rgba(93, 63, 211, 0.15), transparent);
+  background: linear-gradient(145deg, rgba(106, 90, 205, 0.1), transparent); /* Revert Gradient */
   border-radius: 24px;
   z-index: -1;
   opacity: 0.2;
@@ -238,14 +238,14 @@
   right: 0;
   bottom: 0;
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(75, 0, 130, 0.1), transparent);
+  background: linear-gradient(145deg, rgba(106, 90, 205, 0.05), transparent); /* Revert Gradient */
   z-index: -1;
   opacity: 0.3;
 }
 
 .chat-header {
   padding: 1.5rem;
-  border-bottom: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
+  border-bottom: 1px solid rgba(106, 90, 205, 0.15); /* Revert Border */
   background: rgba(25, 23, 36, 0.95);
   border-radius: 16px 16px 0 0;
 }
@@ -297,7 +297,7 @@
 }
 
 .messages-container::-webkit-scrollbar-thumb {
-  background: rgba(93, 63, 211, 0.4); /* Darker Vibrant Purple */
+  background: rgba(106, 90, 205, 0.3); /* Original Purple */
   border-radius: 3px;
 }
 
@@ -331,28 +331,28 @@
 .bot-avatar {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, rgba(93, 63, 211, 0.25) 0%, rgba(123, 104, 238, 0.35) 100%); /* Vibrant Gradient */
+  background: linear-gradient(135deg, rgba(106, 90, 205, 0.2) 0%, rgba(106, 90, 205, 0.3) 100%); /* Revert Gradient */
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7B68EE; /* Vibrant Purple Icon */
+  color: #6a5acd; /* Original Purple */
   font-size: 1.4rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.2); /* Vibrant Shadow */
+  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.15); /* Revert Shadow */
 }
 
 .message-bubble {
-  background: rgba(93, 63, 211, 0.15); /* Vibrant Purple BG */
+  background: rgba(106, 90, 205, 0.1); /* Revert BG */
   padding: 1.25rem;
   border-radius: 16px;
-  border: 1px solid rgba(93, 63, 211, 0.25); /* Vibrant Purple Border */
+  border: 1px solid rgba(106, 90, 205, 0.2); /* Revert Border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .user-message .message-bubble {
-  background: rgba(123, 104, 238, 0.25); /* Brighter Vibrant User BG */
-  border-color: rgba(123, 104, 238, 0.4); /* Brighter Vibrant User Border */
+  background: rgba(106, 90, 205, 0.2); /* Revert User BG */
+  border-color: rgba(106, 90, 205, 0.3); /* Revert User Border */
 }
 
 .message-content {
@@ -369,8 +369,8 @@
 }
 
 .option-button {
-  background: rgba(93, 63, 211, 0.2); /* Vibrant Purple BG */
-  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
+  background: rgba(106, 90, 205, 0.15); /* Revert BG */
+  border: 1px solid rgba(106, 90, 205, 0.25); /* Revert Border */
   color: #fff !important;
   padding: 0.75rem 1.25rem;
   border-radius: 25px;
@@ -381,16 +381,16 @@
 }
 
 .option-button:hover {
-  background: rgba(123, 104, 238, 0.3); /* Brighter Vibrant Hover BG */
-  border-color: rgba(123, 104, 238, 0.5); /* Brighter Vibrant Hover Border */
+  background: rgba(106, 90, 205, 0.25); /* Revert Hover BG */
+  border-color: rgba(106, 90, 205, 0.4); /* Revert Hover Border */
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.25); /* Vibrant Shadow */
+  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.2); /* Revert Shadow */
 }
 
 /* Chat Footer */
 .chat-footer {
   padding: 1.5rem;
-  border-top: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
+  border-top: 1px solid rgba(106, 90, 205, 0.15); /* Revert Border */
   background: rgba(25, 23, 36, 0.95);
   border-radius: 0 0 16px 16px;
 }
@@ -403,19 +403,19 @@
   font-size: var(--text-small);
   margin-bottom: 1rem;
   padding: 0.75rem 1rem;
-  background: rgba(75, 0, 130, 0.15); /* Darker Purple BG */
+  background: rgba(106, 90, 205, 0.1); /* Revert BG */
   border-radius: 8px;
 }
 
 .security-notice svg {
-  color: #7B68EE; /* Vibrant Purple Icon */
+  color: #6a5acd; /* Original Purple */
   font-size: var(--text-body);
 }
 
 .chat-input-container {
   padding: 1rem;
   background: rgba(25, 23, 36, 0.95);
-  border-top: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
+  border-top: 1px solid rgba(106, 90, 205, 0.15); /* Revert Border */
   backdrop-filter: blur(8px);
   display: flex;
   gap: 0.75rem;
@@ -428,7 +428,7 @@
 .chat-input {
   flex: 1;
   background: rgba(35, 32, 52, 0.95);
-  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
+  border: 1px solid rgba(106, 90, 205, 0.25); /* Revert Border */
   padding: 0.875rem 1.25rem;
   border-radius: 24px;
   color: #fff;
@@ -445,13 +445,13 @@
 
 .chat-input:focus {
   outline: none;
-  border-color: rgba(123, 104, 238, 0.6); /* Brighter Vibrant Focus Border */
+  border-color: rgba(106, 90, 205, 0.5); /* Revert Focus Border */
   background: rgba(40, 37, 58, 0.95);
-  box-shadow: 0 0 0 3px rgba(93, 63, 211, 0.15); /* Vibrant Shadow */
+  box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.1); /* Revert Shadow */
 }
 
 .send-button {
-  background: linear-gradient(135deg, #5D3FD3 0%, #4B0082 100%); /* Vibrant to Dark Purple Gradient */
+  background: linear-gradient(135deg, #6a5acd 0%, #5648b3 100%); /* Revert Gradient */
   border: none;
   min-width: 48px;
   height: 48px;
@@ -462,19 +462,19 @@
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.25); /* Vibrant Shadow */
+  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.2); /* Revert Shadow */
   font-size: 1.2rem;
   padding: 0 1rem;
 }
 
 .send-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(93, 63, 211, 0.35); /* Vibrant Shadow */
-  background: linear-gradient(135deg, #7B68EE 0%, #5D3FD3 100%); /* Brighter Vibrant Hover Gradient */
+  box-shadow: 0 6px 16px rgba(106, 90, 205, 0.3); /* Revert Shadow */
+  background: linear-gradient(135deg, #7b6bde 0%, #6759c4 100%); /* Revert Hover Gradient */
 }
 
 .send-button:disabled {
-  background: rgba(93, 63, 211, 0.3); /* Vibrant Disabled BG */
+  background: rgba(106, 90, 205, 0.3); /* Revert Disabled BG */
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
@@ -487,7 +487,7 @@
   gap: 1.25rem;
   padding: 1.25rem;
   background: rgba(30, 28, 44, 0.95);
-  border: 1px solid rgba(93, 63, 211, 0.25); /* Vibrant Purple Border */
+  border: 1px solid rgba(106, 90, 205, 0.2); /* Revert Border */
   border-radius: 12px;
   margin-bottom: 0.75rem;
   transition: all 0.3s ease;
@@ -495,13 +495,13 @@
 }
 
 .security-badge:hover {
-  border-color: rgba(123, 104, 238, 0.5); /* Brighter Vibrant Hover Border */
+  border-color: rgba(106, 90, 205, 0.4); /* Revert Hover Border */
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(93, 63, 211, 0.2); /* Vibrant Shadow */
+  box-shadow: 0 8px 24px rgba(106, 90, 205, 0.15); /* Revert Shadow */
 }
 
 .badge-icon {
-  color: #7B68EE; /* Vibrant Purple Icon */
+  color: #6a5acd; /* Original Purple */
   font-size: 1.75rem;
   display: flex;
   align-items: center;
@@ -562,7 +562,16 @@
 
   .chat-container {
     max-width: 800px;
-    /* Height is auto */
+    margin-top: 2rem; /* Add space above chat */
+  }
+
+  /* Expand Common Questions by default on desktop/laptop */
+  .category-dropdown > .category-questions {
+    display: flex !important; 
+  }
+  .category-dropdown > summary::marker,
+  .category-dropdown > summary::-webkit-details-marker {
+    display: none; /* Hide default dropdown arrow */
   }
 
   /* Hide mobile badges, show desktop badges */
@@ -638,25 +647,55 @@
     display: none !important;
   }
 
-  /* Ensure mobile badges are displayed */
+  /* Ensure mobile badges are displayed horizontally */
   .security-badges-mobile {
     order: 3;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Display side-by-side */
     gap: 1rem;
     width: 100%;
     margin-top: 1rem;
+    justify-content: center; /* Center badges */
   }
 
   .security-badges-mobile .section-header {
-    text-align: center;
-    margin-bottom: 0.5rem;
+    display: none; /* Hide header on mobile */
   }
 
   .security-badges-mobile .security-badge {
-    flex: 1;
-    max-width: none;
+    flex: 1; /* Allow badges to share space */
+    max-width: 200px; /* Limit width of each badge */
     text-align: center;
+    padding: 1rem 0.5rem; /* Adjust padding */
+    gap: 0.5rem; /* Reduce gap inside badge */
+    flex-direction: column; /* Stack icon and text */
+  }
+
+  .security-badges-mobile .badge-icon {
+    font-size: 1.5rem; /* Smaller icon */
+    margin-bottom: 0.25rem;
+  }
+
+  .security-badges-mobile .badge-content h4 {
+    font-size: 0.85rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .security-badges-mobile .badge-content p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  /* Make sure Common Questions are collapsed on mobile */
+  .category-dropdown > .category-questions {
+     display: none; /* Collapse by default */
+  }
+  .category-dropdown[open] > .category-questions {
+     display: flex; /* Show when open */
+  }
+  .category-dropdown > summary::marker, 
+  .category-dropdown > summary::-webkit-details-marker {
+    display: list-item; /* Show default arrow on mobile */
   }
 
   @media (max-width: 480px) {
