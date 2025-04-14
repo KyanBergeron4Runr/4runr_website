@@ -22,11 +22,11 @@
 
 .app-content {
   max-width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 2rem;
-  padding-top: calc(80px + 2rem); /* Account for header height plus padding */
+  padding-top: calc(80px + 2rem);
   background: linear-gradient(180deg, 
     rgba(19, 17, 28, 0) 0%,
     rgba(19, 17, 28, 0.7) 5%,
@@ -34,18 +34,19 @@
     rgba(19, 17, 28, 0) 100%
   );
   backdrop-filter: blur(10px);
+  align-items: flex-start;
 }
 
 /* Sidebar Styles */
 .app-sidebar {
-  width: 380px;
+  width: 320px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  height: 100%;
+  height: auto;
+  max-height: calc(100vh - 120px);
   overflow-y: auto;
-  /* padding-right: 1.5rem; */ /* Removed padding-right */
 }
 
 .app-sidebar::-webkit-scrollbar {
@@ -193,16 +194,16 @@
 .app-main {
   flex: 1;
   min-width: 0;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center chat + desktop badges */
 }
 
 .chat-container {
   width: 100%;
-  max-width: 500px;
-  height: 600px;
-  min-height: 400px;
+  max-width: 700px;
+  height: auto; /* Let content dictate height */
   background: rgba(25, 23, 36, 0.95);
   border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
   border-radius: 24px;
@@ -213,7 +214,7 @@
   display: flex;
   flex-direction: column;
   z-index: 1;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .chat-container::before {
@@ -519,44 +520,62 @@
   line-height: 1.5;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .app-container {
-    min-height: 100vh;
-    margin-top: -1px;
-  }
-
-  .app-content {
-    min-height: 100vh;
-    padding-top: calc(80px + 2rem);
-  }
+/* Mobile Only Badges (Outside Main) */
+.security-badges-mobile {
+  /* Styles for mobile are further down */
 }
 
-@media (max-width: 1024px) {
-  .app-container {
-    min-height: 100vh;
-    margin-top: -1px;
-  }
+/* Desktop Only Badges (Inside Main) */
+.security-badges-desktop {
+  display: none; /* Hidden by default */
+  width: 100%;
+  max-width: 700px; /* Match chat container width */
+  margin-top: 1.5rem; /* Space above badges */
+}
 
+.security-badges-desktop .section-header {
+  text-align: center; /* Center header */
+  margin-bottom: 0.5rem;
+}
+
+.security-badges-desktop .security-badge {
+  /* Use default badge styles */
+  margin-bottom: 1rem;
+}
+
+/* --- DESKTOP/LAPTOP --- */
+@media (min-width: 769px) {
   .app-content {
-    min-height: 100vh;
-    padding-top: calc(90px + 2rem);
-    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
   }
 
   .app-sidebar {
-    width: 100%;
-    max-height: 45vh;
-    padding-right: 0;
-    overflow-y: auto;
+    width: 350px;
+    max-height: calc(100vh - 150px);
   }
 
   .app-main {
-    height: 55vh;
-    min-height: 500px;
+    align-items: center; /* Keep centering main content */
+  }
+
+  .chat-container {
+    max-width: 800px;
+    /* Height is auto */
+  }
+
+  /* Hide mobile badges, show desktop badges */
+  .security-badges-mobile {
+    display: none !important; 
+  }
+  .security-badges-desktop {
+    display: block; /* Show desktop badges */
+    max-width: 800px; /* Match chat container width */
   }
 }
 
+/* --- MOBILE --- */
 @media (max-width: 768px) {
   .app-container {
     min-height: 100vh;
@@ -614,6 +633,12 @@
     padding: 0.6rem 1rem;
   }
 
+  /* Hide desktop badges on mobile */
+  .security-badges-desktop {
+    display: none !important;
+  }
+
+  /* Ensure mobile badges are displayed */
   .security-badges-mobile {
     order: 3;
     display: flex;
@@ -743,20 +768,13 @@
 }
 
 /* Laptop-specific styles */
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .chat-container {
-    max-width: 600px;
-    height: 700px;
-  }
-}
+/* @media (min-width: 1024px) and (max-width: 1440px) { ... } */
+/* @media (min-width: 1441px) { ... } */
+/* @media (min-width: 1024px) { ... } */
 
 /* Desktop displays (>1440px) */
-@media (min-width: 1441px) {
-  .chat-container {
-    max-width: 700px;
-    height: 800px;
-  }
-}
+/* @media (min-width: 1441px) { ... } */
+/* @media (min-width: 1024px) { ... } */
 
 @media (min-width: 1024px) {
   .chat-container {

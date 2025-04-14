@@ -88,11 +88,10 @@ export default function ContactPage() {
       content: 'Welcome! How can I help you today?',
       timestamp: new Date(),
       sessionId,
-      options: ['Schedule a call', 'Learn About Services', 'Get a Quote']
     };
     setMessages([welcomeMessage]);
     sendToWebhook(welcomeMessage);
-  }, []);
+  }, [sessionId]);
 
   const sendToWebhook = async (message: Message) => {
     try {
@@ -343,9 +342,26 @@ export default function ContactPage() {
                 </form>
               </div>
             </div>
+
+            {/* Desktop Security Badges - Inside Main */}
+            <div className="security-badges-desktop">
+              <div className="section-header">
+                <span className="section-icon"><RiShieldCheckLine /></span>
+                <h3>Security & Trust</h3>
+              </div>
+              {securityBadges.map((badge, index) => (
+                <div key={index} className="security-badge">
+                  <span className="badge-icon">{badge.icon}</span>
+                  <div className="badge-content">
+                    <h4>{badge.title}</h4>
+                    <p>{badge.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </main>
 
-          {/* Moved Security Badges outside sidebar for mobile */}
+          {/* Mobile Security Badges - Outside Main */}
           <div className="sidebar-section security-badges-mobile">
             <div className="section-header">
               <span className="section-icon"><RiShieldCheckLine /></span>
