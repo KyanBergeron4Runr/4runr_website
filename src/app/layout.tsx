@@ -31,9 +31,9 @@ import { Metadata } from 'next'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 import { poppinsRegular, poppinsBold } from './fonts'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: '4Runr Tech',
@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable} ${inter.className}`}>
+    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`}>
       <body className={poppinsRegular.className}>
         <Header />
         <main>

@@ -255,22 +255,6 @@ export default function ContactPage() {
                 ))}
               </div>
             </div>
-
-            <div className="sidebar-section">
-              <div className="section-header">
-                <span className="section-icon"><RiShieldCheckLine /></span>
-                <h3>Security & Trust</h3>
-              </div>
-              {securityBadges.map((badge, index) => (
-                <div key={index} className="security-badge">
-                  <span className="badge-icon">{badge.icon}</span>
-                  <div className="badge-content">
-                    <h4>{badge.title}</h4>
-                    <p>{badge.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </aside>
 
           <main className="app-main">
@@ -360,6 +344,23 @@ export default function ContactPage() {
               </div>
             </div>
           </main>
+
+          {/* Moved Security Badges outside sidebar for mobile */}
+          <div className="sidebar-section security-badges-mobile">
+            <div className="section-header">
+              <span className="section-icon"><RiShieldCheckLine /></span>
+              <h3>Security & Trust</h3>
+            </div>
+            {securityBadges.map((badge, index) => (
+              <div key={index} className="security-badge">
+                <span className="badge-icon">{badge.icon}</span>
+                <div className="badge-content">
+                  <h4>{badge.title}</h4>
+                  <p>{badge.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 :root {
   /* Font families */
-  --font-heading: 'Poppins', sans-serif;
-  --font-sans: 'Poppins Regular', sans-serif;
+  --font-heading: var(--font-poppins-bold);
+  --font-sans: var(--font-poppins-regular);
   
   /* Base sizes using moderate vw units */
   --h1-size: 2.8vw;
@@ -37,7 +37,9 @@
 }
 
 /* Global heading styles */
-h1 {
+h1,
+h2,
+h3 {
   font-family: var(--font-heading);
   font-size: var(--h1-size);
   font-weight: var(--weight-h1);
@@ -45,14 +47,12 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-heading);
   font-size: var(--h2-size);
   font-weight: var(--weight-h2);
   line-height: var(--line-height-h2);
 }
 
 h3 {
-  font-family: var(--font-heading);
   font-size: var(--h3-size);
   font-weight: var(--weight-h3);
   line-height: var(--line-height-h3);
