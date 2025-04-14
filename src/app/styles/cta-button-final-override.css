@@ -48,18 +48,18 @@
   }
 
   html body main div.cta-section div.cta-container div.cta-buttons a.lets-talk-button {
-    font-size: 1.05rem !important;
-    padding: 0.9rem 1.3rem !important;
-    min-height: 75px !important;
+    font-size: 1.2rem !important;
+    padding: 1.2rem 1.8rem !important;
+    min-height: 80px !important;
     height: auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     white-space: normal !important;
-    min-width: 170px !important;
-    max-width: 190px !important;
-    line-height: 1.2 !important;
+    min-width: 200px !important;
+    max-width: 220px !important;
+    line-height: 1.3 !important;
     background: linear-gradient(45deg, #4B0082, #483D8B) !important;
   }
 } 
