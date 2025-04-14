@@ -114,52 +114,75 @@
 }
 
 @media (max-width: 768px) {
-  .logo {
-    height: 110px !important;
+  /* Higher specificity selectors */
+  body div.slogan-section .logo {
+    height: 95px !important; /* Further reduced */
+    width: auto !important;
+    min-width: 85px !important; /* Reduced min-width */
   }
   
-  .logo-group {
-    gap: 50px;
+  body div.slogan-section .logo-group {
+    gap: 35px !important; /* Even smaller gap */
   }
   
-  .slogan-section .fine-print {
-    font-size: 18px;
-    max-width: 92%;
-    margin-top: 30px;
+  body div.slogan-section .fine-print {
+    font-size: 17px !important; /* Specific font size */
+    max-width: 92% !important;
+    margin-top: 25px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   
-  .slogan-section .fine-print-line {
-    font-size: 20px;
-    margin-bottom: 10px;
+  body div.slogan-section .fine-print-line {
+    font-size: 19px !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+  
+  body div.slogan-section .marquee {
+    padding: 30px 0 !important;
   }
   
   @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 25px)); }
+    100% { transform: translateX(calc(-50% - 17.5px)); } /* Adjusted for even smaller gap */
   }
 }
 
 @media (max-width: 480px) {
-  .logo {
-    height: 80px !important;
+  /* Higher specificity selectors for small mobile */
+  body div.slogan-section .logo {
+    height: 60px !important; /* Significantly smaller */
+    min-width: 60px !important;
   }
   
-  .logo-group {
-    gap: 40px;
+  body div.slogan-section .logo-container {
+    min-width: auto !important;
+    min-height: auto !important;
+    padding: 10px !important;
   }
   
-  .slogan-section .fine-print {
-    font-size: 16px;
-    margin-top: 25px;
+  body div.slogan-section .logo-group {
+    gap: 25px !important; /* Much smaller gap */
   }
   
-  .slogan-section .fine-print-line {
-    font-size: 18px;
-    margin-bottom: 8px;
+  body div.slogan-section .fine-print {
+    font-size: 14px !important; /* Even smaller */
+    margin-top: 20px !important;
+    line-height: 1.4 !important;
+  }
+  
+  body div.slogan-section .fine-print-line {
+    font-size: 16px !important;
+    margin-bottom: 5px !important;
+  }
+  
+  body div.slogan-section .marquee {
+    padding: 20px 0 !important;
   }
   
   @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 20px)); }
+    100% { transform: translateX(calc(-50% - 12.5px)); } /* Adjusted for smallest gap */
   }
 } 

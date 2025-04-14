@@ -134,6 +134,26 @@
     align-items: center !important;
     justify-content: center !important;
   }
+  
+  /* CTA Section Improvements for Laptop */
+  .cta-section .lets-talk-button {
+    font-size: calc(1.1rem + 0.1vw) !important;
+    padding: 1.1rem 2.5rem !important;
+    min-width: 250px !important;
+    height: auto !important;
+    min-height: 60px !important;
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+    background-size: 100% 100% !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.5rem !important;
+  }
+  
+  .cta-section .lets-talk-button:hover {
+    transform: scale(1.05) !important;
+  }
 }
 
 /* Mobile tablet screens - fix display issues */
@@ -253,6 +273,22 @@
     margin-bottom: 1.2rem !important;
     text-align: center !important;
   }
+  
+  /* CTA Section Improvements for Tablet */
+  .cta-section .lets-talk-button {
+    font-size: 1.05rem !important;
+    padding: 0.9rem 2rem !important;
+    min-width: 220px !important;
+    height: auto !important;
+    min-height: 55px !important;
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+    background-size: 100% 100% !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.5rem !important;
+  }
 }
 
 /* Small mobile screens - further adjustments */
@@ -350,6 +386,22 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+  
+  /* CTA Section Improvements for Mobile */
+  .cta-section .lets-talk-button {
+    font-size: 0.95rem !important;
+    padding: 0.8rem 1.8rem !important;
+    min-width: 180px !important;
+    height: auto !important;
+    min-height: 50px !important;
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+    background-size: 100% 100% !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.5rem !important;
   }
 }
 
@@ -465,16 +517,41 @@
     line-height: 1.5 !important;
   }
   
-  /* Buttons */
-  .cta-button {
-    font-size: calc(1rem + 0.1vw) !important;
-    padding: 1rem 2rem !important;
-    min-width: 180px !important;
+  /* CTA Section Improvements for Desktop */
+  .cta-section .cta-heading-main {
+    font-size: calc(3.2rem + 0.3vw) !important;
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 2.5rem !important;
+  }
+  
+  .cta-section .cta-subtext {
+    font-size: calc(1.4rem + 0.1vw) !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 2.5rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .cta-section .lets-talk-button {
+    font-size: calc(1.3rem + 0.1vw) !important;
+    padding: 1.3rem 3rem !important;
+    min-width: 280px !important;
     height: auto !important;
-    min-height: 55px !important;
+    min-height: 70px !important;
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+    background-size: 100% 100% !important;
+    border: none !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    border-radius: 0.6rem !important;
+  }
+  
+  .cta-section .lets-talk-button:hover {
+    transform: scale(1.05) !important;
   }
 }
 
