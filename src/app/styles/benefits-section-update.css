@@ -31,9 +31,9 @@ section.benefits-section div.desktop-version {
     gap: 3vw !important;
   }
   
-  /* Make section title smaller */
+  /* Make section title bigger */
   section.benefits-section div.section-title h2 {
-    font-size: calc(var(--h2-size) * 1.1) !important;
+    font-size: calc(var(--h2-size) * 1.8) !important;
     line-height: 1.2 !important;
     margin-bottom: 2.5vw !important;
   }
@@ -75,6 +75,15 @@ section.benefits-section div.desktop-version {
     word-wrap: break-word !important;
     text-align: center !important;
     box-sizing: border-box !important;
+  }
+
+  /* Make "Build AI" section text smaller */
+  section.benefits-section div.benefit-item-wrapper div.benefit-item:nth-child(2) div.benefit-bg h3 {
+    font-size: calc(var(--h3-size) * 1.2) !important;
+  }
+  
+  section.benefits-section div.benefit-item-wrapper div.benefit-item:nth-child(2) div.benefit-bg p {
+    font-size: calc(var(--text-body) * 1.2) !important;
   }
   
   /* Make button text smaller */
