@@ -58,15 +58,15 @@
 }
 
 .app-sidebar::-webkit-scrollbar-thumb {
-  background: rgba(106, 90, 205, 0.3);
+  background: rgba(93, 63, 211, 0.4); /* Darker Vibrant Purple */
   border-radius: 3px;
 }
 
 .app-sidebar-header {
   padding: 1.5rem;
-  background: rgba(106, 90, 205, 0.1);
+  background: rgba(75, 0, 130, 0.15); /* Darker Purple BG */
   border-radius: 16px;
-  border: 1px solid rgba(106, 90, 205, 0.2);
+  border: 1px solid rgba(93, 63, 211, 0.25); /* Vibrant Purple Border */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -88,10 +88,10 @@
 
 /* Common Questions Section */
 .sidebar-section {
-  background: rgba(106, 90, 205, 0.05);
+  background: rgba(75, 0, 130, 0.1); /* Darker Purple BG */
   border-radius: 16px;
   padding: 1.5rem;
-  border: 1px solid rgba(106, 90, 205, 0.15);
+  border: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
@@ -106,7 +106,7 @@
 }
 
 .section-title svg {
-  color: #6a5acd;
+  color: #7B68EE; /* Vibrant Purple Icon */
 }
 
 .question-categories {
@@ -117,7 +117,7 @@
 
 /* Category Dropdowns */
 .category-dropdown {
-  border: 1px solid rgba(106, 90, 205, 0.2);
+  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
   border-radius: 12px;
   overflow: hidden;
   background: rgba(30, 28, 44, 0.95);
@@ -125,15 +125,15 @@
 }
 
 .category-dropdown:hover {
-  border-color: rgba(106, 90, 205, 0.4);
-  box-shadow: 0 4px 20px rgba(106, 90, 205, 0.15);
+  border-color: rgba(123, 104, 238, 0.5); /* Lighter Vibrant on Hover */
+  box-shadow: 0 4px 20px rgba(93, 63, 211, 0.2); /* Vibrant Shadow */
   transform: translateY(-1px);
 }
 
 .category-dropdown[open] {
   background: rgba(35, 32, 52, 0.95);
-  border-color: rgba(106, 90, 205, 0.4);
-  box-shadow: 0 8px 32px rgba(106, 90, 205, 0.2);
+  border-color: rgba(123, 104, 238, 0.6); /* Brighter Vibrant Open */
+  box-shadow: 0 8px 32px rgba(93, 63, 211, 0.25); /* Vibrant Shadow Open */
 }
 
 .category-header {
@@ -146,15 +146,15 @@
   color: #fff;
   transition: all 0.3s ease;
   user-select: none;
-  background: linear-gradient(to right, rgba(106, 90, 205, 0.15), rgba(106, 90, 205, 0.05));
+  background: linear-gradient(to right, rgba(93, 63, 211, 0.2), rgba(75, 0, 130, 0.1)); /* Vibrant to Dark Purple Gradient */
 }
 
 .category-header:hover {
-  background: linear-gradient(to right, rgba(106, 90, 205, 0.25), rgba(106, 90, 205, 0.1));
+  background: linear-gradient(to right, rgba(123, 104, 238, 0.3), rgba(93, 63, 211, 0.15)); /* Brighter Vibrant Hover Gradient */
 }
 
 .category-icon {
-  color: #6a5acd;
+  color: #7B68EE; /* Vibrant Purple Icon */
   display: flex;
   align-items: center;
   font-size: 1.25rem;
@@ -169,8 +169,8 @@
 }
 
 .quick-question {
-  background: rgba(106, 90, 205, 0.1);
-  border: 1px solid rgba(106, 90, 205, 0.15);
+  background: rgba(93, 63, 211, 0.15); /* Vibrant Purple BG */
+  border: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
   padding: 0.875rem 1.25rem;
   text-align: left;
   color: rgba(255, 255, 255, 0.9);
@@ -183,8 +183,8 @@
 }
 
 .quick-question:hover {
-  background: rgba(106, 90, 205, 0.2);
-  border-color: rgba(106, 90, 205, 0.3);
+  background: rgba(123, 104, 238, 0.25); /* Brighter Vibrant Hover BG */
+  border-color: rgba(123, 104, 238, 0.4); /* Brighter Vibrant Hover Border */
   color: #fff;
   transform: translateX(4px);
 }
@@ -204,7 +204,7 @@
   height: 600px;
   min-height: 400px;
   background: rgba(25, 23, 36, 0.95);
-  border: 1px solid rgba(106, 90, 205, 0.25);
+  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(8px);
@@ -223,7 +223,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(145deg, rgba(106, 90, 205, 0.1), transparent);
+  background: linear-gradient(145deg, rgba(93, 63, 211, 0.15), transparent);
   border-radius: 24px;
   z-index: -1;
   opacity: 0.2;
@@ -237,14 +237,14 @@
   right: 0;
   bottom: 0;
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(106, 90, 205, 0.05), transparent);
+  background: linear-gradient(145deg, rgba(75, 0, 130, 0.1), transparent);
   z-index: -1;
   opacity: 0.3;
 }
 
 .chat-header {
   padding: 1.5rem;
-  border-bottom: 1px solid rgba(106, 90, 205, 0.15);
+  border-bottom: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
   background: rgba(25, 23, 36, 0.95);
   border-radius: 16px 16px 0 0;
 }
@@ -296,7 +296,7 @@
 }
 
 .messages-container::-webkit-scrollbar-thumb {
-  background: rgba(106, 90, 205, 0.3);
+  background: rgba(93, 63, 211, 0.4); /* Darker Vibrant Purple */
   border-radius: 3px;
 }
 
@@ -330,28 +330,28 @@
 .bot-avatar {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, rgba(106, 90, 205, 0.2) 0%, rgba(106, 90, 205, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(93, 63, 211, 0.25) 0%, rgba(123, 104, 238, 0.35) 100%); /* Vibrant Gradient */
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6a5acd;
+  color: #7B68EE; /* Vibrant Purple Icon */
   font-size: 1.4rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.15);
+  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.2); /* Vibrant Shadow */
 }
 
 .message-bubble {
-  background: rgba(106, 90, 205, 0.1);
+  background: rgba(93, 63, 211, 0.15); /* Vibrant Purple BG */
   padding: 1.25rem;
   border-radius: 16px;
-  border: 1px solid rgba(106, 90, 205, 0.2);
+  border: 1px solid rgba(93, 63, 211, 0.25); /* Vibrant Purple Border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .user-message .message-bubble {
-  background: rgba(106, 90, 205, 0.2);
-  border-color: rgba(106, 90, 205, 0.3);
+  background: rgba(123, 104, 238, 0.25); /* Brighter Vibrant User BG */
+  border-color: rgba(123, 104, 238, 0.4); /* Brighter Vibrant User Border */
 }
 
 .message-content {
@@ -368,8 +368,8 @@
 }
 
 .option-button {
-  background: rgba(106, 90, 205, 0.15);
-  border: 1px solid rgba(106, 90, 205, 0.25);
+  background: rgba(93, 63, 211, 0.2); /* Vibrant Purple BG */
+  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
   color: #fff !important;
   padding: 0.75rem 1.25rem;
   border-radius: 25px;
@@ -380,16 +380,16 @@
 }
 
 .option-button:hover {
-  background: rgba(106, 90, 205, 0.25);
-  border-color: rgba(106, 90, 205, 0.4);
+  background: rgba(123, 104, 238, 0.3); /* Brighter Vibrant Hover BG */
+  border-color: rgba(123, 104, 238, 0.5); /* Brighter Vibrant Hover Border */
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.2);
+  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.25); /* Vibrant Shadow */
 }
 
 /* Chat Footer */
 .chat-footer {
   padding: 1.5rem;
-  border-top: 1px solid rgba(106, 90, 205, 0.15);
+  border-top: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
   background: rgba(25, 23, 36, 0.95);
   border-radius: 0 0 16px 16px;
 }
@@ -402,19 +402,19 @@
   font-size: var(--text-small);
   margin-bottom: 1rem;
   padding: 0.75rem 1rem;
-  background: rgba(106, 90, 205, 0.1);
+  background: rgba(75, 0, 130, 0.15); /* Darker Purple BG */
   border-radius: 8px;
 }
 
 .security-notice svg {
-  color: #6a5acd;
+  color: #7B68EE; /* Vibrant Purple Icon */
   font-size: var(--text-body);
 }
 
 .chat-input-container {
   padding: 1rem;
   background: rgba(25, 23, 36, 0.95);
-  border-top: 1px solid rgba(106, 90, 205, 0.15);
+  border-top: 1px solid rgba(93, 63, 211, 0.2); /* Vibrant Purple Border */
   backdrop-filter: blur(8px);
   display: flex;
   gap: 0.75rem;
@@ -427,7 +427,7 @@
 .chat-input {
   flex: 1;
   background: rgba(35, 32, 52, 0.95);
-  border: 1px solid rgba(106, 90, 205, 0.25);
+  border: 1px solid rgba(93, 63, 211, 0.3); /* Vibrant Purple Border */
   padding: 0.875rem 1.25rem;
   border-radius: 24px;
   color: #fff;
@@ -444,13 +444,13 @@
 
 .chat-input:focus {
   outline: none;
-  border-color: rgba(106, 90, 205, 0.5);
+  border-color: rgba(123, 104, 238, 0.6); /* Brighter Vibrant Focus Border */
   background: rgba(40, 37, 58, 0.95);
-  box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.1);
+  box-shadow: 0 0 0 3px rgba(93, 63, 211, 0.15); /* Vibrant Shadow */
 }
 
 .send-button {
-  background: linear-gradient(135deg, #6a5acd 0%, #5648b3 100%);
+  background: linear-gradient(135deg, #5D3FD3 0%, #4B0082 100%); /* Vibrant to Dark Purple Gradient */
   border: none;
   min-width: 48px;
   height: 48px;
@@ -461,19 +461,19 @@
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.2);
+  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.25); /* Vibrant Shadow */
   font-size: 1.2rem;
   padding: 0 1rem;
 }
 
 .send-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(106, 90, 205, 0.3);
-  background: linear-gradient(135deg, #7b6bde 0%, #6759c4 100%);
+  box-shadow: 0 6px 16px rgba(93, 63, 211, 0.35); /* Vibrant Shadow */
+  background: linear-gradient(135deg, #7B68EE 0%, #5D3FD3 100%); /* Brighter Vibrant Hover Gradient */
 }
 
 .send-button:disabled {
-  background: rgba(106, 90, 205, 0.3);
+  background: rgba(93, 63, 211, 0.3); /* Vibrant Disabled BG */
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
@@ -486,7 +486,7 @@
   gap: 1.25rem;
   padding: 1.25rem;
   background: rgba(30, 28, 44, 0.95);
-  border: 1px solid rgba(106, 90, 205, 0.2);
+  border: 1px solid rgba(93, 63, 211, 0.25); /* Vibrant Purple Border */
   border-radius: 12px;
   margin-bottom: 0.75rem;
   transition: all 0.3s ease;
@@ -494,13 +494,13 @@
 }
 
 .security-badge:hover {
-  border-color: rgba(106, 90, 205, 0.4);
+  border-color: rgba(123, 104, 238, 0.5); /* Brighter Vibrant Hover Border */
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(106, 90, 205, 0.15);
+  box-shadow: 0 8px 24px rgba(93, 63, 211, 0.2); /* Vibrant Shadow */
 }
 
 .badge-icon {
-  color: #6a5acd;
+  color: #7B68EE; /* Vibrant Purple Icon */
   font-size: 1.75rem;
   display: flex;
   align-items: center;
