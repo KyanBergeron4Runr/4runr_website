@@ -26,63 +26,89 @@ export default function ServicesSection() {
     <section className="services-section">
       <div className="container">
         <div className="section-title">
-          <h2>Our AI Services in Action</h2>
+          <h2>Enterprise AI Infrastructure & Automation</h2>
         </div>
 
         <div className="service-categories">
-          <ServiceCategory title="Process Automation & Workflow Enhancement" id="automation">
+          <ServiceCategory title="AI Infrastructure Development" id="infrastructure">
             <div className="service-list">
               <div className="service">
-                <h3>Intelligent Document Processing</h3>
+                <h3>Custom AI Model Development</h3>
                 <div className="service-details">
                   <p>
-                    Transform how you handle documents with AI that automatically extracts, categorizes, and processes
-                    information from invoices, contracts, forms, and reports. Reduce manual data entry by up to 80% while
-                    improving accuracy.
+                    Build powerful, custom AI models tailored to your specific business needs. Our infrastructure enables 
+                    rapid development and deployment of AI solutions that deliver 99%+ accuracy rates and 40-80% efficiency gains. 
+                    From computer vision to natural language processing, we create models that drive real business results.
                   </p>
                 </div>
               </div>
               <div className="service">
-                <h4>Smart Workflow Orchestration</h4>
+                <h4>Scalable AI Architecture</h4>
                 <div className="service-details">
                   <p>
-                    Automate complex business processes across departments. Our AI systems can route tasks, trigger
-                    actions based on events, and maintain audit trails automatically. Perfect for approval processes,
-                    customer onboarding, and compliance workflows.
+                    Deploy enterprise-grade AI infrastructure that grows with your business. Our modular architecture ensures 
+                    seamless scaling, high availability, and optimal performance. Perfect for organizations looking to build 
+                    lasting competitive advantages through AI capabilities.
                   </p>
                 </div>
               </div>
               <div className="service">
-                <h4>Quality Control & Monitoring</h4>
+                <h4>AI Integration & Optimization</h4>
                 <div className="service-details">
                   <p>
-                    Implement AI-powered quality checks that spot errors and anomalies in real-time. From manufacturing
-                    defect detection to data validation, our systems ensure consistency and reduce costly mistakes.
+                    Seamlessly integrate AI systems with your existing infrastructure. Our team ensures smooth implementation, 
+                    optimal performance, and continuous optimization of your AI solutions. Achieve 30-50% cost savings through 
+                    efficient resource utilization and automated processes.
                   </p>
                 </div>
               </div>
             </div>
           </ServiceCategory>
 
-          <ServiceCategory title="Advanced Analytics & Intelligence" id="analytics">
+          <ServiceCategory title="Intelligent Process Automation" id="automation">
             <div className="service-list">
               <div className="service">
-                <h4>Predictive Analytics Engine</h4>
+                <h4>End-to-End Process Automation</h4>
                 <div className="service-details">
                   <p>
-                    Forecast trends, demand, and potential issues before they impact your business. Our custom predictive
-                    models analyze your historical data to provide actionable insights for inventory management, resource
-                    allocation, and risk assessment.
+                    Transform your operations with intelligent automation that combines AI and robotic process automation (RPA). 
+                    Our solutions automate complex workflows, reduce manual intervention by up to 80%, and ensure consistent 
+                    quality across all processes.
                   </p>
                 </div>
               </div>
               <div className="service">
-                <h4>Customer Behavior Analysis</h4>
+                <h4>Smart Document Processing</h4>
                 <div className="service-details">
                   <p>
-                    Understand your customers better with AI that analyzes interaction patterns, preferences, and
-                    feedback. Get detailed insights into customer segments, churn risk, and opportunities for
-                    personalization.
+                    Leverage advanced OCR and NLP technologies to automate document processing with 99%+ accuracy. From invoice 
+                    processing to contract analysis, our systems handle complex document workflows while reducing processing 
+                    time by 40-80%.
+                  </p>
+                </div>
+              </div>
+              <div className="service">
+                <h4>Workflow Intelligence</h4>
+                <div className="service-details">
+                  <p>
+                    Implement AI-powered workflow systems that adapt and improve over time. Our solutions optimize task routing, 
+                    resource allocation, and process execution, leading to significant efficiency gains and cost reductions 
+                    across your organization.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ServiceCategory>
+
+          <ServiceCategory title="Advanced Analytics & Optimization" id="analytics">
+            <div className="service-list">
+              <div className="service">
+                <h4>Real-time Analytics Engine</h4>
+                <div className="service-details">
+                  <p>
+                    Deploy powerful analytics systems that provide real-time insights and predictive capabilities. Our solutions 
+                    help you make data-driven decisions faster, identify opportunities earlier, and respond to market changes 
+                    more effectively.
                   </p>
                 </div>
               </div>
@@ -90,106 +116,52 @@ export default function ServicesSection() {
                 <h4>Performance Optimization</h4>
                 <div className="service-details">
                   <p>
-                    Monitor and optimize business operations in real-time. Our AI systems track KPIs, identify
-                    bottlenecks, and suggest improvements based on actual performance data.
+                    Maximize operational efficiency with AI-driven optimization systems. Our solutions continuously monitor 
+                    performance, identify bottlenecks, and automatically implement improvements, leading to 30-50% cost 
+                    savings and significant productivity gains.
                   </p>
                 </div>
               </div>
-            </div>
-          </ServiceCategory>
-
-          <ServiceCategory title="Custom AI Solutions" id="custom">
-            <div className="service-list">
               <div className="service">
-                <h4>Computer Vision Systems</h4>
+                <h4>Predictive Intelligence</h4>
                 <div className="service-details">
                   <p>
-                    Automate visual inspection tasks, enhance security monitoring, or extract information from images and
-                    video. Our computer vision solutions can be customized for quality control, safety compliance, or
-                    customer experience enhancement.
+                    Anticipate market trends and operational challenges with our predictive AI systems. From demand forecasting 
+                    to risk assessment, our solutions help you stay ahead of changes and make proactive decisions that drive 
+                    business growth.
                   </p>
-                </div>
-              </div>
-              <div className="service">
-                <h4>Natural Language Processing</h4>
-                <div className="service-details">
-                  <p>
-                    Handle text-based communications more efficiently with AI that understands context and intent. From
-                    automated customer service to content categorization, our NLP solutions transform how you process
-                    textual information.
-                  </p>
-                </div>
-              </div>
-              <div className="service">
-                <h4>Recommendation Engines</h4>
-                <div className="service-details">
-                  <p>
-                    Implement sophisticated recommendation systems that increase sales and engagement. Whether it's
-                    product suggestions, content recommendations, or process optimization, our AI helps make smarter
-                    choices.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ServiceCategory>
-
-          <ServiceCategory title="Implementation & Support" id="implementation">
-            <div className="service-list">
-              <div className="service">
-                <h4>Integration Services</h4>
-                <div className="service-details">
-                  <ul className="feature-list">
-                    <li>System compatibility assessment</li>
-                    <li>Custom API development</li>
-                    <li>Legacy system integration</li>
-                    <li>Performance optimization</li>
-                    <li>Security implementation</li>
-                    <li>Data migration support</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="service">
-                <h4>Ongoing Partnership</h4>
-                <div className="service-details">
-                  <ul className="feature-list">
-                    <li>24/7 monitoring and support</li>
-                    <li>Regular performance reviews</li>
-                    <li>System updates and maintenance</li>
-                    <li>Team training and free resources</li>
-                    <li>Quarterly strategy sessions</li>
-                    <li>Scaling and optimization planning</li>
-                  </ul>
                 </div>
               </div>
             </div>
           </ServiceCategory>
 
           <div className="results-section">
-            <h3>Results You Can Expect</h3>
+            <h3>Proven Results & Impact</h3>
             <div className="results-grid">
               <div className="result-item">
                 <span className="metric">40-80%</span>
-                <span className="description">Reduction in manual processing time</span>
+                <span className="description">Increase in Operational Efficiency</span>
               </div>
               <div className="result-item">
                 <span className="metric">99%+</span>
-                <span className="description">Improvement in accuracy rates</span>
+                <span className="description">AI Model Accuracy</span>
               </div>
               <div className="result-item">
                 <span className="metric">30-50%</span>
-                <span className="description">Cost savings on operational tasks</span>
+                <span className="description">Cost Reduction</span>
               </div>
             </div>
             <div className="additional-results">
               <ul className="feature-list">
-                <li>Faster decision-making with real-time insights</li>
-                <li>Increased customer satisfaction through faster response times</li>
-                <li>Scalable solutions that grow with your business</li>
+                <li>Enterprise-grade AI infrastructure that scales with your business</li>
+                <li>End-to-end process automation with intelligent workflow optimization</li>
+                <li>Real-time analytics and predictive insights for faster decision-making</li>
               </ul>
             </div>
             <p className="closing-note">
-              Each service can be customized to your specific industry and business needs. We work closely with your team to
-              understand your unique challenges and develop solutions that deliver measurable results.
+              Our solutions are designed for enterprise-scale impact, combining cutting-edge AI capabilities with practical 
+              automation to deliver measurable results. We work closely with your team to implement systems that drive 
+              lasting competitive advantages.
             </p>
           </div>
         </div>
