@@ -84,12 +84,12 @@ html body div.what-we-do {
   }
 
   html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex div.button-wrapper a.cta-button {
-    font-size: 1.2rem !important;
-    padding: 1rem 1.5rem !important;
-    min-height: 60px !important;
+    font-size: 1.4rem !important;
+    padding: 1.2rem 2rem !important;
+    min-height: 70px !important;
     height: auto !important;
-    min-width: 200px !important;
-    max-width: 200px !important;
+    min-width: 240px !important;
+    max-width: 240px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -98,6 +98,16 @@ html body div.what-we-do {
     white-space: normal !important;
     font-weight: 700 !important;
     margin: 0 !important;
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+    box-shadow: 0 6px 8px rgba(75, 0, 130, 0.25) !important;
+    color: white !important;
+    text-decoration: none !important;
+    border: none !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex div.button-wrapper a.cta-button:hover {
+    transform: scale(1.05) !important;
   }
 }
 
