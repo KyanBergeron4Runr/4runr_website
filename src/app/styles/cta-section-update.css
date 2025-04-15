@@ -48,6 +48,12 @@
   div.cta-section a.our-services-button {
     background: #000 !important;
   }
+
+  .cta-section .cta-buttons {
+    gap: 0.2vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }
 
 /* LAPTOP - Match button text sizes */
@@ -88,6 +94,12 @@
     max-width: 800px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  .cta-section .cta-buttons {
+    gap: 0.2vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
@@ -191,4 +203,14 @@
       min-height: 45px !important;
     }
   }
+}
+
+/* Base styles to ensure gap is always controlled */
+.cta-section .cta-buttons {
+  gap: 0.2vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 } 
