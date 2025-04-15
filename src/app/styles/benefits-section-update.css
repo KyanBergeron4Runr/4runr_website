@@ -86,33 +86,48 @@ section.benefits-section div.desktop-version {
     font-size: calc(var(--text-body) * 1.2) !important;
   }
   
-  /* Make button styles match laptop view */
+  /* Make button styles match CTA section */
   section.benefits-section div.button-group {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 0.5vw !important;
-    margin-top: 2vw !important;
+    gap: 0.2vw !important;
+    margin-top: 2.5vw !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   section.benefits-section div.button-group a.btn {
-    font-size: 1.3vw !important;
-    padding: 1.3vw 3vw !important;
-    min-width: 12vw !important;
-    min-height: 4vw !important;
+    font-size: 1.5rem !important;
+    padding: 1.5rem 2rem !important;
+    min-height: 90px !important;
+    height: auto !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     border-radius: 0.6rem !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    font-weight: 700 !important;
+    transition: transform 0.3s ease, background 0.3s ease !important;
   }
 
   section.benefits-section div.button-group a.btn-primary {
     background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+    box-shadow: 0 6px 8px rgba(75, 0, 130, 0.25) !important;
   }
 
   section.benefits-section div.button-group a.btn-secondary {
     background: #000000 !important;
     border: 1px solid rgba(106, 90, 205, 0.4) !important;
+  }
+
+  section.benefits-section div.button-group a.btn:hover {
+    transform: scale(1.05) !important;
   }
   
   /* Ensure bottom rectangle matches top in text styling */
