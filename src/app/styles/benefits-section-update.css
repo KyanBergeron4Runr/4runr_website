@@ -86,12 +86,33 @@ section.benefits-section div.desktop-version {
     font-size: calc(var(--text-body) * 1.2) !important;
   }
   
-  /* Make button text smaller */
+  /* Make button styles match laptop view */
+  section.benefits-section div.button-group {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5vw !important;
+    margin-top: 2vw !important;
+  }
+
   section.benefits-section div.button-group a.btn {
-    font-size: 1.2vw !important;
-    padding: 1.1vw 2.5vw !important;
+    font-size: 1.3vw !important;
+    padding: 1.3vw 3vw !important;
     min-width: 12vw !important;
-    min-height: 3.8vw !important;
+    min-height: 4vw !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.6rem !important;
+  }
+
+  section.benefits-section div.button-group a.btn-primary {
+    background: linear-gradient(45deg, #4B0082, #483D8B) !important;
+  }
+
+  section.benefits-section div.button-group a.btn-secondary {
+    background: #000000 !important;
+    border: 1px solid rgba(106, 90, 205, 0.4) !important;
   }
   
   /* Ensure bottom rectangle matches top in text styling */
