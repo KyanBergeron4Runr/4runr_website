@@ -15,51 +15,51 @@
   }
 
   .pdf-form__button {
-    min-width: 340px !important;
-    max-width: 340px !important;
-    min-height: 100px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    min-height: 90px !important;
     height: auto !important;
-    padding: 1.2rem !important;
-    font-size: 1.8rem !important;
+    padding: 1.5rem 2rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.2 !important;
     white-space: normal !important;
     word-wrap: break-word !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 1rem !important;
+    gap: 0.5rem !important;
     background: linear-gradient(45deg, #4B0082, #483D8B) !important;
     border: none !important;
     border-radius: 0.6rem !important;
     color: white !important;
     font-weight: 700 !important;
     cursor: pointer !important;
-    transition: transform 0.3s ease !important;
-    box-shadow: 0 6px 12px rgba(75, 0, 130, 0.25) !important;
+    transition: transform 0.3s ease, background 0.3s ease !important;
+    box-shadow: 0 6px 8px rgba(75, 0, 130, 0.25) !important;
+    margin: 2.5vw auto 0 !important;
+    text-align: center !important;
   }
 
   .pdf-form__button:hover {
     transform: scale(1.05) !important;
-    box-shadow: 0 8px 16px rgba(75, 0, 130, 0.3) !important;
   }
 
   .pdf-form__button .button-text {
-    max-width: 260px !important;
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    min-height: 60px !important;
+    display: block !important;
+    max-width: 200px !important;
+    margin: 0 auto !important;
+    word-wrap: break-word !important;
   }
 
   .pdf-form__button .button-icon {
-    font-size: 2rem !important;
-    width: 32px !important;
-    height: 32px !important;
+    font-size: 1.5rem !important;
+    width: 24px !important;
+    height: 24px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-left: 0.5rem !important;
+    margin-left: 12px !important;
+    margin-right: 0 !important;
   }
 }
 
