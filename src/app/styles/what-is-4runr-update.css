@@ -7,19 +7,45 @@ html body div.what-we-do {
 
 /* Desktop overrides (1367px+) */
 @media screen and (min-width: 1367px) {
-  /* Increase button height - but not too big */
+  /* Make button styles match CTA section */
+  html body div.what-we-do div.button-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.2vw !important;
+    margin-top: 2.5vw !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   html body div.what-we-do div.button-wrapper a.cta-button,
   html body div.what-we-do a.cta-button {
-    min-height: 3.75vw !important; /* REDUCED from 5vw to 3.75vw as requested */
-    height: 3.75vw !important;
+    font-size: 1.5rem !important;
+    padding: 1.5rem 2rem !important;
+    min-height: 90px !important;
+    height: auto !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    white-space: nowrap !important;
-    padding: 0.8vw 2.5vw !important;
+    border-radius: 0.6rem !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    font-weight: 700 !important;
+    transition: transform 0.3s ease, background 0.3s ease !important;
     background: linear-gradient(45deg, #4B0082, #483D8B) !important;
-    font-size: 1.1vw !important;
-    font-weight: bold !important;
+    box-shadow: 0 6px 8px rgba(75, 0, 130, 0.25) !important;
+    color: white !important;
+    text-decoration: none !important;
+    border: none !important;
+  }
+
+  html body div.what-we-do div.button-wrapper a.cta-button:hover,
+  html body div.what-we-do a.cta-button:hover {
+    transform: scale(1.05) !important;
   }
 }
 
