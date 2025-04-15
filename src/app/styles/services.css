@@ -457,7 +457,8 @@
   }
   
   .feature-list li {
-    font-size: 1.4rem;
+    font-size: 1.6rem !important;
+    line-height: 1.5;
   }
   
   .results-section h3 {
@@ -474,5 +475,14 @@
   
   .closing-note {
     font-size: 1.3rem;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1367px) {
+  .feature-list li {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    padding-left: 2vw;
   }
 } 
