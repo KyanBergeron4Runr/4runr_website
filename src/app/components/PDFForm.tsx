@@ -56,11 +56,9 @@ export default function PDFForm() {
 
   return (
     <div className="pdf-form">
-      <h2 className="pdf-form__heading">The Ultimate Guide to Business Success in the Age of AI</h2>
+      <h2 className="pdf-form__heading">The Future of Business Operations: Your Guide to AI Infrastructure</h2>
       <p className="pdf-form__description">
-        Discover proven strategies, real-world case studies, and practical tools to help your business thrive with AI. This
-        comprehensive guide, brought to you by the AI experts at 4runr, is your essential resource for navigating the AI
-        landscape and unlocking transformative results.
+        Discover how custom AI infrastructures are revolutionizing business operations. Learn how 4Runr Systems eliminate repetitive work, optimize decisions, and scale with your business. Get our comprehensive guide to building intelligent, modular systems that become the heart of your operations.
       </p>
 
       {/* Language Switch and Download Button */}
@@ -98,8 +96,7 @@ export default function PDFForm() {
 
       {/* Fine Print */}
       <p className="pdf-form__fine-print">
-        Get your complimentary copy of our comprehensive guide now. Don't miss out on this valuable resource—claim your free
-        PDF today!
+        Get your complimentary guide to building a future-proof business with AI infrastructure. Learn how to eliminate manual work and unlock your business's highest potential.
       </p>
     </div>
   );
