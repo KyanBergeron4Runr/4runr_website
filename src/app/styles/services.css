@@ -360,6 +360,28 @@
     max-width: 85%;
     margin: 0 auto;
   }
+
+  .services-cta h2 {
+    font-size: 2rem !important;
+  }
+
+  .feature-list {
+    padding-left: 2rem;
+  }
+
+  .services-cta-buttons {
+    gap: 1rem;
+  }
+
+  .services-cta-buttons .schedule-button,
+  .services-cta-buttons .chat-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .services-cta-buttons .schedule-button {
+    background: linear-gradient(45deg, #6A1B9A, #9C27B0) !important;
+  }
 }
 
 /* Tablet breakpoint remains the same but with adjusted values */
@@ -391,6 +413,32 @@
 
   .results-section {
     padding: 6vw;
+  }
+
+  .feature-list li {
+    padding-left: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .feature-list li:before {
+    left: 0.5rem !important;
+  }
+
+  .services-cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .services-cta-buttons .schedule-button,
+  .services-cta-buttons .chat-button {
+    font-size: 0.9rem !important;
+    padding: 0.7rem 1.4rem !important;
+    min-width: 180px !important;
+    max-width: 220px !important;
+  }
+
+  .services-cta-buttons .schedule-button {
+    background: linear-gradient(45deg, #6A1B9A, #9C27B0) !important;
   }
 }
 
