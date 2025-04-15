@@ -48,7 +48,7 @@ html body div.what-we-do {
     transform: scale(1.05) !important;
   }
 
-  html body div.what-we-do div.bottom-flex {
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -57,9 +57,10 @@ html body div.what-we-do {
     width: 100% !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
+    padding: 0 1rem !important;
   }
 
-  html body div.what-we-do p.fine-print {
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex p.fine-print {
     font-size: calc(var(--text-small) * 1.1) !important;
     line-height: 1.3 !important;
     width: 60% !important;
@@ -67,11 +68,13 @@ html body div.what-we-do {
     margin: 0 !important;
     white-space: normal !important;
     word-wrap: break-word !important;
+    order: 1 !important;
   }
 
-  html body div.what-we-do div.button-wrapper {
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex div.button-wrapper {
     margin: 0 !important;
     flex-shrink: 0 !important;
+    order: 2 !important;
   }
 }
 
@@ -145,7 +148,7 @@ html body div.what-we-do {
     min-width: 170px !important;
   }
 
-  html body div.what-we-do div.bottom-flex {
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -154,6 +157,24 @@ html body div.what-we-do {
     width: 100% !important;
     max-width: 1000px !important;
     margin: 0 auto !important;
+    padding: 0 1rem !important;
+  }
+
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex p.fine-print {
+    font-size: calc(var(--text-small) * 1.1) !important;
+    line-height: 1.3 !important;
+    width: 60% !important;
+    text-align: left !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    order: 1 !important;
+  }
+
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex div.button-wrapper {
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    order: 2 !important;
   }
 }
 
@@ -202,25 +223,27 @@ html body div.what-we-do {
   }
   
   /* Restructure bottom flex to horizontal */
-  html body div.what-we-do div.bottom-flex {
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 20px !important;
     width: 100% !important;
     margin: 0 auto !important;
+    padding: 0 1rem !important;
   }
   
   /* Button wrapper full width for better alignment */
-  html body div.what-we-do div.button-wrapper {
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex div.button-wrapper {
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
+    order: 2 !important;
   }
   
   /* Style the button specifically */
-  html body div.what-we-do div.button-wrapper a.cta-button,
-  html body div.what-we-do a.cta-button {
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex div.button-wrapper a.cta-button,
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex a.cta-button {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -232,6 +255,17 @@ html body div.what-we-do {
     font-weight: bold !important;
     min-width: 200px !important;
     height: 60px !important;
+  }
+
+  html body div.what-we-do div.content-wrapper div.bottom-content div.bottom-flex p.fine-print {
+    font-size: 0.85rem !important;
+    line-height: 1.3 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    order: 1 !important;
   }
 }
 
