@@ -46,9 +46,9 @@
 
 /* Reset margin and padding */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
 /* Prevent white border on refresh */
@@ -58,10 +58,12 @@ html {
   overflow-x: hidden !important;
   width: 100% !important;
   min-height: 100vh !important;
-  background-color: black !important;
+  max-width: 100% !important;
+  background: #000000 !important;
   position: relative !important;
   scrollbar-gutter: stable !important;
-  overflow-y: auto !important; /* Allow vertical scrolling */
+  border: none !important;
+  outline: none !important;
 }
 
 body {
@@ -70,14 +72,16 @@ body {
   overflow-x: hidden !important;
   width: 100% !important;
   min-height: 100vh !important;
-  background-color: black !important;
+  max-width: 100% !important;
+  background: #000000 !important;
   position: relative !important;
   color: rgb(var(--foreground-rgb));
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: var(--line-height-body);
   font-weight: var(--weight-body);
-  overflow-y: auto !important; /* Allow vertical scrolling */
+  border: none !important;
+  outline: none !important;
 }
 
 /* Global section styles */
@@ -90,20 +94,26 @@ section,
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
   box-sizing: border-box !important;
   position: relative !important;
+  border: none !important;
+  outline: none !important;
 }
 
 main {
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  background: #000000;
+  min-height: 100vh !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+  background: #000000 !important;
+  overflow: hidden !important;
   margin: 0 !important;
   padding: 0 !important;
+  border: none !important;
+  outline: none !important;
 }
 
 /* Heading Styles */
