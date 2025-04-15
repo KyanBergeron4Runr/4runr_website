@@ -51,27 +51,31 @@
   box-sizing: border-box;
 }
 
-html, body {
+/* Prevent white border on refresh */
+html {
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden !important;
   width: 100% !important;
   min-height: 100vh !important;
   background-color: black !important;
+  position: relative !important;
+  scrollbar-gutter: stable !important;
 }
 
 body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  background-color: black !important;
   position: relative !important;
   color: rgb(var(--foreground-rgb));
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: var(--line-height-body);
   font-weight: var(--weight-body);
-}
-
-/* Global layout */
-html {
-  scrollbar-gutter: stable !important;
 }
 
 /* Global section styles */
@@ -81,25 +85,14 @@ section,
 .container,
 .content-wrapper,
 .section-container {
-  width: 100vw !important;
-  max-width: 100vw !important;
+  width: 100% !important;
+  max-width: 100% !important;
   margin: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  overflow-x: hidden !important;
+  overflow: hidden !important;
   box-sizing: border-box !important;
   position: relative !important;
-}
-
-/* Inner content width control */
-.inner-content,
-.content-inner,
-.container-inner {
-  width: 100% !important;
-  max-width: 1400px !important;
-  margin: 0 auto !important;
-  padding: 0 2rem !important;
-  box-sizing: border-box !important;
 }
 
 main {
@@ -108,6 +101,9 @@ main {
   position: relative;
   z-index: 1;
   background: #000000;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Heading Styles */

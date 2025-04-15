@@ -10,6 +10,7 @@
   margin: 0;
   border: none;
   margin-top: -1px; /* Remove the gap between header and container */
+  overflow: hidden !important; /* Prevent any potential overflow */
 }
 
 /* Reset default styles for contact page */
@@ -524,15 +525,15 @@
 
 /* Mobile Only Badges (Outside Main) */
 .security-badges-mobile {
-  /* Styles for mobile are further down */
+  display: none !important; /* Hide on all screen sizes */
 }
 
 /* Desktop Only Badges (Inside Main) */
 .security-badges-desktop {
   display: none; /* Hidden by default */
   width: 100%;
-  max-width: 700px; /* Match chat container width */
-  margin-top: 1.5rem; /* Space above badges */
+  max-width: 700px;
+  margin-top: 1.5rem;
 }
 
 .security-badges-desktop .section-header {
@@ -551,21 +552,22 @@
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
+    padding-top: calc(120px + 2rem); /* Increased padding top */
   }
 
   .app-sidebar {
     width: 350px;
-    max-height: none; /* Allow sidebar to grow, removing scrollbar */
-    overflow-y: visible; /* Ensure overflow isn't hidden */
+    max-height: none;
+    overflow-y: visible;
   }
 
   .app-main {
-    align-items: center; /* Keep centering main content */
+    align-items: center;
   }
 
   .chat-container {
     max-width: 800px;
-    margin-top: 4rem; /* Increased space above chat */
+    margin-top: 2rem; /* Reduced margin to balance with increased padding-top */
   }
 
   /* Expand Common Questions by default on desktop/laptop */
@@ -579,11 +581,11 @@
 
   /* Hide mobile badges, show desktop badges */
   .security-badges-mobile {
-    display: none !important; 
+    display: none !important;
   }
   .security-badges-desktop {
-    display: block; /* Show desktop badges */
-    max-width: 800px; /* Match chat container width */
+    display: block;
+    max-width: 800px;
   }
 }
 
@@ -592,6 +594,7 @@
   .app-container {
     min-height: 100vh;
     margin-top: -1px;
+    overflow: hidden !important;
   }
 
   .app-content {
@@ -645,7 +648,8 @@
     padding: 0.5rem 0.9rem; /* Reduced padding */
   }
 
-  /* Hide desktop badges on mobile */
+  /* Hide both mobile and desktop badges on mobile */
+  .security-badges-mobile,
   .security-badges-desktop {
     display: none !important;
   }
