@@ -149,9 +149,9 @@ p {
 .button, 
 .cta-button, 
 a[class*="button"] {
-  font-size: var(--text-button);
-  font-weight: var(--weight-button);
-  font-family: var(--font-heading);
+  font-size: var(--text-button) !important;
+  font-weight: var(--weight-button) !important;
+  font-family: var(--font-heading) !important;
   padding: calc(16 / 1920 * 100vw) calc(32 / 1920 * 100vw);
   display: inline-flex;
   align-items: center;
@@ -194,7 +194,7 @@ a[class*="button"] {
 @media (max-width: 375px) {
   :root {
     --h1-size: 32px;
-    --h2-size: 24px;
+    --h2-size: 26px;
     --h3-size: 20px;
     --text-body: 16px;
     --text-small: 13px;
