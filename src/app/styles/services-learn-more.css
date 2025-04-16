@@ -10,24 +10,8 @@
   gap: 0;
   overflow-x: hidden;  /* Prevent horizontal scroll */
   align-items: center;  /* Center all sections horizontally */
-  position: absolute; /* Add absolute positioning */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-/* Add styles for the page root to ensure no white space */
-:root {
-  background-color: #000;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-  min-height: 100vh;
-  overflow-x: hidden;
+  position: fixed; /* Change to fixed instead of absolute to prevent layout issues */
+  inset: 0; /* Shorthand for top, right, bottom, left: 0 */
 }
 
 .learn-more-section .hero-container {
