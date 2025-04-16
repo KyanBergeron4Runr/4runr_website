@@ -159,18 +159,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
 .learn-more-section .process-step {
   text-align: center;
   position: relative;
-  padding: 40px 30px;
+  padding: 40px 35px;
   background: rgba(106, 90, 205, 0.05);
   border-radius: 16px;
   transition: background-color 0.3s ease;
@@ -179,7 +179,7 @@
   align-items: center;
   justify-content: flex-start;
   min-height: 400px;
-  width: calc(25% - 18px);
+  width: calc(25% - 24px);
   margin: 0;
   box-sizing: border-box;
 }
@@ -190,9 +190,9 @@
 
 .learn-more-section .step-number {
   font-family: var(--font-heading);
-  font-size: 36px;
+  font-size: 48px;
   color: #6a5acd;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .learn-more-section .step-content {
@@ -204,16 +204,16 @@
 
 .learn-more-section .step-title {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 32px;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   width: 100%;
   text-align: center;
 }
 
 .learn-more-section .step-description {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 20px;
   color: #ccc;
   line-height: 1.6;
   width: 100%;
@@ -440,5 +440,20 @@
   .learn-more-section .process-step {
     width: 100%;
     min-height: 300px;
+    padding: 35px 30px;
+  }
+
+  .learn-more-section .step-number {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+
+  .learn-more-section .step-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .learn-more-section .step-description {
+    font-size: 18px;
   }
 } 
