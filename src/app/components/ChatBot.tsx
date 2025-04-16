@@ -46,25 +46,29 @@ const ChatBot = () => {
     if (inView && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
       
-      // Show first typing dots
+      // Start with first typing dots
       setTypingFirst(true);
       
-      // After typing dots, show first message
+      // Show first message after typing dots animation
       setTimeout(() => {
         setTypingFirst(false);
-        setFirstMessageVisible(true);
-        
-        // Show second typing dots after a delay
         setTimeout(() => {
-          setTypingSecond(true);
+          setFirstMessageVisible(true);
           
-          // After typing dots, show second message
+          // Start second typing dots after a delay
           setTimeout(() => {
-            setTypingSecond(false);
-            setSecondMessageVisible(true);
-          }, 1200); // Time to show typing dots
-        }, 400); // Delay before second message
-      }, 1200); // Time to show typing dots
+            setTypingSecond(true);
+            
+            // Show second message after typing dots animation
+            setTimeout(() => {
+              setTypingSecond(false);
+              setTimeout(() => {
+                setSecondMessageVisible(true);
+              }, 300); // Small delay before showing message
+            }, 2000); // Show typing dots for 2 seconds
+          }, 800); // Wait before starting second typing
+        }, 300); // Small delay before showing message
+      }, 2000); // Show typing dots for 2 seconds
     }
   }, [inView]);
 

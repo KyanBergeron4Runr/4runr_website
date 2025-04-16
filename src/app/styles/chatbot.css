@@ -149,8 +149,8 @@
   gap: 16px;
   max-width: 85%;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .message.visible {
@@ -179,7 +179,7 @@
   max-width: 75% !important;
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .message-bubble.visible {
@@ -234,8 +234,14 @@
 .typing-dot:nth-child(3) { animation-delay: 0.6s; }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .input-area {
@@ -716,6 +722,9 @@
   border: 1px solid rgba(106, 90, 205, 0.2);
   border-radius: 12px;
   width: fit-content;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s ease forwards;
 }
 
 .typing-indicator span {
@@ -732,6 +741,23 @@
 .typing-indicator span:nth-child(3) { animation-delay: 0s; }
 
 @keyframes bounce {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1); }
+  0%, 80%, 100% { 
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 } 
