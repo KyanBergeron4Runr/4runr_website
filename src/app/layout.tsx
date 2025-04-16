@@ -36,8 +36,8 @@ import { poppinsRegular, poppinsBold } from './fonts'
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '4Runr - Enterprise AI Solutions',
-  description: 'Empowering businesses with cutting-edge AI solutions',
+  title: '4Runr Tech',
+  description: 'Transform your business with custom AI & automation solutions',
 }
 
 export default function RootLayout({
@@ -46,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`} style={{ background: '#000000' }}>
-      <body className={poppinsRegular.className}>
+    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`}>
+      <body style={{ margin: 0, padding: 0, backgroundColor: '#000', minHeight: '100vh' }}>
         <Header />
         <main>
           {children}
