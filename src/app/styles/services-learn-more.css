@@ -389,15 +389,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: none;
+    border: 2px solid rgba(106, 90, 205, 0.3);
     box-shadow: none;
     background: rgba(106, 90, 205, 0.05);
     border-radius: 16px;
   }
 
-  .learn-more-section .process-step::before,
-  .learn-more-section .process-step::after {
-    display: none;
+  .learn-more-section .process-step:hover {
+    border-color: rgba(106, 90, 205, 0.5);
+    background: rgba(106, 90, 205, 0.08);
   }
 
   .learn-more-section .step-number {
@@ -496,6 +496,7 @@ body {
   .learn-more-section .process-step {
     padding: 28px 20px;
     min-height: 180px;
+    border: 2px solid rgba(106, 90, 205, 0.3);
   }
 
   .learn-more-section .cta-section {
