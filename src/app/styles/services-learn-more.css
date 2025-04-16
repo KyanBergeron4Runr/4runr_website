@@ -157,18 +157,26 @@
 
 .learn-more-section .process-steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .learn-more-section .process-step {
   text-align: center;
   position: relative;
-  padding: calc(20/1920*100vw);
+  padding: 24px;
   background: rgba(106, 90, 205, 0.05);
-  border-radius: calc(8/1920*100vw);
+  border-radius: 8px;
   transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .learn-more-section .process-step:hover {
@@ -177,23 +185,25 @@
 
 .learn-more-section .step-number {
   font-family: var(--font-heading);
-  font-size: calc(20/1920*100vw);
+  font-size: 24px;
   color: #6a5acd;
-  margin-bottom: calc(12/1920*100vw);
+  margin-bottom: 16px;
 }
 
 .learn-more-section .step-title {
   font-family: var(--font-heading);
-  font-size: calc(18/1920*100vw);
+  font-size: 20px;
   color: white;
-  margin-bottom: calc(8/1920*100vw);
+  margin-bottom: 12px;
+  width: 100%;
 }
 
 .learn-more-section .step-description {
   font-family: var(--font-sans);
-  font-size: calc(14/1920*100vw);
+  font-size: 16px;
   color: #ccc;
   line-height: 1.6;
+  width: 100%;
 }
 
 .learn-more-section .cta-section {
