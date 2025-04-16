@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import dynamic from 'next/dynamic'
 import '../styles/chatbot.css'
 import '../styles/chat-section-updates.css'
 import { useInView } from 'react-intersection-observer'
@@ -11,8 +12,8 @@ interface Message {
   isError?: boolean;
 }
 
-const ChatBot = () => {
-  const [isClient, setIsClient] = useState(false);
+// Create a client-only version of the component
+const ChatBotClient = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -31,11 +32,6 @@ const ChatBot = () => {
     triggerOnce: true
   });
 
-  // Set isClient to true on mount
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   // Combine refs
   const setRefs = (node: HTMLDivElement | null) => {
     messagesContainerRef.current = node;
@@ -49,7 +45,7 @@ const ChatBot = () => {
   };
 
   useEffect(() => {
-    if (inView && !hasInitializedRef.current && isClient) {
+    if (inView && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
       
       // First message sequence
@@ -72,13 +68,11 @@ const ChatBot = () => {
         }, 1000); // Wait 1 second after first message
       }, 2000); // Show first typing dots for 2 seconds
     }
-  }, [inView, isClient]);
+  }, [inView]);
 
   useEffect(() => {
-    if (isClient) {
-      scrollToBottom();
-    }
-  }, [messages, isLoading, isFirstMessageVisible, isSecondMessageVisible, isClient]);
+    scrollToBottom();
+  }, [messages, isLoading, isFirstMessageVisible, isSecondMessageVisible]);
 
   const handleSend = async () => {
     if (!inputMessage.trim() || isLoading) return;
@@ -149,66 +143,11 @@ const ChatBot = () => {
       
       <div className="chat-container">
         <div className="messages" id="messages" ref={setRefs}>
-          {/* Only render chat content on client side */}
-          {isClient && (
+          {/* Initial messages */}
+          {!isUserInteracting && (
             <>
-              {/* Initial messages */}
-              {!isUserInteracting && (
-                <>
-                  {/* First message sequence */}
-                  {isTypingFirst && (
-                    <div className="message bot-message visible">
-                      <div className="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {isFirstMessageVisible && (
-                    <div className="message bot-message visible">
-                      <div className="message-bubble visible">
-                        Hi there! I'm your 4Runr AI consultant. 👋
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Second message sequence */}
-                  {isTypingSecond && (
-                    <div className="message bot-message visible">
-                      <div className="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {isSecondMessageVisible && (
-                    <div className="message bot-message visible">
-                      <div className="message-bubble visible">
-                        I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
-                      </div>
-                    </div>
-                  )}
-                </>
-              )}
-
-              {/* User interaction messages */}
-              {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`message ${message.isUser ? 'user-message' : 'bot-message'} ${message.isError ? 'error-message' : ''} visible`}
-                >
-                  <div className="message-bubble visible">
-                    {message.text}
-                  </div>
-                </div>
-              ))}
-
-              {/* Loading indicator for user interactions */}
-              {isLoading && (
+              {/* First message sequence */}
+              {isTypingFirst && (
                 <div className="message bot-message visible">
                   <div className="typing-indicator">
                     <span></span>
@@ -217,7 +156,57 @@ const ChatBot = () => {
                   </div>
                 </div>
               )}
+              
+              {isFirstMessageVisible && (
+                <div className="message bot-message visible">
+                  <div className="message-bubble visible">
+                    Hi there! I'm your 4Runr AI consultant. 👋
+                  </div>
+                </div>
+              )}
+
+              {/* Second message sequence */}
+              {isTypingSecond && (
+                <div className="message bot-message visible">
+                  <div className="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              )}
+              
+              {isSecondMessageVisible && (
+                <div className="message bot-message visible">
+                  <div className="message-bubble visible">
+                    I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
+                  </div>
+                </div>
+              )}
             </>
+          )}
+
+          {/* User interaction messages */}
+          {messages.map((message, index) => (
+            <div
+              key={index}
+              className={`message ${message.isUser ? 'user-message' : 'bot-message'} ${message.isError ? 'error-message' : ''} visible`}
+            >
+              <div className="message-bubble visible">
+                {message.text}
+              </div>
+            </div>
+          ))}
+
+          {/* Loading indicator for user interactions */}
+          {isLoading && (
+            <div className="message bot-message visible">
+              <div className="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
           )}
         </div>
 
@@ -249,5 +238,10 @@ const ChatBot = () => {
     </div>
   );
 };
+
+// Create a dynamic import of the client component with SSR disabled
+const ChatBot = dynamic(() => Promise.resolve(ChatBotClient), {
+  ssr: false
+});
 
 export default ChatBot; 
