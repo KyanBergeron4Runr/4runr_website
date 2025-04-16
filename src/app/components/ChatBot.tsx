@@ -11,6 +11,35 @@ interface Message {
   isError?: boolean;
 }
 
+const TypingText = ({ text }: { text: string }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDone, setIsDone] = useState(false);
+
+  useEffect(() => {
+    let currentText = '';
+    let currentIndex = 0;
+
+    const interval = setInterval(() => {
+      if (currentIndex < text.length) {
+        currentText += text[currentIndex];
+        setDisplayedText(currentText);
+        currentIndex++;
+      } else {
+        setIsDone(true);
+        clearInterval(interval);
+      }
+    }, 30); // Adjust speed of typing here
+
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return (
+    <div className={`typing-text ${isDone ? 'visible' : ''}`}>
+      {displayedText}
+    </div>
+  );
+};
+
 const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
@@ -149,7 +178,9 @@ const ChatBot = () => {
               
               <div className={`message bot-message ${isFirstMessageVisible ? 'visible' : ''}`}>
                 <div className={`message-bubble ${isFirstMessageVisible ? 'visible' : ''}`}>
-                  Hi there! I'm your 4Runr AI consultant. 👋
+                  {isFirstMessageVisible && (
+                    <TypingText text="Hi there! I'm your 4Runr AI consultant. 👋" />
+                  )}
                 </div>
               </div>
 
@@ -165,7 +196,9 @@ const ChatBot = () => {
               
               <div className={`message bot-message ${isSecondMessageVisible ? 'visible' : ''}`}>
                 <div className={`message-bubble ${isSecondMessageVisible ? 'visible' : ''}`}>
-                  I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
+                  {isSecondMessageVisible && (
+                    <TypingText text="I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?" />
+                  )}
                 </div>
               </div>
             </>
@@ -178,7 +211,11 @@ const ChatBot = () => {
               className={`message ${message.isUser ? 'user-message' : 'bot-message'} ${message.isError ? 'error-message' : ''} visible`}
             >
               <div className="message-bubble visible">
-                {message.text}
+                {message.isUser ? (
+                  message.text
+                ) : (
+                  <TypingText text={message.text} />
+                )}
               </div>
             </div>
           ))}

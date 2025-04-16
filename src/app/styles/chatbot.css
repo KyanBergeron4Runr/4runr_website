@@ -676,4 +676,17 @@
   .bottom-text {
     font-size: 18px;
   }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: pre-wrap;
+  animation: typing 1s steps(40, end);
+  width: 100%;
 } 
