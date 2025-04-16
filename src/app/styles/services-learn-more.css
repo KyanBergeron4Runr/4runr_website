@@ -289,109 +289,191 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .learn-more-section .hero-container {
+    padding: 32px 20px;
+    margin: 0;
+    width: 100%;
+  }
+
   .learn-more-section .hero-heading {
-    font-size: 40px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    padding: 0 10px;
   }
 
   .learn-more-section .hero-description {
-    font-size: calc(16/768*100vw);
+    font-size: 16px;
+    padding: 0 10px;
     max-width: 100%;
   }
 
   .learn-more-section .services-grid {
     grid-template-columns: 1fr;
-    gap: calc(20/768*100vw);
+    gap: 24px;
+    padding: 20px;
+    margin: 32px auto;
+    width: 100%;
+  }
+
+  .learn-more-section .service-card {
+    padding: 24px;
+    margin: 0;
+    width: 100%;
   }
 
   .learn-more-section .service-title {
-    font-size: calc(20/768*100vw);
+    font-size: 24px;
   }
 
   .learn-more-section .service-description {
-    font-size: calc(14/768*100vw);
+    font-size: 16px;
+    margin-bottom: 16px;
   }
 
   .learn-more-section .feature-item {
-    font-size: calc(12/768*100vw);
+    font-size: 14px;
+    padding: 16px;
   }
 
   .learn-more-section .feature-description {
-    font-size: calc(11/768*100vw);
+    font-size: 14px;
+  }
+
+  .learn-more-section .process-section {
+    width: 100%;
+    margin: 32px 0;
+    padding: 0 20px;
+  }
+
+  .learn-more-section .process-title {
+    font-size: 36px;
+    margin-bottom: 32px;
+    padding: 0 10px;
   }
 
   .learn-more-section .process-steps {
     flex-direction: column;
     gap: 24px;
+    padding: 0;
+    margin: 0;
   }
 
   .learn-more-section .process-step {
     width: 100%;
-    min-height: 300px;
-    padding: 30px 20px;
+    min-height: auto;
+    padding: 32px 24px;
+    margin-bottom: 16px;
   }
 
   .learn-more-section .step-number {
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 16px;
   }
 
   .learn-more-section .step-title {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 12px;
   }
 
   .learn-more-section .step-description {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .learn-more-section .cta-section {
-    width: calc(100% - 2rem);
-    margin: 2rem auto;
-    padding: 2rem;
+    width: calc(100% - 40px);
+    margin: 32px auto;
+    padding: 32px 24px;
   }
 
   .learn-more-section .cta-heading {
-    font-size: 40px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    padding: 0 10px;
   }
 
   .learn-more-section .cta-description {
-    font-size: calc(16/768*100vw);
-    max-width: 100%;
-    margin-bottom: 1rem;
+    font-size: 16px;
+    margin-bottom: 24px;
+    padding: 0 10px;
   }
 
   .learn-more-section .cta-buttons {
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
+    width: 100%;
+    padding: 0 10px;
   }
 
   .learn-more-section .primary-button {
     width: 100%;
-    min-width: auto;
-    font-size: calc(16/768*100vw);
-    padding: 1rem;
+    padding: 16px 24px;
+    font-size: 16px;
     height: auto;
+    min-height: 56px;
   }
 }
 
+/* Even smaller screens */
 @media (max-width: 480px) {
-  .learn-more-section .cta-section {
-    width: calc(100% - 1rem);
-    margin: 1.5rem auto;
-    padding: 1.5rem;
+  .learn-more-section .hero-heading {
+    font-size: 32px;
+  }
+
+  .learn-more-section .process-title {
+    font-size: 32px;
   }
 
   .learn-more-section .cta-heading {
     font-size: 32px;
   }
 
+  .learn-more-section .hero-description,
+  .learn-more-section .service-description,
+  .learn-more-section .feature-description,
+  .learn-more-section .step-description,
   .learn-more-section .cta-description {
-    font-size: calc(14/480*100vw);
+    font-size: 15px;
+  }
+
+  .learn-more-section .service-title,
+  .learn-more-section .step-title {
+    font-size: 22px;
+  }
+
+  .learn-more-section .step-number {
+    font-size: 32px;
+  }
+
+  .learn-more-section .process-step,
+  .learn-more-section .service-card {
+    padding: 24px 20px;
+  }
+
+  .learn-more-section .cta-section {
+    width: calc(100% - 32px);
+    padding: 24px 16px;
   }
 
   .learn-more-section .primary-button {
-    font-size: calc(14/480*100vw);
-    padding: 0.875rem;
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+}
+
+/* Small height screens */
+@media (max-height: 700px) {
+  .learn-more-section .process-step {
+    padding: 24px 20px;
+  }
+
+  .learn-more-section .step-number {
+    margin-bottom: 12px;
+  }
+
+  .learn-more-section .step-title {
+    margin-bottom: 8px;
   }
 }
 
