@@ -33,11 +33,18 @@ import Footer from '@/app/components/Footer'
 import { Poppins } from 'next/font/google'
 // import { Inter } from 'next/font/google'
 
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700', '800'],
+const poppinsRegular = Poppins({
+  weight: ['400', '500'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-poppins',
+  variable: '--font-poppins-regular',
+})
+
+const poppinsBold = Poppins({
+  weight: ['600', '700', '800'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins-bold',
 })
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -53,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable}`} style={{ background: '#000000' }}>
-      <body style={{ background: '#000000' }}>
+    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`} style={{ background: '#000000' }}>
+      <body className={poppinsRegular.className} style={{ background: '#000000' }}>
         <div className="layout-root" style={{ background: '#000000' }}>
           <Header />
           <main>
