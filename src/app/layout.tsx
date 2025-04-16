@@ -47,14 +47,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`} style={{ background: '#000000' }}>
-      <body className={poppinsRegular.className} style={{ background: '#000000' }}>
-        <div className="layout-root" style={{ background: '#000000' }}>
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
-        </div>
+      <body className={poppinsRegular.className}>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )
