@@ -56,47 +56,24 @@ export default function PDFForm() {
 
   return (
     <div className="pdf-form">
-      <h2 className="pdf-form__heading">The Future of Business Operations: Your Guide to AI Infrastructure</h2>
+      <h2 className="pdf-form__heading">
+        The Ultimate Guide to Business Success in the Age of AI
+      </h2>
       <p className="pdf-form__description">
-        Discover how custom AI infrastructures are revolutionizing business operations. Learn how 4Runr Systems eliminate repetitive work, optimize decisions, and scale with your business. Get our comprehensive guide to building intelligent, modular systems that become the heart of your operations.
+        Discover proven strategies, real-world case studies, and practical tools to help your business thrive with AI. This comprehensive guide, brought to you by the AI experts at 4runr, is your essential resource for navigating the AI landscape and unlocking transformative results.
       </p>
-
-      {/* Language Switch and Download Button */}
       <div className="pdf-form__main-action">
         <div className="pdf-language-selector">
-          <button 
-            className={`language-option ${currentLanguage === 'en' ? 'active' : ''}`}
-            onClick={() => handleLanguageChange('en')}
-          >
-            EN
-          </button>
-          <button 
-            className={`language-option ${currentLanguage === 'fr' ? 'active' : ''}`}
-            onClick={() => handleLanguageChange('fr')}
-          >
-            FR
-          </button>
+          <button className="language-option active">EN</button>
+          <button className="language-option">FR</button>
         </div>
-        <button onClick={handleDownload} className="pdf-form__button">
+        <button className="pdf-form__button">
           <span className="button-text">Download Free Guide</span>
           <span className="button-icon">↓</span>
         </button>
       </div>
-
-      {showSuccess && (
-        <p className="pdf-form__success" style={{ display: 'block' }}>
-          Success! Your download has started.
-        </p>
-      )}
-      {showError && (
-        <p className="pdf-form__error" style={{ display: 'block' }}>
-          Oops! Something went wrong. Please try again.
-        </p>
-      )}
-
-      {/* Fine Print */}
       <p className="pdf-form__fine-print">
-        Get your complimentary guide to building a future-proof business with AI infrastructure. Learn how to eliminate manual work and unlock your business's highest potential.
+        Get your complimentary copy of our comprehensive guide now. Don't miss out on this valuable resource—claim your free PDF today!
       </p>
     </div>
   );

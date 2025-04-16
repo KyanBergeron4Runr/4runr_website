@@ -11,12 +11,12 @@
   --font-heading: var(--font-poppins-bold);
   
   /* Text Sizes - Using vw for better scaling */
-  --h1-size: calc(56 / 1920 * 100vw);      /* Main titles */
-  --h2-size: calc(40 / 1920 * 100vw);      /* Section headings */
-  --h3-size: calc(28 / 1920 * 100vw);      /* Subsection headings */
-  --text-body: calc(18 / 1920 * 100vw);    /* Normal text */
-  --text-small: calc(14 / 1920 * 100vw);   /* Small text */
-  --text-button: calc(16 / 1920 * 100vw);  /* Button text */
+  --h1-size: calc(64 / 1920 * 100vw);      /* Main titles - increased from 56 */
+  --h2-size: calc(48 / 1920 * 100vw);      /* Section headings - increased from 40 */
+  --h3-size: calc(32 / 1920 * 100vw);      /* Subsection headings - increased from 28 */
+  --text-body: calc(20 / 1920 * 100vw);    /* Normal text - increased from 18 */
+  --text-small: calc(16 / 1920 * 100vw);   /* Small text - increased from 14 */
+  --text-button: calc(18 / 1920 * 100vw);  /* Button text - increased from 16 */
   
   /* Line Heights */
   --line-height-h1: 1.2;
@@ -30,7 +30,7 @@
   --letter-spacing-h3: normal;
   
   /* Font Weights */
-  --weight-h1: 700;
+  --weight-h1: 800;
   --weight-h2: 700;
   --weight-h3: 600;
   --weight-body: 400;
@@ -44,30 +44,44 @@
   --color-text-muted: rgba(255, 255, 255, 0.7);
 }
 
-/* Reset default margins and ensure full black background */
-html, body {
+/* Reset margin and padding */
+* {
   margin: 0 !important;
   padding: 0 !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  overflow-x: hidden !important;
-  background-color: #000 !important;
+  box-sizing: border-box !important;
 }
 
-body {
+/* Prevent white border on refresh */
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  max-width: 100% !important;
+  background: #000000 !important;
   position: relative !important;
-  color: rgb(var(--foreground-rgb));
-  font-family: var(--font-sans);
-  font-size: var(--text-body) !important;
-  line-height: var(--line-height-body) !important;
-  font-weight: var(--weight-body);
+  scrollbar-gutter: stable !important;
   border: none !important;
   outline: none !important;
 }
 
-#__next {
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
   min-height: 100vh !important;
-  background-color: #000 !important;
+  max-width: 100% !important;
+  background: #000000 !important;
+  position: relative !important;
+  color: rgb(var(--foreground-rgb));
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--weight-body);
+  border: none !important;
+  outline: none !important;
 }
 
 /* Global section styles */
@@ -109,39 +123,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-family: var(--font-heading) !important;
-  font-size: var(--h1-size) !important;
-  line-height: var(--line-height-h1) !important;
-  letter-spacing: var(--letter-spacing-h1) !important;
-  font-weight: var(--weight-h1) !important;
+  font-family: var(--font-heading);
+  font-size: var(--h1-size);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-h1);
+  font-weight: var(--weight-h1);
 }
 
 h2 {
-  font-family: var(--font-heading) !important;
-  font-size: var(--h2-size) !important;
-  line-height: var(--line-height-h2) !important;
-  letter-spacing: var(--letter-spacing-h2) !important;
-  font-weight: var(--weight-h2) !important;
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  line-height: var(--line-height-h2);
+  letter-spacing: var(--letter-spacing-h2);
+  font-weight: var(--weight-h2);
 }
 
 h3 {
-  font-family: var(--font-heading) !important;
-  font-size: var(--h3-size) !important;
-  line-height: var(--line-height-h3) !important;
-  letter-spacing: var(--letter-spacing-h3) !important;
-  font-weight: var(--weight-h3) !important;
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  line-height: var(--line-height-h3);
+  letter-spacing: var(--letter-spacing-h3);
+  font-weight: var(--weight-h3);
 }
 
 /* Body Text */
 p {
-  font-size: var(--text-body) !important;
-  line-height: var(--line-height-body) !important;
+  font-size: var(--text-body);
+  line-height: var(--line-height-body);
   margin: 0;
 }
 
 .fine-print {
-  font-size: var(--text-small) !important;
-  line-height: var(--line-height-body) !important;
+  font-size: var(--text-small);
+  line-height: var(--line-height-body);
   color: var(--color-text-muted);
 }
 
@@ -149,9 +163,9 @@ p {
 .button, 
 .cta-button, 
 a[class*="button"] {
-  font-size: var(--text-button) !important;
-  font-weight: var(--weight-button) !important;
-  font-family: var(--font-heading) !important;
+  font-size: var(--text-button);
+  font-weight: var(--weight-button);
+  font-family: var(--font-heading);
   padding: calc(16 / 1920 * 100vw) calc(32 / 1920 * 100vw);
   display: inline-flex;
   align-items: center;
@@ -163,8 +177,8 @@ a[class*="button"] {
 /* Tablet Breakpoint */
 @media (max-width: 1024px) {
   :root {
-    --h1-size: calc(42 / 1024 * 100vw);
-    --h2-size: calc(32 / 1024 * 100vw);
+    --h1-size: calc(48 / 1024 * 100vw);
+    --h2-size: calc(36 / 1024 * 100vw);
     --h3-size: calc(24 / 1024 * 100vw);
     --text-body: calc(16 / 1024 * 100vw);
     --text-small: calc(14 / 1024 * 100vw);
@@ -175,9 +189,9 @@ a[class*="button"] {
 /* Mobile Breakpoint */
 @media (max-width: 767px) {
   :root {
-    --h1-size: 36px;
-    --h2-size: 28px;
-    --h3-size: 22px;
+    --h1-size: 40px;
+    --h2-size: 32px;
+    --h3-size: 24px;
     --text-body: 16px;
     --text-small: 14px;
     --text-button: 16px;
@@ -194,7 +208,7 @@ a[class*="button"] {
 @media (max-width: 375px) {
   :root {
     --h1-size: 32px;
-    --h2-size: 26px;
+    --h2-size: 28px;
     --h3-size: 20px;
     --text-body: 16px;
     --text-small: 13px;

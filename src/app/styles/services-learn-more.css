@@ -157,29 +157,30 @@
 
 .learn-more-section .process-steps {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 24px;
   width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
 
 .learn-more-section .process-step {
-  text-align: center;
+  text-align: left;
   position: relative;
-  padding: 40px 30px;
+  padding: 32px;
   background: rgba(106, 90, 205, 0.05);
   border-radius: 16px;
   transition: background-color 0.3s ease;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  min-height: 300px;
-  width: calc(25% - 18px);
+  min-height: auto;
+  width: 100%;
   margin: 0;
   box-sizing: border-box;
+  gap: 24px;
 }
 
 .learn-more-section .process-step:hover {
@@ -190,14 +191,19 @@
   font-family: var(--font-heading);
   font-size: 32px;
   color: #6a5acd;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  min-width: 60px;
+}
+
+.learn-more-section .step-content {
+  flex: 1;
 }
 
 .learn-more-section .step-title {
   font-family: var(--font-heading);
   font-size: 24px;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   width: 100%;
 }
 
@@ -208,7 +214,7 @@
   line-height: 1.6;
   width: 100%;
   margin: 0;
-  padding: 0 10px;
+  padding: 0;
 }
 
 .learn-more-section .cta-section {
@@ -308,9 +314,23 @@
     font-size: calc(11/768*100vw);
   }
 
-  .learn-more-section .process-steps {
-    flex-direction: column;
-    gap: calc(20/768*100vw);
+  .learn-more-section .process-step {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .learn-more-section .step-number {
+    font-size: 28px;
+    min-width: 50px;
+  }
+
+  .learn-more-section .step-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .learn-more-section .step-description {
+    font-size: 14px;
   }
 
   .learn-more-section .cta-section {

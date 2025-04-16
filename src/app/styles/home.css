@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto !important; /* Allow vertical scrolling */
 }
 
 /* Base section spacing */
@@ -64,7 +63,6 @@
   align-items: center;
   padding: 4rem 0 !important;
   background: #000000;
-  overflow-y: visible !important; /* Allow content to flow */
 }
 
 /* Fix for specific sections that might cause issues */

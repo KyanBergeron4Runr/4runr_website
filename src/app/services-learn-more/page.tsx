@@ -157,23 +157,31 @@ export default function ServicesLearnMorePage() {
         <div className="process-steps">
           <div className="process-step">
             <div className="step-number">01</div>
-            <div className="step-title">Discovery & Analysis</div>
-            <p className="step-description">We analyze your current systems to identify opportunities for AI integration.</p>
+            <div className="step-content">
+              <div className="step-title">Discovery & Analysis</div>
+              <p className="step-description">We analyze your current systems to identify opportunities for AI integration.</p>
+            </div>
           </div>
           <div className="process-step">
             <div className="step-number">02</div>
-            <div className="step-title">Service Design</div>
-            <p className="step-description">Our experts design a customized service aligned with your goals.</p>
+            <div className="step-content">
+              <div className="step-title">Service Design</div>
+              <p className="step-description">Our experts design a customized service aligned with your goals.</p>
+            </div>
           </div>
           <div className="process-step">
             <div className="step-number">03</div>
-            <div className="step-title">Implementation</div>
-            <p className="step-description">We deploy your services using industry best practices.</p>
+            <div className="step-content">
+              <div className="step-title">Implementation</div>
+              <p className="step-description">We deploy your services using industry best practices.</p>
+            </div>
           </div>
           <div className="process-step">
             <div className="step-number">04</div>
-            <div className="step-title">Optimization & Support</div>
-            <p className="step-description">Continuous monitoring ensures your services evolve with your needs.</p>
+            <div className="step-content">
+              <div className="step-title">Optimization & Support</div>
+              <p className="step-description">Continuous monitoring ensures your services evolve with your needs.</p>
+            </div>
           </div>
         </div>
       </div>
