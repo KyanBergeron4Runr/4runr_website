@@ -30,22 +30,8 @@ import './styles/responsive-implementation.css'
 import { Metadata } from 'next'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
-import { Poppins } from 'next/font/google'
+import { poppinsRegular, poppinsBold } from './fonts'
 // import { Inter } from 'next/font/google'
-
-const poppinsRegular = Poppins({
-  weight: ['400', '500'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins-regular',
-})
-
-const poppinsBold = Poppins({
-  weight: ['600', '700', '800'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins-bold',
-})
 
 // const inter = Inter({ subsets: ['latin'] })
 
