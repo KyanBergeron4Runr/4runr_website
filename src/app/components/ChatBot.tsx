@@ -11,35 +11,6 @@ interface Message {
   isError?: boolean;
 }
 
-const TypingText = ({ text }: { text: string }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [isDone, setIsDone] = useState(false);
-
-  useEffect(() => {
-    let currentText = '';
-    let currentIndex = 0;
-
-    const interval = setInterval(() => {
-      if (currentIndex < text.length) {
-        currentText += text[currentIndex];
-        setDisplayedText(currentText);
-        currentIndex++;
-      } else {
-        setIsDone(true);
-        clearInterval(interval);
-      }
-    }, 30); // Adjust speed of typing here
-
-    return () => clearInterval(interval);
-  }, [text]);
-
-  return (
-    <div className={`typing-text ${isDone ? 'visible' : ''}`}>
-      {displayedText}
-    </div>
-  );
-};
-
 const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
@@ -75,25 +46,25 @@ const ChatBot = () => {
     if (inView && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
       
-      // Start first typing animation immediately when in view
+      // Show first typing dots
       setTypingFirst(true);
       
-      // Show first message after typing animation
+      // After typing dots, show first message
       setTimeout(() => {
         setTypingFirst(false);
         setFirstMessageVisible(true);
         
-        // Start second typing animation with a delay
+        // Show second typing dots after a delay
         setTimeout(() => {
           setTypingSecond(true);
           
-          // Show second message after typing animation
+          // After typing dots, show second message
           setTimeout(() => {
             setTypingSecond(false);
             setSecondMessageVisible(true);
-          }, 1500); // Reduced from 2500ms to 1500ms for quicker appearance after typing
-        }, 400); // Reduced from 800ms to 400ms for quicker start of second typing
-      }, 1500); // Reduced from 2500ms to 1500ms for quicker appearance after typing
+          }, 1200); // Time to show typing dots
+        }, 400); // Delay before second message
+      }, 1200); // Time to show typing dots
     }
   }, [inView]);
 
@@ -163,7 +134,7 @@ const ChatBot = () => {
       
       <div className="chat-container">
         <div className="messages" id="messages" ref={setRefs}>
-          {/* Initial messages with typing animation */}
+          {/* Initial messages */}
           {!isUserInteracting && (
             <>
               {isTypingFirst && (
@@ -178,9 +149,7 @@ const ChatBot = () => {
               
               <div className={`message bot-message ${isFirstMessageVisible ? 'visible' : ''}`}>
                 <div className={`message-bubble ${isFirstMessageVisible ? 'visible' : ''}`}>
-                  {isFirstMessageVisible && (
-                    <TypingText text="Hi there! I'm your 4Runr AI consultant. 👋" />
-                  )}
+                  Hi there! I'm your 4Runr AI consultant. 👋
                 </div>
               </div>
 
@@ -196,9 +165,7 @@ const ChatBot = () => {
               
               <div className={`message bot-message ${isSecondMessageVisible ? 'visible' : ''}`}>
                 <div className={`message-bubble ${isSecondMessageVisible ? 'visible' : ''}`}>
-                  {isSecondMessageVisible && (
-                    <TypingText text="I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?" />
-                  )}
+                  I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
                 </div>
               </div>
             </>
@@ -211,11 +178,7 @@ const ChatBot = () => {
               className={`message ${message.isUser ? 'user-message' : 'bot-message'} ${message.isError ? 'error-message' : ''} visible`}
             >
               <div className="message-bubble visible">
-                {message.isUser ? (
-                  message.text
-                ) : (
-                  <TypingText text={message.text} />
-                )}
+                {message.text}
               </div>
             </div>
           ))}
