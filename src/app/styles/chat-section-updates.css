@@ -52,6 +52,7 @@
     font-size: 14px !important;
     max-width: 90% !important;
     word-wrap: break-word !important;
+    font-family: var(--font-sans) !important;
   }
   
   /* Make input area bigger on mobile */
@@ -93,5 +94,33 @@
     line-height: 1.4 !important;
     width: 100% !important;
     overflow-x: hidden !important;
+  }
+} 
+
+/* Chat section specific updates */
+.page-section .message-bubble {
+  font-family: var(--font-sans) !important;
+  font-weight: 400 !important;
+  color: white !important;
+}
+
+/* Desktop styles */
+@media (min-width: 1367px) {
+  .page-section .message-bubble {
+    font-family: var(--font-sans) !important;
+  }
+}
+
+/* Laptop styles */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .page-section .message-bubble {
+    font-family: var(--font-sans) !important;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .page-section .message-bubble {
+    font-family: var(--font-sans) !important;
   }
 } 
