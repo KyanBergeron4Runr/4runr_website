@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import '../styles/chatbot.css'
 import '../styles/chat-section-updates.css'
 import { useInView } from 'react-intersection-observer'
@@ -11,7 +11,7 @@ interface Message {
   isError?: boolean;
 }
 
-export default function ChatBot() {
+const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -19,48 +19,33 @@ export default function ChatBot() {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const sessionId = useRef(`session_${Date.now()}`);
   const hasInitializedRef = useRef(false);
+
+  // Animation states
   const [isFirstMessageVisible, setFirstMessageVisible] = useState(false);
   const [isSecondMessageVisible, setSecondMessageVisible] = useState(false);
   const [isTypingFirst, setTypingFirst] = useState(false);
   const [isTypingSecond, setTypingSecond] = useState(false);
-  const { ref, inView } = useInView({
+  const { ref: inViewRef, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true
   });
 
+  // Combine refs
+  const setRefs = (node: HTMLDivElement | null) => {
+    messagesContainerRef.current = node;
+    inViewRef(node);
+  };
+
   const scrollToBottom = () => {
-    if (messagesContainerRef.current && isUserInteracting) {
-      const container = messagesContainerRef.current;
-      container.scrollTop = container.scrollHeight;
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
     }
   };
 
   useEffect(() => {
-    if (hasInitializedRef.current) return;
-    hasInitializedRef.current = true;
-
-    // First welcome message
-    setTimeout(() => {
-      setMessages([
-        { text: "Hi there! I'm your 4Runr AI consultant. 👋", isUser: false }
-      ]);
-    }, 1000);
-
-    // Second welcome message
-    setTimeout(() => {
-      setMessages(prev => [...prev, {
-        text: "I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?",
-        isUser: false
-      }]);
-    }, 2500);
-  }, []);
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, isUserInteracting]);
-
-  useEffect(() => {
-    if (inView) {
+    if (inView && !hasInitializedRef.current) {
+      hasInitializedRef.current = true;
+      
       // Start first typing animation
       setTypingFirst(true);
       
@@ -83,15 +68,18 @@ export default function ChatBot() {
     }
   }, [inView]);
 
-  const handleSend = async () => {
-    if (!inputMessage.trim()) return;
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isLoading, isFirstMessageVisible, isSecondMessageVisible]);
 
+  const handleSend = async () => {
+    if (!inputMessage.trim() || isLoading) return;
+
+    setIsUserInteracting(true);
     const userMessage = inputMessage.trim();
     setInputMessage('');
-    setIsLoading(true);
-    setIsUserInteracting(true);
-
     setMessages(prev => [...prev, { text: userMessage, isUser: true }]);
+    setIsLoading(true);
 
     try {
       const payload = {
@@ -136,61 +124,72 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="page-section" ref={ref}>
+    <div className="page-section">
       <header className="header">
         <h2 className="title">Transform Your Business Challenges into Opportunities</h2>
         <div className="subtitle">
           Chat with our AI assistant to discover how we can automate and optimize your business operations.
         </div>
       </header>
-
-      <div 
-        className="chat-container"
-        onMouseEnter={() => setIsUserInteracting(true)}
-        onMouseLeave={() => setIsUserInteracting(false)}
-        onClick={() => setIsUserInteracting(true)}
-        onFocus={() => setIsUserInteracting(true)}
-      >
-        <div className="messages" id="messages" ref={messagesContainerRef}>
-          {isTypingFirst && (
-            <div className="message bot-message">
-              <div className="typing-indicator">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          )}
-          
-          <div className={`message bot-message ${isFirstMessageVisible ? 'visible' : ''}`}>
-            <div className={`message-bubble ${isFirstMessageVisible ? 'visible' : ''}`}>
-              Hi there! I'm your 4Runr AI consultant. 👋
-            </div>
-          </div>
-
-          {isTypingSecond && (
-            <div className="message bot-message">
-              <div className="typing-indicator">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          )}
-          
-          <div className={`message bot-message ${isSecondMessageVisible ? 'visible' : ''}`}>
-            <div className={`message-bubble ${isSecondMessageVisible ? 'visible' : ''}`}>
-              I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
-            </div>
-          </div>
-          {isLoading && (
-            <div className="message bot-message typing">
-              <div className="message-bubble">
-                <div className="typing-dots">
-                  <span className="typing-dot"></span>
-                  <span className="typing-dot"></span>
-                  <span className="typing-dot"></span>
+      
+      <div className="chat-container">
+        <div className="messages" id="messages" ref={setRefs}>
+          {/* Initial messages with typing animation */}
+          {!isUserInteracting && (
+            <>
+              {isTypingFirst && (
+                <div className="message bot-message">
+                  <div className="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
+              )}
+              
+              <div className={`message bot-message ${isFirstMessageVisible ? 'visible' : ''}`}>
+                <div className={`message-bubble ${isFirstMessageVisible ? 'visible' : ''}`}>
+                  Hi there! I'm your 4Runr AI consultant. 👋
+                </div>
+              </div>
+
+              {isTypingSecond && (
+                <div className="message bot-message">
+                  <div className="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              )}
+              
+              <div className={`message bot-message ${isSecondMessageVisible ? 'visible' : ''}`}>
+                <div className={`message-bubble ${isSecondMessageVisible ? 'visible' : ''}`}>
+                  I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* User interaction messages */}
+          {messages.map((message, index) => (
+            <div
+              key={index}
+              className={`message ${message.isUser ? 'user-message' : 'bot-message'} ${message.isError ? 'error-message' : ''} visible`}
+            >
+              <div className="message-bubble visible">
+                {message.text}
+              </div>
+            </div>
+          ))}
+
+          {/* Loading indicator for user interactions */}
+          {isLoading && (
+            <div className="message bot-message">
+              <div className="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
             </div>
           )}
@@ -203,22 +202,9 @@ export default function ChatBot() {
             placeholder="Type your message here..."
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
-            onFocus={() => setIsUserInteracting(true)}
-            onKeyPress={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                handleSend();
-              }
-            }}
-            disabled={isLoading}
+            onKeyPress={(e) => e.key === 'Enter' && handleSend()}
           />
-          <button
-            className="send-button"
-            onClick={handleSend}
-            disabled={isLoading}
-          >
-            ➜
-          </button>
+          <button className="send-button" onClick={handleSend}>➜</button>
         </div>
       </div>
 
@@ -226,10 +212,16 @@ export default function ChatBot() {
         <div className="bottom-text">
           Let's collaborate to create real solutions for your business. We're ready to listen and build with you.
         </div>
-        <a href="https://4runrtech.com/pages/contact" className="cta-button" target="_blank">
+        <a
+          href="https://4runrtech.com/pages/contact"
+          className="cta-button"
+          target="_blank"
+        >
           Start Building Together
         </a>
       </div>
     </div>
   );
-} 
+};
+
+export default ChatBot; 
