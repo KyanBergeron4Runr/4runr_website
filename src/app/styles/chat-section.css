@@ -1,3 +1,4 @@
+/* Base styles */
 .messages {
   display: flex;
   flex-direction: column;
@@ -13,8 +14,8 @@
   margin-bottom: 1rem;
 }
 
-.message-bubble {
-  font-family: var(--font-sans) !important;
+html body .message-bubble {
+  font-family: var(--font-poppins-regular), sans-serif !important;
   font-size: 1rem;
   line-height: 1.5;
   padding: 1rem 1.5rem;
@@ -23,16 +24,16 @@
   color: white;
 }
 
-.bot-message .message-bubble {
+html body .bot-message .message-bubble {
   background: linear-gradient(135deg, rgba(75, 0, 130, 0.1), rgba(72, 61, 139, 0.1));
   border-left: 3px solid #4B0082;
-  font-family: var(--font-sans) !important;
+  font-family: var(--font-poppins-regular), sans-serif !important;
   font-weight: 400;
 }
 
 /* Desktop styles */
 @media (min-width: 1367px) {
-  .message-bubble {
+  html body .message-bubble {
     font-size: calc(18/1920 * 100vw) !important;
     line-height: 1.5 !important;
     padding: calc(16/1920 * 100vw) calc(24/1920 * 100vw) !important;
@@ -41,7 +42,7 @@
 
 /* Laptop styles */
 @media (min-width: 1024px) and (max-width: 1366px) {
-  .message-bubble {
+  html body .message-bubble {
     font-size: calc(16/1366 * 100vw) !important;
     line-height: 1.5 !important;
     padding: calc(14/1366 * 100vw) calc(20/1366 * 100vw) !important;
@@ -50,7 +51,7 @@
 
 /* Mobile styles */
 @media (max-width: 767px) {
-  .message-bubble {
+  html body .message-bubble {
     font-size: 0.9rem !important;
     line-height: 1.4 !important;
     padding: 0.8rem 1.2rem !important;
