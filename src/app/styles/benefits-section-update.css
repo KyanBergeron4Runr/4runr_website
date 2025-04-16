@@ -181,6 +181,33 @@ section.benefits-section div.desktop-version {
     z-index: -1 !important;
     pointer-events: none !important;
   }
+
+  /* Ultra-specific selectors for text consistency */
+  html body section.benefits-section div.container div.desktop-version div.benefit-item-wrapper div.benefit-item div.benefit-bg h3,
+  html body section.benefits-section div.container div.desktop-version div.bottom-item-wrapper div.benefit-item div.benefit-bg h3 {
+    font-size: calc(32/1920 * 100vw) !important;
+    line-height: 1.2 !important;
+    margin-bottom: calc(16/1920 * 100vw) !important;
+    font-weight: 600 !important;
+    color: white !important;
+    text-align: center !important;
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body section.benefits-section div.container div.desktop-version div.benefit-item-wrapper div.benefit-item div.benefit-bg p,
+  html body section.benefits-section div.container div.desktop-version div.bottom-item-wrapper div.benefit-item div.benefit-bg p {
+    font-size: calc(20/1920 * 100vw) !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 80% !important;
+    max-width: 80% !important;
+    padding: 0 !important;
+    word-wrap: break-word !important;
+  }
 }
 
 /* LAPTOP: Make buttons bigger */
@@ -411,4 +438,10 @@ section.benefits-section div.desktop-version {
     background: rgba(0, 0, 0, 0.8) !important;
     border: 1px solid rgba(106, 90, 205, 0.4) !important;
   }
+}
+
+/* Remove any conflicting styles */
+section.benefits-section div.benefit-item-wrapper div.benefit-item:nth-child(2) div.benefit-bg h3,
+section.benefits-section div.benefit-item-wrapper div.benefit-item:nth-child(2) div.benefit-bg p {
+  font-size: inherit !important;
 } 

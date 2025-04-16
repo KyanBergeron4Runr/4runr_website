@@ -96,13 +96,9 @@
 }
 
 .benefit-bg h3 {
-  margin: 0 0 1.2vw 0;
-  font-size: calc(var(--h3-size) * 1.3);
-  font-weight: var(--weight-h3);
-  font-family: var(--font-heading);
-  color: #fff;
-  line-height: var(--line-height-h3);
-  transform: none;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .benefit-bg h4 {
@@ -115,13 +111,8 @@
 }
 
 .benefit-bg p {
-  font-size: calc(var(--text-body) * 1.3);
-  line-height: var(--line-height-body);
-  color: #ccc;
-  padding: 0 2.083vw;
-  font-family: var(--font-sans);
-  margin-bottom: 1.042vw;
-  transform: none;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
 }
 
 .button-group {
