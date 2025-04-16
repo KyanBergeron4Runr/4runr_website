@@ -30,14 +30,21 @@ import './styles/responsive-implementation.css'
 import { Metadata } from 'next'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
-import { poppinsRegular, poppinsBold } from './fonts'
+import { Poppins } from 'next/font/google'
 // import { Inter } from 'next/font/google'
+
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+})
 
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '4Runr Tech',
-  description: 'Transform your business with custom AI & automation solutions',
+  title: '4Runr - Enterprise AI Solutions',
+  description: 'Empowering businesses with cutting-edge AI solutions',
 }
 
 export default function RootLayout({
@@ -46,13 +53,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppinsRegular.variable} ${poppinsBold.variable}`}>
-      <body className={poppinsRegular.className}>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
+    <html lang="en" className={`${poppins.variable}`} style={{ background: '#000000' }}>
+      <body style={{ background: '#000000' }}>
+        <div className="layout-root" style={{ background: '#000000' }}>
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
