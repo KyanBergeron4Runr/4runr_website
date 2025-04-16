@@ -55,26 +55,19 @@ section.benefits-section div.desktop-version {
   
   /* Increase heading text size */
   section.benefits-section div.benefit-item div.benefit-bg h3 {
-    font-size: calc(var(--h3-size) * 1.8) !important;
-    margin-bottom: 1vw !important;
+    font-size: calc(32/1920 * 100vw) !important;
     line-height: 1.2 !important;
-    padding: 0 !important;
-    width: 80% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
+    margin-bottom: calc(16/1920 * 100vw) !important;
+    font-weight: 600 !important;
+    color: white !important;
   }
   
   /* Increase paragraph text size */
   section.benefits-section div.benefit-item div.benefit-bg p {
-    font-size: calc(var(--text-body) * 1.8) !important;
-    line-height: 1.4 !important;
-    padding: 0 !important;
-    max-width: 80% !important;
-    margin: 0 auto !important;
-    word-wrap: break-word !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
+    font-size: calc(20/1920 * 100vw) !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 !important;
   }
 
   /* Make "Build AI" section text smaller */
