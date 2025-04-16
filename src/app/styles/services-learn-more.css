@@ -1,15 +1,33 @@
+:root {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 .learn-more-section {
   background-color: #000;
   color: white;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;  /* Changed from 100% to 100vw */
+  max-width: 100%;  /* Add max-width to prevent horizontal scroll */
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0;
-  overflow-x: hidden;  /* Prevent horizontal scroll */
-  align-items: center;  /* Center all sections horizontally */
+  overflow-x: hidden;
+  align-items: center;
+  position: relative;  /* Add position relative */
+  left: 0;  /* Ensure alignment */
+  right: 0;
 }
 
 .learn-more-section .hero-container {
