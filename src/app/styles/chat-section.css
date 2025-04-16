@@ -1,0 +1,58 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.message-bubble {
+  font-family: var(--font-sans) !important;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  color: white;
+}
+
+.bot-message .message-bubble {
+  background: linear-gradient(135deg, rgba(75, 0, 130, 0.1), rgba(72, 61, 139, 0.1));
+  border-left: 3px solid #4B0082;
+  font-family: var(--font-sans) !important;
+  font-weight: 400;
+}
+
+/* Desktop styles */
+@media (min-width: 1367px) {
+  .message-bubble {
+    font-size: calc(18/1920 * 100vw) !important;
+    line-height: 1.5 !important;
+    padding: calc(16/1920 * 100vw) calc(24/1920 * 100vw) !important;
+  }
+}
+
+/* Laptop styles */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .message-bubble {
+    font-size: calc(16/1366 * 100vw) !important;
+    line-height: 1.5 !important;
+    padding: calc(14/1366 * 100vw) calc(20/1366 * 100vw) !important;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .message-bubble {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    padding: 0.8rem 1.2rem !important;
+  }
+} 
