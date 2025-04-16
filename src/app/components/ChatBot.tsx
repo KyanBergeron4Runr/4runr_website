@@ -46,29 +46,25 @@ const ChatBot = () => {
     if (inView && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
       
-      // Start with first typing dots
-      setTypingFirst(true);
+      // First message sequence
+      setTypingFirst(true); // Show first typing dots
+      setFirstMessageVisible(false); // Ensure message is hidden
       
-      // Show first message after typing dots animation
       setTimeout(() => {
-        setTypingFirst(false);
+        setTypingFirst(false); // Hide typing dots
+        setFirstMessageVisible(true); // Show first message
+        
+        // Second message sequence
         setTimeout(() => {
-          setFirstMessageVisible(true);
+          setTypingSecond(true); // Show second typing dots
+          setSecondMessageVisible(false); // Ensure message is hidden
           
-          // Start second typing dots after a delay
           setTimeout(() => {
-            setTypingSecond(true);
-            
-            // Show second message after typing dots animation
-            setTimeout(() => {
-              setTypingSecond(false);
-              setTimeout(() => {
-                setSecondMessageVisible(true);
-              }, 300); // Small delay before showing message
-            }, 2000); // Show typing dots for 2 seconds
-          }, 800); // Wait before starting second typing
-        }, 300); // Small delay before showing message
-      }, 2000); // Show typing dots for 2 seconds
+            setTypingSecond(false); // Hide typing dots
+            setSecondMessageVisible(true); // Show second message
+          }, 2000); // Show typing dots for 2 seconds
+        }, 1000); // Wait 1 second after first message
+      }, 2000); // Show first typing dots for 2 seconds
     }
   }, [inView]);
 
@@ -82,7 +78,11 @@ const ChatBot = () => {
     setIsUserInteracting(true);
     const userMessage = inputMessage.trim();
     setInputMessage('');
+    
+    // Add user message immediately
     setMessages(prev => [...prev, { text: userMessage, isUser: true }]);
+    
+    // Show loading dots
     setIsLoading(true);
 
     try {
@@ -106,24 +106,27 @@ const ChatBot = () => {
         const data = await response.json();
         const assistantMessage = data.response || data.message || data.content || data.text;
         
-        if (assistantMessage) {
-          setMessages(prev => [...prev, { text: assistantMessage, isUser: false }]);
-        } else {
-          console.log('Full response data:', data);
-          setMessages(prev => [...prev, { text: "Message received.", isUser: false }]);
-        }
+        // Keep loading dots visible for a moment before showing response
+        setTimeout(() => {
+          setIsLoading(false);
+          if (assistantMessage) {
+            setMessages(prev => [...prev, { text: assistantMessage, isUser: false }]);
+          } else {
+            console.log('Full response data:', data);
+            setMessages(prev => [...prev, { text: "Message received.", isUser: false }]);
+          }
+        }, 1500); // Show loading dots for 1.5 seconds after response received
       } else {
         throw new Error('Invalid response');
       }
     } catch (error) {
       console.error('Error:', error);
+      setIsLoading(false);
       setMessages(prev => [...prev, {
         text: 'Unable to process response. Please try again.',
         isUser: false,
         isError: true
       }]);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -141,8 +144,9 @@ const ChatBot = () => {
           {/* Initial messages */}
           {!isUserInteracting && (
             <>
+              {/* First message sequence */}
               {isTypingFirst && (
-                <div className="message bot-message">
+                <div className="message bot-message visible">
                   <div className="typing-indicator">
                     <span></span>
                     <span></span>
@@ -151,14 +155,17 @@ const ChatBot = () => {
                 </div>
               )}
               
-              <div className={`message bot-message ${isFirstMessageVisible ? 'visible' : ''}`}>
-                <div className={`message-bubble ${isFirstMessageVisible ? 'visible' : ''}`}>
-                  Hi there! I'm your 4Runr AI consultant. 👋
+              {isFirstMessageVisible && (
+                <div className="message bot-message visible">
+                  <div className="message-bubble visible">
+                    Hi there! I'm your 4Runr AI consultant. 👋
+                  </div>
                 </div>
-              </div>
+              )}
 
+              {/* Second message sequence */}
               {isTypingSecond && (
-                <div className="message bot-message">
+                <div className="message bot-message visible">
                   <div className="typing-indicator">
                     <span></span>
                     <span></span>
@@ -167,11 +174,13 @@ const ChatBot = () => {
                 </div>
               )}
               
-              <div className={`message bot-message ${isSecondMessageVisible ? 'visible' : ''}`}>
-                <div className={`message-bubble ${isSecondMessageVisible ? 'visible' : ''}`}>
-                  I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
+              {isSecondMessageVisible && (
+                <div className="message bot-message visible">
+                  <div className="message-bubble visible">
+                    I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
+                  </div>
                 </div>
-              </div>
+              )}
             </>
           )}
 
@@ -189,7 +198,7 @@ const ChatBot = () => {
 
           {/* Loading indicator for user interactions */}
           {isLoading && (
-            <div className="message bot-message">
+            <div className="message bot-message visible">
               <div className="typing-indicator">
                 <span></span>
                 <span></span>
