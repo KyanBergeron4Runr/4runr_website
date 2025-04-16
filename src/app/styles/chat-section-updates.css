@@ -151,52 +151,52 @@
   display: inline-flex;
   align-items: center;
   padding: 0.8rem 1.2rem;
-  background: linear-gradient(135deg, rgba(75, 0, 130, 0.1), rgba(72, 61, 139, 0.1));
-  border-left: 3px solid #4B0082;
+  background: rgba(75, 0, 130, 0.2);
   border-radius: 1rem;
   margin-bottom: 1rem;
-  opacity: 0;
-  transform: translateY(20px);
   animation: fadeIn 0.3s ease forwards;
 }
 
 .typing-indicator span {
   width: 8px;
   height: 8px;
-  background: white;
+  background: #ffffff;
   border-radius: 50%;
-  margin: 0 2px;
-  opacity: 0.6;
+  margin: 0 3px;
   display: inline-block;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 .typing-indicator span:nth-child(1) {
-  animation: typing 1s infinite 0s;
+  animation-name: bounce;
+  animation-delay: 0.2s;
 }
 
 .typing-indicator span:nth-child(2) {
-  animation: typing 1s infinite 0.2s;
+  animation-name: bounce;
+  animation-delay: 0.4s;
 }
 
 .typing-indicator span:nth-child(3) {
-  animation: typing 1s infinite 0.4s;
+  animation-name: bounce;
+  animation-delay: 0.6s;
 }
 
-@keyframes typing {
-  0%, 100% {
+@keyframes bounce {
+  0%, 60%, 100% {
     transform: translateY(0);
-    opacity: 0.6;
   }
-  50% {
-    transform: translateY(-4px);
-    opacity: 1;
+  30% {
+    transform: translateY(-10px);
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

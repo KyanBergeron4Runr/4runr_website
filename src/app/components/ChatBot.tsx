@@ -46,25 +46,25 @@ const ChatBot = () => {
     if (inView && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
       
-      // Start first typing animation
+      // Start first typing animation immediately when in view
       setTypingFirst(true);
       
-      // After typing animation, show first message
+      // Show first message after typing animation
       setTimeout(() => {
         setTypingFirst(false);
         setFirstMessageVisible(true);
         
-        // Start second typing animation after first message
+        // Start second typing animation with a delay
         setTimeout(() => {
           setTypingSecond(true);
           
-          // After second typing animation, show second message
+          // Show second message after typing animation
           setTimeout(() => {
             setTypingSecond(false);
             setSecondMessageVisible(true);
-          }, 2000); // Typing duration for second message
-        }, 500); // Delay before starting second typing
-      }, 2000); // Typing duration for first message
+          }, 2500); // Longer typing duration for second message
+        }, 800); // Shorter delay before second typing starts
+      }, 2500); // Longer typing duration for first message
     }
   }, [inView]);
 
