@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react'
 import '../styles/chatbot.css'
 import '../styles/chat-section-updates.css'
+import { useInView } from 'react-intersection-observer'
 
 interface Message {
   text: string;
@@ -18,6 +19,14 @@ export default function ChatBot() {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const sessionId = useRef(`session_${Date.now()}`);
   const hasInitializedRef = useRef(false);
+  const [isFirstMessageVisible, setFirstMessageVisible] = useState(false);
+  const [isSecondMessageVisible, setSecondMessageVisible] = useState(false);
+  const [isTypingFirst, setTypingFirst] = useState(false);
+  const [isTypingSecond, setTypingSecond] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  });
 
   const scrollToBottom = () => {
     if (messagesContainerRef.current && isUserInteracting) {
@@ -49,6 +58,30 @@ export default function ChatBot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isUserInteracting]);
+
+  useEffect(() => {
+    if (inView) {
+      // Start first typing animation
+      setTypingFirst(true);
+      
+      // After typing animation, show first message
+      setTimeout(() => {
+        setTypingFirst(false);
+        setFirstMessageVisible(true);
+        
+        // Start second typing animation after first message
+        setTimeout(() => {
+          setTypingSecond(true);
+          
+          // After second typing animation, show second message
+          setTimeout(() => {
+            setTypingSecond(false);
+            setSecondMessageVisible(true);
+          }, 2000); // Typing duration for second message
+        }, 500); // Delay before starting second typing
+      }, 2000); // Typing duration for first message
+    }
+  }, [inView]);
 
   const handleSend = async () => {
     if (!inputMessage.trim()) return;
@@ -103,7 +136,7 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="page-section">
+    <div className="page-section" ref={ref}>
       <header className="header">
         <h2 className="title">Transform Your Business Challenges into Opportunities</h2>
         <div className="subtitle">
@@ -119,16 +152,37 @@ export default function ChatBot() {
         onFocus={() => setIsUserInteracting(true)}
       >
         <div className="messages" id="messages" ref={messagesContainerRef}>
-          {messages.map((message, index) => (
-            <div
-              key={index}
-              className={`message ${message.isUser ? 'user-message' : 'bot-message'} ${message.isError ? 'error-message' : ''}`}
-            >
-              <div className="message-bubble">
-                {message.text}
+          {isTypingFirst && (
+            <div className="message bot-message">
+              <div className="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
             </div>
-          ))}
+          )}
+          
+          <div className={`message bot-message ${isFirstMessageVisible ? 'visible' : ''}`}>
+            <div className={`message-bubble ${isFirstMessageVisible ? 'visible' : ''}`}>
+              Hi there! I'm your 4Runr AI consultant. 👋
+            </div>
+          </div>
+
+          {isTypingSecond && (
+            <div className="message bot-message">
+              <div className="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          )}
+          
+          <div className={`message bot-message ${isSecondMessageVisible ? 'visible' : ''}`}>
+            <div className={`message-bubble ${isSecondMessageVisible ? 'visible' : ''}`}>
+              I help businesses identify opportunities for AI and automation. What's your biggest operational challenge right now?
+            </div>
+          </div>
           {isLoading && (
             <div className="message bot-message typing">
               <div className="message-bubble">
