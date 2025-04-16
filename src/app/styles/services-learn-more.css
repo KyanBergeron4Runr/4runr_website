@@ -22,7 +22,7 @@
 
 .learn-more-section .hero-heading {
   font-family: var(--font-heading);
-  font-size: calc(40/1920*100vw);
+  font-size: 56px;
   margin-bottom: calc(24/1920*100vw);
   color: white;
   text-align: center;
@@ -148,7 +148,7 @@
 
 .learn-more-section .process-title {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: 56px;
   color: white;
   text-align: center;
   margin-bottom: 40px;
@@ -240,7 +240,7 @@
 
 .learn-more-section .cta-heading {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: 56px;
   color: white;
   margin-bottom: 24px;
   text-align: center;
@@ -290,7 +290,7 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .learn-more-section .hero-heading {
-    font-size: calc(32/768*100vw);
+    font-size: 40px;
   }
 
   .learn-more-section .hero-description {
@@ -351,7 +351,7 @@
   }
 
   .learn-more-section .cta-heading {
-    font-size: calc(28/768*100vw);
+    font-size: 40px;
   }
 
   .learn-more-section .cta-description {
@@ -382,7 +382,7 @@
   }
 
   .learn-more-section .cta-heading {
-    font-size: calc(24/480*100vw);
+    font-size: 32px;
   }
 
   .learn-more-section .cta-description {
