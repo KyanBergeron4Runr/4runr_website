@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  overflow-x: hidden;  /* Prevent horizontal scroll */
 }
 
 .learn-more-section .hero-container {
@@ -137,6 +138,11 @@
   margin: calc(48/1920*100vw) auto;
   padding: 0 calc(64/1920*100vw);
   background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .learn-more-section .process-title {
@@ -145,12 +151,14 @@
   color: white;
   text-align: center;
   margin-bottom: calc(40/1920*100vw);
+  width: 100%;
 }
 
 .learn-more-section .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: calc(24/1920*100vw);
+  width: 100%;
 }
 
 .learn-more-section .process-step {
@@ -201,37 +209,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .learn-more-section .cta-heading {
   font-family: var(--font-heading);
-  font-size: var(--h2-size);
-  font-weight: var(--weight-h2);
-  line-height: var(--line-height-h2);
+  font-size: calc(32/1920*100vw);
   color: white;
-  margin-bottom: calc(20/1920*100vw);
-  width: 100%;
+  margin-bottom: calc(24/1920*100vw);
   text-align: center;
+  width: 100%;
 }
 
 .learn-more-section .cta-description {
   font-family: var(--font-sans);
   font-size: calc(18/1920*100vw);
   color: #ccc;
-  max-width: calc(800/1920*100vw);
-  margin: 0 auto calc(16/1920*100vw);
   line-height: 1.6;
+  margin-bottom: calc(32/1920*100vw);
+  max-width: calc(800/1920*100vw);
   text-align: center;
 }
 
 .learn-more-section .cta-buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: calc(16/1920*100vw);
   width: 100%;
-  margin-top: calc(32/1920*100vw);
 }
 
 .learn-more-section .primary-button {
