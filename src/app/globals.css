@@ -44,44 +44,44 @@
   --color-text-muted: rgba(255, 255, 255, 0.7);
 }
 
-/* Reset margin and padding */
+/* Reset default margins and ensure full black background */
 * {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Prevent white border on refresh */
-html {
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow-x: hidden !important;
-  width: 100% !important;
-  min-height: 100vh !important;
-  max-width: 100% !important;
-  background: #000000 !important;
-  position: relative !important;
-  scrollbar-gutter: stable !important;
-  border: none !important;
-  outline: none !important;
-}
-
+html, 
 body {
   margin: 0 !important;
   padding: 0 !important;
-  overflow-x: hidden !important;
-  width: 100% !important;
-  min-height: 100vh !important;
-  max-width: 100% !important;
+  min-height: 100vh;
+  width: 100%;
   background: #000000 !important;
-  position: relative !important;
-  color: rgb(var(--foreground-rgb));
+  overflow-x: hidden;
+}
+
+body {
+  color: white;
+  background: #000000;
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: var(--line-height-body);
   font-weight: var(--weight-body);
-  border: none !important;
-  outline: none !important;
+}
+
+/* Ensure no white flash on page transitions */
+#__next {
+  background: #000000;
+  min-height: 100vh;
+}
+
+/* Remove any potential gaps */
+main {
+  background: #000000;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Global section styles */
@@ -98,20 +98,6 @@ section,
   overflow: hidden !important;
   box-sizing: border-box !important;
   position: relative !important;
-  border: none !important;
-  outline: none !important;
-}
-
-main {
-  min-height: 100vh !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  position: relative !important;
-  z-index: 1 !important;
-  background: #000000 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
   border: none !important;
   outline: none !important;
 }
