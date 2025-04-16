@@ -157,7 +157,8 @@
 
 .learn-more-section .process-steps {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 32px;
   width: 100%;
   max-width: 1800px;
@@ -167,21 +168,20 @@
 }
 
 .learn-more-section .process-step {
-  text-align: left;
+  text-align: center;
   position: relative;
-  padding: 40px 50px;
+  padding: 40px 30px;
   background: rgba(106, 90, 205, 0.05);
   border-radius: 16px;
   transition: background-color 0.3s ease;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 200px;
-  width: 100%;
+  min-height: 400px;
+  width: calc(25% - 24px);
   margin: 0;
   box-sizing: border-box;
-  gap: 40px;
 }
 
 .learn-more-section .process-step:hover {
@@ -190,27 +190,25 @@
 
 .learn-more-section .step-number {
   font-family: var(--font-heading);
-  font-size: 64px;
+  font-size: 48px;
   color: #6a5acd;
-  margin-bottom: 0;
-  min-width: 100px;
-  text-align: center;
+  margin-bottom: 24px;
 }
 
 .learn-more-section .step-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex: 1;
 }
 
 .learn-more-section .step-title {
   font-family: var(--font-heading);
-  font-size: 36px;
+  font-size: 32px;
   color: white;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 .learn-more-section .step-description {
@@ -221,7 +219,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .learn-more-section .cta-section {
@@ -321,32 +319,29 @@
     font-size: calc(11/768*100vw);
   }
 
-  .learn-more-section .process-step {
+  .learn-more-section .process-steps {
     flex-direction: column;
-    text-align: center;
+    gap: 24px;
+  }
+
+  .learn-more-section .process-step {
+    width: 100%;
+    min-height: 300px;
     padding: 30px 20px;
-    min-height: auto;
-    gap: 16px;
   }
 
   .learn-more-section .step-number {
     font-size: 40px;
-    min-width: auto;
-    margin-bottom: 12px;
-  }
-
-  .learn-more-section .step-content {
-    align-items: center;
+    margin-bottom: 16px;
   }
 
   .learn-more-section .step-title {
-    font-size: 24px;
-    text-align: center;
+    font-size: 28px;
+    margin-bottom: 12px;
   }
 
   .learn-more-section .step-description {
-    font-size: 16px;
-    text-align: center;
+    font-size: 18px;
   }
 
   .learn-more-section .cta-section {
@@ -441,27 +436,15 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .learn-more-section .process-steps {
-    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
   }
 
   .learn-more-section .process-step {
-    padding: 30px;
-    gap: 30px;
-  }
-
-  .learn-more-section .step-number {
-    font-size: 48px;
-    min-width: 80px;
-  }
-
-  .learn-more-section .step-title {
-    font-size: 28px;
-    margin-bottom: 12px;
-  }
-
-  .learn-more-section .step-description {
-    font-size: 18px;
+    width: calc(50% - 12px);
+    min-height: 350px;
   }
 } 
