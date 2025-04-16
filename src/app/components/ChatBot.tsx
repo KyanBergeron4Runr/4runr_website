@@ -62,9 +62,9 @@ const ChatBot = () => {
           setTimeout(() => {
             setTypingSecond(false);
             setSecondMessageVisible(true);
-          }, 2500); // Longer typing duration for second message
-        }, 800); // Shorter delay before second typing starts
-      }, 2500); // Longer typing duration for first message
+          }, 1500); // Reduced from 2500ms to 1500ms for quicker appearance after typing
+        }, 400); // Reduced from 800ms to 400ms for quicker start of second typing
+      }, 1500); // Reduced from 2500ms to 1500ms for quicker appearance after typing
     }
   }, [inView]);
 
