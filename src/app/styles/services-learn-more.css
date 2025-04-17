@@ -431,21 +431,21 @@ body {
     padding: 20px !important;
     margin: 0 !important;
     min-height: unset !important;
-    max-width: 300px !important;
+    max-width: 280px !important;
   }
 
   .learn-more-section .process-step .step-number {
-    font-size: 32px !important;
-    margin-bottom: 12px !important;
+    font-size: 28px !important;
+    margin-bottom: 10px !important;
   }
 
   .learn-more-section .process-step .step-title {
-    font-size: 24px !important;
-    margin-bottom: 8px !important;
+    font-size: 22px !important;
+    margin-bottom: 6px !important;
   }
 
   .learn-more-section .process-step .step-description {
-    font-size: 18px !important;
+    font-size: 16px !important;
     line-height: 1.4 !important;
   }
 
@@ -529,19 +529,19 @@ body {
 
   .learn-more-section .process-step {
     padding: 16px !important;
-    max-width: 260px !important;
+    max-width: 240px !important;
   }
 
   .learn-more-section .step-number {
-    font-size: 28px !important;
+    font-size: 26px !important;
   }
 
   .learn-more-section .step-title {
-    font-size: 22px !important;
+    font-size: 20px !important;
   }
 
   .learn-more-section .step-description {
-    font-size: 17px !important;
+    font-size: 15px !important;
   }
 
   .learn-more-section .cta-section {
