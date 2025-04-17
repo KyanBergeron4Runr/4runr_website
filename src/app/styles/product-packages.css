@@ -455,10 +455,10 @@
 }
 
 .timeline-container {
-  margin-top: calc(24 / 1920 * 100vw);
-  padding: calc(20 / 1920 * 100vw);
+  margin-top: 1.5rem;
+  padding: 1.25rem;
   background: rgba(255, 255, 255, 0.03);
-  border-radius: calc(12 / 1920 * 100vw);
+  border-radius: 12px;
   position: relative;
   overflow: visible;
   border: 1px solid rgba(106, 90, 205, 0.1);
@@ -466,18 +466,18 @@
 
 .timeline {
   position: relative;
-  padding: calc(16 / 1920 * 100vw) 0;
-  margin-left: calc(24 / 1920 * 100vw);
+  padding: 1rem 0;
+  margin-left: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: calc(16 / 1920 * 100vw);
+  gap: 1rem;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
   top: 0;
-  left: calc(-12 / 1920 * 100vw);
+  left: -12px;
   height: 100%;
   width: 2px;
   background: linear-gradient(to bottom, 
@@ -490,16 +490,16 @@
 
 .timeline-event {
   position: relative;
-  margin-left: calc(24 / 1920 * 100vw);
-  padding: calc(12 / 1920 * 100vw);
+  margin-left: 1.5rem;
+  padding: 1rem;
   opacity: 0;
   transform: translateX(-20px);
   transition: all 0.5s ease;
-  margin-bottom: calc(12 / 1920 * 100vw);
+  margin-bottom: 1rem;
   background: rgba(255, 255, 255, 0.03);
-  border-radius: calc(8 / 1920 * 100vw);
+  border-radius: 8px;
   border: 1px solid rgba(106, 90, 205, 0.1);
-  max-width: calc(600 / 1920 * 100vw);
+  max-width: 100%;
 }
 
 .timeline-event:hover {
@@ -516,49 +516,49 @@
 .timeline-event::before {
   content: '';
   position: absolute;
-  left: calc(-32 / 1920 * 100vw);
-  top: calc(24 / 1920 * 100vw);
-  width: calc(12 / 1920 * 100vw);
-  height: calc(12 / 1920 * 100vw);
+  left: -2rem;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
   background: #6a5acd;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 calc(10 / 1920 * 100vw) rgba(106, 90, 205, 0.5);
+  box-shadow: 0 0 10px rgba(106, 90, 205, 0.5);
   z-index: 1;
 }
 
 .timeline-event::after {
   content: '';
   position: absolute;
-  left: calc(-24 / 1920 * 100vw);
-  top: calc(28 / 1920 * 100vw);
-  width: calc(16 / 1920 * 100vw);
+  left: -1.5rem;
+  top: 1.75rem;
+  width: 1rem;
   height: 2px;
   background: linear-gradient(to right, rgba(106, 90, 205, 0.8), transparent);
 }
 
 .timeline-event h4 {
-  font-size: calc(14 / 1920 * 100vw);
+  font-size: 1rem;
   color: #fff;
-  margin-bottom: calc(8 / 1920 * 100vw);
+  margin-bottom: 0.5rem;
   font-family: var(--font-heading);
   font-weight: 600;
 }
 
 .timeline-event p {
-  font-size: calc(12 / 1920 * 100vw);
+  font-size: 0.9rem;
   color: var(--color-text-light);
-  margin-bottom: calc(8 / 1920 * 100vw);
+  margin-bottom: 0.5rem;
   font-family: var(--font-body);
   line-height: 1.4;
 }
 
 .timeline-event .date {
-  font-size: calc(11 / 1920 * 100vw);
+  font-size: 0.8rem;
   color: var(--color-text-muted);
   font-style: italic;
   display: block;
-  margin-top: calc(4 / 1920 * 100vw);
+  margin-top: 0.25rem;
 }
 
 @keyframes timelineProgress {
