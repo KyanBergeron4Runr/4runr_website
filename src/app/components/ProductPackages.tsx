@@ -189,26 +189,38 @@ export default function ProductPackages() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [timelineIndex, setTimelineIndex] = useState(0);
+  const [autoAdvance, setAutoAdvance] = useState(true);
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
-    if (!isTransitioning && packages[currentIndex]?.timelineEvents) {
+    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents) {
       timelineInterval = setInterval(() => {
         setTimelineIndex((prev) => {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
+          if (nextIndex === 0) {
+            setAutoAdvance(false);
+            setTimeout(() => setAutoAdvance(true), 5000); // Pause for 5 seconds before restarting
+          }
           return nextIndex;
         });
       }, 3000);
     }
     return () => clearInterval(timelineInterval);
-  }, [currentIndex, isTransitioning]);
+  }, [currentIndex, isTransitioning, autoAdvance]);
+
+  const handleTimelineClick = (index: number) => {
+    setTimelineIndex(index);
+    setAutoAdvance(false);
+    setTimeout(() => setAutoAdvance(true), 5000); // Resume auto-advance after 5 seconds
+  };
 
   const handlePrevious = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
       setTimelineIndex(0);
-      setTimeout(() => setIsTransitioning(false), 600);
+      setAutoAdvance(true);
+      setTimeout(() => setIsTransitioning(false), 800);
     }
   };
 
@@ -217,7 +229,8 @@ export default function ProductPackages() {
       setIsTransitioning(true);
       setCurrentIndex((prev) => (prev + 1) % packages.length);
       setTimelineIndex(0);
-      setTimeout(() => setIsTransitioning(false), 600);
+      setAutoAdvance(true);
+      setTimeout(() => setIsTransitioning(false), 800);
     }
   };
 
@@ -226,7 +239,8 @@ export default function ProductPackages() {
       setIsTransitioning(true);
       setCurrentIndex(index);
       setTimelineIndex(0);
-      setTimeout(() => setIsTransitioning(false), 600);
+      setAutoAdvance(true);
+      setTimeout(() => setIsTransitioning(false), 800);
     }
   };
 
@@ -240,14 +254,19 @@ export default function ProductPackages() {
         </div>
 
         <div className="slideshow-container">
-          <button className="nav-button prev" onClick={handlePrevious} aria-label="Previous package">
+          <button 
+            className="nav-button prev" 
+            onClick={handlePrevious} 
+            aria-label="Previous package"
+            disabled={isTransitioning}
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 
-          <div className="package-card">
-            <div className={`card-content ${isTransitioning ? 'transitioning' : ''}`}>
+          <div className={`package-card ${isTransitioning ? 'transitioning' : ''}`}>
+            <div className="card-content">
               <h3>{packages[currentIndex].title}</h3>
               <div className="package-details">
                 <div className="detail">
@@ -267,6 +286,7 @@ export default function ProductPackages() {
               <TimelineProgress 
                 events={packages[currentIndex]?.timelineEvents || []}
                 currentIndex={timelineIndex}
+                onNodeClick={handleTimelineClick}
               />
 
               <div className="features">
@@ -280,7 +300,12 @@ export default function ProductPackages() {
             </div>
           </div>
 
-          <button className="nav-button next" onClick={handleNext} aria-label="Next package">
+          <button 
+            className="nav-button next" 
+            onClick={handleNext} 
+            aria-label="Next package"
+            disabled={isTransitioning}
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -294,6 +319,7 @@ export default function ProductPackages() {
               className={`dot ${index === currentIndex ? 'active' : ''}`}
               onClick={() => handleDotClick(index)}
               aria-label={`Go to package ${index + 1}`}
+              disabled={isTransitioning}
             />
           ))}
         </div>
