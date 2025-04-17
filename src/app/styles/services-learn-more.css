@@ -16,8 +16,8 @@ body {
   background-color: #000;
   color: white;
   min-height: 100vh;
-  width: 100vw;  /* Changed from 100% to 100vw */
-  max-width: 100%;  /* Add max-width to prevent horizontal scroll */
+  width: 100vw;
+  max-width: 100%;
   padding: 0;
   margin: 0;
   display: flex;
@@ -25,9 +25,10 @@ body {
   gap: 0;
   overflow-x: hidden;
   align-items: center;
-  position: relative;  /* Add position relative */
-  left: 0;  /* Ensure alignment */
+  position: relative;
+  left: 0;
   right: 0;
+  box-sizing: border-box;
 }
 
 .learn-more-section .hero-container {
@@ -183,6 +184,13 @@ body {
   margin: 0 auto;
   padding: 0 40px;
   box-sizing: border-box;
+  border: none;
+  position: relative;
+}
+
+.learn-more-section .process-steps::before,
+.learn-more-section .process-steps::after {
+  display: none;
 }
 
 .learn-more-section .process-step {
@@ -204,6 +212,11 @@ body {
 
 .learn-more-section .process-step:hover {
   background: rgba(106, 90, 205, 0.1);
+}
+
+.learn-more-section .process-step::before,
+.learn-more-section .process-step::after {
+  display: none;
 }
 
 .learn-more-section .step-number {
@@ -307,6 +320,13 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .learn-more-section {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+
   .learn-more-section .hero-container {
     padding: 32px 20px;
     margin: 0;
@@ -358,76 +378,68 @@ body {
   }
 
   .learn-more-section .process-section {
-    width: 100%;
-    margin: 32px 0;
-    padding: 0;
-  }
-
-  .learn-more-section .process-title {
-    font-size: 42px;
-    margin-bottom: 32px;
-    padding: 0;
+    width: 100% !important;
+    padding: 32px 16px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .learn-more-section .process-steps {
-    flex-direction: column;
-    gap: 32px;
-    padding: 0;
-    margin: 0 auto;
-    width: 85%;
-    max-width: 450px;
-    border-left: none;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
+    width: 90% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    border: none !important;
+    position: relative !important;
+  }
+
+  .learn-more-section .process-steps::before,
+  .learn-more-section .process-steps::after {
+    display: none !important;
   }
 
   .learn-more-section .process-step {
-    width: 100%;
-    aspect-ratio: 1;
-    height: auto;
-    min-height: unset;
-    padding: 32px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(106, 90, 205, 0.3);
-    border-left: 2px solid rgba(106, 90, 205, 0.3);
-    box-shadow: none;
-    background: rgba(106, 90, 205, 0.05);
-    border-radius: 16px;
-    position: relative;
+    width: 100% !important;
+    aspect-ratio: 1 !important;
+    padding: 24px !important;
+    margin: 0 !important;
+    border: 2px solid rgba(106, 90, 205, 0.5) !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background: transparent !important;
+    position: relative !important;
   }
 
   .learn-more-section .process-step::before,
   .learn-more-section .process-step::after {
-    display: none;
+    display: none !important;
   }
 
-  .learn-more-section .step-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+  .learn-more-section .process-step .step-number {
+    font-size: 24px !important;
+    margin-bottom: 16px !important;
   }
 
-  .learn-more-section .step-number {
-    font-size: 42px;
-    margin-bottom: 16px;
+  .learn-more-section .process-step .step-title {
+    font-size: 20px !important;
+    margin-bottom: 8px !important;
   }
 
-  .learn-more-section .step-title {
-    font-size: 26px;
-    margin-bottom: 12px;
-    padding: 0 16px;
+  .learn-more-section .process-step .step-description {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
   }
 
-  .learn-more-section .step-description {
-    font-size: 16px;
-    line-height: 1.4;
-    padding: 0 8px;
+  .learn-more-section .process-step:hover {
+    border-color: rgba(106, 90, 205, 0.8) !important;
+    background: rgba(106, 90, 205, 0.08) !important;
   }
 
   .learn-more-section .cta-section {
@@ -504,12 +516,12 @@ body {
   }
 
   .learn-more-section .process-steps {
-    width: 90%;
-    max-width: 350px;
+    width: 92% !important;
+    max-width: 350px !important;
   }
 
   .learn-more-section .process-step {
-    padding: 24px;
+    padding: 20px !important;
   }
 
   .learn-more-section .cta-section {
