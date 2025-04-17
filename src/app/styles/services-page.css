@@ -1,11 +1,50 @@
+/* Reset any potential margins or padding */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #000 !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Main container */
 .services-page {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-  overflow-x: hidden;
-  position: relative;
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #000 !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Content wrapper */
+.services-page-content {
+  flex: 1 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Ensure sections take full width */
+.services-page .services-section,
+.services-page .services-cta {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 4rem 0 !important;
+  background: #000 !important;
+}
+
+/* Remove any potential gaps between sections */
+.services-page .services-section + .services-cta {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* Ensure no white space at the edges */
@@ -13,12 +52,4 @@
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-/* Remove any potential gaps between sections */
-.services-section,
-.services-cta {
-  margin: 0;
-  padding: 4rem 0;
-  width: 100%;
 } 

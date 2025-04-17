@@ -8,9 +8,11 @@ import '@/app/styles/services-page.css';
 
 export default function ServicesPage() {
   return (
-    <div className="services-page">
-      <ServicesSection />
-      <ServicesCTA />
-    </div>
+    <main className="services-page">
+      <div className="services-page-content">
+        <ServicesSection />
+        <ServicesCTA />
+      </div>
+    </main>
   );
 } 
