@@ -1,0 +1,24 @@
+.services-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ensure no white space at the edges */
+.services-page > * {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove any potential gaps between sections */
+.services-section,
+.services-cta {
+  margin: 0;
+  padding: 4rem 0;
+  width: 100%;
+} 
