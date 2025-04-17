@@ -21,11 +21,6 @@
     font-size: 25.6px !important;
   }
   
-  /* Don't increase this specific heading */
-  .services-section .subheading:nth-child(2) h2 {
-    font-size: 1.3rem !important;
-  }
-  
   /* Make fine-print bigger */
   .services-section .footer-content .fine-print {
     font-size: 1.1rem !important;
@@ -71,7 +66,7 @@
   }
 }
 
-/* Laptop styles (min-width: 769px and max-width: 1366px) */
+/* Laptop/Desktop styles (min-width: 769px and max-width: 1366px) */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
   /* Make paragraph text bigger */
   .services-section .content p {
@@ -95,11 +90,18 @@
   }
 }
 
-/* Mobile styles (max-width: 768px) */
+/* Tablet/Mobile styles */
 @media screen and (max-width: 768px) {
   /* Make fine-print smaller on mobile */
   .services-section .footer-content .fine-print {
     font-size: 0.8rem !important;
     line-height: 1.4 !important;
+  }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+  .services-section .subheading h2 {
+    font-size: calc(25.6px * 0.8) !important;  /* Even smaller for very small screens */
   }
 } 
