@@ -233,6 +233,31 @@ export default function ProductPackages() {
           </ul>
           <p>Every addition is properly scoped, quoted, and aligned with your evolving needs. We ensure you continue scaling intelligently without technical debt. These packages are just the starting point. Your 4Runr System is always built for evolution.</p>
         </div>
+
+        <div className="timeline-container">
+          <div className="timeline">
+            <div className="timeline-point">
+              <div className="timeline-dot"></div>
+              <span className="timeline-text">12-16 weeks</span>
+            </div>
+            <div className="timeline-point">
+              <div className="timeline-dot"></div>
+              <span className="timeline-text">16-20 weeks</span>
+            </div>
+            <div className="timeline-point active">
+              <div className="timeline-dot"></div>
+              <span className="timeline-text">20-24 weeks</span>
+            </div>
+            <div className="timeline-point">
+              <div className="timeline-dot"></div>
+              <span className="timeline-text">24-28 weeks</span>
+            </div>
+            <div className="timeline-point">
+              <div className="timeline-dot"></div>
+              <span className="timeline-text">28-32 weeks</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
