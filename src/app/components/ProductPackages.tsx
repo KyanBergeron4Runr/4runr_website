@@ -372,6 +372,9 @@ export default function ProductPackages() {
   }, [isTransitioning]);
 
   useEffect(() => {
+    // Reset active events first
+    setActiveTimelineEvents([]);
+    
     // Animate timeline events sequentially
     const events = packages[currentIndex].timelineEvents;
     const timeouts: NodeJS.Timeout[] = [];
@@ -379,13 +382,12 @@ export default function ProductPackages() {
     events.forEach((_, index) => {
       const timeout = setTimeout(() => {
         setActiveTimelineEvents(prev => [...prev, index]);
-      }, index * 200); // 200ms delay between each event
+      }, (index + 1) * 200); // Added +1 to delay first animation
       timeouts.push(timeout);
     });
 
     return () => {
       timeouts.forEach(timeout => clearTimeout(timeout));
-      setActiveTimelineEvents([]);
     };
   }, [currentIndex]);
 
