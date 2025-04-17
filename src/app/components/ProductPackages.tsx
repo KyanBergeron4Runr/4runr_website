@@ -2,332 +2,185 @@
 
 import React, { useState, useEffect } from 'react';
 import '../styles/product-packages.css';
+import TimelineProgress from './TimelineProgress';
 
-interface TimelineEvent {
-  title: string;
-  description: string;
-  date: string;
-}
-
-interface Package {
-  title: string;
-  price: string;
-  timeline: string;
-  deployment: string;
-  features: string[];
-  timelineEvents: TimelineEvent[];
-}
-
-const packages: Package[] = [
+const packages = [
   {
     title: "Free Consultation & Strategic Blueprint",
     price: "Free",
     timeline: "3–5 Business Days",
-    deployment: "Immediate",
-    features: [
-      "45-Minute Strategic Consultation",
-      "AI/Automation Roadmap PDF",
-      "Implementation Timeline",
-      "ROI Projections",
-      "Optional Follow-Up Q&A"
-    ],
+    deployment: "Immediate booking available",
     timelineEvents: [
       {
         title: "Booking Your Consultation",
-        description: "Schedule your strategic session at your convenience",
-        date: "Day 1"
+        description: "Schedule your strategic session",
+        duration: "Same Day"
       },
       {
         title: "45-Minute Consultation Call",
-        description: "Deep dive into your business challenges and goals",
-        date: "Day 2-3"
+        description: "Deep dive into business challenges and goals",
+        duration: "45 Minutes"
       },
       {
-        title: "Roadmap Delivery",
-        description: "Receive your personalized AI/Automation action plan",
-        date: "Day 4-5"
+        title: "AI/Automation Roadmap",
+        description: "Receive your personalized action plan PDF",
+        duration: "2 Days"
       },
       {
         title: "Optional Follow-Up",
-        description: "Q&A session to prepare for next steps",
-        date: "Day 5+"
+        description: "Q&A session for next steps",
+        duration: "30 Minutes"
       }
+    ],
+    features: [
+      "45-Minute Strategic Consultation – Real expert review of how AI and automation can best serve your business goals.",
+      "Custom AI/Automation Roadmap – A tailored step-by-step plan to integrate AI into your operations.",
+      "\"Next Steps After Consultation\" PDF – Actionable advice delivered immediately post-meeting.",
+      "Strategic Best Practices Advice – Insights into how top businesses are using AI today.",
+      "Private Community Access – Join an exclusive group of future-forward business owners.",
+      "Follow-up Strategic Summary Report – Documented key recommendations for future growth."
     ]
   },
   {
     title: "Simple Automation Build & Optimization",
-    price: "Custom Quote",
-    timeline: "1–3 Weeks",
-    deployment: "Phased",
-    features: [
-      "Discovery and Scoping Session",
-      "Access and API Setup",
-      "Custom Automation Development",
-      "Internal Testing Phase",
-      "Client Review and Training",
-      "3-Month Optimization Review"
-    ],
+    price: "$500 – $5,000 initial + Retainer ($500+/month)",
+    timeline: "1–3 weeks",
+    deployment: "Full support with your IT team or we can handle everything",
     timelineEvents: [
       {
         title: "Discovery and Scoping",
-        description: "Define processes for automation and plan implementation",
-        date: "Week 1"
+        description: "Define automation processes",
+        duration: "2-3 Days"
       },
       {
-        title: "Access Setup & Development",
-        description: "Configure APIs and build automation workflows",
-        date: "Week 1-2"
+        title: "Access Setup",
+        description: "API keys and integrations setup",
+        duration: "1-2 Days"
       },
       {
-        title: "Testing & Review",
-        description: "Rigorous testing and client walkthrough",
-        date: "Week 2-3"
+        title: "Automation Development",
+        description: "Building and testing workflows",
+        duration: "1-2 Weeks"
       },
       {
-        title: "Deployment & Training",
-        description: "Launch automations and train your team",
-        date: "Week 3"
+        title: "Internal Testing",
+        description: "Ensuring reliability and accuracy",
+        duration: "2-3 Days"
       },
       {
-        title: "Optimization Review",
-        description: "3-month check-in to optimize performance",
-        date: "Month 3"
+        title: "Client Walkthrough",
+        description: "Review and feedback",
+        duration: "1 Day"
+      },
+      {
+        title: "Deployment",
+        description: "Launch into production",
+        duration: "1 Day"
+      },
+      {
+        title: "3-Month Review",
+        description: "Optimization and expansion",
+        duration: "After 3 Months"
       }
+    ],
+    features: [
+      "Prebuilt Automations – Fast-track operational efficiency with preconfigured AI workflows.",
+      "Real-Time Workflow Automation – Ensure tasks happen instantly with automated triggers and responses.",
+      "3-Month Strategic Optimization Review – Post-deployment performance audit with optimization recommendations.",
+      "Automation Monday Reports – Weekly summaries of all completed automations to show visible progress.",
+      "Full Documentation + Visual Workflow Maps – Easy-to-understand maps showing how each system operates.",
+      "Private Community Access – Ongoing connection with other automation-forward businesses.",
+      "Newsletter Access (AI Insider Updates) – Regular insights into emerging AI trends and opportunities.",
+      "Basic Workflow Health Dashboard – A real-time status board for your active automations."
     ]
   },
   {
     title: "Custom AI-Powered Applications",
-    price: "Custom Quote",
-    timeline: "4–10 Weeks",
-    deployment: "Phased",
+    price: "$10,000 – $75,000 initial + Custom Retainer",
+    timeline: "4–10 weeks",
+    deployment: "Full support with your IT team or we can handle everything",
     features: [
-      "Discovery Workshop",
-      "Technical Architecture Planning",
-      "Custom Application Development",
-      "Quality Assurance Testing",
-      "User Training Program",
-      "3-Month Performance Review"
-    ],
-    timelineEvents: [
-      {
-        title: "Discovery Workshop",
-        description: "Map features, workflows, and user requirements",
-        date: "Week 1"
-      },
-      {
-        title: "Technical Planning",
-        description: "Design architecture and integration strategy",
-        date: "Week 2"
-      },
-      {
-        title: "Development Phase",
-        description: "Build and iterate on your custom application",
-        date: "Weeks 3-8"
-      },
-      {
-        title: "Testing & Refinement",
-        description: "Quality assurance and user acceptance testing",
-        date: "Week 9"
-      },
-      {
-        title: "Deployment & Training",
-        description: "Launch application and train your team",
-        date: "Week 10"
-      },
-      {
-        title: "Optimization Review",
-        description: "3-month performance and scaling assessment",
-        date: "Month 3"
-      }
+      "Full Custom Web or Backend Application – Purpose-built systems designed specifically around your workflows.",
+      "Centralized Smart Data Infrastructure – One unified source of truth across your business operations.",
+      "API-Ready System Design – Systems designed to easily integrate future tools and services.",
+      "User Roles + Permissions Systems – Secure and controlled access to sensitive business data.",
+      "Mobile Responsive Design – Accessible and functional across all devices.",
+      "Hosting Flexibility (Self/Cloud) – Your choice of self-hosted control or fully managed cloud hosting.",
+      "Private AI Consultant Access – Dedicated expert guidance as your systems grow.",
+      "Usage-Based Pricing Option – Flexible pricing for apps scaling across thousands of users.",
+      "Quarterly Innovation Opportunity Briefs – Strategic suggestions for new system capabilities.",
+      "Access to 4Runr AI Tools Marketplace (Early Access) – Exclusive beta access to new automation modules.",
+      "Small Welcome Kit – A personalized 4Runr thank-you package for new partners."
     ]
   },
   {
-    title: "AI Brain Integration",
-    price: "Custom Quote",
-    timeline: "2–5 Weeks",
-    deployment: "Gradual",
+    title: "AI Brain Integration (LLM Interface Add-On)",
+    price: "$5,000 – $30,000 initial + Custom Retainer",
+    timeline: "2–5 weeks",
+    deployment: "Full support with your IT team or we can handle everything",
     features: [
-      "Discovery Session",
-      "Technical Integration Planning",
-      "Custom Prompt Library",
-      "AI Brain Development",
-      "Employee Training Program",
-      "5-Month Performance Review"
-    ],
-    timelineEvents: [
-      {
-        title: "Discovery Session",
-        description: "Define AI brain capabilities and integration points",
-        date: "Week 1"
-      },
-      {
-        title: "Technical Setup",
-        description: "Configure integrations and data connections",
-        date: "Week 2"
-      },
-      {
-        title: "Development Phase",
-        description: "Build AI brain and prompt library",
-        date: "Weeks 2-4"
-      },
-      {
-        title: "Testing & Training",
-        description: "Fine-tune AI responses and train users",
-        date: "Week 5"
-      },
-      {
-        title: "Performance Review",
-        description: "5-month AI performance optimization",
-        date: "Month 5"
-      }
+      "AI Interface Embedded Into Custom Apps – Add powerful conversational AI directly into your internal platforms.",
+      "Centralized Data-Connected Intelligence – Ensure the AI delivers contextually relevant, accurate responses.",
+      "Personalized Prompt Library (50+ Examples) – Custom prompt templates for common tasks and queries.",
+      "Employee AI Interaction Training Guide – Equip your team to maximize their use of the AI brain effectively.",
+      "Full Technical Support + Regular Prompt Updates – Continuous tuning for optimal AI performance.",
+      "5-Month Strategic AI Brain Review – System analysis to optimize AI functionality based on usage data.",
+      "Self/Cloud Hosting Flexibility – Choose the hosting strategy that fits your infrastructure.",
+      "Private AI Consultant Access – Dedicated ongoing support for your AI system's evolution."
     ]
   },
   {
     title: "Full Custom AI Brain Ecosystem",
-    price: "Custom Quote",
-    timeline: "8–16 Weeks",
-    deployment: "Phased",
+    price: "$45,000 – $100,000 initial + Custom Retainer",
+    timeline: "8–16 weeks",
+    deployment: "Full support with your IT team or we can handle everything",
     features: [
-      "Discovery Workshops",
-      "Multi-Brain Architecture Design",
-      "Department-Specific AI Development",
-      "Early Access Program",
-      "Company-Wide Training",
-      "5-Month Evolution Review"
-    ],
-    timelineEvents: [
-      {
-        title: "Discovery Workshops",
-        description: "Map department workflows and AI requirements",
-        date: "Weeks 1-2"
-      },
-      {
-        title: "Architecture Design",
-        description: "Design multi-brain system architecture",
-        date: "Weeks 3-4"
-      },
-      {
-        title: "Development Phase",
-        description: "Build central and department AI brains",
-        date: "Weeks 5-12"
-      },
-      {
-        title: "Early Access Program",
-        description: "Train AI champions and gather feedback",
-        date: "Weeks 13-14"
-      },
-      {
-        title: "Full Deployment",
-        description: "Company-wide rollout and training",
-        date: "Weeks 15-16"
-      },
-      {
-        title: "Evolution Review",
-        description: "5-month system optimization",
-        date: "Month 5"
-      }
+      "Central AI Brain + Department-Specific Sub-Brains – Each department operates with its own customized intelligent assistant.",
+      "Departmental Intelligence Reports (Quarterly) – Performance data on how each department's AI is supporting workflows.",
+      "Automation ROI Reports (Quarterly) – Concrete calculation of time and money saved through automation.",
+      "Departmental Adoption Reports – Insight into which teams are excelling and where improvements are needed.",
+      "Dynamic Automation Heatmaps – Live visualization of system usage across your organization.",
+      "Backup Automation Scripts for Critical Tasks – Disaster recovery automations ensuring business continuity.",
+      "Quarterly Strategic Innovation Calls – Strategy sessions to unlock new efficiencies and capabilities.",
+      "Annual Automation Strategy Workshops – Half-day deep dives into scaling your intelligent systems.",
+      "Employee AI Champions Program – Internal AI leaders trained to maintain high adoption rates.",
+      "Access to 4Runr AI Tools Marketplace (Early Access) – Test and use cutting-edge tools first.",
+      "Certification: AI-Enhanced Company (Digital Badge) – Showcase your leadership in intelligent business operations."
     ]
   },
   {
-    title: "Full Business Automation",
-    price: "Custom Quote",
-    timeline: "12–24 Weeks",
-    deployment: "Phased",
+    title: "Full Business Automation (A–Z Operational Transformation)",
+    price: "$50,000 – $300,000 initial + Custom Retainer",
+    timeline: "12–24 weeks",
+    deployment: "Full support with your IT team or we can handle everything",
     features: [
-      "Full Business Process Audit",
-      "Comprehensive Automation Plan",
-      "Phase 1 & 2 Development",
-      "Staff Training Program",
-      "System Integration Support",
-      "7-Month Evolution Review"
-    ],
-    timelineEvents: [
-      {
-        title: "Business Audit",
-        description: "Complete operational process mapping",
-        date: "Weeks 1-2"
-      },
-      {
-        title: "Blueprint Creation",
-        description: "Design comprehensive automation strategy",
-        date: "Weeks 3-4"
-      },
-      {
-        title: "Phase 1 Development",
-        description: "Build core operational automations",
-        date: "Weeks 5-12"
-      },
-      {
-        title: "Midpoint Review",
-        description: "Assess Phase 1 and plan Phase 2",
-        date: "Week 13"
-      },
-      {
-        title: "Phase 2 Development",
-        description: "Expand automation to additional systems",
-        date: "Weeks 14-22"
-      },
-      {
-        title: "Full Deployment",
-        description: "Launch and train organization",
-        date: "Weeks 23-24"
-      },
-      {
-        title: "Evolution Review",
-        description: "7-month optimization assessment",
-        date: "Month 7"
-      }
+      "End-to-End Process Automation Across Departments – Complete coverage of all eligible operational tasks.",
+      "Change Management Planning + Support – Smooth employee transition into AI-driven workflows.",
+      "SLA-Backed Full Technical Support – Guaranteed response times and issue resolution.",
+      "Quarterly Bottleneck Analysis – Identify and eliminate system slowdowns.",
+      "AI Drift Monitoring Reports – Ensure continued AI accuracy and relevance over time.",
+      "Self-Diagnostic Dashboards for Operations – Instantly visualize system health without external support.",
+      "Cross-Process Automation Expansion Maps – Opportunities to expand automation into new areas.",
+      "Future Threat Radar Reports – Early warnings about tech, legal, or market disruptions.",
+      "Department-Level Strategy Memos – Specific action plans tailored for each business unit.",
+      "Scalability Readiness Reports – Alerts when infrastructure upgrades are needed to sustain growth.",
+      "Annual Efficiency Delta Reports (time/cost saved) – Hard data on how automation transforms your bottom line."
     ]
   },
   {
-    title: "Full Business Automation + AI Brain Ecosystem",
-    price: "Custom Quote",
-    timeline: "16–32 Weeks",
-    deployment: "Phased",
+    title: "Full Business Automation + Integrated AI Brain Ecosystem",
+    price: "$100,000 – $500,000 initial + Custom Retainer",
+    timeline: "16–32 weeks",
+    deployment: "Full support with your IT team or we can handle everything",
     features: [
-      "Executive Vision Workshop",
-      "Complete System Architecture",
-      "Phased Development Approach",
-      "Early Access Program",
-      "Leadership Dashboard",
-      "7-Month Innovation Review"
-    ],
-    timelineEvents: [
-      {
-        title: "Vision Workshop",
-        description: "Align leadership on transformation strategy",
-        date: "Weeks 1-2"
-      },
-      {
-        title: "System Architecture",
-        description: "Design complete automation and AI ecosystem",
-        date: "Weeks 3-4"
-      },
-      {
-        title: "Phase 1: Core Systems",
-        description: "Build foundation and master AI brain",
-        date: "Weeks 5-16"
-      },
-      {
-        title: "Phase 2: Department AI",
-        description: "Develop specialized department systems",
-        date: "Weeks 17-28"
-      },
-      {
-        title: "Early Access Program",
-        description: "Train champions and refine systems",
-        date: "Weeks 29-30"
-      },
-      {
-        title: "Full Deployment",
-        description: "Organization-wide launch and training",
-        date: "Weeks 31-32"
-      },
-      {
-        title: "Innovation Review",
-        description: "7-month transformation assessment",
-        date: "Month 7"
-      }
+      "Full A–Z Automation + Company-Wide AI Brains – Your business runs on an integrated, intelligent infrastructure.",
+      "Executive Intelligence Dashboards – Leadership sees critical system data in real-time for faster decisions.",
+      "Revenue Automation Analysis Reports – Track revenue growth directly driven by your AI systems.",
+      "AI-Driven Market Expansion Forecast Modeling – Uncover new markets and verticals using AI insights.",
+      "Partner Technology Integrations – Seamless plug-ins with third-party platforms and services.",
+      "Annual Future-Proofing Report (Strategic Roadmap) – Plan years ahead for tech disruption and innovation.",
+      "Innovation Partnership Program Access – Early access to beta tools and private strategic events.",
+      "Access to Private 4Runr Events + Strategy Summits – Invitation-only leadership networking with other AI-first businesses."
     ]
   }
 ];
@@ -335,61 +188,47 @@ const packages: Package[] = [
 export default function ProductPackages() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [direction, setDirection] = useState<'next' | 'prev'>('next');
-  const [activeTimelineEvents, setActiveTimelineEvents] = useState<number[]>([]);
+  const [timelineIndex, setTimelineIndex] = useState(0);
 
-  const handleNext = () => {
+  useEffect(() => {
+    let timelineInterval: NodeJS.Timeout;
+    if (!isTransitioning && packages[currentIndex]?.timelineEvents) {
+      timelineInterval = setInterval(() => {
+        setTimelineIndex((prev) => {
+          const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
+          return nextIndex;
+        });
+      }, 3000);
+    }
+    return () => clearInterval(timelineInterval);
+  }, [currentIndex, isTransitioning]);
+
+  const handlePrevious = () => {
     if (!isTransitioning) {
-      setDirection('next');
       setIsTransitioning(true);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % packages.length);
+      setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
+      setTimelineIndex(0);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
 
-  const handlePrev = () => {
+  const handleNext = () => {
     if (!isTransitioning) {
-      setDirection('prev');
       setIsTransitioning(true);
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + packages.length) % packages.length);
+      setCurrentIndex((prev) => (prev + 1) % packages.length);
+      setTimelineIndex(0);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
 
   const handleDotClick = (index: number) => {
     if (!isTransitioning && index !== currentIndex) {
-      setDirection(index > currentIndex ? 'next' : 'prev');
       setIsTransitioning(true);
       setCurrentIndex(index);
+      setTimelineIndex(0);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
-
-  useEffect(() => {
-    if (isTransitioning) {
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-      }, 600); // Match this with your CSS transition duration
-      return () => clearTimeout(timer);
-    }
-  }, [isTransitioning]);
-
-  useEffect(() => {
-    // Reset active events first
-    setActiveTimelineEvents([]);
-    
-    // Animate timeline events sequentially
-    const events = packages[currentIndex].timelineEvents;
-    const timeouts: NodeJS.Timeout[] = [];
-    
-    events.forEach((_, index) => {
-      const timeout = setTimeout(() => {
-        setActiveTimelineEvents(prev => [...prev, index]);
-      }, (index + 1) * 200); // Added +1 to delay first animation
-      timeouts.push(timeout);
-    });
-
-    return () => {
-      timeouts.forEach(timeout => clearTimeout(timeout));
-    };
-  }, [currentIndex]);
 
   return (
     <section className="product-packages">
@@ -401,18 +240,14 @@ export default function ProductPackages() {
         </div>
 
         <div className="slideshow-container">
-          <button className="nav-button prev" onClick={handlePrev} aria-label="Previous package">
+          <button className="nav-button prev" onClick={handlePrevious} aria-label="Previous package">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 
           <div className="package-card">
-            <div 
-              className={`card-content ${isTransitioning ? 'transitioning' : ''} ${
-                direction === 'next' ? 'next-enter' : ''
-              }`}
-            >
+            <div className={`card-content ${isTransitioning ? 'transitioning' : ''}`}>
               <h3>{packages[currentIndex].title}</h3>
               <div className="package-details">
                 <div className="detail">
@@ -428,6 +263,12 @@ export default function ProductPackages() {
                   <span className="value">{packages[currentIndex].deployment}</span>
                 </div>
               </div>
+
+              <TimelineProgress 
+                events={packages[currentIndex]?.timelineEvents || []}
+                currentIndex={timelineIndex}
+              />
+
               <div className="features">
                 <h4>Includes:</h4>
                 <ul>
@@ -436,29 +277,12 @@ export default function ProductPackages() {
                   ))}
                 </ul>
               </div>
-
-              <div className="timeline-container">
-                <div className="timeline">
-                  {packages[currentIndex].timelineEvents.map((event, index) => (
-                    <div
-                      key={index}
-                      className={`timeline-event ${
-                        activeTimelineEvents.includes(index) ? 'active' : ''
-                      }`}
-                    >
-                      <h4>{event.title}</h4>
-                      <p>{event.description}</p>
-                      <span className="date">{event.date}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
 
           <button className="nav-button next" onClick={handleNext} aria-label="Next package">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
         </div>
