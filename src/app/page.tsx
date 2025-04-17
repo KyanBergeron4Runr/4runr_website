@@ -4,6 +4,7 @@ import SloganSection from './components/SloganSection'
 import WhatIs4Runr from './components/WhatIs4Runr'
 import AISolutionsCTA from './components/AISolutionsCTA'
 import BenefitsSection from './components/BenefitsSection'
+import ProductPackages from './components/ProductPackages'
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
 
       {/* AI Solutions CTA Section */}
       <AISolutionsCTA />
+
+      {/* Product Packages Section */}
+      <ProductPackages />
 
       {/* Benefits Section */}
       <BenefitsSection />

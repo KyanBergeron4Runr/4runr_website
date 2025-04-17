@@ -1,0 +1,155 @@
+.product-packages {
+  padding: 4rem 2rem;
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.packages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.package-card {
+  background: rgba(106, 90, 205, 0.05);
+  border: 1px solid rgba(106, 90, 205, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.package-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, 
+    rgba(106, 90, 205, 0.5),
+    rgba(106, 90, 205, 0.2),
+    rgba(106, 90, 205, 0.5)
+  );
+  border-radius: 16px;
+  padding: 1px;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(106, 90, 205, 0.2);
+}
+
+.card-content {
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  font-family: var(--font-heading);
+  text-align: center;
+}
+
+.package-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(106, 90, 205, 0.1);
+  border-radius: 12px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.detail .label {
+  color: #ccc;
+}
+
+.detail .value {
+  color: #fff;
+  font-weight: 500;
+}
+
+.features {
+  flex: 1;
+}
+
+.features h4 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.features li {
+  color: #ccc;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.features li::before {
+  content: '•';
+  color: #6a5acd;
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .product-packages {
+    padding: 2rem 1rem;
+  }
+
+  .package-card {
+    padding: 1.5rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .detail {
+    font-size: 0.9rem;
+  }
+
+  .features h4 {
+    font-size: 1rem;
+  }
+
+  .features li {
+    font-size: 0.9rem;
+  }
+} 
