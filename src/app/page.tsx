@@ -9,6 +9,7 @@ import BenefitsSection from './components/BenefitsSection'
 import ProcessSection from './components/ProcessSection'
 import PDFForm from './components/PDFForm'
 import ChatBot from './components/ChatBot'
+import ProductPackages from './components/ProductPackages'
 
 const InteractiveServices = dynamic(
   () => import('./components/InteractiveServices'),
@@ -32,6 +33,9 @@ export default function Home() {
 
       {/* What is 4Runr Section */}
       <WhatIs4Runr />
+
+      {/* Product Packages Section */}
+      <ProductPackages />
 
       {/* AI Solutions CTA Section */}
       <AISolutionsCTA />
