@@ -39,6 +39,14 @@
   font-family: var(--font-body);
 }
 
+.estimate-disclaimer {
+  font-size: calc(var(--text-small) * 1.1) !important;
+  color: var(--color-text-muted) !important;
+  margin-top: calc(16 / 1920 * 100vw) !important;
+  font-style: italic;
+  opacity: 0.8;
+}
+
 .slideshow-container {
   display: flex;
   align-items: center;
