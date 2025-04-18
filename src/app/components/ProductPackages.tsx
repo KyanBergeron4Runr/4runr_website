@@ -364,11 +364,11 @@ export default function ProductPackages() {
               if (!isTimelineHovered) {  // Only restart if not being hovered
                 setAutoAdvance(true);
               }
-            }, 7000); // Increased pause time at the end of timeline
+            }, 7000); // Pause at the end of timeline
           }
           return nextIndex;
         });
-      }, 4000); // Increased time between timeline events for better readability
+      }, 4000);
     }
     return () => clearInterval(timelineInterval);
   }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
@@ -376,17 +376,24 @@ export default function ProductPackages() {
   const handleTimelineClick = (index: number) => {
     setTimelineIndex(index);
     setAutoAdvance(false);
+    // Resume auto-advance after 7 seconds if not being hovered
     setTimeout(() => {
-      if (!isTimelineHovered) {  // Only restart if not being hovered
+      if (!isTimelineHovered) {
         setAutoAdvance(true);
       }
-    }, 7000); // Consistent pause time after manual interaction
+    }, 7000);
   };
 
   const handleTimelineHover = (isHovered: boolean) => {
     setIsTimelineHovered(isHovered);
     if (!isHovered) {
-      setAutoAdvance(true);
+      // When mouse leaves, wait 2 seconds before resuming the cycle from current position
+      setTimeout(() => {
+        setAutoAdvance(true);
+      }, 2000);
+    } else {
+      // When mouse enters, immediately pause the cycle
+      setAutoAdvance(false);
     }
   };
 
