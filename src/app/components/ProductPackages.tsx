@@ -397,32 +397,91 @@ export default function ProductPackages() {
   const handlePrevious = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
-      setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
-      setTimelineIndex(0);
-      setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 600);
+      // First fade out current content
+      const currentContent = document.querySelector('.card-content');
+      if (currentContent) {
+        currentContent.classList.remove('active');
+      }
+      
+      // After content fades out, change the index
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
+        setTimelineIndex(0);
+        setAutoAdvance(true);
+        
+        // After index changes, fade in new content
+        setTimeout(() => {
+          const newContent = document.querySelector('.card-content');
+          if (newContent) {
+            newContent.classList.add('active');
+          }
+          setIsTransitioning(false);
+        }, 50);
+      }, 400);
     }
   };
 
   const handleNext = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
-      setCurrentIndex((prev) => (prev + 1) % packages.length);
-      setTimelineIndex(0);
-      setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 600);
+      // First fade out current content
+      const currentContent = document.querySelector('.card-content');
+      if (currentContent) {
+        currentContent.classList.remove('active');
+      }
+      
+      // After content fades out, change the index
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % packages.length);
+        setTimelineIndex(0);
+        setAutoAdvance(true);
+        
+        // After index changes, fade in new content
+        setTimeout(() => {
+          const newContent = document.querySelector('.card-content');
+          if (newContent) {
+            newContent.classList.add('active');
+          }
+          setIsTransitioning(false);
+        }, 50);
+      }, 400);
     }
   };
 
   const handleDotClick = (index: number) => {
     if (!isTransitioning && index !== currentIndex) {
       setIsTransitioning(true);
-      setCurrentIndex(index);
-      setTimelineIndex(0);
-      setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 600);
+      // First fade out current content
+      const currentContent = document.querySelector('.card-content');
+      if (currentContent) {
+        currentContent.classList.remove('active');
+      }
+      
+      // After content fades out, change the index
+      setTimeout(() => {
+        setCurrentIndex(index);
+        setTimelineIndex(0);
+        setAutoAdvance(true);
+        
+        // After index changes, fade in new content
+        setTimeout(() => {
+          const newContent = document.querySelector('.card-content');
+          if (newContent) {
+            newContent.classList.add('active');
+          }
+          setIsTransitioning(false);
+        }, 50);
+      }, 400);
     }
   };
+
+  // Add useEffect to handle initial content fade-in
+  useEffect(() => {
+    const content = document.querySelector('.card-content');
+    if (content) {
+      content.classList.add('active');
+    }
+  }, []);
 
   return (
     <section className="product-packages">
@@ -445,8 +504,8 @@ export default function ProductPackages() {
             </svg>
           </button>
 
-          <div className={`package-card ${isTransitioning ? 'transitioning' : ''}`}>
-            <div className={`card-content ${isTransitioning ? 'transitioning' : ''}`}>
+          <div className="package-card">
+            <div className="card-content">
               <h3>{packages[currentIndex].title}</h3>
               <div className="package-details">
                 <div className="detail">

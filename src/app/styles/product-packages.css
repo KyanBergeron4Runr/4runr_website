@@ -119,13 +119,13 @@
 .package-container {
   position: relative;
   width: 100%;
-  max-width: calc(1300 / 1920 * 100vw);
+  max-width: calc(1500 / 1920 * 100vw);
   margin: calc(60 / 1920 * 100vw) auto;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(1200 / 1920 * 100vw);
+  height: calc(1400 / 1920 * 100vw);
 }
 
 .package-card {
@@ -137,11 +137,10 @@
   border-radius: calc(20 / 1920 * 100vw);
   padding: calc(60 / 1920 * 100vw);
   width: 100%;
-  min-height: calc(1200 / 1920 * 100vw);
+  height: calc(1400 / 1920 * 100vw);
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .package-card:hover {
@@ -168,15 +167,16 @@
 }
 
 .card-content {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-content.transitioning {
   opacity: 0;
   transform: translateX(-40px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.card-content.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .package-card h3 {
@@ -526,13 +526,18 @@
   }
 
   .package-container {
+    height: auto;
+    min-height: calc(800px);
     padding: 0 60px;
-    min-height: auto;
   }
 
   .package-card {
-    padding: 40px;
-    min-height: auto;
+    height: auto;
+    min-height: calc(800px);
+  }
+
+  .card-content {
+    height: auto;
   }
 
   .nav-button {
@@ -744,7 +749,13 @@
   position: absolute;
   height: 100%;
   background: linear-gradient(90deg, rgba(106, 90, 205, 0.5), rgba(106, 90, 205, 0.8));
-  transition: width 3s linear;
+  width: 0;
+  animation: progressAnimation 3s linear forwards;
+}
+
+@keyframes progressAnimation {
+  0% { width: 0; }
+  100% { width: 100%; }
 }
 
 /* Add slide transition classes */
