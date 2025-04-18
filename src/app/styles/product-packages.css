@@ -124,12 +124,14 @@
   padding: 2rem;
   max-width: calc(1600 / 1920 * 100vw);
   margin: 0 auto;
+  background: #000;
+  min-height: 100vh;
 }
 
 .package-card {
-  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   padding: 2.5rem;
   max-width: calc(1500 / 1920 * 100vw);
   min-height: calc(800 / 1920 * 100vw);
@@ -137,30 +139,32 @@
   flex-direction: column;
   gap: 2rem;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .package-header {
   text-align: center;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .package-header h3 {
   font-size: 2.5rem;
-  color: #333;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 .package-header .price {
   font-size: 2rem;
   font-weight: bold;
-  color: #2563eb;
+  color: #60a5fa;
   margin-bottom: 0.5rem;
 }
 
 .package-header .timeline {
   font-size: 1.1rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .package-content {
@@ -178,12 +182,13 @@
   align-items: center;
   gap: 1rem;
   font-size: 1.1rem;
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
 }
 
 .feature-item::before {
   content: "✓";
-  color: #2563eb;
+  color: #60a5fa;
   font-weight: bold;
 }
 
@@ -209,9 +214,7 @@
 }
 
 .nav-button {
-  position: relative;
-  z-index: 10;
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 50%;
   width: 48px;
@@ -220,19 +223,18 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .nav-button:hover {
+  background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .nav-button svg {
   width: 24px;
   height: 24px;
-  stroke: #2563eb;
+  stroke: #fff;
 }
 
 .navigation-dots {
@@ -544,4 +546,16 @@
   height: 100%;
   background: linear-gradient(90deg, rgba(106, 90, 205, 0.5), rgba(106, 90, 205, 0.8));
   transition: width 0.3s ease;
+}
+
+.card-content {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-content.transitioning {
+  opacity: 0;
+  transform: translateX(-40px);
 } 

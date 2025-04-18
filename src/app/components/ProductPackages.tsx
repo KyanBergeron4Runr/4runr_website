@@ -346,66 +346,26 @@ const packages = [
 ];
 
 export default function ProductPackages() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentPackage, setCurrentPackage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [timelineIndex, setTimelineIndex] = useState(0);
-  const [autoAdvance, setAutoAdvance] = useState(true);
-
-  useEffect(() => {
-    let timelineInterval: NodeJS.Timeout;
-    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents) {
-      timelineInterval = setInterval(() => {
-        setTimelineIndex((prev) => {
-          const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
-          if (nextIndex === 0) {
-            setAutoAdvance(false);
-            setTimeout(() => {
-              setAutoAdvance(true);
-            }, 3000); // Reduced pause time at the end from 5000 to 3000
-          }
-          return nextIndex;
-        });
-      }, 2000); // Reduced from 3000 to 2000 for faster cycling
-    }
-    return () => clearInterval(timelineInterval);
-  }, [currentIndex, isTransitioning, autoAdvance]);
+  const [selectedTimelineIndex, setSelectedTimelineIndex] = useState(-1);
 
   const handleTimelineClick = (index: number) => {
-    setTimelineIndex(index);
-    setAutoAdvance(false);
-    setTimeout(() => {
-      setAutoAdvance(true);
-    }, 3000); // Reduced from 5000 to 3000 to match the cycle timing
+    setSelectedTimelineIndex(index === selectedTimelineIndex ? -1 : index);
   };
 
   const handlePrevious = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
-      setTimelineIndex(0);
-      setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 800);
-    }
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentPackage((prev) => (prev === 0 ? packages.length - 1 : prev - 1));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   const handleNext = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setCurrentIndex((prev) => (prev + 1) % packages.length);
-      setTimelineIndex(0);
-      setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 800);
-    }
-  };
-
-  const handleDotClick = (index: number) => {
-    if (!isTransitioning && index !== currentIndex) {
-      setIsTransitioning(true);
-      setCurrentIndex(index);
-      setTimelineIndex(0);
-      setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 800);
-    }
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentPackage((prev) => (prev === packages.length - 1 ? 0 : prev + 1));
+    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   return (
@@ -418,59 +378,43 @@ export default function ProductPackages() {
         </div>
 
         <div className="package-container">
-          <button
-            className="nav-button"
-            onClick={handlePrevious}
-            aria-label="Previous package"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <button className="nav-button prev" onClick={handlePrevious}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
 
           <div className="package-card">
-            <div className="package-header">
-              <h3>{packages[currentIndex].title}</h3>
-              <p className="price">{packages[currentIndex].price}</p>
-              <p className="timeline">{packages[currentIndex].timeline}</p>
-            </div>
-
-            <div className="package-content">
-              <div className="features-list">
-                {packages[currentIndex].features.map((feature, index) => (
-                  <div key={index} className="feature-item">
-                    <span className="feature-text">{feature}</span>
-                  </div>
-                ))}
+            <div className={`card-content ${isTransitioning ? 'transitioning' : ''}`}>
+              <div className="package-header">
+                <h3>{packages[currentPackage].title}</h3>
+                <div className="price">{packages[currentPackage].price}</div>
+                <div className="timeline">{packages[currentPackage].timeline}</div>
               </div>
-            </div>
 
-            <div className="package-footer">
-              <button className="cta-button">Get Started</button>
+              <div className="package-content">
+                <div className="features-list">
+                  {packages[currentPackage].features.map((feature, index) => (
+                    <div key={index} className="feature-item">
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <TimelineProgress
+                events={packages[currentPackage].timelineEvents}
+                currentIndex={selectedTimelineIndex}
+                onNodeClick={handleTimelineClick}
+              />
             </div>
           </div>
 
-          <button
-            className="nav-button"
-            onClick={handleNext}
-            aria-label="Next package"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <button className="nav-button next" onClick={handleNext}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
-        </div>
-
-        <div className="navigation-dots">
-          {packages.map((_, index) => (
-            <button
-              key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => handleDotClick(index)}
-              aria-label={`Go to package ${index + 1}`}
-              disabled={isTransitioning}
-            />
-          ))}
         </div>
 
         <div className="post-deployment">
