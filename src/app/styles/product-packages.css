@@ -119,25 +119,27 @@
 .package-container {
   position: relative;
   width: 100%;
-  max-width: calc(1700 / 1920 * 100vw);
+  max-width: calc(1900 / 1920 * 100vw);
   margin: calc(60 / 1920 * 100vw) auto;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(1800 / 1920 * 100vw);
+  min-height: calc(1400 / 1920 * 100vw);
+  height: auto;
 }
 
 .package-card {
   position: absolute;
   left: 0;
   right: 0;
-  overflow: hidden;
+  overflow: visible;
   background: rgba(255, 255, 255, 0.05);
   border-radius: calc(20 / 1920 * 100vw);
-  padding: calc(80 / 1920 * 100vw) calc(100 / 1920 * 100vw);
+  padding: calc(80 / 1920 * 100vw) calc(120 / 1920 * 100vw);
   width: 100%;
-  height: calc(1800 / 1920 * 100vw);
+  min-height: calc(1400 / 1920 * 100vw);
+  height: auto;
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -531,10 +533,14 @@
   .package-container {
     max-width: 95%;
     padding: 0 20px;
+    min-height: auto;
+    height: auto;
   }
 
   .package-card {
     padding: 40px 30px;
+    min-height: auto;
+    height: auto;
   }
 
   .card-content {
@@ -642,10 +648,15 @@
   }
 
   .timeline-node {
-    width: 200px;
-    height: 120px;
-    padding: 12px;
-    top: 90px;
+    width: 220px;
+    height: 130px;
+    transform: translate(-50%, -100%);
+  }
+
+  .timeline-node:hover,
+  .timeline-node.active,
+  .timeline-node.current {
+    transform: translate(-50%, -105%);
   }
 
   .features-list {
@@ -685,24 +696,33 @@
 .timeline-node {
   position: absolute;
   transform: translate(-50%, -100%);
-  width: calc(220 / 1920 * 100vw);
-  height: calc(130 / 1920 * 100vw);
+  width: calc(250 / 1920 * 100vw);
+  height: calc(150 / 1920 * 100vw);
   background: rgba(255, 255, 255, 0.1);
   border-radius: calc(10 / 1920 * 100vw);
   padding: calc(16 / 1920 * 100vw);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
   top: calc(120 / 1920 * 100vw);
+  cursor: pointer;
+}
+
+.timeline-node:hover {
+  transform: translate(-50%, -105%);
+  background: rgba(106, 90, 205, 0.2);
+  box-shadow: 0 calc(8 / 1920 * 100vw) calc(24 / 1920 * 100vw) rgba(106, 90, 205, 0.3);
 }
 
 .timeline-node.active {
   background: rgba(106, 90, 205, 0.3);
-  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(-50%, -105%);
+  box-shadow: 0 calc(12 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(106, 90, 205, 0.4);
 }
 
 .timeline-node.current {
   background: rgba(106, 90, 205, 0.4);
-  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(-50%, -105%);
+  box-shadow: 0 calc(16 / 1920 * 100vw) calc(40 / 1920 * 100vw) rgba(106, 90, 205, 0.5);
 }
 
 .timeline-content {
@@ -714,7 +734,8 @@
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(106, 90, 205, 0.3);
   border-radius: calc(8 / 1920 * 100vw);
-  padding: calc(12 / 1920 * 100vw);
+  padding: calc(16 / 1920 * 100vw);
+  transition: all 0.3s ease;
 }
 
 .timeline-title {
