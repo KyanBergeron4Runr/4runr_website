@@ -121,7 +121,7 @@
   width: 100%;
   max-width: calc(1100 / 1920 * 100vw);
   margin: calc(60 / 1920 * 100vw) auto;
-  padding: 0 calc(80 / 1920 * 100vw);
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,11 +302,11 @@
 }
 
 .nav-button.prev {
-  left: 0;
+  left: calc(-80 / 1920 * 100vw);
 }
 
 .nav-button.next {
-  right: 0;
+  right: calc(-80 / 1920 * 100vw);
 }
 
 .nav-button::before {
@@ -525,7 +525,7 @@
   }
 
   .package-container {
-    margin: 40px auto;
+    padding: 0 60px;
   }
 
   .package-card {
@@ -539,11 +539,11 @@
   }
 
   .nav-button.prev {
-    left: 10px;
+    left: 0;
   }
 
   .nav-button.next {
-    right: 10px;
+    right: 0;
   }
 
   .nav-button svg {
