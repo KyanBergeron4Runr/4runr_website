@@ -428,7 +428,7 @@ export default function ProductPackages() {
     <section className="product-packages">
       <div className="container">
         <div className="section-header">
-          <h2>⚡ The 4Runr Partnership Value Journey</h2>
+          <h2>⚡ The 4Runr Vision</h2>
           <p>At 4Runr, we build custom AI infrastructures—not off-the-shelf solutions. Each package below represents a template framework to help guide our discovery and planning process. Every system we build is tailored to your needs and can be expanded over time as your business grows.</p>
           <p className="estimate-disclaimer">* All timelines and pricing are estimates and may vary based on your specific requirements, project complexity, and scope. Final quotes will be provided after detailed consultation.</p>
         </div>

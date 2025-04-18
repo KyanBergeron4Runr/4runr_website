@@ -121,7 +121,7 @@
   width: 100%;
   max-width: calc(1100 / 1920 * 100vw);
   margin: 0 auto;
-  padding: 0;
+  padding: 0 calc(80 / 1920 * 100vw);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,7 +282,7 @@
 }
 
 .nav-button {
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: calc(50 / 1920 * 100vw);
@@ -301,11 +301,11 @@
 }
 
 .nav-button.prev {
-  left: calc(50% - calc(600 / 1920 * 100vw));
+  left: 0;
 }
 
 .nav-button.next {
-  right: calc(50% - calc(600 / 1920 * 100vw));
+  right: 0;
 }
 
 .nav-button::before {
@@ -524,8 +524,7 @@
   }
 
   .package-container {
-    min-height: auto;
-    padding: 0 40px;
+    padding: 0 calc(60 / 1920 * 100vw);
   }
 
   .package-card {
@@ -534,15 +533,16 @@
   }
 
   .nav-button {
-    position: absolute;
+    width: 40px;
+    height: 40px;
   }
 
   .nav-button.prev {
-    left: 0;
+    left: 10px;
   }
 
   .nav-button.next {
-    right: 0;
+    right: 10px;
   }
 
   .nav-button svg {
