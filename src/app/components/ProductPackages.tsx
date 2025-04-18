@@ -351,7 +351,6 @@ export default function ProductPackages() {
   const [timelineIndex, setTimelineIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
   const [isTimelineHovered, setIsTimelineHovered] = useState(false);
-  const [lastTimelineIndex, setLastTimelineIndex] = useState(0);
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
@@ -359,7 +358,6 @@ export default function ProductPackages() {
       timelineInterval = setInterval(() => {
         setTimelineIndex((prev) => {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
-          setLastTimelineIndex(nextIndex);
           if (nextIndex === 0) {
             setAutoAdvance(false);
             setTimeout(() => setAutoAdvance(true), 5000); // Pause for 5 seconds before restarting
@@ -373,7 +371,6 @@ export default function ProductPackages() {
 
   const handleTimelineClick = (index: number) => {
     setTimelineIndex(index);
-    setLastTimelineIndex(index);
     setAutoAdvance(false);
     setTimeout(() => setAutoAdvance(true), 5000); // Resume auto-advance after 5 seconds
   };
@@ -381,7 +378,6 @@ export default function ProductPackages() {
   const handleTimelineHover = (isHovered: boolean) => {
     setIsTimelineHovered(isHovered);
     if (!isHovered) {
-      setTimelineIndex(lastTimelineIndex);
       setAutoAdvance(true);
     }
   };
