@@ -484,7 +484,7 @@ export default function ProductPackages() {
   }, []);
 
   return (
-    <section className="product-packages">
+    <section className="packages-section">
       <div className="container">
         <div className="section-header">
           <h2>The 4Runr Vision</h2>
@@ -505,7 +505,7 @@ export default function ProductPackages() {
           </button>
 
           <div className="package-card">
-            <div className="card-content">
+            <div className={`card-content ${isTransitioning ? 'changing' : ''}`}>
               <h3>{packages[currentIndex].title}</h3>
               <div className="package-details">
                 <div className="detail">
@@ -576,6 +576,9 @@ export default function ProductPackages() {
           </ul>
           <p>Every addition is properly scoped, quoted, and aligned with your evolving needs. We ensure you continue scaling intelligently without technical debt. These packages are just the starting point. Your 4Runr System is always built for evolution.</p>
         </div>
+      </div>
+      <div className="fine-print">
+        * All timelines are estimates and may vary based on project complexity and requirements
       </div>
     </section>
   );
