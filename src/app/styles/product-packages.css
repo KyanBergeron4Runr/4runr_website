@@ -755,6 +755,14 @@
   border-radius: calc(8 / 1920 * 100vw);
   padding: calc(16 / 1920 * 100vw);
   transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.timeline-node:hover .timeline-content,
+.timeline-node.current .timeline-content {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .timeline-title {

@@ -351,6 +351,7 @@ export default function ProductPackages() {
   const [timelineIndex, setTimelineIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
   const [isTimelineHovered, setIsTimelineHovered] = useState(false);
+  const cycleInterval = 3000; // Define cycle interval as a constant
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
@@ -359,39 +360,24 @@ export default function ProductPackages() {
         setTimelineIndex((prev) => {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
           if (nextIndex === 0) {
-            setAutoAdvance(false);
-            setTimeout(() => {
-              if (!isTimelineHovered) {
-                setAutoAdvance(true);
-              }
-            }, 5000);
+            // Don't stop auto-advance, just continue cycling
+            return nextIndex;
           }
           return nextIndex;
         });
-      }, 3000);
+      }, cycleInterval);
     }
     return () => clearInterval(timelineInterval);
   }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
 
   const handleTimelineClick = (index: number) => {
     setTimelineIndex(index);
-    setAutoAdvance(false);
-    setTimeout(() => {
-      if (!isTimelineHovered) {
-        setAutoAdvance(true);
-      }
-    }, 5000);
+    // Don't stop auto-advance on click, maintain consistent behavior
   };
 
   const handleTimelineHover = (isHovered: boolean) => {
     setIsTimelineHovered(isHovered);
-    if (!isHovered) {
-      setTimeout(() => {
-        setAutoAdvance(true);
-      }, 2000);
-    } else {
-      setAutoAdvance(false);
-    }
+    // Don't stop auto-advance on hover, let it continue cycling
   };
 
   const handlePrevious = () => {
