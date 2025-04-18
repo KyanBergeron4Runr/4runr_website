@@ -10,11 +10,16 @@ interface TimelineEvent {
 interface TimelineProgressProps {
   events: TimelineEvent[];
   currentIndex: number;
-  onNodeClick?: (index: number) => void;
-  onHover?: (isHovered: boolean) => void;
+  onTimelineClick: (index: number) => void;
+  onTimelineHover: (isHovered: boolean) => void;
 }
 
-export default function TimelineProgress({ events, currentIndex, onNodeClick, onHover }: TimelineProgressProps) {
+const TimelineProgress: React.FC<TimelineProgressProps> = ({
+  events,
+  currentIndex,
+  onTimelineClick,
+  onTimelineHover,
+}) => {
   const [activeEvent, setActiveEvent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -22,10 +27,10 @@ export default function TimelineProgress({ events, currentIndex, onNodeClick, on
     if (!isAnimating && index !== activeEvent) {
       setIsAnimating(true);
       setActiveEvent(index);
-      onNodeClick?.(index);
+      onTimelineClick(index);
       setTimeout(() => setIsAnimating(false), 800);
     }
-  }, [activeEvent, isAnimating, onNodeClick]);
+  }, [activeEvent, isAnimating, onTimelineClick]);
 
   useEffect(() => {
     if (!isAnimating) {
@@ -34,46 +39,26 @@ export default function TimelineProgress({ events, currentIndex, onNodeClick, on
   }, [currentIndex, isAnimating]);
 
   return (
-    <div 
-      className="timeline-container"
-      onMouseEnter={() => onHover?.(true)}
-      onMouseLeave={() => onHover?.(false)}
-    >
+    <div className="timeline-container">
       <div className="timeline-progress">
-        <div 
-          className="timeline-progress-bar"
-          style={{
-            width: `${((activeEvent + 1) / events.length) * 100}%`
-          }}
-        />
         {events.map((event, index) => (
-          <div 
+          <div
             key={index}
-            className={`timeline-node ${index <= activeEvent ? 'active' : ''} ${index === activeEvent ? 'current' : ''}`}
-            style={{ 
-              left: `${(index / (events.length - 1)) * 100}%`,
-              transitionDelay: `${Math.abs(index - activeEvent) * 0.1}s`
-            }}
+            className={`timeline-item ${index === currentIndex ? 'active' : ''}`}
             onClick={() => handleNodeClick(index)}
-            role="button"
-            tabIndex={0}
-            onKeyPress={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                handleNodeClick(index);
-              }
-            }}
-            aria-label={`Timeline step ${index + 1}: ${event.title}`}
+            onMouseEnter={() => onTimelineHover(true)}
+            onMouseLeave={() => onTimelineHover(false)}
           >
             <div className="timeline-content">
-              <div className="timeline-title">{event.title}</div>
-              {event.duration && (
-                <div className="timeline-duration">{event.duration}</div>
-              )}
-              <div className="timeline-description">{event.description}</div>
+              <h3 className="timeline-title">{event.title}</h3>
+              <p className="timeline-duration">{event.duration}</p>
+              <p className="timeline-description">{event.description}</p>
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-} 
+};
+
+export default TimelineProgress; 

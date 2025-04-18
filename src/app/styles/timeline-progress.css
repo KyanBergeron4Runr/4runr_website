@@ -136,7 +136,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(0);
   background: rgba(20, 20, 20, 0.95);
-  padding: calc(20 / 1920 * 100vw) calc(24 / 1920 * 100vw);
+  padding: calc(16 / 1920 * 100vw) calc(24 / 1920 * 100vw);
   border-radius: calc(12 / 1920 * 100vw);
   width: calc(320 / 1920 * 100vw);
   min-height: calc(120 / 1920 * 100vw);
@@ -144,7 +144,7 @@
   border: 1px solid rgba(106, 90, 205, 0.2);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-align: center;
   box-shadow: 
     0 calc(10 / 1920 * 100vw) calc(20 / 1920 * 100vw) rgba(0, 0, 0, 0.2),
@@ -160,7 +160,7 @@
 .timeline-node.current .timeline-content {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(calc(-10 / 1920 * 100vw));
+  transform: translateX(-50%) translateY(calc(-20 / 1920 * 100vw));
 }
 
 .timeline-title {
@@ -181,7 +181,7 @@
 .timeline-description {
   font-size: calc(14 / 1920 * 100vw);
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 @keyframes pulse {
@@ -218,24 +218,22 @@
   }
 
   .timeline-content {
-    top: -70px;
-    width: 280px;
-    min-height: 100px;
-    padding: 16px 20px;
+    top: -60px;
+    width: 220px;
+    padding: 12px 16px;
   }
 
   .timeline-title {
-    font-size: 15px;
-    margin-bottom: 6px;
+    font-size: 14px;
+    margin-bottom: 4px;
   }
 
   .timeline-duration {
-    font-size: 13px;
-    margin-bottom: 6px;
+    font-size: 12px;
+    margin-bottom: 4px;
   }
 
   .timeline-description {
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 12px;
   }
 } 
