@@ -360,11 +360,15 @@ export default function ProductPackages() {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
           if (nextIndex === 0) {
             setAutoAdvance(false);
-            setTimeout(() => setAutoAdvance(true), 5000); // Pause for 5 seconds before restarting
+            setTimeout(() => {
+              if (!isTimelineHovered) {  // Only restart if not being hovered
+                setAutoAdvance(true);
+              }
+            }, 7000); // Increased pause time at the end of timeline
           }
           return nextIndex;
         });
-      }, 3000);
+      }, 4000); // Increased time between timeline events for better readability
     }
     return () => clearInterval(timelineInterval);
   }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
@@ -372,7 +376,11 @@ export default function ProductPackages() {
   const handleTimelineClick = (index: number) => {
     setTimelineIndex(index);
     setAutoAdvance(false);
-    setTimeout(() => setAutoAdvance(true), 5000); // Resume auto-advance after 5 seconds
+    setTimeout(() => {
+      if (!isTimelineHovered) {  // Only restart if not being hovered
+        setAutoAdvance(true);
+      }
+    }, 7000); // Consistent pause time after manual interaction
   };
 
   const handleTimelineHover = (isHovered: boolean) => {
