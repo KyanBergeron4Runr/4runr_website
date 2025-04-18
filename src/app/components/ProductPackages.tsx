@@ -383,81 +383,42 @@ export default function ProductPackages() {
   const handlePrevious = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
-      // First fade out current content
-      const currentContent = document.querySelector('.card-content');
-      if (currentContent) {
-        currentContent.classList.remove('active');
-      }
+      setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
       
-      // After content fades out, change the index
+      // Short delay to allow new content to render before removing transition state
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
-        setTimelineIndex(0);
-        setAutoAdvance(true);
-        
-        // After index changes, fade in new content
-        setTimeout(() => {
-          const newContent = document.querySelector('.card-content');
-          if (newContent) {
-            newContent.classList.add('active');
-          }
-          setIsTransitioning(false);
-        }, 50);
-      }, 400);
+        setIsTransitioning(false);
+      }, 50);
     }
   };
 
   const handleNext = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
-      // First fade out current content
-      const currentContent = document.querySelector('.card-content');
-      if (currentContent) {
-        currentContent.classList.remove('active');
-      }
+      setCurrentIndex((prev) => (prev + 1) % packages.length);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
       
-      // After content fades out, change the index
+      // Short delay to allow new content to render before removing transition state
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % packages.length);
-        setTimelineIndex(0);
-        setAutoAdvance(true);
-        
-        // After index changes, fade in new content
-        setTimeout(() => {
-          const newContent = document.querySelector('.card-content');
-          if (newContent) {
-            newContent.classList.add('active');
-          }
-          setIsTransitioning(false);
-        }, 50);
-      }, 400);
+        setIsTransitioning(false);
+      }, 50);
     }
   };
 
   const handleDotClick = (index: number) => {
     if (!isTransitioning && index !== currentIndex) {
       setIsTransitioning(true);
-      // First fade out current content
-      const currentContent = document.querySelector('.card-content');
-      if (currentContent) {
-        currentContent.classList.remove('active');
-      }
+      setCurrentIndex(index);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
       
-      // After content fades out, change the index
+      // Short delay to allow new content to render before removing transition state
       setTimeout(() => {
-        setCurrentIndex(index);
-        setTimelineIndex(0);
-        setAutoAdvance(true);
-        
-        // After index changes, fade in new content
-        setTimeout(() => {
-          const newContent = document.querySelector('.card-content');
-          if (newContent) {
-            newContent.classList.add('active');
-          }
-          setIsTransitioning(false);
-        }, 50);
-      }, 400);
+        setIsTransitioning(false);
+      }, 50);
     }
   };
 
@@ -483,7 +444,6 @@ export default function ProductPackages() {
             className="nav-button prev" 
             onClick={handlePrevious}
             aria-label="Previous package"
-            disabled={isTransitioning}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -491,7 +451,7 @@ export default function ProductPackages() {
           </button>
 
           <div className="package-card">
-            <div className={`card-content ${isTransitioning ? 'changing' : ''}`}>
+            <div className="card-content">
               <h3>{packages[currentIndex].title}</h3>
               <div className="package-details">
                 <div className="detail">
@@ -530,7 +490,6 @@ export default function ProductPackages() {
             className="nav-button next" 
             onClick={handleNext}
             aria-label="Next package"
-            disabled={isTransitioning}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -545,7 +504,6 @@ export default function ProductPackages() {
               className={`dot ${index === currentIndex ? 'active' : ''}`}
               onClick={() => handleDotClick(index)}
               aria-label={`Go to package ${index + 1}`}
-              disabled={isTransitioning}
             />
           ))}
         </div>
