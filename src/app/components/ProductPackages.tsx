@@ -361,11 +361,11 @@ export default function ProductPackages() {
             setAutoAdvance(false);
             setTimeout(() => {
               setAutoAdvance(true);
-            }, 5000); // Pause at the end of timeline
+            }, 3000); // Reduced pause time at the end from 5000 to 3000
           }
           return nextIndex;
         });
-      }, 3000); // Reduced from 4000 to 3000 for faster cycling
+      }, 2000); // Reduced from 3000 to 2000 for faster cycling
     }
     return () => clearInterval(timelineInterval);
   }, [currentIndex, isTransitioning, autoAdvance]);
@@ -375,7 +375,7 @@ export default function ProductPackages() {
     setAutoAdvance(false);
     setTimeout(() => {
       setAutoAdvance(true);
-    }, 5000);
+    }, 3000); // Reduced from 5000 to 3000 to match the cycle timing
   };
 
   const handlePrevious = () => {
