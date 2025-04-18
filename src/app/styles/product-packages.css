@@ -135,7 +135,7 @@
   padding: calc(48 / 1920 * 100vw);
   width: 100%;
   max-width: calc(900 / 1920 * 100vw);
-  min-height: calc(600 / 1920 * 100vw);
+  min-height: calc(800 / 1920 * 100vw);
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -654,4 +654,95 @@
   .post-deployment h3 {
     font-size: 1.4rem;
   }
+}
+
+/* Add these new styles for timeline nodes */
+.timeline-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: calc(200 / 1920 * 100vw); /* Fixed width for all nodes */
+  height: calc(120 / 1920 * 100vw); /* Fixed height for all nodes */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: calc(10 / 1920 * 100vw);
+  padding: calc(12 / 1920 * 100vw);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.timeline-node:hover {
+  background: rgba(106, 90, 205, 0.2);
+  transform: translate(-50%, -50%) scale(1.05);
+  z-index: 2;
+}
+
+.timeline-node.active {
+  background: rgba(106, 90, 205, 0.3);
+}
+
+.timeline-node.current {
+  background: rgba(106, 90, 205, 0.4);
+}
+
+.timeline-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(106, 90, 205, 0.3);
+  border-radius: calc(8 / 1920 * 100vw);
+  padding: calc(12 / 1920 * 100vw);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.timeline-node:hover .timeline-content {
+  opacity: 1;
+  visibility: visible;
+  top: -120%;
+}
+
+.timeline-title {
+  font-size: calc(var(--text-small) * 1.1);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: calc(4 / 1920 * 100vw);
+}
+
+.timeline-duration {
+  font-size: calc(var(--text-small) * 0.9);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: calc(4 / 1920 * 100vw);
+}
+
+.timeline-description {
+  font-size: calc(var(--text-small) * 0.9);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Add styles for timeline container */
+.timeline-container {
+  position: relative;
+  width: 100%;
+  height: calc(160 / 1920 * 100vw);
+  margin: calc(40 / 1920 * 100vw) 0;
+}
+
+.timeline-progress {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: calc(80 / 1920 * 100vw) 0;
+}
+
+.timeline-progress-bar {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(106, 90, 205, 0.5), rgba(106, 90, 205, 0.8));
+  transition: width 0.3s ease;
 } 
