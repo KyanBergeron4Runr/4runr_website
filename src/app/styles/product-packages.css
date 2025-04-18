@@ -279,7 +279,7 @@
 }
 
 .nav-button {
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: calc(50 / 1920 * 100vw);
@@ -297,11 +297,11 @@
 }
 
 .nav-button.prev {
-  left: calc((100vw - (1300 / 1920 * 100vw)) / 2 - (60 / 1920 * 100vw));
+  left: calc(-60 / 1920 * 100vw);
 }
 
 .nav-button.next {
-  right: calc((100vw - (1300 / 1920 * 100vw)) / 2 - (60 / 1920 * 100vw));
+  right: calc(-60 / 1920 * 100vw);
 }
 
 .nav-button svg {
