@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/product-packages.css';
 import TimelineProgress from './TimelineProgress';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { CheckIcon } from '@heroicons/react/24/outline';
 
 const packages = [
   {
@@ -408,88 +410,72 @@ export default function ProductPackages() {
     }
   };
 
+  const currentPackage = packages[currentIndex];
+
   return (
     <section className="product-packages">
       <div className="container">
         <div className="section-header">
-          <h2>⚡ The 4Runr Partnership Value Journey</h2>
+          <h2>The 4Runr Vision</h2>
           <p>At 4Runr, we build custom AI infrastructures—not off-the-shelf solutions. Each package below represents a template framework to help guide our discovery and planning process. Every system we build is tailored to your needs and can be expanded over time as your business grows.</p>
           <p className="estimate-disclaimer">* All timelines and pricing are estimates and may vary based on your specific requirements, project complexity, and scope. Final quotes will be provided after detailed consultation.</p>
         </div>
 
         <div className="package-container">
-          <button 
-            className="nav-button prev" 
-            onClick={handlePrevious} 
+          <button
+            className="nav-button prev"
+            onClick={handlePrevious}
             aria-label="Previous package"
-            disabled={isTransitioning}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <ChevronLeftIcon className="w-6 h-6" />
           </button>
 
-          <div className={`package-card ${isTransitioning ? 'transitioning' : ''}`}>
-            <div className="card-content">
-              <h3>{packages[currentIndex].title}</h3>
-              <div className="package-details">
-                <div className="detail">
-                  <span className="label">Price:</span>
-                  <span className="value">{packages[currentIndex].price}</span>
-                </div>
-                <div className="detail">
-                  <span className="label">Timeline:</span>
-                  <span className="value">{packages[currentIndex].timeline}</span>
-                </div>
-                <div className="detail">
-                  <span className="label">Deployment:</span>
-                  <span className="value">{packages[currentIndex].deployment}</span>
+          <div className="package-card">
+            <div className="package-content">
+              <div className="package-header">
+                <h2>{currentPackage.title}</h2>
+                <div className="package-price">
+                  <span className="currency">$</span>
+                  <span className="amount">{currentPackage.price}</span>
+                  <span className="timeline">/{currentPackage.timeline}</span>
                 </div>
               </div>
 
-              <TimelineProgress 
-                events={packages[currentIndex]?.timelineEvents || []}
-                currentIndex={timelineIndex}
-                onNodeClick={handleTimelineClick}
-              />
+              <div className="package-features">
+                {currentPackage.features.map((feature, index) => (
+                  <div key={index} className="feature-item">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
 
-              <div className="features">
-                <h4>Includes:</h4>
-                <ul>
-                  {packages[currentIndex].features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
+              <div className="package-footer">
+                <div className="timeline-dots">
+                  {packages.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`timeline-dot ${index === currentIndex ? 'active' : ''}`}
+                      onClick={() => handleDotClick(index)}
+                      aria-label={`Go to package ${index + 1}`}
+                    />
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          <button 
-            className="nav-button next" 
-            onClick={handleNext} 
+          <button
+            className="nav-button next"
+            onClick={handleNext}
             aria-label="Next package"
-            disabled={isTransitioning}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <ChevronRightIcon className="w-6 h-6" />
           </button>
         </div>
 
-        <div className="navigation-dots">
-          {packages.map((_, index) => (
-            <button
-              key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => handleDotClick(index)}
-              aria-label={`Go to package ${index + 1}`}
-              disabled={isTransitioning}
-            />
-          ))}
-        </div>
-
         <div className="post-deployment">
-          <h3>📈 Post-Deployment Flexibility</h3>
+          <h3>Post-Deployment Flexibility</h3>
           <p>All 4Runr systems are modular and scalable. After initial deployment, you can:</p>
           <ul>
             <li>Add new workflows, departments, or AI brains</li>
