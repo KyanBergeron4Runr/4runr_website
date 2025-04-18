@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/product-packages.css';
 import TimelineProgress from './TimelineProgress';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { CheckIcon } from '@heroicons/react/24/outline';
 
 const packages = [
   {
@@ -410,8 +408,6 @@ export default function ProductPackages() {
     }
   };
 
-  const currentPackage = packages[currentIndex];
-
   return (
     <section className="product-packages">
       <div className="container">
@@ -423,55 +419,58 @@ export default function ProductPackages() {
 
         <div className="package-container">
           <button
-            className="nav-button prev"
+            className="nav-button"
             onClick={handlePrevious}
             aria-label="Previous package"
           >
-            <ChevronLeftIcon className="w-6 h-6" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
           </button>
 
           <div className="package-card">
-            <div className="package-content">
-              <div className="package-header">
-                <h2>{currentPackage.title}</h2>
-                <div className="package-price">
-                  <span className="currency">$</span>
-                  <span className="amount">{currentPackage.price}</span>
-                  <span className="timeline">/{currentPackage.timeline}</span>
-                </div>
-              </div>
+            <div className="package-header">
+              <h3>{packages[currentIndex].title}</h3>
+              <p className="price">{packages[currentIndex].price}</p>
+              <p className="timeline">{packages[currentIndex].timeline}</p>
+            </div>
 
-              <div className="package-features">
-                {currentPackage.features.map((feature, index) => (
+            <div className="package-content">
+              <div className="features-list">
+                {packages[currentIndex].features.map((feature, index) => (
                   <div key={index} className="feature-item">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span>{feature}</span>
+                    <span className="feature-text">{feature}</span>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <div className="package-footer">
-                <div className="timeline-dots">
-                  {packages.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`timeline-dot ${index === currentIndex ? 'active' : ''}`}
-                      onClick={() => handleDotClick(index)}
-                      aria-label={`Go to package ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
+            <div className="package-footer">
+              <button className="cta-button">Get Started</button>
             </div>
           </div>
 
           <button
-            className="nav-button next"
+            className="nav-button"
             onClick={handleNext}
             aria-label="Next package"
           >
-            <ChevronRightIcon className="w-6 h-6" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </button>
+        </div>
+
+        <div className="navigation-dots">
+          {packages.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+              aria-label={`Go to package ${index + 1}`}
+              disabled={isTransitioning}
+            />
+          ))}
         </div>
 
         <div className="post-deployment">
