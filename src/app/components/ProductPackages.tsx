@@ -346,79 +346,167 @@ const packages = [
 ];
 
 export default function ProductPackages() {
-  const [currentPackage, setCurrentPackage] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [selectedTimelineIndex, setSelectedTimelineIndex] = useState(-1);
+  const [timelineIndex, setTimelineIndex] = useState(0);
+  const [autoAdvance, setAutoAdvance] = useState(true);
+  const [isTimelineHovered, setIsTimelineHovered] = useState(false);
+
+  useEffect(() => {
+    let timelineInterval: NodeJS.Timeout;
+    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents && !isTimelineHovered) {
+      timelineInterval = setInterval(() => {
+        setTimelineIndex((prev) => {
+          const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
+          if (nextIndex === 0) {
+            setAutoAdvance(false);
+            setTimeout(() => {
+              if (!isTimelineHovered) {
+                setAutoAdvance(true);
+              }
+            }, 5000);
+          }
+          return nextIndex;
+        });
+      }, 3000);
+    }
+    return () => clearInterval(timelineInterval);
+  }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
 
   const handleTimelineClick = (index: number) => {
-    setSelectedTimelineIndex(index === selectedTimelineIndex ? -1 : index);
+    setTimelineIndex(index);
+    setAutoAdvance(false);
+    setTimeout(() => {
+      if (!isTimelineHovered) {
+        setAutoAdvance(true);
+      }
+    }, 5000);
+  };
+
+  const handleTimelineHover = (isHovered: boolean) => {
+    setIsTimelineHovered(isHovered);
+    if (!isHovered) {
+      setTimeout(() => {
+        setAutoAdvance(true);
+      }, 2000);
+    } else {
+      setAutoAdvance(false);
+    }
   };
 
   const handlePrevious = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentPackage((prev) => (prev === 0 ? packages.length - 1 : prev - 1));
-    setTimeout(() => setIsTransitioning(false), 600);
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
+      setTimeout(() => setIsTransitioning(false), 800);
+    }
   };
 
   const handleNext = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentPackage((prev) => (prev === packages.length - 1 ? 0 : prev + 1));
-    setTimeout(() => setIsTransitioning(false), 600);
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => (prev + 1) % packages.length);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
+      setTimeout(() => setIsTransitioning(false), 800);
+    }
+  };
+
+  const handleDotClick = (index: number) => {
+    if (!isTransitioning && index !== currentIndex) {
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
+      setTimeout(() => setIsTransitioning(false), 800);
+    }
   };
 
   return (
     <section className="product-packages">
       <div className="container">
         <div className="section-header">
-          <h2>The 4Runr Vision</h2>
+          <h2>⚡ The 4Runr Partnership Value Journey</h2>
           <p>At 4Runr, we build custom AI infrastructures—not off-the-shelf solutions. Each package below represents a template framework to help guide our discovery and planning process. Every system we build is tailored to your needs and can be expanded over time as your business grows.</p>
           <p className="estimate-disclaimer">* All timelines and pricing are estimates and may vary based on your specific requirements, project complexity, and scope. Final quotes will be provided after detailed consultation.</p>
         </div>
 
         <div className="package-container">
-          <button className="nav-button prev" onClick={handlePrevious}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6" />
+          <button 
+            className="nav-button prev" 
+            onClick={handlePrevious} 
+            aria-label="Previous package"
+            disabled={isTransitioning}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 
-          <div className="package-card">
-            <div className={`card-content ${isTransitioning ? 'transitioning' : ''}`}>
-              <div className="package-header">
-                <h3>{packages[currentPackage].title}</h3>
-                <div className="price">{packages[currentPackage].price}</div>
-                <div className="timeline">{packages[currentPackage].timeline}</div>
-              </div>
-
-              <div className="package-content">
-                <div className="features-list">
-                  {packages[currentPackage].features.map((feature, index) => (
-                    <div key={index} className="feature-item">
-                      {feature}
-                    </div>
-                  ))}
+          <div className={`package-card ${isTransitioning ? 'transitioning' : ''}`}>
+            <div className="card-content">
+              <h3>{packages[currentIndex].title}</h3>
+              <div className="package-details">
+                <div className="detail">
+                  <span className="label">Price:</span>
+                  <span className="value">{packages[currentIndex].price}</span>
+                </div>
+                <div className="detail">
+                  <span className="label">Timeline:</span>
+                  <span className="value">{packages[currentIndex].timeline}</span>
+                </div>
+                <div className="detail">
+                  <span className="label">Deployment:</span>
+                  <span className="value">{packages[currentIndex].deployment}</span>
                 </div>
               </div>
 
-              <TimelineProgress
-                events={packages[currentPackage].timelineEvents}
-                currentIndex={selectedTimelineIndex}
+              <TimelineProgress 
+                events={packages[currentIndex]?.timelineEvents || []}
+                currentIndex={timelineIndex}
                 onNodeClick={handleTimelineClick}
+                onHover={handleTimelineHover}
               />
+
+              <div className="features">
+                <h4>Includes:</h4>
+                <ul>
+                  {packages[currentIndex].features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
-          <button className="nav-button next" onClick={handleNext}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6" />
+          <button 
+            className="nav-button next" 
+            onClick={handleNext} 
+            aria-label="Next package"
+            disabled={isTransitioning}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
         </div>
 
+        <div className="navigation-dots">
+          {packages.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+              aria-label={`Go to package ${index + 1}`}
+              disabled={isTransitioning}
+            />
+          ))}
+        </div>
+
         <div className="post-deployment">
-          <h3>Post-Deployment Flexibility</h3>
+          <h3>📈 Post-Deployment Flexibility</h3>
           <p>All 4Runr systems are modular and scalable. After initial deployment, you can:</p>
           <ul>
             <li>Add new workflows, departments, or AI brains</li>
