@@ -350,51 +350,32 @@ export default function ProductPackages() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [timelineIndex, setTimelineIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
-  const [isTimelineHovered, setIsTimelineHovered] = useState(false);
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
-    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents && !isTimelineHovered) {
+    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents) {
       timelineInterval = setInterval(() => {
         setTimelineIndex((prev) => {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
           if (nextIndex === 0) {
             setAutoAdvance(false);
             setTimeout(() => {
-              if (!isTimelineHovered) {  // Only restart if not being hovered
-                setAutoAdvance(true);
-              }
-            }, 7000); // Pause at the end of timeline
+              setAutoAdvance(true);
+            }, 5000); // Pause at the end of timeline
           }
           return nextIndex;
         });
-      }, 4000);
+      }, 3000); // Reduced from 4000 to 3000 for faster cycling
     }
     return () => clearInterval(timelineInterval);
-  }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
+  }, [currentIndex, isTransitioning, autoAdvance]);
 
   const handleTimelineClick = (index: number) => {
     setTimelineIndex(index);
     setAutoAdvance(false);
-    // Resume auto-advance after 7 seconds if not being hovered
     setTimeout(() => {
-      if (!isTimelineHovered) {
-        setAutoAdvance(true);
-      }
-    }, 7000);
-  };
-
-  const handleTimelineHover = (isHovered: boolean) => {
-    setIsTimelineHovered(isHovered);
-    if (!isHovered) {
-      // When mouse leaves, wait 2 seconds before resuming the cycle from current position
-      setTimeout(() => {
-        setAutoAdvance(true);
-      }, 2000);
-    } else {
-      // When mouse enters, immediately pause the cycle
-      setAutoAdvance(false);
-    }
+      setAutoAdvance(true);
+    }, 5000);
   };
 
   const handlePrevious = () => {
@@ -470,7 +451,6 @@ export default function ProductPackages() {
                 events={packages[currentIndex]?.timelineEvents || []}
                 currentIndex={timelineIndex}
                 onNodeClick={handleTimelineClick}
-                onHover={handleTimelineHover}
               />
 
               <div className="features">
