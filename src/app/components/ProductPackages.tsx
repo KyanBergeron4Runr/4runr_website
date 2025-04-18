@@ -400,7 +400,7 @@ export default function ProductPackages() {
       setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
       setTimelineIndex(0);
       setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 800);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
 
@@ -410,7 +410,7 @@ export default function ProductPackages() {
       setCurrentIndex((prev) => (prev + 1) % packages.length);
       setTimelineIndex(0);
       setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 800);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
 
@@ -420,7 +420,7 @@ export default function ProductPackages() {
       setCurrentIndex(index);
       setTimelineIndex(0);
       setAutoAdvance(true);
-      setTimeout(() => setIsTransitioning(false), 800);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
 
@@ -436,7 +436,7 @@ export default function ProductPackages() {
         <div className="package-container">
           <button 
             className="nav-button prev" 
-            onClick={handlePrevious} 
+            onClick={handlePrevious}
             aria-label="Previous package"
             disabled={isTransitioning}
           >
@@ -446,7 +446,7 @@ export default function ProductPackages() {
           </button>
 
           <div className={`package-card ${isTransitioning ? 'transitioning' : ''}`}>
-            <div className="card-content">
+            <div className={`card-content ${isTransitioning ? 'transitioning' : ''}`}>
               <h3>{packages[currentIndex].title}</h3>
               <div className="package-details">
                 <div className="detail">
@@ -483,7 +483,7 @@ export default function ProductPackages() {
 
           <button 
             className="nav-button next" 
-            onClick={handleNext} 
+            onClick={handleNext}
             aria-label="Next package"
             disabled={isTransitioning}
           >

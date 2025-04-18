@@ -141,7 +141,7 @@
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: opacity 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .package-card:hover {
@@ -170,13 +170,13 @@
 .card-content {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-content.transitioning {
   opacity: 0;
   transform: translateX(-40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .package-card h3 {
@@ -356,7 +356,7 @@
   background: rgba(255, 255, 255, 0.2);
   border: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
@@ -384,6 +384,7 @@
 .dot.active {
   background: #6a5acd;
   transform: scale(1.2);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dot.active:hover {
@@ -678,17 +679,19 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: calc(10 / 1920 * 100vw);
   padding: calc(16 / 1920 * 100vw);
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
   top: calc(120 / 1920 * 100vw);
 }
 
 .timeline-node.active {
   background: rgba(106, 90, 205, 0.3);
+  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-node.current {
   background: rgba(106, 90, 205, 0.4);
+  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-content {
@@ -741,5 +744,28 @@
   position: absolute;
   height: 100%;
   background: linear-gradient(90deg, rgba(106, 90, 205, 0.5), rgba(106, 90, 205, 0.8));
-  transition: width 0.3s ease;
+  transition: width 3s linear;
+}
+
+/* Add slide transition classes */
+.slide-enter {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 } 
