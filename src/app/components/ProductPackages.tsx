@@ -99,6 +99,38 @@ const packages = [
     price: "$10,000 – $75,000 initial + Custom Retainer",
     timeline: "4–10 weeks",
     deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Initial Consultation",
+        description: "Define project scope and requirements",
+        duration: "1 Week"
+      },
+      {
+        title: "System Design",
+        description: "Architecture planning and design approval",
+        duration: "1-2 Weeks"
+      },
+      {
+        title: "Development Phase",
+        description: "Building core functionality and features",
+        duration: "2-4 Weeks"
+      },
+      {
+        title: "Testing & QA",
+        description: "Thorough testing and refinement",
+        duration: "1-2 Weeks"
+      },
+      {
+        title: "Deployment Prep",
+        description: "Final adjustments and documentation",
+        duration: "3-5 Days"
+      },
+      {
+        title: "Launch",
+        description: "System deployment and monitoring",
+        duration: "1-2 Days"
+      }
+    ],
     features: [
       "Full Custom Web or Backend Application – Purpose-built systems designed specifically around your workflows.",
       "Centralized Smart Data Infrastructure – One unified source of truth across your business operations.",
@@ -118,6 +150,38 @@ const packages = [
     price: "$5,000 – $30,000 initial + Custom Retainer",
     timeline: "2–5 weeks",
     deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Requirements Analysis",
+        description: "Define AI integration needs",
+        duration: "2-3 Days"
+      },
+      {
+        title: "AI Model Selection",
+        description: "Choose and configure AI models",
+        duration: "3-5 Days"
+      },
+      {
+        title: "Integration Development",
+        description: "Implement AI interfaces",
+        duration: "1-2 Weeks"
+      },
+      {
+        title: "Training & Fine-tuning",
+        description: "Optimize AI responses",
+        duration: "1 Week"
+      },
+      {
+        title: "Testing Phase",
+        description: "Validate AI performance",
+        duration: "3-5 Days"
+      },
+      {
+        title: "Deployment",
+        description: "Launch and monitor",
+        duration: "1-2 Days"
+      }
+    ],
     features: [
       "AI Interface Embedded Into Custom Apps – Add powerful conversational AI directly into your internal platforms.",
       "Centralized Data-Connected Intelligence – Ensure the AI delivers contextually relevant, accurate responses.",
@@ -134,6 +198,38 @@ const packages = [
     price: "$45,000 – $100,000 initial + Custom Retainer",
     timeline: "8–16 weeks",
     deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Ecosystem Planning",
+        description: "Design multi-brain architecture",
+        duration: "2-3 Weeks"
+      },
+      {
+        title: "Department Analysis",
+        description: "Map department-specific needs",
+        duration: "2 Weeks"
+      },
+      {
+        title: "Core Brain Development",
+        description: "Build central AI system",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Sub-brain Development",
+        description: "Create department AI systems",
+        duration: "4-5 Weeks"
+      },
+      {
+        title: "Integration & Testing",
+        description: "Connect and validate all systems",
+        duration: "2 Weeks"
+      },
+      {
+        title: "Training & Deployment",
+        description: "Roll out across organization",
+        duration: "1-2 Weeks"
+      }
+    ],
     features: [
       "Central AI Brain + Department-Specific Sub-Brains – Each department operates with its own customized intelligent assistant.",
       "Departmental Intelligence Reports (Quarterly) – Performance data on how each department's AI is supporting workflows.",
@@ -153,6 +249,38 @@ const packages = [
     price: "$50,000 – $300,000 initial + Custom Retainer",
     timeline: "12–24 weeks",
     deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Business Analysis",
+        description: "Complete operational assessment",
+        duration: "2-3 Weeks"
+      },
+      {
+        title: "Process Mapping",
+        description: "Document all workflows",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Automation Design",
+        description: "Plan automation architecture",
+        duration: "4-6 Weeks"
+      },
+      {
+        title: "Development Phase",
+        description: "Build automation systems",
+        duration: "6-8 Weeks"
+      },
+      {
+        title: "Testing & Validation",
+        description: "Ensure system reliability",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Deployment",
+        description: "Phased implementation",
+        duration: "2-3 Weeks"
+      }
+    ],
     features: [
       "End-to-End Process Automation Across Departments – Complete coverage of all eligible operational tasks.",
       "Change Management Planning + Support – Smooth employee transition into AI-driven workflows.",
@@ -172,6 +300,38 @@ const packages = [
     price: "$100,000 – $500,000 initial + Custom Retainer",
     timeline: "16–32 weeks",
     deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Strategic Planning",
+        description: "Comprehensive system design",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Infrastructure Setup",
+        description: "Build core systems",
+        duration: "4-6 Weeks"
+      },
+      {
+        title: "AI Integration",
+        description: "Implement AI capabilities",
+        duration: "6-8 Weeks"
+      },
+      {
+        title: "Automation Development",
+        description: "Create automation workflows",
+        duration: "8-10 Weeks"
+      },
+      {
+        title: "Testing & Optimization",
+        description: "Validate entire ecosystem",
+        duration: "4-5 Weeks"
+      },
+      {
+        title: "Full Deployment",
+        description: "Organization-wide rollout",
+        duration: "2-3 Weeks"
+      }
+    ],
     features: [
       "Full A–Z Automation + Company-Wide AI Brains – Your business runs on an integrated, intelligent infrastructure.",
       "Executive Intelligence Dashboards – Leadership sees critical system data in real-time for faster decisions.",
@@ -253,7 +413,7 @@ export default function ProductPackages() {
           <p className="estimate-disclaimer">* All timelines and pricing are estimates and may vary based on your specific requirements, project complexity, and scope. Final quotes will be provided after detailed consultation.</p>
         </div>
 
-        <div className="slideshow-container">
+        <div className="package-container">
           <button 
             className="nav-button prev" 
             onClick={handlePrevious} 

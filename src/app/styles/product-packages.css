@@ -116,6 +116,14 @@
   position: relative;
 }
 
+.package-container {
+  position: relative;
+  width: 100%;
+  max-width: calc(900 / 1920 * 100vw);
+  margin: 0 auto;
+  padding: 0 calc(50 / 1920 * 100vw);
+}
+
 .package-card {
   position: relative;
   overflow: hidden;
@@ -123,7 +131,6 @@
   border-radius: calc(20 / 1920 * 100vw);
   padding: calc(48 / 1920 * 100vw);
   width: 100%;
-  max-width: calc(900 / 1920 * 100vw);
   min-height: calc(600 / 1920 * 100vw);
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
@@ -281,8 +288,19 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #fff;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
   overflow: hidden;
+}
+
+.nav-button.prev {
+  left: calc(-25 / 1920 * 100vw);
+}
+
+.nav-button.next {
+  right: calc(-25 / 1920 * 100vw);
 }
 
 .nav-button::before {
@@ -304,7 +322,7 @@
 
 .nav-button:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .nav-button svg {
@@ -481,7 +499,7 @@
 
   .container {
     max-width: 100%;
-    padding: 0 20px;
+    padding: 0 30px;
   }
 
   .section-header {
@@ -499,10 +517,26 @@
     max-width: 90%;
   }
 
+  .package-container {
+    padding: 0 30px;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-button.prev {
+    left: -10px;
+  }
+
+  .nav-button.next {
+    right: -10px;
+  }
+
   .package-card {
-    padding: 1.5rem;
+    padding: 24px;
     min-height: auto;
-    border-radius: 15px;
   }
 
   .package-card h3 {
@@ -542,11 +576,6 @@
   .features li {
     font-size: 1rem;
     padding-left: 1.2rem;
-  }
-
-  .nav-button {
-    width: 40px;
-    height: 40px;
   }
 
   .navigation-dots {
