@@ -351,6 +351,7 @@ export default function ProductPackages() {
   const [timelineIndex, setTimelineIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
   const [isTimelineHovered, setIsTimelineHovered] = useState(false);
+  const [lastTimelineIndex, setLastTimelineIndex] = useState(0);
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
@@ -362,15 +363,17 @@ export default function ProductPackages() {
             setAutoAdvance(false);
             setTimeout(() => setAutoAdvance(true), 5000); // Pause for 5 seconds before restarting
           }
+          setLastTimelineIndex(nextIndex);
           return nextIndex;
         });
-      }, 3000);
+      }, 4000); // Increased interval for smoother transitions
     }
     return () => clearInterval(timelineInterval);
   }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
 
   const handleTimelineClick = (index: number) => {
     setTimelineIndex(index);
+    setLastTimelineIndex(index);
     setAutoAdvance(false);
     setTimeout(() => setAutoAdvance(true), 5000); // Resume auto-advance after 5 seconds
   };
@@ -378,6 +381,7 @@ export default function ProductPackages() {
   const handleTimelineHover = (isHovered: boolean) => {
     setIsTimelineHovered(isHovered);
     if (!isHovered) {
+      setTimelineIndex(lastTimelineIndex); // Resume from last shown position
       setAutoAdvance(true);
     }
   };
@@ -451,12 +455,29 @@ export default function ProductPackages() {
                 </div>
               </div>
 
-              <TimelineProgress 
-                events={packages[currentIndex]?.timelineEvents || []}
-                currentIndex={timelineIndex}
-                onNodeClick={handleTimelineClick}
-                onHover={handleTimelineHover}
-              />
+              <div className="timeline-container">
+                {packages[currentIndex]?.timelineEvents?.map((event, index) => (
+                  <div
+                    key={index}
+                    className={`timeline-item ${timelineIndex === index ? 'active' : ''}`}
+                    onClick={() => handleTimelineClick(index)}
+                    onMouseEnter={() => handleTimelineHover(true)}
+                    onMouseLeave={() => handleTimelineHover(false)}
+                  >
+                    <div className="timeline-content">
+                      <h3 className="timeline-title">{event.title}</h3>
+                      <p className="timeline-duration">{event.duration}</p>
+                      <p className="timeline-description">{event.description}</p>
+                    </div>
+                    <div className="timeline-progress">
+                      <div className="timeline-dot"></div>
+                      {index < packages[currentIndex].timelineEvents.length - 1 && (
+                        <div className="timeline-line"></div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
 
               <div className="features">
                 <h4>Includes:</h4>
@@ -506,6 +527,85 @@ export default function ProductPackages() {
           <p>Every addition is properly scoped, quoted, and aligned with your evolving needs. We ensure you continue scaling intelligently without technical debt. These packages are just the starting point. Your 4Runr System is always built for evolution.</p>
         </div>
       </div>
+      <style jsx>{`
+        .timeline-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 2rem;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .timeline-item {
+          display: flex;
+          gap: 1.5rem;
+          position: relative;
+          cursor: pointer;
+          padding: 1rem;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-content {
+          flex: 1;
+        }
+
+        .timeline-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: var(--text-primary);
+        }
+
+        .timeline-duration {
+          font-size: 0.875rem;
+          color: var(--text-secondary);
+          margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+          font-size: 1rem;
+          color: var(--text-secondary);
+          line-height: 1.5;
+        }
+
+        .timeline-progress {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 0.5rem;
+        }
+
+        .timeline-dot {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: var(--accent-primary);
+          transition: transform 0.3s ease;
+        }
+
+        .timeline-line {
+          width: 2px;
+          height: 100%;
+          background: var(--accent-primary);
+          margin-top: 4px;
+          opacity: 0.5;
+        }
+
+        .timeline-item.active .timeline-dot {
+          transform: scale(1.25);
+          box-shadow: 0 0 15px var(--accent-primary);
+        }
+
+        .timeline-item.active .timeline-title {
+          color: var(--accent-primary);
+        }
+      `}</style>
     </section>
   );
 } 
