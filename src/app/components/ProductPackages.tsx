@@ -428,7 +428,7 @@ export default function ProductPackages() {
     <section className="product-packages">
       <div className="container">
         <div className="section-header">
-          <h2>⚡ The 4Runr Vision</h2>
+          <h2>The 4Runr Vision</h2>
           <p>At 4Runr, we build custom AI infrastructures—not off-the-shelf solutions. Each package below represents a template framework to help guide our discovery and planning process. Every system we build is tailored to your needs and can be expanded over time as your business grows.</p>
           <p className="estimate-disclaimer">* All timelines and pricing are estimates and may vary based on your specific requirements, project complexity, and scope. Final quotes will be provided after detailed consultation.</p>
         </div>
@@ -506,7 +506,7 @@ export default function ProductPackages() {
         </div>
 
         <div className="post-deployment">
-          <h3>📈 Post-Deployment Flexibility</h3>
+          <h3>Post-Deployment Flexibility</h3>
           <p>All 4Runr systems are modular and scalable. After initial deployment, you can:</p>
           <ul>
             <li>Add new workflows, departments, or AI brains</li>
