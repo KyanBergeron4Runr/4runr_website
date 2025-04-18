@@ -350,10 +350,11 @@ export default function ProductPackages() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [timelineIndex, setTimelineIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
+  const [isTimelineHovered, setIsTimelineHovered] = useState(false);
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
-    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents) {
+    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents && !isTimelineHovered) {
       timelineInterval = setInterval(() => {
         setTimelineIndex((prev) => {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
@@ -366,12 +367,19 @@ export default function ProductPackages() {
       }, 3000);
     }
     return () => clearInterval(timelineInterval);
-  }, [currentIndex, isTransitioning, autoAdvance]);
+  }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
 
   const handleTimelineClick = (index: number) => {
     setTimelineIndex(index);
     setAutoAdvance(false);
     setTimeout(() => setAutoAdvance(true), 5000); // Resume auto-advance after 5 seconds
+  };
+
+  const handleTimelineHover = (isHovered: boolean) => {
+    setIsTimelineHovered(isHovered);
+    if (!isHovered) {
+      setAutoAdvance(true);
+    }
   };
 
   const handlePrevious = () => {
@@ -447,6 +455,7 @@ export default function ProductPackages() {
                 events={packages[currentIndex]?.timelineEvents || []}
                 currentIndex={timelineIndex}
                 onNodeClick={handleTimelineClick}
+                onHover={handleTimelineHover}
               />
 
               <div className="features">

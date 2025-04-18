@@ -11,9 +11,10 @@ interface TimelineProgressProps {
   events: TimelineEvent[];
   currentIndex: number;
   onNodeClick?: (index: number) => void;
+  onHover?: (isHovered: boolean) => void;
 }
 
-export default function TimelineProgress({ events, currentIndex, onNodeClick }: TimelineProgressProps) {
+export default function TimelineProgress({ events, currentIndex, onNodeClick, onHover }: TimelineProgressProps) {
   const [activeEvent, setActiveEvent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -33,7 +34,11 @@ export default function TimelineProgress({ events, currentIndex, onNodeClick }: 
   }, [currentIndex, isAnimating]);
 
   return (
-    <div className="timeline-container">
+    <div 
+      className="timeline-container"
+      onMouseEnter={() => onHover?.(true)}
+      onMouseLeave={() => onHover?.(false)}
+    >
       <div className="timeline-progress">
         <div 
           className="timeline-progress-bar"

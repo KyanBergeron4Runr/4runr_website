@@ -132,13 +132,14 @@
 
 .timeline-content {
   position: absolute;
-  top: calc(-100 / 1920 * 100vw);
+  top: calc(-80 / 1920 * 100vw);
   left: 50%;
-  transform: translateX(-50%) translateY(calc(20 / 1920 * 100vw));
+  transform: translateX(-50%) translateY(calc(-20 / 1920 * 100vw));
   background: rgba(20, 20, 20, 0.95);
   padding: calc(16 / 1920 * 100vw) calc(24 / 1920 * 100vw);
   border-radius: calc(12 / 1920 * 100vw);
   min-width: calc(280 / 1920 * 100vw);
+  max-width: calc(280 / 1920 * 100vw);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(106, 90, 205, 0.2);
   opacity: 0;
@@ -155,7 +156,7 @@
 .timeline-node.current .timeline-content {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(calc(-40 / 1920 * 100vw));
 }
 
 .timeline-title {
@@ -177,7 +178,6 @@
   font-size: calc(14 / 1920 * 100vw);
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.5;
-  max-width: calc(300 / 1920 * 100vw);
 }
 
 @keyframes pulse {
@@ -198,49 +198,45 @@
 /* Mobile Styles */
 @media (max-width: 767px) {
   .timeline-container {
-    padding: 32px 16px;
-    margin: 32px 0;
+    padding: 24px 12px;
+    margin: 24px 0;
   }
 
   .timeline-progress {
-    height: 6px;
-    margin: 80px 0;
+    height: 4px;
+    margin: 60px 0;
   }
 
   .timeline-node {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-width: 2px;
   }
 
-  .timeline-node::before {
-    width: 32px;
-    height: 32px;
-  }
-
-  .timeline-node::after {
-    width: 12px;
-    height: 12px;
-  }
-
   .timeline-content {
-    top: -80px;
+    top: -60px;
     min-width: 220px;
+    max-width: 220px;
     padding: 12px 16px;
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  .timeline-node:hover .timeline-content,
+  .timeline-node.current .timeline-content {
+    transform: translateX(-50%) translateY(-20px);
   }
 
   .timeline-title {
     font-size: 14px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .timeline-duration {
     font-size: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .timeline-description {
     font-size: 12px;
-    max-width: 240px;
   }
 } 

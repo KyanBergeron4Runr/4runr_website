@@ -119,9 +119,12 @@
 .package-container {
   position: relative;
   width: 100%;
-  max-width: calc(900 / 1920 * 100vw);
+  max-width: calc(1000 / 1920 * 100vw);
   margin: 0 auto;
   padding: 0 calc(50 / 1920 * 100vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .package-card {
@@ -131,12 +134,14 @@
   border-radius: calc(20 / 1920 * 100vw);
   padding: calc(48 / 1920 * 100vw);
   width: 100%;
+  max-width: calc(900 / 1920 * 100vw);
   min-height: calc(600 / 1920 * 100vw);
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease,
               box-shadow 0.3s ease;
+  margin: 0 calc(60 / 1920 * 100vw);
 }
 
 .package-card:hover {
@@ -277,30 +282,29 @@
 }
 
 .nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(50 / 1920 * 100vw);
+  height: calc(50 / 1920 * 100vw);
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 50%;
-  width: calc(50 / 1920 * 100vw);
-  height: calc(50 / 1920 * 100vw);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #fff;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 10;
-  overflow: hidden;
 }
 
 .nav-button.prev {
-  left: calc(-25 / 1920 * 100vw);
+  left: 0;
 }
 
 .nav-button.next {
-  right: calc(-25 / 1920 * 100vw);
+  right: 0;
 }
 
 .nav-button::before {
@@ -322,12 +326,13 @@
 
 .nav-button:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-50%) scale(1.1);
 }
 
 .nav-button svg {
   position: relative;
   z-index: 1;
+  width: calc(24 / 1920 * 100vw);
+  height: calc(24 / 1920 * 100vw);
   transition: transform 0.3s ease;
 }
 
@@ -518,7 +523,8 @@
   }
 
   .package-container {
-    padding: 0 30px;
+    padding: 0 40px;
+    max-width: 100%;
   }
 
   .nav-button {
@@ -526,17 +532,15 @@
     height: 40px;
   }
 
-  .nav-button.prev {
-    left: -10px;
-  }
-
-  .nav-button.next {
-    right: -10px;
+  .nav-button svg {
+    width: 24px;
+    height: 24px;
   }
 
   .package-card {
     padding: 24px;
     min-height: auto;
+    margin: 0 20px;
   }
 
   .package-card h3 {
