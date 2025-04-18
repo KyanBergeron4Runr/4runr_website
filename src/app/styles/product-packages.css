@@ -119,13 +119,13 @@
 .package-container {
   position: relative;
   width: 100%;
-  max-width: calc(1100 / 1920 * 100vw);
+  max-width: calc(1300 / 1920 * 100vw);
   margin: calc(60 / 1920 * 100vw) auto;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(1000 / 1920 * 100vw);
+  min-height: calc(1200 / 1920 * 100vw);
 }
 
 .package-card {
@@ -135,9 +135,9 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
   border-radius: calc(20 / 1920 * 100vw);
-  padding: calc(48 / 1920 * 100vw);
+  padding: calc(60 / 1920 * 100vw);
   width: 100%;
-  min-height: calc(1000 / 1920 * 100vw);
+  min-height: calc(1200 / 1920 * 100vw);
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -302,11 +302,11 @@
 }
 
 .nav-button.prev {
-  left: calc(-80 / 1920 * 100vw);
+  left: calc(-100 / 1920 * 100vw);
 }
 
 .nav-button.next {
-  right: calc(-80 / 1920 * 100vw);
+  right: calc(-100 / 1920 * 100vw);
 }
 
 .nav-button::before {
@@ -526,10 +526,11 @@
 
   .package-container {
     padding: 0 60px;
+    min-height: auto;
   }
 
   .package-card {
-    position: relative;
+    padding: 40px;
     min-height: auto;
   }
 
@@ -622,6 +623,22 @@
     font-size: 1rem;
     padding-left: 1.2rem;
   }
+
+  .timeline-container {
+    height: 180px;
+    margin: 40px 0;
+  }
+
+  .timeline-progress {
+    margin: 90px 0;
+  }
+
+  .timeline-node {
+    width: 200px;
+    height: 120px;
+    padding: 12px;
+    top: 90px;
+  }
 }
 
 /* Small mobile adjustments */
@@ -655,14 +672,15 @@
 /* Add these new styles for timeline nodes */
 .timeline-node {
   position: absolute;
-  transform: translate(-50%, -50%);
-  width: calc(200 / 1920 * 100vw);
-  height: calc(120 / 1920 * 100vw);
+  transform: translate(-50%, -100%);
+  width: calc(220 / 1920 * 100vw);
+  height: calc(130 / 1920 * 100vw);
   background: rgba(255, 255, 255, 0.1);
   border-radius: calc(10 / 1920 * 100vw);
-  padding: calc(12 / 1920 * 100vw);
+  padding: calc(16 / 1920 * 100vw);
   transition: all 0.3s ease;
   z-index: 1;
+  top: calc(120 / 1920 * 100vw);
 }
 
 .timeline-node.active {
@@ -707,8 +725,8 @@
 .timeline-container {
   position: relative;
   width: 100%;
-  height: calc(160 / 1920 * 100vw);
-  margin: calc(40 / 1920 * 100vw) 0;
+  height: calc(200 / 1920 * 100vw);
+  margin: calc(60 / 1920 * 100vw) 0;
 }
 
 .timeline-progress {
@@ -716,7 +734,7 @@
   width: 100%;
   height: 2px;
   background: rgba(255, 255, 255, 0.1);
-  margin: calc(80 / 1920 * 100vw) 0;
+  margin: calc(120 / 1920 * 100vw) 0;
 }
 
 .timeline-progress-bar {
