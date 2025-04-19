@@ -554,10 +554,9 @@
   }
 
   .timeline-container {
+    height: auto;
     margin: 40px 0;
     padding: 0;
-    position: relative;
-    height: auto;
   }
 
   .timeline-nodes-container {
@@ -583,16 +582,18 @@
   }
 
   .timeline-node {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
     width: 24px;
     height: 24px;
     background: rgba(106, 90, 205, 0.2);
     border: 2px solid rgba(106, 90, 205, 0.5);
     border-radius: 50%;
-    position: relative;
     flex-shrink: 0;
     margin: 0;
     z-index: 2;
-    transition: all 0.3s ease;
   }
 
   .timeline-node-wrapper.active .timeline-node {
@@ -601,16 +602,22 @@
   }
 
   .timeline-content {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: auto;
     flex: 1;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     padding: 16px;
-    position: relative;
     opacity: 1;
     visibility: visible;
-    transform: none;
     max-width: calc(100% - 40px);
-    transition: all 0.3s ease;
+  }
+
+  .timeline-content::after {
+    display: none;
   }
 
   .timeline-node-wrapper:nth-child(even) .timeline-content {
@@ -623,6 +630,7 @@
     top: 24px;
     bottom: 24px;
     width: 2px;
+    height: auto;
     background: rgba(106, 90, 205, 0.3);
     z-index: 1;
   }
@@ -633,9 +641,7 @@
 
   .timeline-title {
     font-size: 16px;
-    font-weight: 600;
     margin-bottom: 4px;
-    color: #fff;
   }
 
   .timeline-duration {
@@ -768,7 +774,7 @@
   }
 }
 
-/* Add these new styles for timeline nodes */
+/* Timeline styles for desktop */
 .timeline-container {
   position: relative;
   width: 100%;

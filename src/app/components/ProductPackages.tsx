@@ -470,29 +470,38 @@ export default function ProductPackages() {
                 </div>
 
                 <div className="timeline-container">
+                  <div className="timeline-progress">
+                    <div className="timeline-line" />
+                    <div 
+                      className="timeline-progress-bar" 
+                      style={{ 
+                        width: getProgressBarWidth(),
+                        transition: autoAdvance ? 'width 3s linear' : 'none'
+                      }} 
+                    />
+                  </div>
                   <div className="timeline-nodes-container">
-                    {packages[currentIndex]?.timelineEvents.map((event, idx) => (
+                    {packages[currentIndex]?.timelineEvents?.map((event, index) => (
                       <div 
-                        key={idx} 
-                        className={`timeline-node-wrapper ${idx === timelineIndex ? 'active' : ''}`}
-                        onMouseEnter={() => handleTimelineHover(idx, true)}
-                        onMouseLeave={() => handleTimelineHover(idx, false)}
+                        key={index}
+                        className="timeline-node-wrapper"
                       >
-                        <div className="timeline-node"></div>
-                        <div className="timeline-content">
-                          <h4 className="timeline-title">{event.title}</h4>
-                          <p className="timeline-duration">{event.duration}</p>
-                          <p className="timeline-description">{event.description}</p>
+                        <div
+                          className={`timeline-node ${index === timelineIndex ? 'current' : ''} ${index < timelineIndex ? 'active' : ''}`}
+                          role="button"
+                          tabIndex={0}
+                          aria-label={`Timeline step ${index + 1}: ${event.title}`}
+                          onMouseEnter={() => handleTimelineHover(index, true)}
+                          onMouseLeave={() => handleTimelineHover(index, false)}
+                        >
+                          <div className="timeline-content">
+                            <div className="timeline-title">{event.title}</div>
+                            <div className="timeline-duration">{event.duration}</div>
+                            <div className="timeline-description">{event.description}</div>
+                          </div>
                         </div>
                       </div>
                     ))}
-                  </div>
-                  <div className="timeline-line"></div>
-                  <div className="timeline-progress">
-                    <div 
-                      className="timeline-progress-bar"
-                      style={{ width: `${getProgressBarWidth()}%` }}
-                    ></div>
                   </div>
                 </div>
 
