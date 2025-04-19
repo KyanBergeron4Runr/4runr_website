@@ -351,7 +351,8 @@ export default function ProductPackages() {
   const [timelineIndex, setTimelineIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
   const [isTimelineHovered, setIsTimelineHovered] = useState(false);
-  const cycleInterval = 3000; // Define cycle interval as a constant
+  const [hoveredNodeIndex, setHoveredNodeIndex] = useState<number | null>(null);
+  const cycleInterval = 3000;
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
@@ -359,10 +360,6 @@ export default function ProductPackages() {
       timelineInterval = setInterval(() => {
         setTimelineIndex((prev) => {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
-          if (nextIndex === 0) {
-            // Don't stop auto-advance, just continue cycling
-            return nextIndex;
-          }
           return nextIndex;
         });
       }, cycleInterval);
@@ -370,14 +367,20 @@ export default function ProductPackages() {
     return () => clearInterval(timelineInterval);
   }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
 
-  const handleTimelineClick = (index: number) => {
-    setTimelineIndex(index);
-    // Don't stop auto-advance on click, maintain consistent behavior
+  const handleTimelineHover = (index: number, isHovered: boolean) => {
+    setIsTimelineHovered(isHovered);
+    if (isHovered) {
+      setTimelineIndex(index);
+      setHoveredNodeIndex(index);
+    } else {
+      setHoveredNodeIndex(null);
+    }
   };
 
-  const handleTimelineHover = (isHovered: boolean) => {
-    setIsTimelineHovered(isHovered);
-    // Don't stop auto-advance on hover, let it continue cycling
+  const getProgressBarWidth = () => {
+    const totalNodes = packages[currentIndex]?.timelineEvents?.length || 1;
+    const currentPosition = timelineIndex / totalNodes * 100;
+    return `${currentPosition}%`;
   };
 
   const handlePrevious = () => {
@@ -468,12 +471,39 @@ export default function ProductPackages() {
                 </div>
               </div>
 
-              <TimelineProgress 
-                events={packages[currentIndex]?.timelineEvents || []}
-                currentIndex={timelineIndex}
-                onNodeClick={handleTimelineClick}
-                onHover={handleTimelineHover}
-              />
+              <div className="timeline-container">
+                <div className="timeline-progress">
+                  <div className="timeline-line" />
+                  <div 
+                    className="timeline-progress-bar" 
+                    style={{ 
+                      width: getProgressBarWidth(),
+                      transition: isTimelineHovered ? 'none' : 'width 3s linear'
+                    }} 
+                  />
+                  {packages[currentIndex]?.timelineEvents?.map((event, index) => (
+                    <div
+                      key={index}
+                      className={`timeline-node ${index === timelineIndex ? 'current' : ''} ${index < timelineIndex ? 'active' : ''}`}
+                      style={{
+                        left: `${(index / (packages[currentIndex].timelineEvents.length - 1)) * 100}%`,
+                        transitionDelay: `${index * 0.1}s`
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Timeline step ${index + 1}: ${event.title}`}
+                      onMouseEnter={() => handleTimelineHover(index, true)}
+                      onMouseLeave={() => handleTimelineHover(index, false)}
+                    >
+                      <div className="timeline-content">
+                        <div className="timeline-title">{event.title}</div>
+                        <div className="timeline-duration">{event.duration}</div>
+                        <div className="timeline-description">{event.description}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div className="features">
                 <h4>Includes:</h4>
