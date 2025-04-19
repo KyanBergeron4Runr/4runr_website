@@ -1,164 +1,557 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/product-packages.css';
 import TimelineProgress from './TimelineProgress';
 
 const packages = [
   {
     title: "Free Consultation & Strategic Blueprint",
-    price: "$0",
-    description: "45-minute consultation to understand your business needs and create a strategic automation blueprint.",
-    features: ["Business Process Analysis", "Automation Opportunity Assessment", "ROI Calculation", "Strategic Recommendations"]
+    price: "Free",
+    description: "A personalized 45-minute consultation where we map your business needs, identify high-impact use cases for AI and automation, and deliver a clear, actionable roadmap to guide your next steps.",
+    deployment: "Immediate booking available",
+    timelineEvents: [
+      {
+        title: "Booking Your Consultation",
+        description: "Schedule your strategic session",
+        duration: "Same Day"
+      },
+      {
+        title: "45-Minute Consultation Call",
+        description: "Deep dive into business challenges and goals",
+        duration: "45 Minutes"
+      },
+      {
+        title: "AI/Automation Roadmap",
+        description: "Receive your personalized action plan PDF",
+        duration: "2 Days"
+      },
+      {
+        title: "Optional Follow-Up",
+        description: "Q&A session for next steps",
+        duration: "30 Minutes"
+      }
+    ],
+    features: [
+      "45-Minute Strategic Consultation – Real expert review of how AI and automation can best serve your business goals.",
+      "Custom AI/Automation Roadmap – A tailored step-by-step plan to integrate AI into your operations.",
+      "\"Next Steps After Consultation\" PDF – Actionable advice delivered immediately post-meeting.",
+      "Strategic Best Practices Advice – Insights into how top businesses are using AI today.",
+      "Private Community Access – Join an exclusive group of future-forward business owners.",
+      "Follow-up Strategic Summary Report – Documented key recommendations for future growth."
+    ]
   },
   {
     title: "Simple Automation Build & Optimization",
-    price: "Starting at $2,500",
-    description: "Fast automation of 1-2 simple workflows with basic integrations and error handling.",
-    features: ["Process Documentation", "Basic Integration Setup", "Error Handling", "User Training"]
+    price: "$500 – $5,000 initial + Retainer ($500+/month)",
+    description: "Fast, focused automation of specific workflows — such as lead management, order processing, or notifications — delivering immediate time savings, improved reliability, and full integration handled by 4Runr.",
+    deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Discovery and Scoping",
+        description: "Define automation processes",
+        duration: "2-3 Days"
+      },
+      {
+        title: "Access Setup",
+        description: "API keys and integrations setup",
+        duration: "1-2 Days"
+      },
+      {
+        title: "Automation Development",
+        description: "Building and testing workflows",
+        duration: "1-2 Weeks"
+      },
+      {
+        title: "Internal Testing",
+        description: "Ensuring reliability and accuracy",
+        duration: "2-3 Days"
+      },
+      {
+        title: "Client Walkthrough",
+        description: "Review and feedback",
+        duration: "1 Day"
+      },
+      {
+        title: "Deployment",
+        description: "Launch into production",
+        duration: "1 Day"
+      },
+      {
+        title: "3-Month Review",
+        description: "Optimization and expansion",
+        duration: "After 3 Months"
+      }
+    ],
+    features: [
+      "Prebuilt Automations – Fast-track operational efficiency with preconfigured AI workflows.",
+      "Real-Time Workflow Automation – Ensure tasks happen instantly with automated triggers and responses.",
+      "3-Month Strategic Optimization Review – Post-deployment performance audit with optimization recommendations.",
+      "Automation Monday Reports – Weekly summaries of all completed automations to show visible progress.",
+      "Full Documentation + Visual Workflow Maps – Easy-to-understand maps showing how each system operates.",
+      "Private Community Access – Ongoing connection with other automation-forward businesses.",
+      "Newsletter Access (AI Insider Updates) – Regular insights into emerging AI trends and opportunities.",
+      "Basic Workflow Health Dashboard – A real-time status board for your active automations."
+    ]
   },
   {
     title: "Custom AI-Powered Applications",
-    price: "Starting at $5,000",
-    description: "Customized application development with AI capabilities and advanced integrations.",
-    features: ["Custom Development", "AI Integration", "Advanced Error Handling", "Comprehensive Documentation"]
+    price: "$10,000 – $75,000 initial + Custom Retainer",
+    description: "A fully customized web or backend application built for a targeted business use case — such as customer management, internal dashboarding, or task orchestration — with complete design, development, and integration by 4Runr.",
+    deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Initial Consultation",
+        description: "Define project scope and requirements",
+        duration: "1 Week"
+      },
+      {
+        title: "System Design",
+        description: "Architecture planning and design approval",
+        duration: "1-2 Weeks"
+      },
+      {
+        title: "Development Phase",
+        description: "Building core functionality and features",
+        duration: "2-4 Weeks"
+      },
+      {
+        title: "Testing & QA",
+        description: "Thorough testing and refinement",
+        duration: "1-2 Weeks"
+      },
+      {
+        title: "Deployment Prep",
+        description: "Final adjustments and documentation",
+        duration: "3-5 Days"
+      },
+      {
+        title: "Launch",
+        description: "System deployment and monitoring",
+        duration: "1-2 Days"
+      }
+    ],
+    features: [
+      "Full Custom Web or Backend Application – Purpose-built systems designed specifically around your workflows.",
+      "Centralized Smart Data Infrastructure – One unified source of truth across your business operations.",
+      "API-Ready System Design – Systems designed to easily integrate future tools and services.",
+      "User Roles + Permissions Systems – Secure and controlled access to sensitive business data.",
+      "Mobile Responsive Design – Accessible and functional across all devices.",
+      "Hosting Flexibility (Self/Cloud) – Your choice of self-hosted control or fully managed cloud hosting.",
+      "Private AI Consultant Access – Dedicated expert guidance as your systems grow.",
+      "Usage-Based Pricing Option – Flexible pricing for apps scaling across thousands of users.",
+      "Quarterly Innovation Opportunity Briefs – Strategic suggestions for new system capabilities.",
+      "Access to 4Runr AI Tools Marketplace (Early Access) – Exclusive beta access to new automation modules.",
+      "Small Welcome Kit – A personalized 4Runr thank-you package for new partners."
+    ]
   },
   {
     title: "AI Brain Integration (LLM Interface Add-On)",
-    price: "Starting at $7,500",
-    description: "Integration of an internal AI brain to enhance decision-making and process automation.",
-    features: ["LLM Integration", "Custom Training", "Knowledge Base Setup", "Performance Monitoring"]
+    price: "$5,000 – $30,000 initial + Custom Retainer",
+    description: "A smart internal AI brain that gives your business data a voice — enabling employees to quickly access policies, documents, and operational knowledge through conversation. (External chatbots are handled separately under automation.)",
+    deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Requirements Analysis",
+        description: "Define AI integration needs",
+        duration: "2-3 Days"
+      },
+      {
+        title: "AI Model Selection",
+        description: "Choose and configure AI models",
+        duration: "3-5 Days"
+      },
+      {
+        title: "Integration Development",
+        description: "Implement AI interfaces",
+        duration: "1-2 Weeks"
+      },
+      {
+        title: "Training & Fine-tuning",
+        description: "Optimize AI responses",
+        duration: "1 Week"
+      },
+      {
+        title: "Testing Phase",
+        description: "Validate AI performance",
+        duration: "3-5 Days"
+      },
+      {
+        title: "Deployment",
+        description: "Launch and monitor",
+        duration: "1-2 Days"
+      }
+    ],
+    features: [
+      "AI Interface Embedded Into Custom Apps – Add powerful conversational AI directly into your internal platforms.",
+      "Centralized Data-Connected Intelligence – Ensure the AI delivers contextually relevant, accurate responses.",
+      "Personalized Prompt Library (50+ Examples) – Custom prompt templates for common tasks and queries.",
+      "Employee AI Interaction Training Guide – Equip your team to maximize their use of the AI brain effectively.",
+      "Full Technical Support + Regular Prompt Updates – Continuous tuning for optimal AI performance.",
+      "5-Month Strategic AI Brain Review – System analysis to optimize AI functionality based on usage data.",
+      "Self/Cloud Hosting Flexibility – Choose the hosting strategy that fits your infrastructure.",
+      "Private AI Consultant Access – Dedicated ongoing support for your AI system's evolution."
+    ]
   },
   {
     title: "Full Custom AI Brain Ecosystem",
-    price: "Starting at $15,000",
-    description: "Complete network of specialized AI brains working together to automate complex processes.",
-    features: ["Multiple AI Agents", "Complex Workflow Automation", "Advanced Integration", "Continuous Optimization"]
+    price: "$45,000 – $100,000 initial + Custom Retainer",
+    description: "A complete network of internal AI brains — a central master brain plus department-specific assistants — allowing employees to interact with company data, systems, and processes intelligently across all major teams.",
+    deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Ecosystem Planning",
+        description: "Design multi-brain architecture",
+        duration: "2-3 Weeks"
+      },
+      {
+        title: "Department Analysis",
+        description: "Map department-specific needs",
+        duration: "2 Weeks"
+      },
+      {
+        title: "Core Brain Development",
+        description: "Build central AI system",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Sub-brain Development",
+        description: "Create department AI systems",
+        duration: "4-5 Weeks"
+      },
+      {
+        title: "Integration & Testing",
+        description: "Connect and validate all systems",
+        duration: "2 Weeks"
+      },
+      {
+        title: "Training & Deployment",
+        description: "Roll out across organization",
+        duration: "1-2 Weeks"
+      }
+    ],
+    features: [
+      "Central AI Brain + Department-Specific Sub-Brains – Each department operates with its own customized intelligent assistant.",
+      "Departmental Intelligence Reports (Quarterly) – Performance data on how each department's AI is supporting workflows.",
+      "Automation ROI Reports (Quarterly) – Concrete calculation of time and money saved through automation.",
+      "Departmental Adoption Reports – Insight into which teams are excelling and where improvements are needed.",
+      "Dynamic Automation Heatmaps – Live visualization of system usage across your organization.",
+      "Backup Automation Scripts for Critical Tasks – Disaster recovery automations ensuring business continuity.",
+      "Quarterly Strategic Innovation Calls – Strategy sessions to unlock new efficiencies and capabilities.",
+      "Annual Automation Strategy Workshops – Half-day deep dives into scaling your intelligent systems.",
+      "Employee AI Champions Program – Internal AI leaders trained to maintain high adoption rates.",
+      "Access to 4Runr AI Tools Marketplace (Early Access) – Test and use cutting-edge tools first.",
+      "Certification: AI-Enhanced Company (Digital Badge) – Showcase your leadership in intelligent business operations."
+    ]
   },
   {
     title: "Full Business Automation (A–Z Operational Transformation)",
-    price: "Starting at $25,000",
-    description: "Complete automation of business workflows with advanced AI integration and optimization.",
-    features: ["End-to-End Automation", "AI-Powered Workflows", "Custom Development", "24/7 Support"]
+    price: "$50,000 – $300,000 initial + Custom Retainer",
+    description: "Complete automation of all eligible workflows — from customer onboarding to internal task routing — turning your operations into a lean, scalable, and self-optimizing business designed for growth.",
+    deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Business Analysis",
+        description: "Complete operational assessment",
+        duration: "2-3 Weeks"
+      },
+      {
+        title: "Process Mapping",
+        description: "Document all workflows",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Automation Design",
+        description: "Plan automation architecture",
+        duration: "4-6 Weeks"
+      },
+      {
+        title: "Development Phase",
+        description: "Build automation systems",
+        duration: "6-8 Weeks"
+      },
+      {
+        title: "Testing & Validation",
+        description: "Ensure system reliability",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Deployment",
+        description: "Phased implementation",
+        duration: "2-3 Weeks"
+      }
+    ],
+    features: [
+      "End-to-End Process Automation Across Departments – Complete coverage of all eligible operational tasks.",
+      "Change Management Planning + Support – Smooth employee transition into AI-driven workflows.",
+      "SLA-Backed Full Technical Support – Guaranteed response times and issue resolution.",
+      "Quarterly Bottleneck Analysis – Identify and eliminate system slowdowns.",
+      "AI Drift Monitoring Reports – Ensure continued AI accuracy and relevance over time.",
+      "Self-Diagnostic Dashboards for Operations – Instantly visualize system health without external support.",
+      "Cross-Process Automation Expansion Maps – Opportunities to expand automation into new areas.",
+      "Future Threat Radar Reports – Early warnings about tech, legal, or market disruptions.",
+      "Department-Level Strategy Memos – Specific action plans tailored for each business unit.",
+      "Scalability Readiness Reports – Alerts when infrastructure upgrades are needed to sustain growth.",
+      "Annual Efficiency Delta Reports (time/cost saved) – Hard data on how automation transforms your bottom line."
+    ]
   },
   {
     title: "Full Business Automation + Integrated AI Brain Ecosystem",
-    price: "Starting at $35,000",
-    description: "Comprehensive automation solution with a network of specialized AI brains and complete workflow optimization.",
-    features: ["Complete AI Integration", "Custom Solutions", "Advanced Analytics", "Dedicated Support Team"]
+    price: "$100,000 – $500,000 initial + Custom Retainer",
+    description: "Full business automation combined with a company-wide internal AI brain network — creating intelligent, self-optimizing operations where employees interact naturally with your systems, processes, and knowledge.",
+    deployment: "Full support with your IT team or we can handle everything",
+    timelineEvents: [
+      {
+        title: "Strategic Planning",
+        description: "Comprehensive system design",
+        duration: "3-4 Weeks"
+      },
+      {
+        title: "Infrastructure Setup",
+        description: "Build core systems",
+        duration: "4-6 Weeks"
+      },
+      {
+        title: "AI Integration",
+        description: "Implement AI capabilities",
+        duration: "6-8 Weeks"
+      },
+      {
+        title: "Automation Development",
+        description: "Create automation workflows",
+        duration: "8-10 Weeks"
+      },
+      {
+        title: "Testing & Optimization",
+        description: "Validate entire ecosystem",
+        duration: "4-5 Weeks"
+      },
+      {
+        title: "Full Deployment",
+        description: "Organization-wide rollout",
+        duration: "2-3 Weeks"
+      }
+    ],
+    features: [
+      "Full A–Z Automation + Company-Wide AI Brains – Your business runs on an integrated, intelligent infrastructure.",
+      "Executive Intelligence Dashboards – Leadership sees critical system data in real-time for faster decisions.",
+      "Revenue Automation Analysis Reports – Track revenue growth directly driven by your AI systems.",
+      "AI-Driven Market Expansion Forecast Modeling – Uncover new markets and verticals using AI insights.",
+      "Partner Technology Integrations – Seamless plug-ins with third-party platforms and services.",
+      "Annual Future-Proofing Report (Strategic Roadmap) – Plan years ahead for tech disruption and innovation.",
+      "Innovation Partnership Program Access – Early access to beta tools and private strategic events.",
+      "Access to Private 4Runr Events + Strategy Summits – Invitation-only leadership networking with other AI-first businesses."
+    ]
   }
 ];
 
-const ProductPackages = () => {
-  const [currentNode, setCurrentNode] = useState(0);
+export default function ProductPackages() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [timelineIndex, setTimelineIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
-  const progressBarRef = useRef<HTMLDivElement>(null);
-  const timelineContainerRef = useRef<HTMLDivElement>(null);
+  const [isTimelineHovered, setIsTimelineHovered] = useState(false);
+  const [hoveredNodeIndex, setHoveredNodeIndex] = useState<number | null>(null);
+  const cycleInterval = 3000;
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (autoAdvance) {
-      interval = setInterval(() => {
-        handleNext();
-      }, 3000);
+    let timelineInterval: NodeJS.Timeout;
+    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents) {
+      timelineInterval = setInterval(() => {
+        setTimelineIndex((prev) => {
+          const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
+          return nextIndex;
+        });
+      }, cycleInterval);
     }
-    return () => clearInterval(interval);
-  }, [currentNode, autoAdvance]);
+    return () => clearInterval(timelineInterval);
+  }, [currentIndex, isTransitioning, autoAdvance]);
 
-  useEffect(() => {
-    updateProgressBar();
-  }, [currentNode]);
+  const handleTimelineHover = (index: number, isHovered: boolean) => {
+    if (isHovered) {
+      setAutoAdvance(false);
+      setTimelineIndex(index);
+    } else {
+      setAutoAdvance(true);
+    }
+  };
 
-  const updateProgressBar = () => {
-    if (progressBarRef.current) {
-      const progress = ((currentNode + 1) / packages.length) * 100;
-      progressBarRef.current.style.height = `${progress}%`;
+  const getProgressBarWidth = () => {
+    const totalNodes = packages[currentIndex]?.timelineEvents?.length || 1;
+    const currentPosition = timelineIndex / (totalNodes - 1) * 100;
+    return `${currentPosition}%`;
+  };
+
+  const handlePrevious = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => (prev - 1 + packages.length) % packages.length);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
+      
+      // Short delay to allow new content to render before removing transition state
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
     }
   };
 
   const handleNext = () => {
-    setCurrentNode((prev) => (prev + 1) % packages.length);
-  };
-
-  const handlePrevious = () => {
-    setCurrentNode((prev) => (prev - 1 + packages.length) % packages.length);
-  };
-
-  const handleNodeClick = (index: number) => {
-    setCurrentNode(index);
-    setAutoAdvance(false);
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => (prev + 1) % packages.length);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
+      
+      // Short delay to allow new content to render before removing transition state
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }
   };
 
   const handleDotClick = (index: number) => {
-    setCurrentNode(index);
-    setAutoAdvance(false);
+    if (!isTransitioning && index !== currentIndex) {
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimelineIndex(0);
+      setAutoAdvance(true);
+      
+      // Short delay to allow new content to render before removing transition state
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }
   };
 
-  return (
-    <div className="product-packages">
-      <div className="package-container">
-        {packages.map((pkg, index) => (
-          <div key={index} className="package-card">
-            <div className="package-header">
-              <h3 className="package-title">{pkg.title}</h3>
-              <p className="package-price">{pkg.price}</p>
-            </div>
-            <div className="package-details">
-              <div className="detail description">{pkg.description}</div>
-              {pkg.features.map((feature, featureIndex) => (
-                <div key={featureIndex} className="detail">
-                  {feature}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+  // Add useEffect to handle initial content fade-in
+  useEffect(() => {
+    const content = document.querySelector('.card-content');
+    if (content) {
+      content.classList.add('active');
+    }
+  }, []);
 
-      <div className="timeline-section">
-        <div className="timeline-container" ref={timelineContainerRef}>
-          <div className="timeline-progress">
-            <div className="timeline-line"></div>
-            <div className="timeline-progress-bar" ref={progressBarRef}></div>
-          </div>
-          
-          <div className="timeline-nodes">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`timeline-node ${index === currentNode ? 'current' : ''}`}
-                onClick={() => handleNodeClick(index)}
-              >
-                <div className="timeline-content">
-                  <h4 className="timeline-title">{pkg.title}</h4>
-                  <p className="timeline-duration">{pkg.price}</p>
-                  <p className="timeline-description">{pkg.description}</p>
+  return (
+    <section className="packages-section">
+      <div className="container">
+        <div className="section-header">
+          <h2>The 4Runr Vision</h2>
+          <p>At 4Runr, we build custom AI infrastructures—not off-the-shelf solutions. Each package below represents a template framework to help guide our discovery and planning process. Every system we build is tailored to your needs and can be expanded over time as your business grows.</p>
+          <p className="estimate-disclaimer">* All timelines and pricing are estimates and may vary based on your specific requirements, project complexity, and scope. Final quotes will be provided after detailed consultation.</p>
+        </div>
+
+        <div className="package-container">
+          <button 
+            className="nav-button prev" 
+            onClick={handlePrevious}
+            aria-label="Previous package"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          <div className="package-card">
+            <div className="card-content">
+              <h3>{packages[currentIndex].title}</h3>
+              <div className="package-details">
+                <div className="detail">
+                  <span className="label">Price:</span>
+                  <span className="value">{packages[currentIndex].price}</span>
+                </div>
+                <div className="detail description">
+                  <span className="value">{packages[currentIndex].description}</span>
+                </div>
+                <div className="detail">
+                  <span className="label">Deployment:</span>
+                  <span className="value">{packages[currentIndex].deployment}</span>
                 </div>
               </div>
-            ))}
+
+              <div className="timeline-container">
+                <div className="timeline-progress">
+                  <div className="timeline-line" />
+                  <div 
+                    className="timeline-progress-bar" 
+                    style={{ 
+                      width: getProgressBarWidth(),
+                      transition: autoAdvance ? 'width 3s linear' : 'none'
+                    }} 
+                  />
+                  {packages[currentIndex]?.timelineEvents?.map((event, index) => (
+                    <div
+                      key={index}
+                      className={`timeline-node ${index === timelineIndex ? 'current' : ''} ${index < timelineIndex ? 'active' : ''}`}
+                      style={{
+                        left: `${(index / (packages[currentIndex].timelineEvents.length - 1)) * 100}%`,
+                        transitionDelay: `${index * 0.1}s`
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Timeline step ${index + 1}: ${event.title}`}
+                      onMouseEnter={() => handleTimelineHover(index, true)}
+                      onMouseLeave={() => handleTimelineHover(index, false)}
+                    >
+                      <div className="timeline-content">
+                        <div className="timeline-title">{event.title}</div>
+                        <div className="timeline-duration">{event.duration}</div>
+                        <div className="timeline-description">{event.description}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="features">
+                <h4>Includes:</h4>
+                <ul>
+                  {packages[currentIndex].features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div className="timeline-controls">
-            <button className="timeline-button" onClick={handlePrevious}>
-              Previous
-            </button>
-            <div className="timeline-dots">
-              {packages.map((_, index) => (
-                <div
-                  key={index}
-                  className={`timeline-dot ${index === currentNode ? 'active' : ''}`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
-            </div>
-            <button className="timeline-button" onClick={handleNext}>
-              Next
-            </button>
-          </div>
+          <button 
+            className="nav-button next" 
+            onClick={handleNext}
+            aria-label="Next package"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div className="navigation-dots">
+          {packages.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+              aria-label={`Go to package ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <div className="post-deployment">
+          <h3>Post-Deployment Flexibility</h3>
+          <p>All 4Runr systems are modular and scalable. After initial deployment, you can:</p>
+          <ul>
+            <li>Add new workflows, departments, or AI brains</li>
+            <li>Expand system capacity for scaling teams</li>
+            <li>Upgrade AI models and data intelligence layers</li>
+            <li>Integrate additional platforms and APIs</li>
+            <li>Scope new projects based on future goals</li>
+          </ul>
+          <p>Every addition is properly scoped, quoted, and aligned with your evolving needs. We ensure you continue scaling intelligently without technical debt. These packages are just the starting point. Your 4Runr System is always built for evolution.</p>
         </div>
       </div>
-    </div>
+      <div className="fine-print">
+        * All timelines are estimates and may vary based on project complexity and requirements
+      </div>
+    </section>
   );
-};
-
-export default ProductPackages; 
+} 
