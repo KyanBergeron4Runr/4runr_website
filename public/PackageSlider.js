@@ -3,22 +3,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const packages = document.querySelectorAll('.package-card');
   let currentIndex = 0;
   let startX = 0;
+  let currentX = 0;
   let isDragging = false;
   let autoPlayInterval;
 
   // Touch events for mobile swipe
   packageContainer.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
+    currentX = startX;
     isDragging = true;
     clearInterval(autoPlayInterval);
+    packageContainer.style.cursor = 'grabbing';
   });
 
   packageContainer.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
-    e.preventDefault();
-    const currentX = e.touches[0].clientX;
+    
+    currentX = e.touches[0].clientX;
     const diff = startX - currentX;
     
+    // Allow scrolling only after a minimum distance to prevent accidental swipes
+    if (Math.abs(diff) > 30) {
+      e.preventDefault(); // Prevent scrolling only when we're sure it's a swipe
+    }
+  });
+
+  packageContainer.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    
+    const diff = startX - currentX;
     if (Math.abs(diff) > 50) { // Minimum swipe distance
       if (diff > 0) {
         // Swipe left
@@ -27,13 +40,56 @@ document.addEventListener('DOMContentLoaded', () => {
         // Swipe right
         showPreviousPackage();
       }
-      isDragging = false;
+    }
+    
+    isDragging = false;
+    packageContainer.style.cursor = 'grab';
+    startAutoPlay();
+  });
+
+  // Mouse events for desktop
+  packageContainer.addEventListener('mousedown', (e) => {
+    startX = e.clientX;
+    currentX = startX;
+    isDragging = true;
+    clearInterval(autoPlayInterval);
+    packageContainer.style.cursor = 'grabbing';
+  });
+
+  packageContainer.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    currentX = e.clientX;
+    const diff = startX - currentX;
+    
+    if (Math.abs(diff) > 30) {
+      e.preventDefault();
     }
   });
 
-  packageContainer.addEventListener('touchend', () => {
+  packageContainer.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    
+    const diff = startX - currentX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        showNextPackage();
+      } else {
+        showPreviousPackage();
+      }
+    }
+    
     isDragging = false;
+    packageContainer.style.cursor = 'grab';
     startAutoPlay();
+  });
+
+  packageContainer.addEventListener('mouseleave', () => {
+    if (isDragging) {
+      isDragging = false;
+      packageContainer.style.cursor = 'grab';
+      startAutoPlay();
+    }
   });
 
   function showNextPackage() {

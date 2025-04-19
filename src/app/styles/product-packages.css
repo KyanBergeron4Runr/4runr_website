@@ -129,7 +129,7 @@
 .package-container {
   position: relative;
   width: 100%;
-  max-width: calc(1900 / 1920 * 100vw);
+  max-width: 100%;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -137,11 +137,14 @@
   justify-content: center;
   min-height: calc(1400 / 1920 * 100vw);
   height: auto;
+  touch-action: pan-x;
+  cursor: grab;
 }
 
 .package-card {
   position: relative;
   width: 100%;
+  max-width: 100%;
   overflow: visible;
   background: rgba(255, 255, 255, 0.05);
   border-radius: calc(20 / 1920 * 100vw);
@@ -151,6 +154,7 @@
   box-shadow: 0 calc(8 / 1920 * 100vw) calc(32 / 1920 * 100vw) rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  touch-action: pan-x;
 }
 
 .package-card:hover {
