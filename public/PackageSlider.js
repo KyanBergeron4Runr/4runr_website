@@ -2,108 +2,120 @@ document.addEventListener('DOMContentLoaded', () => {
   const packageContainer = document.querySelector('.package-container');
   const packages = document.querySelectorAll('.package-card');
   let currentIndex = 0;
-  let startX = 0;
-  let currentX = 0;
-  let isDragging = false;
   let autoPlayInterval;
+  const isMobile = window.innerWidth <= 767;
 
-  // Touch events for mobile swipe
-  packageContainer.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    currentX = startX;
-    isDragging = true;
-    clearInterval(autoPlayInterval);
-    packageContainer.style.cursor = 'grabbing';
-  });
+  function createMobileNav() {
+    // Create mobile navigation container
+    const mobileNav = document.createElement('div');
+    mobileNav.className = 'mobile-nav';
 
-  packageContainer.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    
-    currentX = e.touches[0].clientX;
-    const diff = startX - currentX;
-    
-    // Allow scrolling only after a minimum distance to prevent accidental swipes
-    if (Math.abs(diff) > 30) {
-      e.preventDefault(); // Prevent scrolling only when we're sure it's a swipe
-    }
-  });
-
-  packageContainer.addEventListener('touchend', (e) => {
-    if (!isDragging) return;
-    
-    const diff = startX - currentX;
-    if (Math.abs(diff) > 50) { // Minimum swipe distance
-      if (diff > 0) {
-        // Swipe left
-        showNextPackage();
-      } else {
-        // Swipe right
-        showPreviousPackage();
-      }
-    }
-    
-    isDragging = false;
-    packageContainer.style.cursor = 'grab';
-    startAutoPlay();
-  });
-
-  // Mouse events for desktop
-  packageContainer.addEventListener('mousedown', (e) => {
-    startX = e.clientX;
-    currentX = startX;
-    isDragging = true;
-    clearInterval(autoPlayInterval);
-    packageContainer.style.cursor = 'grabbing';
-  });
-
-  packageContainer.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    
-    currentX = e.clientX;
-    const diff = startX - currentX;
-    
-    if (Math.abs(diff) > 30) {
-      e.preventDefault();
-    }
-  });
-
-  packageContainer.addEventListener('mouseup', (e) => {
-    if (!isDragging) return;
-    
-    const diff = startX - currentX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        showNextPackage();
-      } else {
-        showPreviousPackage();
-      }
-    }
-    
-    isDragging = false;
-    packageContainer.style.cursor = 'grab';
-    startAutoPlay();
-  });
-
-  packageContainer.addEventListener('mouseleave', () => {
-    if (isDragging) {
-      isDragging = false;
-      packageContainer.style.cursor = 'grab';
+    // Create previous button
+    const prevButton = document.createElement('button');
+    prevButton.className = 'mobile-nav-button';
+    prevButton.innerHTML = '← Previous';
+    prevButton.onclick = () => {
+      clearInterval(autoPlayInterval);
+      showPreviousPackage();
       startAutoPlay();
-    }
-  });
+    };
+
+    // Create next button
+    const nextButton = document.createElement('button');
+    nextButton.className = 'mobile-nav-button';
+    nextButton.innerHTML = 'Next →';
+    nextButton.onclick = () => {
+      clearInterval(autoPlayInterval);
+      showNextPackage();
+      startAutoPlay();
+    };
+
+    mobileNav.appendChild(prevButton);
+    mobileNav.appendChild(nextButton);
+    packageContainer.after(mobileNav);
+
+    // Create package indicators
+    const indicatorContainer = document.createElement('div');
+    indicatorContainer.className = 'package-indicator';
+    
+    packages.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.className = `indicator-dot ${index === currentIndex ? 'active' : ''}`;
+      dot.onclick = () => {
+        clearInterval(autoPlayInterval);
+        goToPackage(index);
+        startAutoPlay();
+      };
+      indicatorContainer.appendChild(dot);
+    });
+
+    mobileNav.after(indicatorContainer);
+  }
+
+  function createDesktopNav() {
+    // Create desktop navigation buttons
+    const prevButton = document.createElement('button');
+    prevButton.className = 'nav-button prev';
+    prevButton.innerHTML = '←';
+    prevButton.onclick = () => {
+      clearInterval(autoPlayInterval);
+      showPreviousPackage();
+      startAutoPlay();
+    };
+
+    const nextButton = document.createElement('button');
+    nextButton.className = 'nav-button next';
+    nextButton.innerHTML = '→';
+    nextButton.onclick = () => {
+      clearInterval(autoPlayInterval);
+      showNextPackage();
+      startAutoPlay();
+    };
+
+    packageContainer.appendChild(prevButton);
+    packageContainer.appendChild(nextButton);
+  }
 
   function showNextPackage() {
-    packages[currentIndex].classList.remove('swipe-left', 'swipe-right', 'auto-cycle');
+    packages[currentIndex].style.display = 'none';
+    packages[currentIndex].style.opacity = '0';
     currentIndex = (currentIndex + 1) % packages.length;
-    packages[currentIndex].classList.add('swipe-left');
-    updateVisibility();
+    packages[currentIndex].style.display = 'flex';
+    setTimeout(() => {
+      packages[currentIndex].style.opacity = '1';
+      updateIndicators();
+    }, 50);
   }
 
   function showPreviousPackage() {
-    packages[currentIndex].classList.remove('swipe-left', 'swipe-right', 'auto-cycle');
+    packages[currentIndex].style.display = 'none';
+    packages[currentIndex].style.opacity = '0';
     currentIndex = (currentIndex - 1 + packages.length) % packages.length;
-    packages[currentIndex].classList.add('swipe-right');
-    updateVisibility();
+    packages[currentIndex].style.display = 'flex';
+    setTimeout(() => {
+      packages[currentIndex].style.opacity = '1';
+      updateIndicators();
+    }, 50);
+  }
+
+  function goToPackage(index) {
+    if (index === currentIndex) return;
+    packages[currentIndex].style.display = 'none';
+    packages[currentIndex].style.opacity = '0';
+    currentIndex = index;
+    packages[currentIndex].style.display = 'flex';
+    setTimeout(() => {
+      packages[currentIndex].style.opacity = '1';
+      updateIndicators();
+    }, 50);
+  }
+
+  function updateIndicators() {
+    if (!isMobile) return;
+    const dots = document.querySelectorAll('.indicator-dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
   }
 
   function updateVisibility() {
@@ -116,21 +128,33 @@ document.addEventListener('DOMContentLoaded', () => {
         pkg.style.opacity = '0';
       }
     });
+    updateIndicators();
   }
 
   function startAutoPlay() {
     clearInterval(autoPlayInterval);
     autoPlayInterval = setInterval(() => {
-      packages[currentIndex].classList.add('auto-cycle');
-      setTimeout(() => {
-        showNextPackage();
-      }, 9500); // Slightly less than the animation duration
-    }, 10000); // Match this with the CSS animation duration
+      showNextPackage();
+    }, 10000);
   }
 
   // Initialize
+  if (isMobile) {
+    createMobileNav();
+  } else {
+    createDesktopNav();
+  }
+  
   updateVisibility();
   startAutoPlay();
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const newIsMobile = window.innerWidth <= 767;
+    if (newIsMobile !== isMobile) {
+      location.reload(); // Refresh page on layout change
+    }
+  });
 
   // Stop auto-play when the tab is not visible
   document.addEventListener('visibilitychange', () => {
