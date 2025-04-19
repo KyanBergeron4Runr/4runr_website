@@ -201,9 +201,9 @@
 }
 
 .package-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(250 / 1920 * 100vw), 1fr));
-  gap: calc(32 / 1920 * 100vw);
+  display: flex;
+  flex-direction: column;
+  gap: calc(24 / 1920 * 100vw);
   margin-bottom: calc(60 / 1920 * 100vw);
   animation: fadeIn 0.6s ease-out both;
 }
@@ -213,10 +213,15 @@
   flex-direction: column;
   gap: calc(8 / 1920 * 100vw);
   transition: transform 0.3s ease;
+  padding: calc(16 / 1920 * 100vw);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: calc(12 / 1920 * 100vw);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .detail:hover {
   transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .detail .label {
@@ -231,6 +236,25 @@
   color: #fff;
   font-weight: 600;
   font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.detail.description {
+  background: rgba(106, 90, 205, 0.05);
+  border-color: rgba(106, 90, 205, 0.1);
+  padding: calc(24 / 1920 * 100vw);
+}
+
+.detail.description .value {
+  font-size: calc(var(--text-body) * 1);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.detail.description:hover {
+  background: rgba(106, 90, 205, 0.08);
+  border-color: rgba(106, 90, 205, 0.15);
 }
 
 .features {
@@ -580,15 +604,28 @@
   }
 
   .package-details {
-    margin-bottom: 40px;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .detail {
+    padding: 12px;
+  }
+
+  .detail.description {
+    padding: 16px;
   }
 
   .detail .label {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .detail .value {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .detail.description .value {
+    font-size: 0.95rem;
   }
 
   .features {

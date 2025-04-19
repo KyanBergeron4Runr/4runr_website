@@ -8,7 +8,7 @@ const packages = [
   {
     title: "Free Consultation & Strategic Blueprint",
     price: "Free",
-    timeline: "3–5 Business Days",
+    description: "A personalized 45-minute consultation where we map your business needs, identify high-impact use cases for AI and automation, and deliver a clear, actionable roadmap to guide your next steps.",
     deployment: "Immediate booking available",
     timelineEvents: [
       {
@@ -44,7 +44,7 @@ const packages = [
   {
     title: "Simple Automation Build & Optimization",
     price: "$500 – $5,000 initial + Retainer ($500+/month)",
-    timeline: "1–3 weeks",
+    description: "Fast, focused automation of specific workflows — such as lead management, order processing, or notifications — delivering immediate time savings, improved reliability, and full integration handled by 4Runr.",
     deployment: "Full support with your IT team or we can handle everything",
     timelineEvents: [
       {
@@ -97,7 +97,7 @@ const packages = [
   {
     title: "Custom AI-Powered Applications",
     price: "$10,000 – $75,000 initial + Custom Retainer",
-    timeline: "4–10 weeks",
+    description: "A fully customized web or backend application built for a targeted business use case — such as customer management, internal dashboarding, or task orchestration — with complete design, development, and integration by 4Runr.",
     deployment: "Full support with your IT team or we can handle everything",
     timelineEvents: [
       {
@@ -148,7 +148,7 @@ const packages = [
   {
     title: "AI Brain Integration (LLM Interface Add-On)",
     price: "$5,000 – $30,000 initial + Custom Retainer",
-    timeline: "2–5 weeks",
+    description: "A smart internal AI brain that gives your business data a voice — enabling employees to quickly access policies, documents, and operational knowledge through conversation. (External chatbots are handled separately under automation.)",
     deployment: "Full support with your IT team or we can handle everything",
     timelineEvents: [
       {
@@ -196,7 +196,7 @@ const packages = [
   {
     title: "Full Custom AI Brain Ecosystem",
     price: "$45,000 – $100,000 initial + Custom Retainer",
-    timeline: "8–16 weeks",
+    description: "A complete network of internal AI brains — a central master brain plus department-specific assistants — allowing employees to interact with company data, systems, and processes intelligently across all major teams.",
     deployment: "Full support with your IT team or we can handle everything",
     timelineEvents: [
       {
@@ -247,7 +247,7 @@ const packages = [
   {
     title: "Full Business Automation (A–Z Operational Transformation)",
     price: "$50,000 – $300,000 initial + Custom Retainer",
-    timeline: "12–24 weeks",
+    description: "Complete automation of all eligible workflows — from customer onboarding to internal task routing — turning your operations into a lean, scalable, and self-optimizing business designed for growth.",
     deployment: "Full support with your IT team or we can handle everything",
     timelineEvents: [
       {
@@ -298,7 +298,7 @@ const packages = [
   {
     title: "Full Business Automation + Integrated AI Brain Ecosystem",
     price: "$100,000 – $500,000 initial + Custom Retainer",
-    timeline: "16–32 weeks",
+    description: "Full business automation combined with a company-wide internal AI brain network — creating intelligent, self-optimizing operations where employees interact naturally with your systems, processes, and knowledge.",
     deployment: "Full support with your IT team or we can handle everything",
     timelineEvents: [
       {
@@ -460,9 +460,8 @@ export default function ProductPackages() {
                   <span className="label">Price:</span>
                   <span className="value">{packages[currentIndex].price}</span>
                 </div>
-                <div className="detail">
-                  <span className="label">Timeline:</span>
-                  <span className="value">{packages[currentIndex].timeline}</span>
+                <div className="detail description">
+                  <span className="value">{packages[currentIndex].description}</span>
                 </div>
                 <div className="detail">
                   <span className="label">Deployment:</span>
