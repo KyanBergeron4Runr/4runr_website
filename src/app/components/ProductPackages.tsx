@@ -356,7 +356,7 @@ export default function ProductPackages() {
 
   useEffect(() => {
     let timelineInterval: NodeJS.Timeout;
-    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents && !isTimelineHovered) {
+    if (!isTransitioning && autoAdvance && packages[currentIndex]?.timelineEvents) {
       timelineInterval = setInterval(() => {
         setTimelineIndex((prev) => {
           const nextIndex = (prev + 1) % (packages[currentIndex]?.timelineEvents?.length || 1);
@@ -365,21 +365,20 @@ export default function ProductPackages() {
       }, cycleInterval);
     }
     return () => clearInterval(timelineInterval);
-  }, [currentIndex, isTransitioning, autoAdvance, isTimelineHovered]);
+  }, [currentIndex, isTransitioning, autoAdvance]);
 
   const handleTimelineHover = (index: number, isHovered: boolean) => {
-    setIsTimelineHovered(isHovered);
     if (isHovered) {
+      setAutoAdvance(false);
       setTimelineIndex(index);
-      setHoveredNodeIndex(index);
     } else {
-      setHoveredNodeIndex(null);
+      setAutoAdvance(true);
     }
   };
 
   const getProgressBarWidth = () => {
     const totalNodes = packages[currentIndex]?.timelineEvents?.length || 1;
-    const currentPosition = timelineIndex / totalNodes * 100;
+    const currentPosition = timelineIndex / (totalNodes - 1) * 100;
     return `${currentPosition}%`;
   };
 
@@ -478,7 +477,7 @@ export default function ProductPackages() {
                     className="timeline-progress-bar" 
                     style={{ 
                       width: getProgressBarWidth(),
-                      transition: isTimelineHovered ? 'none' : 'width 3s linear'
+                      transition: autoAdvance ? 'width 3s linear' : 'none'
                     }} 
                   />
                   {packages[currentIndex]?.timelineEvents?.map((event, index) => (
