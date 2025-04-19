@@ -433,128 +433,125 @@ export default function ProductPackages() {
   }, []);
 
   return (
-    <div className="product-packages">
+    <section className="packages-section">
       <div className="container">
         <div className="section-header">
           <h2>The 4Runr Vision</h2>
           <p>At 4Runr, we build custom AI infrastructures—not off-the-shelf solutions. Each package below represents a template framework to help guide our discovery and planning process. Every system we build is tailored to your needs and can be expanded over time as your business grows.</p>
           <p className="estimate-disclaimer">* All timelines and pricing are estimates and may vary based on your specific requirements, project complexity, and scope. Final quotes will be provided after detailed consultation.</p>
         </div>
-        <div className="packages-section">
-          <div className="package-container">
-            <button 
-              className="nav-button prev" 
-              onClick={handlePrevious}
-              aria-label="Previous package"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
 
-            <div className="package-card">
-              <div className="card-content">
-                <h3>{packages[currentIndex].title}</h3>
-                <div className="package-details">
-                  <div className="detail">
-                    <span className="label">Price:</span>
-                    <span className="value">{packages[currentIndex].price}</span>
-                  </div>
-                  <div className="detail description">
-                    <span className="value">{packages[currentIndex].description}</span>
-                  </div>
-                  <div className="detail">
-                    <span className="label">Deployment:</span>
-                    <span className="value">{packages[currentIndex].deployment}</span>
-                  </div>
+        <div className="package-container">
+          <button 
+            className="nav-button prev" 
+            onClick={handlePrevious}
+            aria-label="Previous package"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          <div className="package-card">
+            <div className="card-content">
+              <h3>{packages[currentIndex].title}</h3>
+              <div className="package-details">
+                <div className="detail">
+                  <span className="label">Price:</span>
+                  <span className="value">{packages[currentIndex].price}</span>
                 </div>
-
-                <div className="timeline-container">
-                  <div className="timeline-progress">
-                    <div className="timeline-line" />
-                    <div 
-                      className="timeline-progress-bar" 
-                      style={{ 
-                        width: getProgressBarWidth(),
-                        transition: autoAdvance ? 'width 3s linear' : 'none'
-                      }} 
-                    />
-                  </div>
-                  <div className="timeline-nodes-container">
-                    {packages[currentIndex]?.timelineEvents?.map((event, index) => (
-                      <div 
-                        key={index}
-                        className="timeline-node-wrapper"
-                      >
-                        <div
-                          className={`timeline-node ${index === timelineIndex ? 'current' : ''} ${index < timelineIndex ? 'active' : ''}`}
-                          role="button"
-                          tabIndex={0}
-                          aria-label={`Timeline step ${index + 1}: ${event.title}`}
-                          onMouseEnter={() => handleTimelineHover(index, true)}
-                          onMouseLeave={() => handleTimelineHover(index, false)}
-                        >
-                          <div className="timeline-content">
-                            <div className="timeline-title">{event.title}</div>
-                            <div className="timeline-duration">{event.duration}</div>
-                            <div className="timeline-description">{event.description}</div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                <div className="detail description">
+                  <span className="value">{packages[currentIndex].description}</span>
                 </div>
-
-                <div className="features">
-                  <h4>Includes:</h4>
-                  <ul>
-                    {packages[currentIndex].features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
+                <div className="detail">
+                  <span className="label">Deployment:</span>
+                  <span className="value">{packages[currentIndex].deployment}</span>
                 </div>
               </div>
+
+              <div className="timeline-container">
+                <div className="timeline-progress">
+                  <div className="timeline-line" />
+                  <div 
+                    className="timeline-progress-bar" 
+                    style={{ 
+                      width: getProgressBarWidth(),
+                      transition: autoAdvance ? 'width 3s linear' : 'none'
+                    }} 
+                  />
+                  {packages[currentIndex]?.timelineEvents?.map((event, index) => (
+                    <div
+                      key={index}
+                      className={`timeline-node ${index === timelineIndex ? 'current' : ''} ${index < timelineIndex ? 'active' : ''}`}
+                      style={{
+                        left: `${(index / (packages[currentIndex].timelineEvents.length - 1)) * 100}%`,
+                        transitionDelay: `${index * 0.1}s`
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Timeline step ${index + 1}: ${event.title}`}
+                      onMouseEnter={() => handleTimelineHover(index, true)}
+                      onMouseLeave={() => handleTimelineHover(index, false)}
+                    >
+                      <div className="timeline-content">
+                        <div className="timeline-title">{event.title}</div>
+                        <div className="timeline-duration">{event.duration}</div>
+                        <div className="timeline-description">{event.description}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="features">
+                <h4>Includes:</h4>
+                <ul>
+                  {packages[currentIndex].features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-
-            <button 
-              className="nav-button next" 
-              onClick={handleNext}
-              aria-label="Next package"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
           </div>
 
-          <div className="navigation-dots">
-            {packages.map((_, index) => (
-              <button
-                key={index}
-                className={`dot ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => handleDotClick(index)}
-                aria-label={`Go to package ${index + 1}`}
-              />
-            ))}
-          </div>
+          <button 
+            className="nav-button next" 
+            onClick={handleNext}
+            aria-label="Next package"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
 
-          <div className="post-deployment">
-            <h3>Post-Deployment Flexibility</h3>
-            <p>All 4Runr systems are modular and scalable. After initial deployment, you can:</p>
-            <ul>
-              <li>Add new workflows, departments, or AI brains</li>
-              <li>Expand system capacity for scaling teams</li>
-              <li>Upgrade AI models and data intelligence layers</li>
-              <li>Integrate additional platforms and APIs</li>
-              <li>Scope new projects based on future goals</li>
-            </ul>
-            <p>Every addition is properly scoped, quoted, and aligned with your evolving needs. We ensure you continue scaling intelligently without technical debt. These packages are just the starting point. Your 4Runr System is always built for evolution.</p>
-          </div>
+        <div className="navigation-dots">
+          {packages.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+              aria-label={`Go to package ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <div className="post-deployment">
+          <h3>Post-Deployment Flexibility</h3>
+          <p>All 4Runr systems are modular and scalable. After initial deployment, you can:</p>
+          <ul>
+            <li>Add new workflows, departments, or AI brains</li>
+            <li>Expand system capacity for scaling teams</li>
+            <li>Upgrade AI models and data intelligence layers</li>
+            <li>Integrate additional platforms and APIs</li>
+            <li>Scope new projects based on future goals</li>
+          </ul>
+          <p>Every addition is properly scoped, quoted, and aligned with your evolving needs. We ensure you continue scaling intelligently without technical debt. These packages are just the starting point. Your 4Runr System is always built for evolution.</p>
         </div>
       </div>
       <div className="fine-print">
         * All timelines are estimates and may vary based on project complexity and requirements
       </div>
-    </div>
+    </section>
   );
 } 
