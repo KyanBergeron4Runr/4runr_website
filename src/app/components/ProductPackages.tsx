@@ -367,6 +367,18 @@ export default function ProductPackages() {
     return () => clearInterval(timelineInterval);
   }, [currentIndex, isTransitioning, autoAdvance]);
 
+  useEffect(() => {
+    // Load the package slider script
+    const script = document.createElement('script');
+    script.src = '/PackageSlider.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const handleTimelineHover = (index: number, isHovered: boolean) => {
     if (isHovered) {
       setAutoAdvance(false);
